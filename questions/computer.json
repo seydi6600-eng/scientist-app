@@ -1,1 +1,2716 @@
 
+[
+  {
+    "question": "CPU در رایانه چه وظیفه‌ای دارد؟",
+    "answers": ["پردازش دستورها", "ذخیره دائمی فایل‌ها", "نمایش تصویر", "چاپ اسناد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام وسیله برای وارد کردن متن به رایانه استفاده می‌شود؟",
+    "answers": ["صفحه‌کلید", "مانیتور", "بلندگو", "پروژکتور"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "RAM مخفف چیست؟",
+    "answers": ["Random Access Memory", "Read Access Module", "Rapid Application Machine", "Remote Access Monitor"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام مورد یک سیستم‌عامل است؟",
+    "answers": ["Linux", "Chrome", "Google", "Intel"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام قطعه برای ذخیره‌سازی دائمی اطلاعات استفاده می‌شود؟",
+    "answers": ["SSD", "RAM", "CPU", "کارت صدا"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "پسوند فایل PDF معمولاً چیست؟",
+    "answers": [".pdf", ".doc", ".jpg", ".exe"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام‌یک مرورگر وب است؟",
+    "answers": ["Mozilla Firefox", "Microsoft Word", "Windows", "Photoshop"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام دستگاه برای نمایش تصویر رایانه استفاده می‌شود؟",
+    "answers": ["مانیتور", "مودم", "کیبورد", "اسکنر"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام گزینه یک موتور جست‌وجوی اینترنتی است؟",
+    "answers": ["Google", "Android", "Ubuntu", "Bluetooth"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "Wi-Fi برای چه کاری استفاده می‌شود؟",
+    "answers": ["ارتباط بی‌سیم با شبکه", "افزایش ظرفیت باتری", "خنک کردن پردازنده", "چاپ سه‌بعدی"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+
+  {
+    "question": "کدام پروتکل برای انتقال امن صفحات وب استفاده می‌شود؟",
+    "answers": ["HTTPS", "FTP", "SMTP", "POP3"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "DNS در اینترنت چه وظیفه‌ای دارد؟",
+    "answers": ["تبدیل نام دامنه به نشانی IP", "رمزگذاری فایل‌های محلی", "فشرده‌سازی ویدئو", "مدیریت باتری لپ‌تاپ"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گزینه نمونه‌ای از حافظه نهان پردازنده است؟",
+    "answers": ["Cache", "SSD", "فلش USB", "DVD"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "آدرس IP چه چیزی را در یک شبکه مشخص می‌کند؟",
+    "answers": ["یک دستگاه یا رابط شبکه", "نوع پردازنده", "اندازه نمایشگر", "ظرفیت هارددیسک"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام زبان برای ساختاردهی محتوای صفحات وب استفاده می‌شود؟",
+    "answers": ["HTML", "CSS", "SQL", "Python"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "CSS عمدتاً برای چه کاری در صفحات وب استفاده می‌شود؟",
+    "answers": ["تعیین ظاهر و چیدمان", "مدیریت پایگاه داده", "ارسال ایمیل", "فشرده‌سازی فایل"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گزینه یک پایگاه داده رابطه‌ای محسوب می‌شود؟",
+    "answers": ["MySQL", "Git", "Linux", "Docker"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "Git بیشتر برای چه منظوری استفاده می‌شود؟",
+    "answers": ["کنترل نسخه کد", "ویرایش عکس", "پخش موسیقی", "مدیریت چاپگر"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "فیشینگ معمولاً با چه هدفی انجام می‌شود؟",
+    "answers": ["فریب کاربر برای به‌دست‌آوردن اطلاعات حساس", "افزایش سرعت اینترنت", "تعمیر سیستم‌عامل", "افزایش ظرفیت RAM"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام فناوری برای ارتباط بسیار نزدیک و بدون تماس مستقیم در تلفن‌های هوشمند کاربرد دارد؟",
+    "answers": ["NFC", "GPS", "HDMI", "Ethernet"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+
+  {
+    "question": "در IPv4 طول یک نشانی IP چند بیت است؟",
+    "answers": ["۳۲ بیت", "۴۸ بیت", "۶۴ بیت", "۱۲۸ بیت"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در IPv6 طول یک نشانی IP چند بیت است؟",
+    "answers": ["۱۲۸ بیت", "۳۲ بیت", "۶۴ بیت", "۲۵۶ بیت"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام الگوریتم مرتب‌سازی در حالت میانگین پیچیدگی زمانی O(n log n) دارد؟",
+    "answers": ["Merge Sort", "Linear Search", "Bubble Sort", "Counting یک عنصر"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در پایگاه داده رابطه‌ای، کلید اصلی چه ویژگی مهمی دارد؟",
+    "answers": ["هر رکورد را به‌صورت یکتا شناسایی می‌کند", "همیشه متن طولانی ذخیره می‌کند", "فقط برای حذف جدول استفاده می‌شود", "حتماً باید شامل چند ستون باشد"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام الگوریتم رمزنگاری یک الگوریتم متقارن است؟",
+    "answers": ["AES", "RSA", "DSA", "Diffie-Hellman"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام الگوریتم معمولاً برای ایجاد امضای دیجیتال استفاده می‌شود؟",
+    "answers": ["RSA", "AES", "ZIP", "JPEG"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در مدل OSI، مسیریابی بسته‌ها عمدتاً در کدام لایه انجام می‌شود؟",
+    "answers": ["لایه شبکه", "لایه فیزیکی", "لایه نشست", "لایه ارائه"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام ساختار داده از اصل LIFO پیروی می‌کند؟",
+    "answers": ["Stack", "Queue", "Linked List", "Graph"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام ساختار داده از اصل FIFO پیروی می‌کند؟",
+    "answers": ["Queue", "Stack", "Heap", "Tree"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام فناوری برای اجرای برنامه‌ها در محیط‌های ایزوله و قابل‌حمل بسیار رایج است؟",
+    "answers": ["Docker", "BIOS", "CMOS", "VGA"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام قطعه وظیفه پردازش گرافیکی را بر عهده دارد؟",
+    "answers": ["GPU", "PSU", "RAM", "NIC"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام وسیله برای اتصال رایانه به شبکه کابلی استفاده می‌شود؟",
+    "answers": ["کارت شبکه", "کارت صدا", "وب‌کم", "میکروفون"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام گزینه یک سیستم‌عامل موبایل است؟",
+    "answers": ["Android", "Firefox", "Ubuntu Server", "MySQL"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام کلید معمولاً برای حذف نویسه سمت چپ مکان‌نما استفاده می‌شود؟",
+    "answers": ["Backspace", "Shift", "Tab", "Caps Lock"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام فرمت معمولاً برای تصاویر فشرده‌شده استفاده می‌شود؟",
+    "answers": ["JPEG", "TXT", "EXE", "CSV"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام دستگاه صدا را از رایانه پخش می‌کند؟",
+    "answers": ["بلندگو", "اسکنر", "صفحه‌کلید", "وب‌کم"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام گزینه برای اتصال دستگاه‌های نزدیک به‌صورت بی‌سیم بسیار رایج است؟",
+    "answers": ["Bluetooth", "SATA", "VGA", "USB-A"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام مورد نمونه‌ای از فضای ذخیره‌سازی ابری است؟",
+    "answers": ["Google Drive", "RAM", "CPU", "BIOS"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام پسوند معمولاً برای فایل متنی ساده استفاده می‌شود؟",
+    "answers": [".txt", ".mp3", ".png", ".zip"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام وسیله برای اسکن اسناد کاغذی استفاده می‌شود؟",
+    "answers": ["اسکنر", "مودم", "روتر", "بلندگو"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+
+  {
+    "question": "کدام پروتکل برای ارسال ایمیل از یک سرویس‌دهنده به سرویس‌دهنده دیگر استفاده می‌شود؟",
+    "answers": ["SMTP", "HTTP", "SSH", "DHCP"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "DHCP در شبکه چه کاری انجام می‌دهد؟",
+    "answers": ["اختصاص خودکار تنظیمات شبکه", "رمزگذاری دیسک", "فشرده‌سازی تصاویر", "تشخیص ویروس"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام پروتکل برای انتقال فایل از راه دور طراحی شده است؟",
+    "answers": ["FTP", "DNS", "ARP", "ICMP"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام فناوری برای ایجاد شبکه خصوصی مجازی روی یک شبکه عمومی استفاده می‌شود؟",
+    "answers": ["VPN", "VLAN", "BIOS", "RAID"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گزینه یک زبان برنامه‌نویسی سطح بالا است؟",
+    "answers": ["Python", "HTML", "CSS", "JSON"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "JSON بیشتر برای چه منظوری استفاده می‌شود؟",
+    "answers": ["ذخیره و تبادل داده ساخت‌یافته", "ویرایش ویدئو", "اجرای سیستم‌عامل", "مدیریت سخت‌افزار"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "API در نرم‌افزار معمولاً چه مفهومی دارد؟",
+    "answers": ["رابط برنامه‌نویسی کاربردی", "پردازنده تصویری خودکار", "پروتکل انتقال صوت", "حافظه برنامه‌ریزی‌شده داخلی"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گزینه نمونه‌ای از نرم‌افزار متن‌باز است؟",
+    "answers": ["VLC Media Player", "Microsoft Excel", "Adobe Photoshop", "Windows 11"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در HTML، کدام تگ برای ایجاد پیوند استفاده می‌شود؟",
+    "answers": ["a", "img", "table", "form"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در CSS، کدام ویژگی برای تغییر رنگ متن استفاده می‌شود؟",
+    "answers": ["color", "margin", "display", "position"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+
+  {
+    "question": "کدام الگوریتم برای یافتن کوتاه‌ترین مسیر از یک مبدأ در گراف با وزن‌های غیرمنفی شناخته شده است؟",
+    "answers": ["Dijkstra", "Kruskal", "Floyd فقط برای مرتب‌سازی", "Boyer-Moore"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام ساختار داده معمولاً برای پیاده‌سازی صف اولویت‌دار استفاده می‌شود؟",
+    "answers": ["Heap", "Stack", "Array فقط به‌صورت خام", "Linked List بدون ترتیب"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در معماری رایج رایانه، کش L1 معمولاً چه ویژگی‌ای نسبت به L3 دارد؟",
+    "answers": ["کوچک‌تر و سریع‌تر است", "بزرگ‌تر و کندتر است", "فقط روی دیسک قرار دارد", "فقط برای ذخیره فایل استفاده می‌شود"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام مفهوم در امنیت اطلاعات به معنی تأیید هویت کاربر است؟",
+    "answers": ["Authentication", "Authorization", "Encryption", "Compression"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "Authorization در امنیت اطلاعات به چه معناست؟",
+    "answers": ["تعیین سطح دسترسی پس از احراز هویت", "تأیید وجود اینترنت", "رمزگذاری ارتباط", "تهیه نسخه پشتیبان"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام نوع حمله امنیتی با تزریق دستورات SQL به ورودی برنامه مرتبط است؟",
+    "answers": ["SQL Injection", "DDoS", "Phishing", "Brute-force Wi-Fi"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام مفهوم در هوش مصنوعی به یادگیری الگوها از داده‌ها بدون برنامه‌نویسی صریح همه قوانین اشاره دارد؟",
+    "answers": ["Machine Learning", "Rasterization", "Virtual Memory", "Packet Switching"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام نوع یادگیری ماشین از داده‌های دارای برچسب برای آموزش مدل استفاده می‌کند؟",
+    "answers": ["Supervised Learning", "Unsupervised Learning", "Reinforcement Learning", "Transfer Encoding"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در شبکه‌های کامپیوتری، NAT معمولاً چه کاری انجام می‌دهد؟",
+    "answers": ["ترجمه نشانی‌های شبکه", "فشرده‌سازی بسته‌ها", "تشخیص بدافزار", "تبدیل متن به صدا"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام مفهوم به اجرای چند ماشین مجازی روی یک سخت‌افزار فیزیکی اشاره دارد؟",
+    "answers": ["Virtualization", "Compilation", "Defragmentation", "Rasterization"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام واحد معمولاً برای اندازه‌گیری سرعت پردازنده استفاده می‌شود؟",
+    "answers": ["گیگاهرتز", "گیگابایت", "مگاپیکسل", "دسی‌بل"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام وسیله برای وارد کردن صدای کاربر به رایانه کاربرد دارد؟",
+    "answers": ["میکروفون", "اسپیکر", "مانیتور", "پرینتر"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام گزینه یک نرم‌افزار ویرایش متن است؟",
+    "answers": ["Notepad", "VLC", "Calculator", "Paint"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام کلید معمولاً برای رفتن به خط بعدی در یک فرم یا متن استفاده می‌شود؟",
+    "answers": ["Enter", "Alt", "Ctrl", "Esc"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام گزینه یک فایل فشرده را نشان می‌دهد؟",
+    "answers": [".zip", ".wav", ".bmp", ".html"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام وسیله معمولاً برای چاپ اطلاعات روی کاغذ استفاده می‌شود؟",
+    "answers": ["چاپگر", "روتر", "وب‌کم", "مودم"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام شرکت سازنده سیستم‌عامل Windows است؟",
+    "answers": ["Microsoft", "NVIDIA", "Canon", "Sony"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام گزینه برای انتقال تصویر دیجیتال و صدا از رایانه به نمایشگر رایج است؟",
+    "answers": ["HDMI", "RJ45", "PS/2", "SATA"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام وسیله معمولاً برای حرکت دادن نشانگر روی صفحه استفاده می‌شود؟",
+    "answers": ["ماوس", "اسکنر", "فلش‌مموری", "هارددیسک"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام گزینه یک برنامه پیام‌رسان محسوب می‌شود؟",
+    "answers": ["Telegram", "Excel", "PowerPoint", "Visual Studio Code"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+
+  {
+    "question": "کدام فناوری برای افزایش امنیت ورود با استفاده از اثر انگشت یا چهره کاربرد دارد؟",
+    "answers": ["احراز هویت زیستی", "فشرده‌سازی داده", "کشینگ", "تجزیه‌سازی"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گزینه برای اجرای کد JavaScript در سمت سرور بسیار شناخته‌شده است؟",
+    "answers": ["Node.js", "Bootstrap", "Figma", "SQLite Browser"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گزینه یک سیستم مدیریت پایگاه داده رابطه‌ای است؟",
+    "answers": ["PostgreSQL", "Redis فقط به‌عنوان دیتابیس رابطه‌ای", "GitHub", "Nginx"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام روش برای جلوگیری از دسترسی غیرمجاز به حساب، علاوه بر رمز عبور، یک عامل دیگر نیز درخواست می‌کند؟",
+    "answers": ["احراز هویت دومرحله‌ای", "حالت ناشناس مرورگر", "فشرده‌سازی دیسک", "اشتراک‌گذاری صفحه"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام کد وضعیت HTTP به معنی «یافت نشد» است؟",
+    "answers": ["404", "200", "301", "500"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام کد وضعیت HTTP معمولاً نشان‌دهنده موفقیت درخواست است؟",
+    "answers": ["200", "403", "404", "503"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام ابزار برای توسعه و آزمایش درخواست‌های API کاربرد زیادی دارد؟",
+    "answers": ["Postman", "Photoshop", "Audacity", "WinRAR"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام فناوری برای ساخت رابط‌های کاربری وب به‌صورت مؤلفه‌ای بسیار شناخته شده است؟",
+    "answers": ["React", "Apache", "MySQL", "OpenSSH"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام ویژگی CSS برای تعیین فاصله داخلی یک عنصر استفاده می‌شود؟",
+    "answers": ["padding", "border", "opacity", "z-index"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام ویژگی CSS برای تعیین فاصله بیرونی یک عنصر استفاده می‌شود؟",
+    "answers": ["margin", "padding", "font-weight", "line-height"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+
+  {
+    "question": "کدام الگوریتم رمزنگاری برای رمزگذاری متقارن داده‌ها در بسیاری از سامانه‌ها استاندارد شناخته‌شده‌ای است؟",
+    "answers": ["AES", "SHA-256", "RSA فقط به‌صورت متقارن", "MD5"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "SHA-256 در درجه اول برای چه منظوری استفاده می‌شود؟",
+    "answers": ["تولید تابع درهم‌سازی", "رمزگذاری متقارن قابل‌بازگشت", "فشرده‌سازی ویدئو", "مسیریابی بسته‌ها"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام مفهوم در سیستم‌عامل امکان استفاده از بخشی از فضای ذخیره‌سازی به‌عنوان امتداد حافظه اصلی را فراهم می‌کند؟",
+    "answers": ["Virtual Memory", "Dual Boot", "Spooling", "Overclocking"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام الگوریتم اجماع در شبکه اصلی بیت‌کوین استفاده می‌شود؟",
+    "answers": ["Proof of Work", "Proof of Stake", "Delegated Proof of Stake", "Proof of Authority"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در یادگیری ماشین، Overfitting به چه وضعیتی اشاره دارد؟",
+    "answers": ["مدل داده‌های آموزشی را بیش از حد یاد می‌گیرد و روی داده جدید ضعیف عمل می‌کند", "مدل هیچ داده‌ای دریافت نمی‌کند", "مدل همیشه با داده جدید بهتر می‌شود", "مدل فقط از سخت‌افزار استفاده می‌کند"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام ساختار داده برای نمایش روابط سلسله‌مراتبی مانند ساختار پوشه‌ها مناسب است؟",
+    "answers": ["Tree", "Queue", "Stack", "Hash Table"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام الگوریتم جست‌وجو روی یک آرایه مرتب‌شده می‌تواند در حالت معمول پیچیدگی زمانی O(log n) داشته باشد؟",
+    "answers": ["Binary Search", "Linear Search", "Depth-First Search", "Breadth-First Search"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در برنامه‌نویسی شیءگرا، کپسوله‌سازی به چه مفهومی اشاره دارد؟",
+    "answers": ["محدود کردن دسترسی مستقیم به داده‌ها و ترکیب داده و رفتار در یک واحد", "اجرای همزمان چند سیستم‌عامل", "تبدیل کد به تصویر", "ذخیره داده‌ها فقط در فایل متنی"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام مفهوم در سیستم‌های توزیع‌شده به اجرای چند نسخه از یک سرویس برای افزایش دسترس‌پذیری اشاره دارد؟",
+    "answers": ["Replication", "Compilation", "Parsing", "Minification"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام قطعه وظیفه تأمین برق اجزای مختلف رایانه را بر عهده دارد؟",
+    "answers": ["منبع تغذیه", "مادربرد", "پردازنده", "حافظه RAM"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "مادربرد در رایانه چه نقشی دارد؟",
+    "answers": ["اتصال و هماهنگی اجزای سخت‌افزاری", "ذخیره دائمی فایل‌های شخصی", "نمایش مستقیم تصاویر", "تولید صدای خروجی"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام گزینه نمونه‌ای از یک فایل صوتی است؟",
+    "answers": [".mp3", ".html", ".csv", ".dll"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام گزینه معمولاً برای ذخیره تصاویر با پشتیبانی از شفافیت و فشرده‌سازی بدون اتلاف استفاده می‌شود؟",
+    "answers": ["PNG", "MP3", "AVI", "DOCX"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "واحد اندازه‌گیری ظرفیت ذخیره‌سازی داده معمولاً کدام است؟",
+    "answers": ["بایت", "هرتز", "ولت", "وات"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام گزینه یک سیستم‌عامل متن‌باز محسوب می‌شود؟",
+    "answers": ["Ubuntu", "iOS", "Windows", "macOS"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام کلید معمولاً برای لغو یا خروج از یک عملیات در بسیاری از برنامه‌ها استفاده می‌شود؟",
+    "answers": ["Esc", "Home", "Insert", "Page Down"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام دستگاه می‌تواند رایانه را به یک شبکه بی‌سیم متصل کند؟",
+    "answers": ["آداپتور Wi-Fi", "کارت گرافیک", "کارت صدا", "درایو نوری"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام گزینه نمونه‌ای از یک سرویس ذخیره‌سازی ابری است؟",
+    "answers": ["OneDrive", "BIOS", "CPU-Z", "UEFI"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام مورد برای تهیه نسخه چاپی از یک سند دیجیتال استفاده می‌شود؟",
+    "answers": ["چاپگر", "تاچ‌پد", "مودم", "کارت شبکه"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+
+  {
+    "question": "کدام دستگاه شبکه معمولاً بسته‌های داده را بین شبکه‌های مختلف مسیریابی می‌کند؟",
+    "answers": ["روتر", "سوئیچ", "هاب", "اکسس‌پوینت"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام دستگاه شبکه معمولاً چند دستگاه را در یک شبکه محلی به یکدیگر متصل می‌کند؟",
+    "answers": ["سوئیچ", "روتر", "مودم", "فایروال نرم‌افزاری"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "پورت 443 در شبکه معمولاً با کدام سرویس مرتبط است؟",
+    "answers": ["HTTPS", "FTP", "SSH", "DNS"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام پروتکل برای دریافت ایمیل و همگام‌سازی آن با سرور طراحی شده است؟",
+    "answers": ["IMAP", "SMTP", "HTTP", "TFTP"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گزینه تفاوت اصلی TCP و UDP را بهتر بیان می‌کند؟",
+    "answers": ["TCP ارتباط قابل‌اعتماد و مبتنی بر اتصال فراهم می‌کند، UDP چنین تضمینی ندارد", "UDP همیشه از TCP سریع‌تر و قابل‌اعتمادتر است", "TCP فقط برای شبکه‌های محلی استفاده می‌شود", "UDP امکان ارسال بسته‌های داده را ندارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام فناوری برای ساختاردهی داده‌ها به شکل کلید و مقدار بسیار رایج است؟",
+    "answers": ["JSON", "JPEG", "MPEG", "SVG"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام دستور SQL برای دریافت داده از یک جدول استفاده می‌شود؟",
+    "answers": ["SELECT", "INSERT", "DELETE", "ALTER"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام دستور SQL برای افزودن رکورد جدید به جدول استفاده می‌شود؟",
+    "answers": ["INSERT", "SELECT", "DROP", "RENAME"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام مفهوم در پایگاه داده برای کاهش افزونگی و ناسازگاری داده‌ها استفاده می‌شود؟",
+    "answers": ["نرمال‌سازی", "رمزنگاری", "مجازی‌سازی", "پردازش موازی"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام فناوری امکان اجرای چند سیستم‌عامل یا محیط محاسباتی مستقل روی یک سخت‌افزار را فراهم می‌کند؟",
+    "answers": ["ماشین مجازی", "فشرده‌سازی", "قطعه‌بندی دیسک", "کش مرورگر"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+
+  {
+    "question": "کدام الگوریتم برای پیمایش گراف به‌صورت لایه‌به‌لایه شناخته می‌شود؟",
+    "answers": ["Breadth-First Search", "Quick Sort", "Heap Sort", "Binary Search"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام الگوریتم برای پیمایش گراف به‌صورت عمیق در شاخه‌ها استفاده می‌شود؟",
+    "answers": ["Depth-First Search", "Merge Sort", "Counting Sort", "Linear Search"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "پیچیدگی زمانی جست‌وجوی خطی در بدترین حالت برای آرایه‌ای با n عنصر چیست؟",
+    "answers": ["O(n)", "O(1)", "O(log n)", "O(n²)"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام مفهوم در سیستم‌عامل به اجرای چند فرایند به‌صورت همزمان یا درهم‌تنیده مربوط است؟",
+    "answers": ["هم‌روندی", "قطعه‌بندی", "بوت‌لودینگ", "فشرده‌سازی"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "Deadlock در سیستم‌عامل به چه وضعیتی گفته می‌شود؟",
+    "answers": ["چند فرایند منتظر منابعی هستند که یکدیگر در اختیار دارند", "پردازنده بدون هیچ دستور خاموش می‌شود", "فایل‌ها به‌طور خودکار فشرده می‌شوند", "سیستم‌عامل وارد حالت نصب می‌شود"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام روش برای جلوگیری از اجرای کد مخرب در حافظه به‌صورت تصادفی‌سازی مکان‌ها شناخته می‌شود؟",
+    "answers": ["ASLR", "RAID", "DHCP", "NAT"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام حمله امنیتی در آن مهاجم خود را بین دو طرف ارتباط قرار می‌دهد تا ارتباط را شنود یا دستکاری کند؟",
+    "answers": ["Man-in-the-Middle", "Buffer Overflow", "SQL Injection", "Dictionary Attack"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام نوع حافظه با قطع برق، اطلاعات خود را از دست می‌دهد؟",
+    "answers": ["RAM", "ROM", "Flash Memory", "SSD"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام مفهوم در هوش مصنوعی به شبکه‌هایی اشاره دارد که از ساختاری الهام‌گرفته از نورون‌های عصبی استفاده می‌کنند؟",
+    "answers": ["شبکه عصبی مصنوعی", "درخت دودویی", "ماشین حالت متناهی", "جدول درهم‌سازی"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در پایگاه داده، JOIN برای چه منظوری استفاده می‌شود؟",
+    "answers": ["ترکیب داده‌های مرتبط از چند جدول", "حذف کامل پایگاه داده", "رمزگذاری ستون‌ها", "تغییر سیستم‌عامل سرور"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام شرکت نخستین نسخه عمومی سیستم‌عامل اندروید را در سال 2008 روی گوشی T-Mobile G1 عرضه کرد؟",
+    "answers": ["Google", "Apple", "Nokia", "IBM"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام فناوری برای تعیین موقعیت جغرافیایی دستگاه با استفاده از ماهواره‌ها کاربرد دارد؟",
+    "answers": ["GPS", "NFC", "USB", "DLNA"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام قطعه رایانه معمولاً مسئول تولید و پردازش تصویر برای نمایشگر است؟",
+    "answers": ["کارت گرافیک", "منبع تغذیه", "کارت شبکه", "کارت صدا"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام فناوری برای شارژ بی‌سیم بسیاری از تلفن‌های هوشمند استفاده می‌شود؟",
+    "answers": ["Qi", "FTP", "SATA", "PCIe"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام شرکت سازنده مرورگر Chrome است؟",
+    "answers": ["Google", "Mozilla", "Opera Software", "Samsung"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام وسیله برای گرفتن تصویر زنده و انتقال آن به رایانه استفاده می‌شود؟",
+    "answers": ["وب‌کم", "روتر", "UPS", "هاب USB"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام گزینه یک شبکه اجتماعی محسوب می‌شود؟",
+    "answers": ["Instagram", "Ubuntu", "Firefox", "SQLite"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام فناوری برای اتصال برخی کارت‌های بانکی و دستگاه‌های پرداخت در فاصله بسیار نزدیک استفاده می‌شود؟",
+    "answers": ["NFC", "GPS", "DSL", "SCSI"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام وسیله برای محافظت موقت رایانه در برابر قطع برق و نوسان برق کاربرد دارد؟",
+    "answers": ["UPS", "GPU", "SSD", "Router"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام شرکت بیشتر با تولید پردازنده‌های سری Ryzen شناخته می‌شود؟",
+    "answers": ["AMD", "NVIDIA", "Qualcomm", "Broadcom"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+
+  {
+    "question": "در اینترنت، URL چه چیزی را مشخص می‌کند؟",
+    "answers": ["نشانی یک منبع", "سرعت پردازنده", "ظرفیت حافظه", "نوع کارت گرافیک"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام فناوری برای ساخت صفحات وب تعاملی در سمت کاربر بسیار رایج است؟",
+    "answers": ["JavaScript", "SQL", "Bash", "Assembly"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام تگ HTML برای قرار دادن تصویر در صفحه استفاده می‌شود؟",
+    "answers": ["img", "video", "link", "section"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام تگ HTML برای ایجاد یک فهرست مرتب‌شده استفاده می‌شود؟",
+    "answers": ["ol", "ul", "li", "dl"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام ویژگی HTML برای تعیین نشانی مقصد یک پیوند استفاده می‌شود؟",
+    "answers": ["href", "src", "alt", "class"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام فناوری برای ارتباط کوتاه‌برد بین تلفن و لوازم جانبی مانند هدفون بی‌سیم کاربرد دارد؟",
+    "answers": ["Bluetooth", "Ethernet", "Thunderbolt", "DisplayPort"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام استاندارد برای اتصال دستگاه‌های جانبی با پهنای باند بالا در رایانه‌ها استفاده می‌شود؟",
+    "answers": ["USB 3.x", "VGA", "PS/2", "RS-232"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام فناوری شبکه بی‌سیم در نسل‌های جدید Wi-Fi امکان سرعت و ظرفیت بالاتری نسبت به نسل‌های قدیمی فراهم کرده است؟",
+    "answers": ["Wi-Fi 6", "Bluetooth 2.0", "GSM", "Infrared"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام ابزار معمولاً برای مدیریت کدهای منبع و همکاری برنامه‌نویسان روی پروژه‌ها استفاده می‌شود؟",
+    "answers": ["GitHub", "Spotify", "VLC", "Blender"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در برنامه‌نویسی، Debugging به چه معناست؟",
+    "answers": ["پیدا کردن و رفع خطاهای برنامه", "فشرده‌سازی برنامه", "تبدیل برنامه به تصویر", "انتقال برنامه به حافظه جانبی"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+
+  {
+    "question": "کدام معماری پردازنده از مجموعه دستورهای نسبتاً ساده و تعداد زیادی ثبات استفاده می‌کند؟",
+    "answers": ["RISC", "BIOS", "RAID", "DMA"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام فناوری امکان دسترسی مستقیم یک دستگاه سخت‌افزاری به حافظه بدون دخالت مداوم CPU را فراهم می‌کند؟",
+    "answers": ["DMA", "DNS", "NAT", "DHCP"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در سیستم‌عامل، Page Fault زمانی رخ می‌دهد که چه اتفاقی بیفتد؟",
+    "answers": ["صفحه موردنیاز در حافظه اصلی حاضر نباشد", "پردازنده بیش از حد گرم شود", "فایل سیستم حذف شود", "کارت شبکه اتصالش را از دست بدهد"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام الگوریتم مرتب‌سازی در بدترین حالت پیچیدگی زمانی O(n log n) دارد؟",
+    "answers": ["Merge Sort", "Quick Sort", "Bubble Sort", "Insertion Sort"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام الگوریتم مرتب‌سازی معمولاً به‌صورت درجا انجام می‌شود و در پیاده‌سازی رایج به حافظه کمکی زیادی نیاز ندارد؟",
+    "answers": ["Heap Sort", "Merge Sort", "Counting Sort", "Radix Sort"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در یادگیری ماشین، Precision چه چیزی را اندازه‌گیری می‌کند؟",
+    "answers": ["نسبت پیش‌بینی‌های مثبت درست به تمام پیش‌بینی‌های مثبت", "نسبت نمونه‌های درست به کل داده‌های آموزشی", "میانگین خطای عددی مدل", "سرعت آموزش شبکه عصبی"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در یادگیری ماشین، Recall چه چیزی را اندازه‌گیری می‌کند؟",
+    "answers": ["نسبت موارد مثبت شناسایی‌شده به تمام موارد مثبت واقعی", "نسبت مثبت‌های درست به تمام مثبت‌های پیش‌بینی‌شده", "تعداد لایه‌های شبکه عصبی", "مقدار حافظه موردنیاز مدل"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام فناوری در رایانش ابری امکان افزایش یا کاهش منابع محاسباتی متناسب با نیاز را فراهم می‌کند؟",
+    "answers": ["Elasticity", "Defragmentation", "Overclocking", "Rendering"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در معماری نرم‌افزار، Microservices به چه رویکردی اشاره دارد؟",
+    "answers": ["تقسیم یک سامانه به سرویس‌های کوچک و مستقل", "اجرای برنامه فقط روی یک رایانه", "ذخیره همه داده‌ها در یک فایل", "تبدیل برنامه به کد ماشین"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام فناوری برای ایجاد یک شبکه همتا‌به‌همتا و توزیع‌شده از دفترکل تراکنش‌ها شناخته شده است؟",
+    "answers": ["Blockchain", "Bluetooth", "CD-ROM", "SMTP"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بخش از پردازنده وظیفه انجام عملیات حسابی و منطقی را بر عهده دارد؟",
+    "answers": ["واحد کنترل", "واحد محاسبه و منطق", "حافظه نهان", "گذرگاه داده"],
+    "correct": 1,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام گزینه نمونه‌ای از یک سیستم‌عامل دسکتاپ است؟",
+    "answers": ["Ubuntu", "Chrome", "Firefox", "VLC"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام واحد برای بیان وضوح تصویر دیجیتال مانند 1920×1080 استفاده می‌شود؟",
+    "answers": ["پیکسل", "هرتز", "وات", "دسی‌بل"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام فناوری برای انتقال تصویر و صدا از یک دستگاه به نمایشگر دیجیتال استفاده می‌شود؟",
+    "answers": ["HDMI", "Ethernet", "SATA", "PS/2"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام گزینه یک موتور جست‌وجوی اینترنتی است؟",
+    "answers": ["Google", "Android", "Windows", "Linux"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام نوع حافظه معمولاً برای نگهداری موقت داده‌های در حال پردازش استفاده می‌شود؟",
+    "answers": ["RAM", "SSD", "DVD", "فلش‌مموری"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام وسیله برای تبدیل اسناد کاغذی به داده دیجیتال تصویری استفاده می‌شود؟",
+    "answers": ["اسکنر", "روتر", "پردازنده", "بلندگو"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام گزینه یک سرویس پست الکترونیکی است؟",
+    "answers": ["Gmail", "YouTube", "Google Maps", "Google Drive"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام پسوند معمولاً برای فایل ویدئویی استفاده می‌شود؟",
+    "answers": [".mp4", ".xlsx", ".css", ".ini"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام گزینه یک نرم‌افزار پخش فایل‌های چندرسانه‌ای است؟",
+    "answers": ["VLC", "Git", "Docker", "MySQL"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+
+  {
+    "question": "کدام پروتکل برای انتقال امن فایل از طریق یک ارتباط رمزگذاری‌شده استفاده می‌شود؟",
+    "answers": ["SFTP", "HTTP", "SMTP", "DHCP"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام کد وضعیت HTTP نشان‌دهنده عدم مجوز دسترسی است؟",
+    "answers": ["403", "201", "302", "418"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام کد وضعیت HTTP معمولاً نشان‌دهنده خطای داخلی سرور است؟",
+    "answers": ["500", "204", "304", "206"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام فناوری برای تبدیل نام دامنه به نشانی IP استفاده می‌شود؟",
+    "answers": ["DNS", "VPN", "NTP", "FTP"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "NTP در شبکه‌های رایانه‌ای برای چه کاری استفاده می‌شود؟",
+    "answers": ["همگام‌سازی زمان", "انتقال فایل", "اختصاص نشانی IP", "رمزگذاری ایمیل"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام زبان برای پرس‌وجو و مدیریت داده‌های پایگاه‌های داده رابطه‌ای به‌طور گسترده استفاده می‌شود؟",
+    "answers": ["SQL", "HTML", "CSS", "XML"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در SQL، کدام دستور برای تغییر داده‌های موجود در رکوردها استفاده می‌شود؟",
+    "answers": ["UPDATE", "CREATE", "GRANT", "TRUNCATE"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در برنامه‌نویسی، Variable یا متغیر چه کاربردی دارد؟",
+    "answers": ["نگهداری یک مقدار قابل استفاده در برنامه", "اجرای سیستم‌عامل", "اتصال فیزیکی رایانه‌ها", "تبدیل تصویر به صدا"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام نوع داده معمولاً برای ذخیره مقادیر درست یا نادرست استفاده می‌شود؟",
+    "answers": ["Boolean", "String", "Float", "Array"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام مفهوم در برنامه‌نویسی به اجرای مکرر یک بخش از کد تا برقرار بودن یک شرط اشاره دارد؟",
+    "answers": ["Loop", "Variable", "Comment", "Import"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+
+  {
+    "question": "کدام روش رمزنگاری نامتقارن از یک جفت کلید عمومی و خصوصی استفاده می‌کند؟",
+    "answers": ["RSA", "AES", "ChaCha20", "3DES"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در رمزنگاری، کلید عمومی در سامانه‌های نامتقارن معمولاً چه ویژگی‌ای دارد؟",
+    "answers": ["می‌تواند در اختیار دیگران قرار گیرد", "باید همیشه مخفی بماند", "فقط روی کاغذ ذخیره می‌شود", "فقط برای فشرده‌سازی استفاده می‌شود"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام مفهوم امنیتی به اجرای برنامه با کمترین سطح دسترسی موردنیاز اشاره می‌کند؟",
+    "answers": ["اصل کمترین سطح دسترسی", "احراز هویت چندعاملی", "رمزنگاری انتها به انتها", "تفکیک شبکه"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام حمله با ارسال حجم بسیار زیادی از درخواست‌ها به یک سرویس با هدف مختل کردن دسترسی آن مرتبط است؟",
+    "answers": ["DDoS", "Phishing", "SQL Injection", "Cross-Site Scripting"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در وب، حمله XSS معمولاً از چه ضعفی سوءاستفاده می‌کند؟",
+    "answers": ["اجرای محتوای اسکریپتی مخرب در زمینه صفحه وب", "اشباع حافظه RAM سرور", "خرابی فیزیکی هارددیسک", "اختلال در سیگنال Wi-Fi"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام مفهوم پایگاه داده تضمین می‌کند یک تراکنش یا به‌طور کامل انجام شود یا هیچ بخشی از آن اعمال نشود؟",
+    "answers": ["Atomicity", "Indexing", "Sharding", "Replication"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در پایگاه داده، Index معمولاً چه هدفی دارد؟",
+    "answers": ["افزایش سرعت جست‌وجوی داده‌ها", "رمزگذاری خودکار همه ستون‌ها", "حذف نسخه‌های پشتیبان", "تغییر نوع سیستم‌عامل"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام الگوریتم رمزنگاری برای تولید یک مقدار درهم‌سازی 256 بیتی شناخته شده است؟",
+    "answers": ["SHA-256", "AES-128", "RSA-2048", "ChaCha20"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در هوش مصنوعی، مدل زبانی بزرگ یا LLM عمدتاً برای چه نوع کاری آموزش داده می‌شود؟",
+    "answers": ["پردازش و تولید زبان طبیعی", "کنترل مستقیم ولتاژ پردازنده", "ذخیره فایل‌های سیستم‌عامل", "مدیریت کابل‌های شبکه"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در شبکه‌های عصبی مصنوعی، وزن یک اتصال چه نقشی دارد؟",
+    "answers": ["میزان تأثیر یک ورودی بر محاسبه نورون را تعیین می‌کند", "سرعت اینترنت را اندازه‌گیری می‌کند", "ظرفیت هارددیسک را مشخص می‌کند", "نوع سیستم‌عامل را انتخاب می‌کند"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام قطعه وظیفه ذخیره‌سازی دائمی اطلاعات را بر عهده دارد؟",
+    "answers": ["RAM", "CPU", "SSD", "Cache"],
+    "correct": 2,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام پسوند معمولاً برای فایل‌های فشرده استفاده می‌شود؟",
+    "answers": [".zip", ".txt", ".html", ".bmp"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام کلید برای حذف کاراکتر سمت راست مکان‌نما در بسیاری از ویرایشگرها استفاده می‌شود؟",
+    "answers": ["Shift", "Delete", "Alt", "Tab"],
+    "correct": 1,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام دستگاه برای نمایش تصویر رایانه روی صفحه استفاده می‌شود؟",
+    "answers": ["مانیتور", "مودم", "اسکنر", "میکروفون"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام فناوری برای اتصال بی‌سیم دستگاه‌ها در فاصله کوتاه بسیار رایج است؟",
+    "answers": ["Bluetooth", "Ethernet", "SATA", "PCIe"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام نرم‌افزار برای ویرایش متن ساده مناسب است؟",
+    "answers": ["Paint", "Notepad", "Calculator", "File Explorer"],
+    "correct": 1,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام واحد معمولاً برای بیان سرعت پردازنده استفاده می‌شود؟",
+    "answers": ["گیگاهرتز", "گیگابایت", "پیکسل", "دسی‌بل"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام وسیله برای وارد کردن صدای کاربر به رایانه استفاده می‌شود؟",
+    "answers": ["بلندگو", "مانیتور", "میکروفون", "پروژکتور"],
+    "correct": 2,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام سیستم‌عامل توسط شرکت Apple برای رایانه‌های مک توسعه داده شده است؟",
+    "answers": ["Android", "macOS", "ChromeOS", "Ubuntu"],
+    "correct": 1,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام گزینه یک مرورگر وب است؟",
+    "answers": ["Firefox", "Photoshop", "Excel", "VLC"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "در شبکه‌های کامپیوتری، MAC Address معمولاً به چه چیزی مربوط است؟",
+    "answers": ["نام کاربری", "رابط شبکه", "شماره تلفن", "نوع سیستم‌عامل"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام رکورد DNS معمولاً یک نام دامنه را به یک آدرس IPv4 نگاشت می‌کند؟",
+    "answers": ["MX", "AAAA", "A", "TXT"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام رکورد DNS برای نگاشت نام دامنه به آدرس IPv6 استفاده می‌شود؟",
+    "answers": ["AAAA", "CNAME", "MX", "PTR"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام پروتکل برای همگام‌سازی ساعت سیستم‌ها در شبکه استفاده می‌شود؟",
+    "answers": ["NTP", "IMAP", "ARP", "SSH"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در Git، کدام دستور برای ایجاد یک شاخه جدید استفاده می‌شود؟",
+    "answers": ["git merge", "git branch", "git clone", "git status"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در Git، کدام دستور تغییرات ثبت‌شده را به شاخه دیگری ترکیب می‌کند؟",
+    "answers": ["git merge", "git init", "git stash", "git log"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام ساختار داده از اصل LIFO پیروی می‌کند؟",
+    "answers": ["Queue", "Stack", "Graph", "Hash Table"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام ساختار داده معمولاً از اصل FIFO پیروی می‌کند؟",
+    "answers": ["Stack", "Heap", "Queue", "Tree"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در HTML، کدام تگ برای ایجاد پیوند به صفحه دیگر استفاده می‌شود؟",
+    "answers": ["<p>", "<img>", "<a>", "<table>"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در CSS، کدام ویژگی برای تغییر اندازه فونت استفاده می‌شود؟",
+    "answers": ["font-size", "font-style", "text-align", "line-height"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در JavaScript، کدام عملگر برای مقایسه دقیق مقدار و نوع داده استفاده می‌شود؟",
+    "answers": ["=", "==", "===", "!="],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام متد JavaScript یک عنصر را بر اساس شناسه آن در DOM پیدا می‌کند؟",
+    "answers": ["getElementById", "queryValue", "findElementByName", "selectId"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در SQL، کدام عبارت برای حذف جدول به‌طور کامل استفاده می‌شود؟",
+    "answers": ["REMOVE TABLE", "DELETE TABLE", "DROP TABLE", "CLEAR TABLE"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در SQL، کدام دستور برای افزودن یک ستون جدید به جدول موجود استفاده می‌شود؟",
+    "answers": ["ALTER TABLE", "CREATE COLUMN", "UPDATE COLUMN", "INSERT COLUMN"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام نوع JOIN فقط رکوردهای دارای تطابق در هر دو جدول را برمی‌گرداند؟",
+    "answers": ["LEFT JOIN", "RIGHT JOIN", "FULL JOIN", "INNER JOIN"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام پایگاه داده یک سیستم مدیریت پایگاه داده رابطه‌ای متن‌باز است؟",
+    "answers": ["PostgreSQL", "Redis", "MongoDB", "Neo4j"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در برنامه‌نویسی شیءگرا، کدام مفهوم امکان ایجاد کلاس جدید بر پایه کلاس موجود را فراهم می‌کند؟",
+    "answers": ["Inheritance", "Encapsulation", "Iteration", "Compilation"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام مفهوم در برنامه‌نویسی شیءگرا به پنهان‌سازی جزئیات داخلی یک شیء اشاره دارد؟",
+    "answers": ["Inheritance", "Encapsulation", "Recursion", "Parsing"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام فرمت برای انتقال داده‌های ساختاریافته و سبک در برنامه‌های وب بسیار رایج است؟",
+    "answers": ["JSON", "WAV", "BMP", "EXE"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در REST API، کدام متد HTTP معمولاً برای ایجاد یک منبع جدید استفاده می‌شود؟",
+    "answers": ["GET", "POST", "HEAD", "OPTIONS"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در REST API، کدام متد HTTP معمولاً برای حذف یک منبع استفاده می‌شود؟",
+    "answers": ["PUT", "PATCH", "DELETE", "TRACE"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام فناوری امکان اجرای چند ماشین مجازی روی یک سیستم فیزیکی را فراهم می‌کند؟",
+    "answers": ["Virtualization", "Compression", "Indexing", "Rendering"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در سیستم‌عامل، کدام جزء وظیفه مدیریت منابع سخت‌افزاری و ارتباط میان نرم‌افزار و سخت‌افزار را بر عهده دارد؟",
+    "answers": ["Kernel", "Compiler", "Shell Script", "Text Editor"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در سیستم‌عامل‌های مدرن، Context Switch به چه معناست؟",
+    "answers": ["تغییر وضوح صفحه", "تعویض بین وضعیت اجرای پردازش‌ها یا نخ‌ها", "تغییر فایل‌سیستم", "تعویض کارت شبکه"],
+    "correct": 1,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام الگوریتم مرتب‌سازی در حالت معمول دارای پیچیدگی زمانی O(n log n) است و از تقسیم مسئله به زیرمسئله‌ها استفاده می‌کند؟",
+    "answers": ["Merge Sort", "Linear Search", "Bubble Sort", "Counting فقط برای داده‌های متنی"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در یک درخت جست‌وجوی دودویی متعادل، جست‌وجوی یک مقدار معمولاً چه پیچیدگی زمانی دارد؟",
+    "answers": ["O(n²)", "O(n)", "O(log n)", "O(2ⁿ)"],
+    "correct": 2,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام الگوریتم برای یافتن کوتاه‌ترین مسیر از یک مبدأ در گرافی با وزن‌های غیرمنفی کاربرد دارد؟",
+    "answers": ["Dijkstra", "DFS", "Binary Search", "Kruskal"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "الگوریتم Kruskal عمدتاً برای حل کدام مسئله در گراف استفاده می‌شود؟",
+    "answers": ["یافتن کوتاه‌ترین مسیر با وزن منفی", "ساخت Minimum Spanning Tree", "مرتب‌سازی رشته‌ها", "جست‌وجوی دودویی"],
+    "correct": 1,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام ساختار داده معمولاً برای پیاده‌سازی یک Priority Queue به‌صورت کارآمد استفاده می‌شود؟",
+    "answers": ["Heap", "Stack", "Linked List ساده", "String"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در ساختمان داده، Hash Table برای رسیدن به جست‌وجوی متوسط O(1) به چه چیزی متکی است؟",
+    "answers": ["تابع هش مناسب", "مرتب‌سازی کامل داده‌ها", "بازگشت بازگشتی", "درخت دودویی اجباری"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در یک Hash Table، Collision زمانی رخ می‌دهد که چه اتفاقی بیفتد؟",
+    "answers": ["دو کلید به یک موقعیت هش یکسان نگاشت شوند", "جدول کاملاً خالی شود", "کلید حذف شود", "حافظه RAM خاموش شود"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام روش برای حل Collision در Hash Table، چند مقدار را در یک bucket با استفاده از یک ساختار داده نگهداری می‌کند؟",
+    "answers": ["Separate Chaining", "Binary Partitioning", "Round Robin", "Page Swapping"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در پایگاه داده، Foreign Key چه نقشی دارد؟",
+    "answers": ["رمزنگاری کل جدول", "ایجاد ارتباط میان رکوردهای جداول", "افزایش فرکانس CPU", "فشرده‌سازی داده‌ها"],
+    "correct": 1,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام ویژگی ACID تضمین می‌کند که یک تراکنش یا به‌طور کامل انجام شود یا اصلاً انجام نشود؟",
+    "answers": ["Consistency", "Isolation", "Atomicity", "Durability"],
+    "correct": 2,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام ویژگی ACID تضمین می‌کند که تغییرات موفق یک تراکنش پس از ثبت، در برابر خرابی سیستم حفظ شوند؟",
+    "answers": ["Atomicity", "Durability", "Isolation", "Consistency"],
+    "correct": 1,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در سیستم‌های توزیع‌شده، CAP Theorem چه سه ویژگی را مطرح می‌کند؟",
+    "answers": ["Cache، API، Process", "Consistency، Availability، Partition Tolerance", "CPU، Access، Protocol", "Compression، Authentication، Persistence"],
+    "correct": 1,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در معماری پردازنده، Pipeline چه هدف اصلی‌ای دارد؟",
+    "answers": ["افزایش بهره‌وری اجرای دستورها با هم‌پوشانی مراحل", "افزایش ظرفیت هارددیسک", "رمزنگاری فایل‌ها", "تبدیل IPv4 به IPv6"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام فناوری برای دسترسی مستقیم یک دستگاه به حافظه بدون دخالت مداوم CPU طراحی شده است؟",
+    "answers": ["DMA", "DNS", "DHCP", "NAT"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در شبکه، NAT عمدتاً چه کاری انجام می‌دهد؟",
+    "answers": ["ترجمه آدرس‌های شبکه بین فضاهای آدرس مختلف", "رمزنگاری محتوای وب", "تبدیل فایل‌های صوتی", "فشرده‌سازی تصاویر"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام پروتکل برای دریافت خودکار تنظیمات شبکه مانند IP Address از یک سرور استفاده می‌شود؟",
+    "answers": ["DHCP", "SNMP", "SSH", "SIP"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در امنیت شبکه، ARP Spoofing معمولاً با جعل چه اطلاعاتی انجام می‌شود؟",
+    "answers": ["ارتباط میان IP و MAC Address", "نام دامنه و پسورد", "شماره پورت و پروتکل", "نام فایل و پسوند"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام حمله امنیتی معمولاً با قرار دادن مهاجم بین دو طرف ارتباط برای شنود یا دستکاری داده‌ها انجام می‌شود؟",
+    "answers": ["Brute Force", "Man-in-the-Middle", "Buffer Overflow", "Phishing فقط از طریق ایمیل"],
+    "correct": 1,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در رمزنگاری، AES در کدام دسته قرار می‌گیرد؟",
+    "answers": ["رمزنگاری متقارن", "هش یک‌طرفه", "رمزنگاری نامتقارن", "الگوریتم فشرده‌سازی"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در TLS، گواهی دیجیتال معمولاً برای چه منظوری استفاده می‌شود؟",
+    "answers": ["تأیید هویت یک طرف ارتباط و ارائه کلید عمومی", "افزایش سرعت CPU", "فشرده‌سازی تصاویر", "ذخیره کوکی‌های مرورگر"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام آسیب‌پذیری زمانی رخ می‌دهد که برنامه داده بیشتری از ظرفیت یک Buffer در آن بنویسد؟",
+    "answers": ["Buffer Overflow", "DNS Tunneling", "Clickjacking", "SQL Normalization"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در یادگیری ماشین، مجموعه Validation معمولاً برای چه کاری استفاده می‌شود؟",
+    "answers": ["تنظیم و انتخاب مدل یا ابرپارامترها", "ذخیره دائمی مدل روی دیسک", "تولید سیستم‌عامل", "رمزنگاری داده‌ها"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در یادگیری ماشین، Regularization عمدتاً با چه هدفی به کار می‌رود؟",
+    "answers": ["کاهش بیش‌برازش مدل", "افزایش حجم داده خام", "حذف پردازنده", "تبدیل تصویر به صدا"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام قطعه رایانه وظیفه اجرای دستورهای برنامه‌ها را بر عهده دارد؟",
+    "answers": ["پردازنده", "مانیتور", "کیبورد", "منبع تغذیه"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام وسیله برای وارد کردن متن به رایانه استفاده می‌شود؟",
+    "answers": ["صفحه‌کلید", "اسپیکر", "پروژکتور", "پرینتر"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام گزینه یک فایل تصویری است؟",
+    "answers": ["report.exe", "photo.jpg", "music.mp3", "document.txt"],
+    "correct": 1,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام گزینه برای ذخیره یک فایل معمولاً استفاده می‌شود؟",
+    "answers": ["Ctrl+S", "Ctrl+P", "Ctrl+Z", "Ctrl+F"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام کلید معمولاً برای لغو یا خروج از یک عملیات استفاده می‌شود؟",
+    "answers": ["Enter", "Esc", "Shift", "Space"],
+    "correct": 1,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام گزینه یک دستگاه خروجی محسوب می‌شود؟",
+    "answers": ["صفحه‌کلید", "ماوس", "مانیتور", "میکروفون"],
+    "correct": 2,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام گزینه برای اتصال رایانه به شبکه سیمی رایج است؟",
+    "answers": ["کابل Ethernet", "کابل AUX", "کابل آنتن تلویزیون", "کابل هدفون"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام نرم‌افزار برای پخش فایل‌های ویدیویی و صوتی کاربرد دارد؟",
+    "answers": ["VLC", "Notepad", "Paint", "Calculator"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام گزینه یک سیستم‌عامل موبایل است؟",
+    "answers": ["Android", "Firefox", "Photoshop", "MySQL"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام دستگاه برای حرکت دادن نشانگر روی صفحه رایانه استفاده می‌شود؟",
+    "answers": ["ماوس", "اسکنر", "پرینتر", "مودم"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "در شبکه، شماره پورت برای چه منظوری استفاده می‌شود؟",
+    "answers": ["تشخیص سرویس یا برنامه مقصد در یک میزبان", "تعیین اندازه صفحه‌نمایش", "ذخیره نام کاربر", "تعیین ظرفیت RAM"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "پورت پیش‌فرض HTTPS معمولاً کدام است؟",
+    "answers": ["21", "25", "80", "443"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "پورت پیش‌فرض SSH معمولاً کدام است؟",
+    "answers": ["22", "53", "110", "3389"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "پورت پیش‌فرض DNS معمولاً کدام است؟",
+    "answers": ["23", "53", "143", "8080"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام پروتکل برای مدیریت و نظارت بر تجهیزات شبکه طراحی شده است؟",
+    "answers": ["SNMP", "SMTP", "SFTP", "RDP"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام پروتکل برای انتقال امن فایل بر پایه SSH استفاده می‌شود؟",
+    "answers": ["SFTP", "TFTP", "HTTP", "POP3"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام پروتکل برای دسترسی از راه دور به محیط دسکتاپ ویندوز طراحی شده است؟",
+    "answers": ["RDP", "ARP", "IMAP", "ICMP"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در شبکه، ICMP بیشتر برای چه نوع پیام‌هایی استفاده می‌شود؟",
+    "answers": ["پیام‌های کنترلی و تشخیصی شبکه", "ارسال فایل‌های ویدیویی", "ذخیره صفحات وب", "مدیریت پایگاه داده"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام دستور Git تغییرات فایل‌ها را برای Commit بعدی وارد Staging Area می‌کند؟",
+    "answers": ["git add", "git reset", "git diff", "git show"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام دستور Git یک Commit جدید ایجاد می‌کند؟",
+    "answers": ["git commit", "git status", "git remote", "git checkout"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام دستور Git معمولاً برای ارسال Commitهای محلی به مخزن راه دور استفاده می‌شود؟",
+    "answers": ["git push", "git clone", "git diff", "git stash"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در Git، کدام دستور وضعیت فایل‌های مخزن را نشان می‌دهد؟",
+    "answers": ["git status", "git commit", "git tag", "git revert"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در HTML، ویژگی alt در تگ img چه کاربرد مهمی دارد؟",
+    "answers": ["ارائه متن جایگزین برای تصویر", "تغییر رنگ تصویر", "تعیین سرعت بارگذاری CPU", "ایجاد جدول"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در CSS، کدام ویژگی برای تعیین فاصله داخلی یک عنصر استفاده می‌شود؟",
+    "answers": ["margin", "padding", "border", "outline"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در CSS، margin به چه چیزی اشاره دارد؟",
+    "answers": ["فاصله بیرونی عنصر", "فاصله داخلی عنصر", "رنگ متن", "اندازه فونت"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در JavaScript، کدام نوع داده برای مقادیر متنی استفاده می‌شود؟",
+    "answers": ["String", "Boolean", "Number", "Symbol فقط برای اعداد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در JavaScript، کدام نوع داده می‌تواند مقدار true یا false داشته باشد؟",
+    "answers": ["String", "Boolean", "Array", "Object"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در JavaScript، کدام متد برای اضافه کردن یک عنصر به انتهای آرایه استفاده می‌شود؟",
+    "answers": ["push()", "shift()", "pop()", "slice()"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در JavaScript، کدام متد آخرین عنصر آرایه را حذف می‌کند و آن را برمی‌گرداند؟",
+    "answers": ["push()", "pop()", "unshift()", "concat()"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در SQL، تابع COUNT معمولاً برای چه کاری استفاده می‌شود؟",
+    "answers": ["شمارش رکوردها یا مقادیر", "محاسبه میانگین", "تغییر ساختار جدول", "رمزگذاری ستون"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در SQL، تابع AVG برای چه منظوری استفاده می‌شود؟",
+    "answers": ["محاسبه میانگین", "یافتن بیشترین مقدار", "شمارش جدول‌ها", "حذف رکوردها"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در SQL، تابع MAX چه چیزی را برمی‌گرداند؟",
+    "answers": ["بیشترین مقدار", "کمترین مقدار", "تعداد رکوردها", "میانگین مقادیر"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در SQL، تابع MIN چه چیزی را برمی‌گرداند؟",
+    "answers": ["مجموع مقادیر", "کمترین مقدار", "بیشترین مقدار", "تعداد ستون‌ها"],
+    "correct": 1,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در پایگاه داده رابطه‌ای، Primary Key چه ویژگی مهمی دارد؟",
+    "answers": ["هر رکورد را به‌صورت یکتا شناسایی می‌کند", "همیشه متن ذخیره می‌کند", "حتماً باید دو ستون داشته باشد", "فقط برای مرتب‌سازی استفاده می‌شود"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در پایگاه داده رابطه‌ای، کدام ویژگی معمولاً برای Primary Key ضروری است؟",
+    "answers": ["مقادیر آن یکتا باشند و NULL نباشند", "همه مقادیر تکراری باشند", "حتماً از نوع تصویر باشد", "همیشه مقدار اعشاری داشته باشد"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "هدف اصلی نرمال‌سازی پایگاه داده چیست؟",
+    "answers": ["کاهش افزونگی داده و جلوگیری از ناسازگاری", "افزایش اندازه فایل‌ها", "رمزگذاری خودکار تمام داده‌ها", "افزایش فرکانس پردازنده"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در معماری نرم‌افزار، Microservices چه رویکردی را دنبال می‌کند؟",
+    "answers": ["تقسیم برنامه به سرویس‌های کوچک و مستقل", "قرار دادن تمام قابلیت‌ها در یک فایل", "حذف کامل APIها", "اجرای برنامه بدون سیستم‌عامل"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در معماری نرم‌افزار، Monolith معمولاً به چه نوع ساختاری اشاره دارد؟",
+    "answers": ["برنامه‌ای که اجزای اصلی آن در یک واحد یکپارچه قرار دارند", "شبکه‌ای بدون سرور", "پایگاه داده فقط خواندنی", "سیستم‌عامل توزیع‌شده"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "Docker Container نسبت به ماشین مجازی معمولاً چه تفاوت مهمی دارد؟",
+    "answers": ["Containerها معمولاً هسته سیستم‌عامل میزبان را به اشتراک می‌گذارند", "هر Container حتماً یک سخت‌افزار فیزیکی جدا دارد", "Container فقط برای ذخیره عکس است", "Container همیشه از VM کندتر است"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در Docker، Image چیست؟",
+    "answers": ["قالبی شامل فایل‌ها و تنظیمات لازم برای ایجاد Container", "یک کارت گرافیک مجازی", "یک آدرس IP عمومی", "یک نوع پایگاه داده رابطه‌ای"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در رایانش ابری، مفهوم Scalability به چه چیزی اشاره دارد؟",
+    "answers": ["توانایی افزایش یا کاهش منابع متناسب با نیاز", "رمزگذاری فایل‌های کاربر", "تغییر خودکار نام دامنه", "حذف سیستم‌عامل"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در رایانش ابری، مفهوم Fault Tolerance به چه معناست؟",
+    "answers": ["توانایی سیستم برای ادامه کار با وجود برخی خرابی‌ها", "افزایش ظرفیت هارددیسک بدون محدودیت", "تغییر خودکار زبان برنامه", "حذف همه نسخه‌های پشتیبان"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در سیستم‌های توزیع‌شده، Load Balancer چه وظیفه‌ای دارد؟",
+    "answers": ["توزیع درخواست‌ها میان چند سرور", "رمزگذاری فایل‌های سیستم", "تبدیل HTML به تصویر", "ذخیره رمزهای عبور در مرورگر"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "CDN عمدتاً چه مزیتی برای وب‌سایت‌ها ایجاد می‌کند؟",
+    "answers": ["ارائه محتوا از سرورهای نزدیک‌تر به کاربران", "افزایش ظرفیت RAM دستگاه کاربر", "جایگزینی کامل پایگاه داده", "حذف نیاز به HTML"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در وب، CORS برای کنترل چه چیزی به کار می‌رود؟",
+    "answers": ["درخواست‌های منابع میان Originهای متفاوت", "سرعت پردازنده", "فضای ذخیره‌سازی SSD", "وضوح تصویر"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در وب، JWT معمولاً برای چه منظوری استفاده می‌شود؟",
+    "answers": ["انتقال اطلاعات احراز هویت و ادعاها به‌صورت Token", "فشرده‌سازی ویدیو", "ذخیره فایل‌های صوتی", "مدیریت کارت گرافیک"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام روش برای ذخیره رمز عبور کاربران از نظر امنیتی مناسب‌تر است؟",
+    "answers": ["ذخیره Hash مقاوم همراه با Salt", "ذخیره متن ساده", "ذخیره رمز در نام کاربری", "ذخیره رمز داخل URL"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "Salt در ذخیره امن رمزهای عبور چه نقشی دارد؟",
+    "answers": ["باعث می‌شود Hash رمزهای یکسان برای کاربران مختلف الزاماً یکسان نباشد", "رمز عبور را قابل بازیابی می‌کند", "رمز را به متن ساده تبدیل می‌کند", "باعث حذف نیاز به Hash می‌شود"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در رمزنگاری، مفهوم Perfect Forward Secrecy چه مزیتی دارد؟",
+    "answers": ["افشای کلید بلندمدت نباید به افشای خودکار نشست‌های گذشته منجر شود", "همه رمزها را به متن ساده تبدیل می‌کند", "نیاز به احراز هویت را حذف می‌کند", "سرعت اینترنت را دو برابر می‌کند"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در امنیت نرم‌افزار، اصل Least Privilege به چه معناست؟",
+    "answers": ["هر کاربر یا فرایند فقط حداقل مجوزهای لازم را داشته باشد", "همه کاربران دسترسی مدیر داشته باشند", "هیچ کاربری رمز عبور نداشته باشد", "تمام فایل‌ها عمومی باشند"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در سیستم‌های کنترل نسخه، Pull Request معمولاً برای چه منظوری استفاده می‌شود؟",
+    "answers": ["پیشنهاد بررسی و ادغام تغییرات یک شاخه در شاخه دیگر", "حذف کامل مخزن", "تغییر آدرس IP", "فشرده‌سازی فایل‌های پروژه"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در CI/CD، هدف اصلی Continuous Integration چیست؟",
+    "answers": ["ادغام مکرر تغییرات کد و اجرای خودکار بررسی‌ها و تست‌ها", "خاموش کردن سرور پس از هر Commit", "حذف مخزن کد", "جلوگیری از همکاری توسعه‌دهندگان"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در تست نرم‌افزار، Unit Test معمولاً چه چیزی را بررسی می‌کند؟",
+    "answers": ["یک واحد کوچک و مشخص از کد به‌صورت نسبتاً مستقل", "کل شبکه اینترنت", "فقط سخت‌افزار رایانه", "سرعت هارددیسک"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در مهندسی نرم‌افزار، Refactoring با چه هدفی انجام می‌شود؟",
+    "answers": ["بهبود ساختار داخلی کد بدون تغییر رفتار مورد انتظار آن", "افزایش تصادفی خطاها", "حذف تست‌های نرم‌افزار", "تغییر سیستم‌عامل کاربر"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در برنامه‌نویسی، Recursion به چه معناست؟",
+    "answers": ["تابعی که به‌طور مستقیم یا غیرمستقیم خودش را فراخوانی می‌کند", "اجرای هم‌زمان دو سیستم‌عامل", "ذخیره داده در شبکه", "تبدیل کد به تصویر"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام گزینه برای اتصال چند دستگاه در یک شبکه محلی سیمی استفاده می‌شود؟",
+    "answers": ["Switch", "Scanner", "Printer", "Microphone"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام قطعه وظیفه تأمین برق اجزای رایانه را بر عهده دارد؟",
+    "answers": ["GPU", "PSU", "SSD", "RAM"],
+    "correct": 1,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام گزینه یک فایل صوتی رایج است؟",
+    "answers": [".mp3", ".html", ".exe", ".xlsx"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام میانبر معمولاً برای کپی کردن متن یا فایل استفاده می‌شود؟",
+    "answers": ["Ctrl+X", "Ctrl+C", "Ctrl+V", "Ctrl+A"],
+    "correct": 1,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام میانبر معمولاً برای چسباندن محتوای کپی‌شده استفاده می‌شود؟",
+    "answers": ["Ctrl+V", "Ctrl+P", "Ctrl+N", "Ctrl+H"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام گزینه یک نرم‌افزار صفحه‌گسترده است؟",
+    "answers": ["Excel", "Firefox", "VLC", "Audacity"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام گزینه برای انتخاب تمام محتوای یک متن معمولاً استفاده می‌شود؟",
+    "answers": ["Ctrl+A", "Ctrl+E", "Ctrl+W", "Ctrl+R"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام نوع نمایشگر از پیکسل‌های نورده تشکیل‌شده از مواد آلی استفاده می‌کند؟",
+    "answers": ["OLED", "CRT", "VGA", "DVI"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام وسیله برای تأمین برق اضطراری کوتاه‌مدت رایانه استفاده می‌شود؟",
+    "answers": ["UPS", "Router", "Switch", "Hub"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام گزینه یک قالب رایج برای تصویر بدون افت کیفیت و با پشتیبانی از شفافیت است؟",
+    "answers": ["PNG", "MP3", "AVI", "TXT"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام دستگاه معمولاً شبکه‌های مختلف را به یکدیگر متصل می‌کند؟",
+    "answers": ["Router", "Keyboard", "Scanner", "Webcam"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در شبکه‌های کامپیوتری، Subnet Mask چه چیزی را مشخص می‌کند؟",
+    "answers": [
+      "بخش شبکه و بخش میزبان یک آدرس IP",
+      "نوع پردازنده",
+      "سرعت اتصال Wi-Fi",
+      "نام سیستم‌عامل"
+    ],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "آدرس IPv4 از چند بیت تشکیل شده است؟",
+    "answers": ["16 بیت", "32 بیت", "64 بیت", "128 بیت"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "آدرس IPv6 از چند بیت تشکیل شده است؟",
+    "answers": ["32 بیت", "64 بیت", "96 بیت", "128 بیت"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آدرس معمولاً برای اشاره به همین رایانه در IPv4 استفاده می‌شود؟",
+    "answers": ["8.8.8.8", "127.0.0.1", "192.0.2.1", "224.0.0.1"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام فناوری برای ترجمه نام دامنه به آدرس IP استفاده می‌شود؟",
+    "answers": ["DNS", "NAT", "VPN", "USB"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام پروتکل برای دریافت ایمیل از سرور و دانلود پیام‌ها به‌صورت سنتی استفاده می‌شود؟",
+    "answers": ["POP3", "SMTP", "SSH", "SNMP"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام استاندارد بی‌سیم با نام Wi-Fi 5 نیز شناخته می‌شود؟",
+    "answers": ["802.11n", "802.11ac", "802.11ax", "802.11g"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام استاندارد بی‌سیم با نام Wi-Fi 6 شناخته می‌شود؟",
+    "answers": ["802.11a", "802.11g", "802.11ac", "802.11ax"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در HTML، کدام تگ برای تعریف یک پاراگراف استفاده می‌شود؟",
+    "answers": ["<p>", "<h1>", "<br>", "<div>"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در HTML، کدام تگ برای ایجاد شکست خط استفاده می‌شود؟",
+    "answers": ["<hr>", "<br>", "<line>", "<break>"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در CSS، کدام ویژگی برای تنظیم ضخامت حاشیه عنصر استفاده می‌شود؟",
+    "answers": ["border-width", "border-color", "outline-style", "box-width"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در CSS، کدام ویژگی برای گرد کردن گوشه‌های یک عنصر استفاده می‌شود؟",
+    "answers": ["corner-radius", "border-radius", "round-border", "radius"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در JavaScript، کدام متد رشته را به حروف بزرگ تبدیل می‌کند؟",
+    "answers": ["toUpperCase()", "upper()", "capitalizeAll()", "toCapital()"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در JavaScript، کدام متد طول یک رشته را به‌صورت یک ویژگی در اختیار قرار می‌دهد؟",
+    "answers": ["size()", "count()", "length", "characters()"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در JavaScript، کدام متد اولین موقعیت یک مقدار مشخص را در آرایه پیدا می‌کند؟",
+    "answers": ["indexOf()", "findIndexOnly()", "position()", "locate()"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در SQL، کدام عبارت برای محدود کردن تعداد رکوردهای خروجی در بسیاری از سیستم‌های رایج استفاده می‌شود؟",
+    "answers": ["LIMIT", "CAP", "RESTRICT ROWS", "TOP ONLY"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در SQL، کدام عبارت برای حذف رکوردهای مشخص از جدول استفاده می‌شود؟",
+    "answers": ["DELETE FROM", "DROP ROW", "REMOVE DATA", "ERASE FROM"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در SQL، DISTINCT چه کاربردی دارد؟",
+    "answers": [
+      "حذف مقادیر تکراری از نتایج انتخاب‌شده",
+      "حذف کل جدول",
+      "تغییر نام ستون",
+      "ایجاد یک پایگاه داده جدید"
+    ],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در Git، دستور git stash معمولاً برای چه کاری استفاده می‌شود؟",
+    "answers": [
+      "ذخیره موقت تغییرات کاری بدون Commit کردن آن‌ها",
+      "حذف دائمی کل مخزن",
+      "ارسال پروژه به سرور",
+      "ایجاد یک پایگاه داده"
+    ],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام الگوریتم برای یافتن Minimum Spanning Tree در گراف وزن‌دار استفاده می‌شود؟",
+    "answers": ["Prim", "KMP", "Boyer-Moore", "Floyd فقط برای مرتب‌سازی"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "الگوریتم Floyd-Warshall عمدتاً برای حل چه مسئله‌ای استفاده می‌شود؟",
+    "answers": [
+      "یافتن کوتاه‌ترین مسیر بین همه جفت رأس‌ها",
+      "مرتب‌سازی داده‌ها",
+      "جست‌وجوی یک عنصر در آرایه مرتب",
+      "ساخت درخت دودویی"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام الگوریتم برای جست‌وجوی الگو در یک رشته با استفاده از جدول پیشوندها شناخته می‌شود؟",
+    "answers": ["KMP", "Dijkstra", "Prim", "Heap Sort"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در الگوریتم‌های گراف، توپولوژیکال Sort برای چه نوع گرافی تعریف می‌شود؟",
+    "answers": [
+      "گراف جهت‌دار بدون دور",
+      "گراف کامل بدون جهت",
+      "گراف وزن‌دار با یال‌های منفی",
+      "هر گراف دلخواه"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام ساختار داده برای پیاده‌سازی کارآمد عملیات Union و Find در مجموعه‌های مجزا استفاده می‌شود؟",
+    "answers": ["Disjoint Set Union", "Circular Queue", "Binary Heap", "Trie"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "Trie بیشتر برای چه نوع داده‌ای مناسب است؟",
+    "answers": [
+      "رشته‌ها و عملیات مرتبط با پیشوند",
+      "تصاویر خام",
+      "داده‌های سنسورهای آنالوگ",
+      "فایل‌های اجرایی"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در یک Min-Heap، کدام رابطه معمولاً بین هر گره و فرزندهای آن برقرار است؟",
+    "answers": [
+      "مقدار گره والد کمتر یا مساوی فرزندان است",
+      "مقدار والد همیشه بزرگ‌تر از فرزندان است",
+      "همه گره‌ها مقدار یکسان دارند",
+      "هیچ رابطه‌ای میان والد و فرزند وجود ندارد"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام مفهوم در برنامه‌نویسی پویا به ذخیره نتایج مسائل فرعی برای جلوگیری از محاسبه مجدد اشاره دارد؟",
+    "answers": ["Memoization", "Serialization", "Parsing", "Compilation"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام تکنیک برنامه‌نویسی پویا معمولاً مسئله را از کوچک‌ترین زیرمسئله‌ها به سمت مسئله اصلی حل می‌کند؟",
+    "answers": ["Tabulation", "Backtracking", "Hash Collision", "Tokenization"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در معماری سیستم‌عامل، System Call چه نقشی دارد؟",
+    "answers": [
+      "رابطی برای درخواست خدمات سیستم‌عامل توسط برنامه‌های کاربر",
+      "روش فشرده‌سازی فایل‌های صوتی",
+      "پروتکل انتقال تصویر",
+      "روش ذخیره رمز عبور"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در لینوکس، مجوز فایل با حالت 755 معمولاً چه معنایی دارد؟",
+    "answers": [
+      "مالک خواندن، نوشتن و اجرا؛ گروه و دیگران خواندن و اجرا",
+      "همه فقط خواندن",
+      "مالک فقط اجرا؛ دیگران نوشتن",
+      "همه دسترسی کامل"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در سیستم‌عامل، Thread نسبت به Process معمولاً چه ویژگی‌ای دارد؟",
+    "answers": [
+      "Threadهای یک Process می‌توانند حافظه و منابع آن Process را به اشتراک بگذارند",
+      "هر Thread الزاماً یک رایانه جداگانه است",
+      "Thread همیشه مستقل از Process اجرا می‌شود",
+      "Thread فقط برای ذخیره فایل استفاده می‌شود"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در معماری کامپیوتر، Cache معمولاً چرا از RAM سریع‌تر است؟",
+    "answers": [
+      "به پردازنده نزدیک‌تر است و معمولاً با فناوری حافظه سریع‌تری پیاده‌سازی می‌شود",
+      "ظرفیت آن همیشه از RAM بیشتر است",
+      "روی هارددیسک قرار دارد",
+      "فقط برای ذخیره فایل‌های ویدیویی استفاده می‌شود"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام فناوری ذخیره‌سازی معمولاً از حافظه فلش NAND استفاده می‌کند؟",
+    "answers": ["SSD", "DVD", "نوار مغناطیسی", "Floppy Disk"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در پایگاه داده، Index معمولاً چه مزیتی دارد؟",
+    "answers": [
+      "می‌تواند جست‌وجوی برخی داده‌ها را سریع‌تر کند",
+      "همیشه حجم پایگاه داده را کاهش می‌دهد",
+      "داده‌ها را خودکار رمزنگاری می‌کند",
+      "نیاز به جدول‌ها را حذف می‌کند"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "افزایش بیش از حد تعداد Indexها در پایگاه داده چه اثر منفی احتمالی دارد؟",
+    "answers": [
+      "می‌تواند عملیات درج و به‌روزرسانی را پرهزینه‌تر کند",
+      "همیشه سرعت همه عملیات را افزایش می‌دهد",
+      "باعث حذف خودکار رکوردها می‌شود",
+      "نوع داده ستون‌ها را تغییر می‌دهد"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در سیستم‌های توزیع‌شده، Consensus به چه مسئله‌ای مربوط است؟",
+    "answers": [
+      "توافق چند گره درباره یک مقدار یا وضعیت مشترک",
+      "فشرده‌سازی تصاویر در سرور",
+      "افزایش وضوح نمایشگر",
+      "تغییر فرکانس پردازنده"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام الگوریتم Consensus در برخی سیستم‌های توزیع‌شده برای انتخاب رهبر و ثبت تغییرات استفاده می‌شود؟",
+    "answers": ["Raft", "Quick Sort", "AES", "KMP"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در سیستم‌های توزیع‌شده، Replication به چه معناست؟",
+    "answers": [
+      "نگهداری نسخه‌هایی از داده یا سرویس روی چند گره",
+      "حذف همه نسخه‌های پشتیبان",
+      "تبدیل داده به تصویر",
+      "فشرده‌سازی کد منبع"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در رایانش ابری، مفهوم Multi-Tenancy به چه معناست؟",
+    "answers": [
+      "چند مشتری یا کاربر از یک زیرساخت یا نرم‌افزار مشترک با جداسازی منطقی استفاده می‌کنند",
+      "هر مشتری الزاماً سرور فیزیکی کاملاً جدا دارد",
+      "یک کاربر هم‌زمان چند سیستم‌عامل نصب می‌کند",
+      "همه کاربران به یک حساب مشترک وارد می‌شوند"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در توسعه نرم‌افزار، Semantic Versioning معمولاً از چه الگوی سه‌بخشی استفاده می‌کند؟",
+    "answers": [
+      "MAJOR.MINOR.PATCH",
+      "DAY.MONTH.YEAR",
+      "CPU.RAM.DISK",
+      "USER.SERVER.PORT"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در APIها، Idempotent بودن یک عملیات به چه معناست؟",
+    "answers": [
+      "اجرای چندباره آن عملیات اثر نهایی یکسانی با اجرای یک‌باره داشته باشد",
+      "عملیات فقط یک بار قابل اجرا باشد",
+      "عملیات حتماً باعث ایجاد رکورد جدید شود",
+      "عملیات بدون شبکه اجرا شود"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام متد HTTP طبق تعریف استاندارد، برای درخواست یکسان باید اثر یکسانی داشته باشد و معمولاً برای جایگزینی کامل یک منبع استفاده می‌شود؟",
+    "answers": ["PUT", "POST", "CONNECT", "TRACE"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در امنیت وب، Content Security Policy یا CSP عمدتاً برای چه منظوری استفاده می‌شود؟",
+    "answers": [
+      "محدود کردن منابع و اسکریپت‌هایی که مرورگر اجازه اجرای آن‌ها را دارد",
+      "افزایش ظرفیت RAM سرور",
+      "تغییر آدرس IP کاربر",
+      "فشرده‌سازی پایگاه داده"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در احراز هویت چندعاملی، کدام گزینه نمونه‌ای از عامل مالکیت است؟",
+    "answers": [
+      "کد تولیدشده توسط یک برنامه Authenticator روی تلفن کاربر",
+      "رمز عبور کاربر",
+      "اثر انگشت کاربر",
+      "نام کاربری"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در یادگیری ماشین، Cross-Validation چه کاربردی دارد؟",
+    "answers": [
+      "ارزیابی مدل با تقسیم‌های مختلف داده و سنجش عملکرد آن",
+      "افزایش تعداد هسته‌های CPU",
+      "رمزگذاری داده‌های آموزشی",
+      "تبدیل مدل به فایل تصویری"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در یادگیری ماشین، Gradient Descent برای چه منظوری استفاده می‌شود؟",
+    "answers": [
+      "به‌روزرسانی پارامترهای مدل برای کاهش تابع هزینه",
+      "ذخیره داده‌ها روی SSD",
+      "رمزنگاری شبکه عصبی",
+      "تقسیم دیسک به پارتیشن"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در شبکه عصبی، Learning Rate چه چیزی را کنترل می‌کند؟",
+    "answers": [
+      "اندازه گام به‌روزرسانی پارامترهای مدل هنگام آموزش",
+      "تعداد تصاویر ورودی",
+      "ظرفیت حافظه SSD",
+      "سرعت اتصال اینترنت"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام فناوری برای ارتباط دوطرفه و هم‌زمان بین مرورگر و سرور مناسب است؟",
+    "answers": ["WebSocket", "FTP", "DNS", "SMTP"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام گزینه نمونه‌ای از داده متنی است؟",
+    "answers": ["UTF-8 encoded text", "JPEG image", "MP3 audio", "MP4 video"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام گزینه برای ضبط و ویرایش صدای دیجیتال کاربرد دارد؟",
+    "answers": ["Audacity", "Paint", "Notepad", "File Explorer"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام فرمت معمولاً برای تصاویر متحرک کوتاه در وب استفاده می‌شود؟",
+    "answers": ["GIF", "WAV", "CSV", "TXT"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام گزینه یک نرم‌افزار ارائه مطلب است؟",
+    "answers": ["PowerPoint", "Notepad", "VLC", "WinRAR"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام کلید معمولاً برای ایجاد فاصله بین کلمات استفاده می‌شود؟",
+    "answers": ["Space", "Shift", "Esc", "Tab"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام وسیله برای اتصال رایانه به شبکه بی‌سیم استفاده می‌شود؟",
+    "answers": ["Wi-Fi adapter", "Printer", "Scanner", "Speaker"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام گزینه یک فرمت رایج فایل صفحه‌گسترده است؟",
+    "answers": [".xlsx", ".mp3", ".jpg", ".html"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام گزینه یک موتور جست‌وجوی متن‌باز و مستقل است؟",
+    "answers": ["DuckDuckGo", "Excel", "VLC", "PowerPoint"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام دستگاه می‌تواند برای انتقال اطلاعات از رایانه به دستگاه‌های دیگر از طریق USB استفاده شود؟",
+    "answers": ["فلش USB", "مانیتور", "بلندگو", "وب‌کم"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام پروتکل انتقال داده بدون برقراری اتصال اختصاصی و با سربار کمتر از TCP شناخته می‌شود؟",
+    "answers": ["UDP", "FTP", "SMTP", "IMAP"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام پروتکل برای انتقال قابل اعتماد و مرتب داده‌ها بین دو نقطه شبکه طراحی شده است؟",
+    "answers": ["TCP", "UDP", "ICMP", "ARP"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "سه مرحله اصلی برقراری اتصال TCP با چه فرایندی شناخته می‌شود؟",
+    "answers": ["Three-way handshake", "Four-way encryption", "DNS handshake", "ARP negotiation"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در TCP، شماره Sequence Number چه نقشی دارد؟",
+    "answers": [
+      "کمک به مرتب‌سازی و ردیابی داده‌های ارسالی",
+      "تعیین آدرس MAC",
+      "تعیین نام دامنه",
+      "مشخص کردن نوع کابل شبکه"
+    ],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام پروتکل برای انتقال پیام‌های تشخیصی و خطا در IP استفاده می‌شود؟",
+    "answers": ["ICMP", "SMTP", "FTP", "IMAP"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در شبکه، ARP در IPv4 عمدتاً برای پیدا کردن چه چیزی از روی آدرس IP استفاده می‌شود؟",
+    "answers": ["MAC Address", "Port Number", "Domain Name", "Subnet Mask"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام فناوری برای تخصیص آدرس‌های IP خصوصی و اشتراک یک آدرس عمومی میان چند دستگاه کاربرد دارد؟",
+    "answers": ["NAT", "NTP", "SMTP", "LDAP"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام روش برای تبدیل نام دامنه به آدرس IP به‌کار می‌رود؟",
+    "answers": ["DNS Resolution", "Packet Fragmentation", "Port Forwarding", "Disk Mirroring"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام رکورد DNS معمولاً نام مستعار یک نام دامنه را مشخص می‌کند؟",
+    "answers": ["CNAME", "MX", "AAAA", "SRV"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام رکورد DNS برای مشخص کردن سرور دریافت‌کننده ایمیل یک دامنه استفاده می‌شود؟",
+    "answers": ["MX", "CNAME", "PTR", "TXT"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "Base64 بیشتر برای چه منظوری استفاده می‌شود؟",
+    "answers": [
+      "تبدیل داده باینری به یک نمایش متنی قابل انتقال",
+      "رمزنگاری امن با کلید مخفی",
+      "فشرده‌سازی بدون افت",
+      "افزایش سرعت CPU"
+    ],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "UTF-8 چه چیزی را مشخص می‌کند؟",
+    "answers": [
+      "یک روش کدگذاری کاراکترهای Unicode",
+      "یک الگوریتم فشرده‌سازی تصویر",
+      "یک پروتکل انتقال فایل",
+      "یک سیستم مدیریت پایگاه داده"
+    ],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام ویژگی مهم UTF-8 باعث شده برای متن چندزبانه مناسب باشد؟",
+    "answers": [
+      "توانایی نمایش طیف بزرگی از کاراکترهای Unicode با طول متغیر",
+      "محدود بودن به حروف انگلیسی",
+      "ذخیره فقط اعداد صحیح",
+      "نیاز نداشتن به کدگذاری"
+    ],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام الگوریتم فشرده‌سازی معمولاً بدون از دست دادن اطلاعات اصلی داده کار می‌کند؟",
+    "answers": ["DEFLATE", "JPEG", "MP3", "MPEG-4"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام نوع فشرده‌سازی معمولاً بخشی از اطلاعات را برای کاهش حجم حذف می‌کند؟",
+    "answers": ["Lossy", "Lossless", "Bit-perfect", "Raw"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام فرمت تصویر معمولاً از فشرده‌سازی Lossy استفاده می‌کند؟",
+    "answers": ["JPEG", "PNG", "BMP", "TIFF بدون فشرده‌سازی"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در صدا دیجیتال، Sample Rate به چه چیزی اشاره دارد؟",
+    "answers": [
+      "تعداد نمونه‌برداری از سیگنال در هر ثانیه",
+      "تعداد بلندگوهای سیستم",
+      "حجم فایل صوتی",
+      "تعداد کانال‌های شبکه"
+    ],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در صدای دیجیتال، افزایش Bit Depth چه چیزی را دقیق‌تر می‌کند؟",
+    "answers": [
+      "دقت نمایش دامنه هر نمونه صوتی",
+      "تعداد فریم‌های ویدیو",
+      "سرعت انتقال شبکه",
+      "رزولوشن نمایشگر"
+    ],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام ابزار معمولاً برای مدیریت وابستگی‌های پروژه‌های JavaScript استفاده می‌شود؟",
+    "answers": ["npm", "BIOS", "FTP", "GRUB"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "فایل package.json در پروژه‌های معمول Node.js بیشتر چه اطلاعاتی را نگهداری می‌کند؟",
+    "answers": [
+      "اطلاعات پروژه، اسکریپت‌ها و وابستگی‌ها",
+      "تنها تصویر لوگوی پروژه",
+      "تنظیمات BIOS رایانه",
+      "اطلاعات کارت گرافیک"
+    ],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در JavaScript، Promise معمولاً برای نمایش چه چیزی استفاده می‌شود؟",
+    "answers": [
+      "نتیجه یا وضعیت یک عملیات ناهمگام",
+      "یک نوع فایل تصویری",
+      "یک آدرس IP",
+      "یک جدول پایگاه داده"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در JavaScript، کلمه کلیدی await معمولاً در چه زمینه‌ای استفاده می‌شود؟",
+    "answers": [
+      "انتظار برای نتیجه یک Promise در یک تابع async",
+      "تعریف کلاس CSS",
+      "ایجاد جدول SQL",
+      "تغییر آدرس MAC"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "Event Loop در JavaScript مرورگر چه نقشی دارد؟",
+    "answers": [
+      "هماهنگ کردن اجرای کد و رسیدگی به کارهای صف‌شده مانند Callbackها",
+      "فشرده‌سازی فایل‌های JavaScript",
+      "تبدیل JavaScript به SQL",
+      "تخصیص آدرس IP"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "Closure در JavaScript چه ویژگی‌ای دارد؟",
+    "answers": [
+      "تابع می‌تواند به متغیرهای محدوده بیرونی خود حتی پس از پایان اجرای آن محدوده دسترسی داشته باشد",
+      "تابع فقط یک بار قابل اجراست",
+      "تابع فقط روی اعداد کار می‌کند",
+      "تابع حتماً باید async باشد"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در برنامه‌نویسی، Garbage Collection چه کاری انجام می‌دهد؟",
+    "answers": [
+      "شناسایی و آزادسازی حافظه‌ای که دیگر توسط برنامه قابل استفاده نیست",
+      "حذف فایل‌های سیستم‌عامل",
+      "فشرده‌سازی پایگاه داده",
+      "افزایش فرکانس CPU"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "Compiler معمولاً چه کاری انجام می‌دهد؟",
+    "answers": [
+      "تبدیل کد منبع به شکلی قابل اجرا یا قابل پردازش توسط ماشین",
+      "تغییر آدرس IP",
+      "مدیریت کاربران شبکه",
+      "ذخیره فایل‌های تصویری"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "Linker در فرایند ساخت نرم‌افزار چه نقشی دارد؟",
+    "answers": [
+      "ترکیب فایل‌های شیء و کتابخانه‌های لازم برای ساخت برنامه نهایی",
+      "اجرای تست‌های شبکه",
+      "فشرده‌سازی تصاویر",
+      "مدیریت حافظه RAM در زمان اجرا"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در سیستم‌های فایل، Inode در سیستم‌های Unix-like معمولاً چه چیزی را نگهداری می‌کند؟",
+    "answers": [
+      "اطلاعات فراداده فایل مانند مالک، مجوزها و اشاره به داده‌های فایل",
+      "خود نام دامنه اینترنتی",
+      "کل محتوای کارت گرافیک",
+      "رمز عبور کاربر به صورت متن ساده"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "Journaling در برخی فایل‌سیستم‌ها چه مزیتی دارد؟",
+    "answers": [
+      "کمک به بازیابی سازگاری ساختار فایل‌سیستم پس از خرابی یا خاموشی ناگهانی",
+      "افزایش ظرفیت فیزیکی دیسک",
+      "رمزگذاری خودکار تمام فایل‌ها",
+      "افزایش سرعت اینترنت"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "RAID 1 معمولاً بر چه اصلی استوار است؟",
+    "answers": [
+      "Mirroring یا نگهداری نسخه مشابه داده روی چند دیسک",
+      "Striping بدون افزونگی",
+      "فشرده‌سازی فایل‌ها",
+      "رمزنگاری دیسک"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "RAID 0 عمدتاً چه روشی را به کار می‌گیرد؟",
+    "answers": [
+      "Striping داده بین چند دیسک بدون افزونگی",
+      "Mirroring کامل",
+      "Parity دوگانه",
+      "رمزگذاری دیسک‌ها"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "UEFI نسبت به BIOS قدیمی چه قابلیت مهمی را فراهم می‌کند؟",
+    "answers": [
+      "یک محیط Firmware مدرن برای راه‌اندازی سیستم و پشتیبانی از قابلیت‌هایی مانند GPT",
+      "افزایش ظرفیت RAM بدون تغییر سخت‌افزار",
+      "تبدیل HDD به SSD",
+      "جایگزینی کامل سیستم‌عامل"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "GPT در سیستم‌های رایانه‌ای بیشتر به چه چیزی مربوط است؟",
+    "answers": [
+      "طرح پارتیشن‌بندی دیسک",
+      "پروتکل ایمیل",
+      "نوع پردازنده",
+      "فرمت فایل صوتی"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام ویژگی GPT نسبت به MBR امکان پشتیبانی از دیسک‌های بسیار بزرگ‌تر را فراهم می‌کند؟",
+    "answers": [
+      "استفاده از ساختار آدرس‌دهی مدرن‌تر برای پارتیشن‌ها",
+      "استفاده از فشرده‌سازی ZIP",
+      "استفاده از DNS",
+      "استفاده از حافظه Cache"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در معماری پردازنده، Branch Prediction با چه هدفی استفاده می‌شود؟",
+    "answers": [
+      "پیش‌بینی مسیر احتمالی اجرای یک دستور شرطی برای کاهش توقف Pipeline",
+      "پیش‌بینی ظرفیت هارددیسک",
+      "تعیین آدرس IP",
+      "رمزگذاری حافظه"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "SIMD در معماری پردازنده به چه ایده‌ای اشاره دارد؟",
+    "answers": [
+      "اجرای یک دستور روی چند داده به‌صورت موازی",
+      "اجرای چند سیستم‌عامل روی یک دیسک",
+      "ارسال یک فایل به چند سرور",
+      "ذخیره چند نسخه از یک فایل"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "Endianness در ذخیره‌سازی داده‌های چندبایتی به چه چیزی مربوط است؟",
+    "answers": [
+      "ترتیب قرار گرفتن بایت‌ها در حافظه",
+      "سرعت پردازنده",
+      "تعداد هسته‌های CPU",
+      "نوع اتصال شبکه"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در معماری Big-Endian، برای یک مقدار چندبایتی، کدام بخش معمولاً در آدرس پایین‌تر قرار می‌گیرد؟",
+    "answers": ["Most Significant Byte", "Least Significant Byte", "Parity Bit", "Sign Flag"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "IEEE 754 استانداردی شناخته‌شده برای نمایش چه نوع داده‌ای است؟",
+    "answers": [
+      "اعداد ممیز شناور",
+      "آدرس‌های MAC",
+      "نام دامنه‌ها",
+      "تصاویر برداری"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "Checksum در انتقال یا ذخیره داده معمولاً چه کاربردی دارد؟",
+    "answers": [
+      "کمک به تشخیص تغییر یا خراب شدن داده",
+      "رمزگذاری قطعی داده",
+      "افزایش ظرفیت دیسک",
+      "تعیین نام فایل"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در امنیت وب، استفاده از Prepared Statement برای چه منظوری بسیار مهم است؟",
+    "answers": [
+      "کاهش خطر SQL Injection با جداسازی دستور SQL از داده ورودی",
+      "افزایش سرعت اینترنت",
+      "رمزگذاری فایل‌های تصویری",
+      "تغییر آدرس IP"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "برای ذخیره امن رمزهای عبور، چرا استفاده از یک تابع مشتق‌سازی کلید با Salt مناسب‌تر از ذخیره مستقیم رمز عبور است؟",
+    "answers": [
+      "حمله‌های آفلاین و استفاده مجدد از Hashهای از پیش محاسبه‌شده را دشوارتر می‌کند",
+      "امکان بازیابی مستقیم رمز عبور را فراهم می‌کند",
+      "رمز عبور را به متن ساده تبدیل می‌کند",
+      "نیاز به احراز هویت را حذف می‌کند"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در برابر CSRF در برنامه‌هایی که از Cookie برای احراز هویت استفاده می‌کنند، کدام روش دفاعی استاندارد است؟",
+    "answers": [
+      "استفاده و اعتبارسنجی CSRF Token برای درخواست‌های تغییر‌دهنده وضعیت",
+      "حذف تمام Cookieها",
+      "استفاده از FTP",
+      "افزایش رزولوشن صفحه"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام روش برای جلوگیری از XSS هنگام قرار دادن داده غیرقابل اعتماد در HTML مناسب‌تر است؟",
+    "answers": [
+      "Context-aware output encoding و استفاده از APIهای امن",
+      "اعتماد کامل به ورودی کاربر",
+      "قرار دادن ورودی مستقیماً در innerHTML",
+      "ذخیره ورودی در نام فایل"
+    ],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام ویژگی HTTP برای مشخص کردن نوع محتوای ارسال‌شده در بدنه درخواست یا پاسخ استفاده می‌شود؟",
+    "answers": ["Content-Type", "User-Agent", "Referer", "Host"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام متد HTTP برای دریافت اطلاعات یک منبع بدون درخواست تغییر آن طراحی شده است؟",
+    "answers": ["GET", "POST", "PATCH", "CONNECT"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام متد HTTP برای اعمال تغییرات جزئی روی یک منبع طراحی شده است؟",
+    "answers": ["PATCH", "GET", "HEAD", "OPTIONS"],
+    "correct": 0,
+    "difficulty": "hard"
+  }
+] 
