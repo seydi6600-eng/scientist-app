@@ -51,7 +51,7 @@ const ONLINE_UNLOCK_LEVEL = 5;
 const SIGNING_KEY = "SCIENTIST_APP_2026_SECRET_v4";
 
 /* 🔌 Supabase API */
-const SUPABASE_URL = "https://aqgacfnbiktutbkgrakq.supabase.co";
+const SUPABASE_URL = "https://scientist-api.seydi6600.workers.dev";
 const SUPABASE_KEY = "sb_publishable_upUFTYz_9jtjqVxL9DOkKA_tM2_WWN3";
 
 async function supabaseFetch(path, options = {}) {
