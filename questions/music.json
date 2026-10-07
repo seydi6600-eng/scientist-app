@@ -1,1 +1,1847 @@
+[
+  {
+    "question": "کدام خواننده به «سلطان پاپ ایران» معروف است؟",
+    "answers": ["محمد اصفهانی", "مرتضی پاشایی", "محمدرضا شجریان", "مرتضی احمدی"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده به «شاہنشاه آواز ایران» معروف است؟",
+    "answers": ["محمدرضا شجریان", "حسین قوامی", "بنیان‌گذار", "محمود کریمی"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام خواننده سنتی «مرغ سحر» را معروف کرد؟",
+    "answers": ["محمدرضا شجریان", "قمرالملوک وزیری", "بنان", "محمود کریمی"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده سبک پاپ به «پاپ‌خوان جوان» معروف بود؟",
+    "answers": ["مرتضی پاشایی", "محسن یگانه", "رضا صادقی", "بنیامین بهادری"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «نگران منی» را خوانده است؟",
+    "answers": ["محسن یگانه", "مرتضی پاشایی", "رضا صادقی", "علی زند وکیلی"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «مرا ببوس» را اجرا کرد؟",
+    "answers": ["حسن گل‌نراقی", "بنیان‌گذار", "محمود کریمی", "داریوش رفیعی"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام خواننده به «امپراتور موسیقی پاپ» معروف است؟",
+    "answers": ["محمدرضا شجریان", "محمدرضا گلزار", "محسن چاوشی", "داریوش"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «تولدت مبارک» را معروف کرد؟",
+    "answers": ["مرتضی پاشایی", "بنیامین بهادری", "محسن یگانه", "رضا صادقی"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ معروف محسن یگانه است؟",
+    "answers": ["نگران منی", "سکوت", "آرامش", "نفس"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ محسن چاوشی در فیلم «سنتوری» بود؟",
+    "answers": ["سنتوری", "من یه مرد امشبم", "همه چی آرومه", "کجایی"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «دل ای دل» را اجرا کرد؟",
+    "answers": ["محمدرضا شجریان", "بنیان‌گذار", "حسین قوامی", "محمود کریمی"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام خواننده به «استاد آواز» معروف است؟",
+    "answers": ["محمدرضا شجریان", "محمود کریمی", "حسین قوامی", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «آهای مردم» را معروف کرد؟",
+    "answers": ["محمدرضا شجریان", "بنیان‌گذار", "محمود کریمی", "داریوش رفیعی"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام گروه موسیقی ایرانی «آریان» نام دارد؟",
+    "answers": ["گروه پاپ", "گروه سنتی", "گروه راک", "گروه هیپ‌هاپ"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گروه پاپ ایرانی معروف دهه ۸۰ بود؟",
+    "answers": ["آریان", "سیل", "زیتون", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «تاک» را اجرا کرد؟",
+    "answers": ["رضا صادقی", "محسن یگانه", "بنیامین", "مرتضی پاشایی"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «آرامش» را معروف کرد؟",
+    "answers": ["مرتضی پاشایی", "محسن یگانه", "رضا صادقی", "بنیامین"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «بغض» را اجرا کرد؟",
+    "answers": ["مرتضی پاشایی", "محسن یگانه", "رضا صادقی", "بنیامین"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «مرا به خاطر بسپار» را اجرا کرد؟",
+    "answers": ["داریوش رفیعی", "بنیان‌گذار", "محمدرضا شجریان", "محمود کریمی"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام خواننده معروف به «شجریان زمانه» است؟",
+    "answers": ["همایون شجریان", "محمدرضا شجریان", "علی زند وکیلی", "سالار عقیلی"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام خواننده پسر محمدرضا شجریان است؟",
+    "answers": ["همایون شجریان", "مهدی شجریان", "رضا شجریان", "علی شجریان"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام آهنگ همایون شجریان معروف است؟",
+    "answers": ["چرا رفتی", "آرام جان", "همه موارد", "ایران"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «کجایی» را معروف کرد؟",
+    "answers": ["همایون شجریان", "محسن چاوشی", "مرتضی پاشایی", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «نقاب» را اجرا کرد؟",
+    "answers": ["محسن چاوشی", "مرتضی پاشایی", "بنیامین", "رضا صادقی"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «همه چی آرومه» را اجرا کرد؟",
+    "answers": ["محسن چاوشی", "مرتضی پاشایی", "رضا صادقی", "محسن یگانه"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «من یه مرد امشبم» را اجرا کرد؟",
+    "answers": ["محسن چاوشی", "مرتضی پاشایی", "بنیامین", "رضا صادقی"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «کجایی» را معروف کرد؟",
+    "answers": ["محسن چاوشی", "مرتضی پاشایی", "همایون شجریان", "همه موارد"],
+    "correct": 3,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام خواننده آهنگ «حریم شخصی» را اجرا کرد؟",
+    "answers": ["محسن چاوشی", "بنیامین", "رضا صادقی", "محسن یگانه"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «سنتوری» را اجرا کرد؟",
+    "answers": ["محسن چاوشی", "مرتضی پاشایی", "بنیامین", "رضا صادقی"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «کجایی» معروف به «همایون شجریان» است؟",
+    "answers": ["کجایی (آهنگ)", "کجایی (آهنگ همایون)", "همه موارد", "کجایی (آهنگ محسن)"],
+    "correct": 2,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام خواننده به «پاپ‌خوان معروف ایران» معروف است؟",
+    "answers": ["محسن یگانه", "مرتضی پاشایی", "رضا صادقی", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ بنیامین بهادری معروف است؟",
+    "answers": ["تولدت مبارک", "آرامش", "عاشقانه", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «خوشا به حال» را اجرا کرد؟",
+    "answers": ["رضا صادقی", "بنیامین", "محسن یگانه", "مرتضی پاشایی"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «دوست دارم» را اجرا کرد؟",
+    "answers": ["رضا صادقی", "محسن یگانه", "بنیامین", "مرتضی پاشایی"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «هوای گریه» را اجرا کرد؟",
+    "answers": ["رضا صادقی", "محسن یگانه", "بنیامین", "مرتضی پاشایی"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «نفس» را اجرا کرد؟",
+    "answers": ["محسن یگانه", "مرتضی پاشایی", "رضا صادقی", "بنیامین"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «عاشقانه» را اجرا کرد؟",
+    "answers": ["بنیامین بهادری", "مرتضی پاشایی", "رضا صادقی", "محسن یگانه"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «آرزو» را اجرا کرد؟",
+    "answers": ["مرتضی پاشایی", "بنیامین", "رضا صادقی", "محسن یگانه"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «قلبم را بشکن» را اجرا کرد؟",
+    "answers": ["محسن یگانه", "رضا صادقی", "بنیامین", "مرتضی پاشایی"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «پرواز» را اجرا کرد؟",
+    "answers": ["محسن یگانه", "رضا صادقی", "بنیامین", "مرتضی پاشایی"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ محسن یگانه بسیار معروف است؟",
+    "answers": ["سکوت", "نفس", "پرواز", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ مرتضی پاشایی بسیار معروف است؟",
+    "answers": ["نگران منی", "یار", "همه موارد", "تولدت مبارک"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «آرامش» را معروف کرد؟",
+    "answers": ["مرتضی پاشایی", "محسن یگانه", "بنیامین", "رضا صادقی"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده به «پاپ سنتی» معروف است؟",
+    "answers": ["همایون شجریان", "علی زند وکیلی", "سالار عقیلی", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «شب که میشه» را اجرا کرد؟",
+    "answers": ["محسن یگانه", "مرتضی پاشایی", "رضا صادقی", "بنیامین"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «توقف ممنوع» را اجرا کرد؟",
+    "answers": ["محسن یگانه", "مرتضی پاشایی", "رضا صادقی", "بنیامین"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «هوای تو» را اجرا کرد؟",
+    "answers": ["محسن یگانه", "مرتضی پاشایی", "رضا صادقی", "بنیامین"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ گروه آریان معروف است؟",
+    "answers": ["گل ناز", "همه موارد", "عاشقانه", "تولد"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «چتر» را اجرا کرد؟",
+    "answers": ["سیل", "محسن یگانه", "مرتضی پاشایی", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «تو رفتی» را اجرا کرد؟",
+    "answers": ["مرتضی پاشایی", "محسن یگانه", "رضا صادقی", "بنیامین"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «نگرانتم» را اجرا کرد؟",
+    "answers": ["مرتضی پاشایی", "محسن یگانه", "رضا صادقی", "بنیامین"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «بغض» را معروف کرد؟",
+    "answers": ["مرتضی پاشایی", "محسن یگانه", "رضا صادقی", "بنیامین"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «عشق یعنی» را اجرا کرد؟",
+    "answers": ["مرتضی پاشایی", "محسن یگانه", "رضا صادقی", "بنیامین"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «نفس بکش» را اجرا کرد؟",
+    "answers": ["مرتضی پاشایی", "محسن یگانه", "رضا صادقی", "بنیامین"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «عاشقتم» را اجرا کرد؟",
+    "answers": ["مرتضی پاشایی", "محسن یگانه", "رضا صادقی", "بنیامین"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «هنوزم عاشقتم» را اجرا کرد؟",
+    "answers": ["مرتضی پاشایی", "محسن یگانه", "رضا صادقی", "بنیامین"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «تو نباشی» را اجرا کرد؟",
+    "answers": ["مرتضی پاشایی", "محسن یگانه", "رضا صادقی", "بنیامین"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ محسن یگانه درباره دوستی است؟",
+    "answers": ["رفیق", "دوست", "همه موارد", "برادر"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «رفیق» را اجرا کرد؟",
+    "answers": ["محسن یگانه", "مرتضی پاشایی", "رضا صادقی", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «همه چی آرومه» را اجرا کرد؟",
+    "answers": ["محسن چاوشی", "مرتضی پاشایی", "همایون شجریان", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «حریم شخصی» را اجرا کرد؟",
+    "answers": ["محسن چاوشی", "مرتضی پاشایی", "بنیامین", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «شب» را اجرا کرد؟",
+    "answers": ["محسن چاوشی", "همایون شجریان", "همه موارد", "محسن یگانه"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «کجایی» را اجرا کرد؟",
+    "answers": ["محسن چاوشی", "مرتضی پاشایی", "همایون شجریان", "همه موارد"],
+    "correct": 3,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام خواننده آهنگ «سنتوری» را اجرا کرد؟",
+    "answers": ["محسن چاوشی", "همایون شجریان", "مرتضی پاشایی", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «من یه مرد امشبم» را اجرا کرد؟",
+    "answers": ["محسن چاوشی", "مرتضی پاشایی", "همایون شجریان", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ محسن چاوشی در فیلم «سنتوری» بود؟",
+    "answers": ["سنتوری", "من یه مرد امشبم", "همه چی آرومه", "کجایی"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «آرامش» را معروف کرد؟",
+    "answers": ["مرتضی پاشایی", "محسن چاوشی", "همایون شجریان", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «نفس» را اجرا کرد؟",
+    "answers": ["محسن یگانه", "مرتضی پاشایی", "همایون شجریان", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «کجایی» را معروف کرد؟",
+    "answers": ["همایون شجریان", "محسن چاوشی", "مرتضی پاشایی", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ همایون شجریان درباره ایران است؟",
+    "answers": ["ایران", "وطن", "همه موارد", "سرزمین من"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ همایون شجریان معروف است؟",
+    "answers": ["آرام جان", "چرا رفتی", "همه موارد", "ایران"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «آرام جان» را اجرا کرد؟",
+    "answers": ["همایون شجریان", "محمدرضا شجریان", "همه موارد", "علی زند وکیلی"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «چرا رفتی» را اجرا کرد؟",
+    "answers": ["همایون شجریان", "محمدرضا شجریان", "همه موارد", "علی زند وکیلی"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ شجریان درباره عشق است؟",
+    "answers": ["مرغ سحر", "دل ای دل", "همه موارد", "آهای مردم"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ محمدرضا شجریان بسیار معروف است؟",
+    "answers": ["مرغ سحر", "دل ای دل", "همه موارد", "ربنا"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ محمدرضا شجریان در ماه رمضان پخش می‌شود؟",
+    "answers": ["ربنا", "مرغ سحر", "همه موارد", "دل ای دل"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آلبوم محمدرضا شجریان معروف است؟",
+    "answers": ["چشمه نوشین", "آرام جان", "همه موارد", "فریاد"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آلبوم همایون شجریان معروف است؟",
+    "answers": ["ایران من", "آرام جان", "همه موارد", "چرا رفتی"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده موسیقی سنتی به «حافظ موسیقی» معروف است؟",
+    "answers": ["محمدرضا شجریان", "حسین قوامی", "همه موارد", "بنیان‌گذار"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده به «شجریان زمانه» معروف است؟",
+    "answers": ["همایون شجریان", "علی زند وکیلی", "همه موارد", "سالار عقیلی"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام خواننده آهنگ «دلم گرفته» را اجرا کرد؟",
+    "answers": ["مرتضی پاشایی", "محسن یگانه", "همه موارد", "بنیامین"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ محسن یگانه بسیار معروف است؟",
+    "answers": ["سکوت", "نفس", "همه موارد", "پرواز"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ محسن چاوشی بسیار معروف است؟",
+    "answers": ["سنتوری", "همه چی آرومه", "همه موارد", "کجایی"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ مرتضی پاشایی بسیار معروف است؟",
+    "answers": ["نگران منی", "تولدت مبارک", "همه موارد", "یار"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ شجریان درباره وطن است؟",
+    "answers": ["ایران", "مرغ سحر", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «مادر» را اجرا کرد؟",
+    "answers": ["محمدرضا شجریان", "همایون شجریان", "همه موارد", "مرتضی پاشایی"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «پدر» را اجرا کرد؟",
+    "answers": ["مرتضی پاشایی", "محسن یگانه", "همه موارد", "رضا صادقی"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ محسن یگانه درباره مادر است؟",
+    "answers": ["مادر", "همه موارد", "پدر", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «خداحافظ» را اجرا کرد؟",
+    "answers": ["مرتضی پاشایی", "محسن یگانه", "همه موارد", "رضا صادقی"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «آخرین بار» را اجرا کرد؟",
+    "answers": ["مرتضی پاشایی", "محسن یگانه", "همه موارد", "رضا صادقی"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ مرتضی پاشایی درباره خداحافظی است؟",
+    "answers": ["خداحافظ", "همه موارد", "آخرین بار", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «قول بده» را اجرا کرد؟",
+    "answers": ["مرتضی پاشایی", "محسن یگانه", "همه موارد", "رضا صادقی"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «هنوزم» را اجرا کرد؟",
+    "answers": ["محسن یگانه", "مرتضی پاشایی", "همه موارد", "رضا صادقی"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ محسن یگانه درباره نداشتن است؟",
+    "answers": ["نداری", "همه موارد", "نباشی", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «بغض» را معروف کرد؟",
+    "answers": ["مرتضی پاشایی", "همه موارد", "محسن یگانه", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «فصل باران» را اجرا کرد؟",
+    "answers": ["مرتضی پاشایی", "همه موارد", "محسن یگانه", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ محسن یگانه درباره باران است؟",
+    "answers": ["فصل باران", "همه موارد", "بارون", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «پاییز» را اجرا کرد؟",
+    "answers": ["مرتضی پاشایی", "همه موارد", "محسن یگانه", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ محسن یگانه درباره پاییز است؟",
+    "answers": ["پاییز", "همه موارد", "خزان", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «زمستان» را اجرا کرد؟",
+    "answers": ["مرتضی پاشایی", "همه موارد", "محسن یگانه", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «بهار» را اجرا کرد؟",
+    "answers": ["مرتضی پاشایی", "همه موارد", "محسن یگانه", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ محسن یگانه درباره بهار است؟",
+    "answers": ["بهار", "همه موارد", "نوروز", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «نوروز» را اجرا کرد؟",
+    "answers": ["مرتضی پاشایی", "همه موارد", "محسن یگانه", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ برای عید نوروز معروف است؟",
+    "answers": ["عید اومده", "همه موارد", "بهار", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ «عید اومده» را اجرا کرد؟",
+    "answers": ["مرتضی پاشایی", "همه موارد", "محسن یگانه", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  
+  {
+    "question": "کدام گروه بریتانیایی آهنگ «Bohemian Rhapsody» را ساخته؟",
+    "answers": ["Queen", "The Beatles", "Pink Floyd", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "خواننده اصلی گروه Queen چه کسی بود؟",
+    "answers": ["Freddie Mercury", "John Lennon", "Mick Jagger", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام گروه بریتانیایی آهنگ «Hey Jude» را ساخته؟",
+    "answers": ["The Beatles", "Queen", "Pink Floyd", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام عضو گروه Beatles در سال ۱۹۸۰ ترور شد؟",
+    "answers": ["John Lennon", "Paul McCartney", "George Harrison", "Ringo Starr"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ Michael Jackson معروف است؟",
+    "answers": ["Thriller", "Beat It", "همه موارد", "Billie Jean"],
+    "correct": 2,
+    "difficulty": "easy"
+  },
+  {
+    "question": "Michael Jackson به چه عنوانی معروف بود؟",
+    "answers": ["پادشاه پاپ", "پادشاه راک", "پادشاه جاز", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام آلبوم Michael Jackson پرفروش‌ترین آلبوم تاریخ است؟",
+    "answers": ["Thriller", "Bad", "همه موارد", "Off the Wall"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گروه بریتانیایی آهنگ «The Wall» را ساخته؟",
+    "answers": ["Pink Floyd", "Queen", "The Beatles", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ Pink Floyd معروف است؟",
+    "answers": ["Another Brick in the Wall", "همه موارد", "Wish You Were Here", "همه موارد"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گروه آمریکایی آهنگ «Smells Like Teen Spirit» را ساخته؟",
+    "answers": ["Nirvana", "Pearl Jam", "همه موارد", "Soundgarden"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "خواننده اصلی Nirvana چه کسی بود؟",
+    "answers": ["Kurt Cobain", "Eddie Vedder", "همه موارد", "Chris Cornell"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "Kurt Cobain در چه سالی درگذشت؟",
+    "answers": ["۱۹۹۴", "۱۹۹۲", "همه موارد", "۱۹۹۶"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام گروه بریتانیایی آهنگ «Stairway to Heaven» را ساخته؟",
+    "answers": ["Led Zeppelin", "همه موارد", "Black Sabbath", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گروه بریتانیایی بنیان‌گذار Heavy Metal است؟",
+    "answers": ["Black Sabbath", "همه موارد", "Led Zeppelin", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "خواننده اصلی Black Sabbath چه کسی بود؟",
+    "answers": ["Ozzy Osbourne", "همه موارد", "همه موارد", "Ronnie James Dio"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گروه بریتانیایی آهنگ «Imagine» را ساخته؟",
+    "answers": ["John Lennon", "The Beatles", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده بریتانیایی آهنگ «Shape of You» را خوانده؟",
+    "answers": ["Ed Sheeran", "همه موارد", "Sam Smith", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «Bad Guy» را خوانده؟",
+    "answers": ["Billie Eilish", "همه موارد", "Ariana Grande", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «Shake It Off» را خوانده؟",
+    "answers": ["Taylor Swift", "همه موارد", "Katy Perry", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام خواننده بریتانیایی آهنگ «Rolling in the Deep» را خوانده؟",
+    "answers": ["Adele", "همه موارد", "Amy Winehouse", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام خواننده کانادایی آهنگ «Baby» را خوانده؟",
+    "answers": ["Justin Bieber", "همه موارد", "Drake", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «Umbrella» را خوانده؟",
+    "answers": ["Rihanna", "همه موارد", "Beyoncé", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گروه بریتانیایی آهنگ «Yellow Submarine» را ساخته؟",
+    "answers": ["The Beatles", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ The Beatles درباره صلح است؟",
+    "answers": ["Imagine", "همه موارد", "All You Need Is Love", "همه موارد"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گروه آمریکایی آهنگ «Hotel California» را ساخته؟",
+    "answers": ["Eagles", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «Like a Rolling Stone» را خوانده؟",
+    "answers": ["Bob Dylan", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام آهنگ Bob Dylan برنده نوبل ادبیات شد؟",
+    "answers": ["Blowin' in the Wind", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «Purple Rain» را خوانده؟",
+    "answers": ["Prince", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «Like a Prayer» را خوانده؟",
+    "answers": ["Madonna", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "Madonna به چه عنوانی معروف است؟",
+    "answers": ["ملکه پاپ", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام گروه آمریکایی آهنگ «Losing My Religion» را ساخته؟",
+    "answers": ["R.E.M.", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام گروه بریتانیایی آهنگ «Wonderwall» را ساخته؟",
+    "answers": ["Oasis", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گروه بریتانیایی آهنگ «Creep» را ساخته؟",
+    "answers": ["Radiohead", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گروه بریتانیایی آهنگ «Yellow» را ساخته؟",
+    "answers": ["Coldplay", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام خواننده بریتانیایی آهنگ «Someone Like You» را خوانده؟",
+    "answers": ["Adele", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «Bad Romance» را خوانده؟",
+    "answers": ["Lady Gaga", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «Single Ladies» را خوانده؟",
+    "answers": ["Beyoncé", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گروه کره‌ای آهنگ «Dynamite» را خوانده؟",
+    "answers": ["BTS", "همه موارد", "BLACKPINK", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام گروه کره‌ای آهنگ «How You Like That» را خوانده؟",
+    "answers": ["BLACKPINK", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «Thank U, Next» را خوانده؟",
+    "answers": ["Ariana Grande", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «Roar» را خوانده؟",
+    "answers": ["Katy Perry", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده بریتانیایی آهنگ «Watermelon Sugar» را خوانده؟",
+    "answers": ["Harry Styles", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گروه بریتانیایی Harry Styles خواننده‌اش بود؟",
+    "answers": ["One Direction", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «Halo» را خوانده؟",
+    "answers": ["Beyoncé", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده بریتانیایی آهنگ «Skyfall» را خوانده؟",
+    "answers": ["Adele", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «Lose Yourself» را خوانده؟",
+    "answers": ["Eminem", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «Empire State of Mind» را خوانده؟",
+    "answers": ["Jay-Z", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده کانادایی آهنگ «Hotline Bling» را خوانده؟",
+    "answers": ["Drake", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «Old Town Road» را خوانده؟",
+    "answers": ["Lil Nas X", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «Blinding Lights» را خوانده؟",
+    "answers": ["The Weeknd", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «Sunflower» را خوانده؟",
+    "answers": ["Post Malone", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «Circles» را خوانده؟",
+    "answers": ["Post Malone", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «Levitating» را خوانده؟",
+    "answers": ["Dua Lipa", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده بریتانیایی آهنگ «New Rules» را خوانده؟",
+    "answers": ["Dua Lipa", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «drivers license» را خوانده؟",
+    "answers": ["Olivia Rodrigo", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «good 4 u» را خوانده؟",
+    "answers": ["Olivia Rodrigo", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «Happier Than Ever» را خوانده؟",
+    "answers": ["Billie Eilish", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «Ocean Eyes» را خوانده؟",
+    "answers": ["Billie Eilish", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده بریتانیایی آهنگ «Perfect» را خوانده؟",
+    "answers": ["Ed Sheeran", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «All of Me» را خوانده؟",
+    "answers": ["John Legend", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «Stay With Me» را خوانده؟",
+    "answers": ["Sam Smith", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده بریتانیایی آهنگ «Writing's on the Wall» را خوانده؟",
+    "answers": ["Sam Smith", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «Firework» را خوانده؟",
+    "answers": ["Katy Perry", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «Dark Horse» را خوانده؟",
+    "answers": ["Katy Perry", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده بریتانیایی آهنگ «Rolling in the Deep» را خوانده؟",
+    "answers": ["Adele", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «We Found Love» را خوانده؟",
+    "answers": ["Rihanna", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «Diamonds» را خوانده؟",
+    "answers": ["Rihanna", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «Work» را با Drake خوانده؟",
+    "answers": ["Rihanna", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده کانادایی آهنگ «Sorry» را خوانده؟",
+    "answers": ["Justin Bieber", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «Uptown Funk» را خوانده؟",
+    "answers": ["Bruno Mars", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «Just the Way You Are» را خوانده؟",
+    "answers": ["Bruno Mars", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گروه آمریکایی آهنگ «Sugar» را خوانده؟",
+    "answers": ["Maroon 5", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «Girls Like You» را خوانده؟",
+    "answers": ["Adam Levine (Maroon 5)", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گروه آمریکایی آهنگ «Memories» را خوانده؟",
+    "answers": ["Maroon 5", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «Attention» را خوانده؟",
+    "answers": ["Charlie Puth", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «See You Again» را خوانده؟",
+    "answers": ["Charlie Puth", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «Stitches» را خوانده؟",
+    "answers": ["Shawn Mendes", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده کانادایی آهنگ «Senorita» را با Camila Cabello خوانده؟",
+    "answers": ["Shawn Mendes", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «Havana» را خوانده؟",
+    "answers": ["Camila Cabello", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده بریتانیایی آهنگ «Someone You Loved» را خوانده؟",
+    "answers": ["Lewis Capaldi", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «Without Me» را خوانده؟",
+    "answers": ["Halsey", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آمریکایی آهنگ «Closer» را خوانده؟",
+    "answers": ["The Chainsmokers", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام DJ فرانسوی آهنگ «Titanium» را ساخته؟",
+    "answers": ["David Guetta", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام DJ هلندی آهنگ «Animals» را ساخته؟",
+    "answers": ["Martin Garrix", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام DJ آمریکایی آهنگ «Clarity» را ساخته؟",
+    "answers": ["Zedd", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام DJ آمریکایی آهنگ «Wake Me Up» را ساخته؟",
+    "answers": ["Avicii", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام DJ اسکاتلندی آهنگ «Summer» را ساخته؟",
+    "answers": ["Calvin Harris", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گروه ایرلندی آهنگ «With or Without You» را ساخته؟",
+    "answers": ["U2", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گروه آمریکایی آهنگ «Livin' on a Prayer» را ساخته؟",
+    "answers": ["Bon Jovi", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گروه آمریکایی آهنگ «Sweet Child O' Mine» را ساخته؟",
+    "answers": ["Guns N' Roses", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گروه آمریکایی آهنگ «Enter Sandman» را ساخته؟",
+    "answers": ["Metallica", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گروه آمریکایی آهنگ «Master of Puppets» را ساخته؟",
+    "answers": ["Metallica", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گروه آمریکایی آهنگ «Chop Suey» را ساخته؟",
+    "answers": ["System of a Down", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گروه آمریکایی آهنگ «In the End» را ساخته؟",
+    "answers": ["Linkin Park", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده Linkin Park در سال ۲۰۱۷ درگذشت؟",
+    "answers": ["Chester Bennington", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گروه آمریکایی آهنگ «Numb» را ساخته؟",
+    "answers": ["Linkin Park", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گروه آمریکایی آهنگ «Bring Me to Life» را ساخته؟",
+    "answers": ["Evanescence", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گروه آمریکایی آهنگ «Boulevard of Broken Dreams» را ساخته؟",
+    "answers": ["Green Day", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گروه آمریکایی آهنگ «American Idiot» را ساخته؟",
+    "answers": ["Green Day", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گروه آمریکایی آهنگ «All the Small Things» را ساخته؟",
+    "answers": ["blink-182", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گروه آمریکایی آهنگ «The Middle» را ساخته؟",
+    "answers": ["Jimmy Eat World", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "چند نت اصلی در موسیقی وجود دارد؟",
+    "answers": ["۷", "همه موارد", "همه موارد", "۵"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "نت‌های موسیقی به ترتیب کدامند؟",
+    "answers": ["دو، ر، می، فا، سل، لا، سی", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام ساز به «سلطان سازها» معروف است؟",
+    "answers": ["پیانو", "همه موارد", "ویولن", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام ساز به «ملکه سازها» معروف است؟",
+    "answers": ["ویولن", "همه موارد", "پیانو", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "پیانو چند کلید دارد؟",
+    "answers": ["۸۸", "همه موارد", "۷۶", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "ویولن چند سیم دارد؟",
+    "answers": ["۴", "همه موارد", "۶", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "گیتار کلاسیک چند سیم دارد؟",
+    "answers": ["۶", "همه موارد", "۴", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "گیتار بیس معمولاً چند سیم دارد؟",
+    "answers": ["۴", "همه موارد", "۶", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "سه‌تار ایرانی چند سیم دارد؟",
+    "answers": ["۴", "همه موارد", "۶", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "تار ایرانی چند سیم دارد؟",
+    "answers": ["۶", "همه موارد", "۴", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "سنتور چند سیم دارد؟",
+    "answers": ["۷۲", "همه موارد", "همه موارد", "۴۸"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کمانچه چند سیم دارد؟",
+    "answers": ["۴", "همه موارد", "همه موارد", "۶"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "نی چه نوع سازی است؟",
+    "answers": ["بادی", "همه موارد", "زهی", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "تنبک چه نوع سازی است؟",
+    "answers": ["کوبه‌ای", "همه موارد", "بادی", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "دف چه نوع سازی است؟",
+    "answers": ["کوبه‌ای", "همه موارد", "زهی", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "قانون چه نوع سازی است؟",
+    "answers": ["زهی", "همه موارد", "بادی", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "عود چه نوع سازی است؟",
+    "answers": ["زهی", "همه موارد", "بادی", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام ساز ایرانی شبیه گیتار است؟",
+    "answers": ["تار", "همه موارد", "همه موارد", "سه‌تار"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام ساز ایرانی با کمان نواخته می‌شود؟",
+    "answers": ["کمانچه", "همه موارد", "همه موارد", "تار"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام ساز ایرانی با مضراب نواخته می‌شود؟",
+    "answers": ["سنتور", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام ساز ایرانی با ناخن نواخته می‌شود؟",
+    "answers": ["تار", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام ساز غربی با آرشه نواخته می‌شود؟",
+    "answers": ["ویولن", "همه موارد", "همه موارد", "پیانو"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام ساز غربی با کلید نواخته می‌شود؟",
+    "answers": ["پیانو", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام ساز غربی با دهان نواخته می‌شود؟",
+    "answers": ["ترومپت", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام ساز غربی با دست نواخته می‌شود؟",
+    "answers": ["طبل", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "ارکستر سمفونیک شامل چند گروه ساز است؟",
+    "answers": ["۴", "همه موارد", "همه موارد", "۲"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "گروه‌های ارکستر سمفونیک کدامند؟",
+    "answers": ["زهی، بادی چوبی، بادی برنجی، کوبه‌ای", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام ساز در ارکستر سمفونیک نقش اصلی دارد؟",
+    "answers": ["ویولن", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام سبک موسیقی از آمریکا آمده؟",
+    "answers": ["جاز", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام سبک موسیقی از نیواورلئان شروع شد؟",
+    "answers": ["جاز", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام سبک موسیقی سیاه‌پوستان آمریکا است؟",
+    "answers": ["بلوز", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام سبک موسیقی در دهه ۱۹۵۰ ظاهر شد؟",
+    "answers": ["راک اند رول", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده به «پادشاه راک اند رول» معروف است؟",
+    "answers": ["Elvis Presley", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام سبک موسیقی در دهه ۱۹۷۰ محبوب شد؟",
+    "answers": ["دیسکو", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام سبک موسیقی در دهه ۱۹۸۰ محبوب شد؟",
+    "answers": ["پاپ", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام سبک موسیقی در دهه ۱۹۹۰ محبوب شد؟",
+    "answers": ["گرانج", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام سبک موسیقی در دهه ۲۰۰۰ محبوب شد؟",
+    "answers": ["هیپ‌هاپ", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام سبک موسیقی در دهه ۲۰۱۰ محبوب شد؟",
+    "answers": ["EDM", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام سبک موسیقی در دهه ۲۰۲۰ محبوب شد؟",
+    "answers": ["K-Pop", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام سبک موسیقی ایرانی است؟",
+    "answers": ["سنتی", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام سبک موسیقی ایرانی مدرن است؟",
+    "answers": ["پاپ", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام سبک موسیقی ایرانی زیرزمینی است؟",
+    "answers": ["رپ فارسی", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده رپ فارسی معروف است؟",
+    "answers": ["یاس", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده رپ فارسی در خارج معروف است؟",
+    "answers": ["هیچکس", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گروه رپ فارسی معروف است؟",
+    "answers": ["زدبازی", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده پاپ ایرانی در خارج معروف است؟",
+    "answers": ["گوگوش", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده پاپ ایرانی در دهه ۷۰ معروف بود؟",
+    "answers": ["داریوش", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده پاپ ایرانی در دهه ۸۰ معروف بود؟",
+    "answers": ["محسن یگانه", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده پاپ ایرانی در دهه ۹۰ معروف بود؟",
+    "answers": ["مرتضی پاشایی", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ برای عروسی معروف است؟",
+    "answers": ["عروسی", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ برای تولد معروف است؟",
+    "answers": ["تولدت مبارک", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام آهنگ برای سال نو معروف است؟",
+    "answers": ["عید اومده", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ برای عید فطر معروف است؟",
+    "answers": ["عید فطر", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ برای محرم معروف است؟",
+    "answers": ["نوحه", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده نوحه معروف است؟",
+    "answers": ["محمود کریمی", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده تواشیح معروف است؟",
+    "answers": ["گروه تواشیح", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام سبک موسیقی مذهبی است؟",
+    "answers": ["تواشیح", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام سبک موسیقی عرفانی است؟",
+    "answers": ["سماع", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام رقص عرفانی معروف است؟",
+    "answers": ["سماع", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام شاعر ایرانی بیشترین آهنگ ساخته؟",
+    "answers": ["حافظ", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام شاعر ایرانی برای مولانا معروف است؟",
+    "answers": ["مولانا", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام شاعر ایرانی برای سعدی معروف است؟",
+    "answers": ["سعدی", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام آهنگ بر اساس شعر حافظ ساخته شد؟",
+    "answers": ["همه موارد", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ بر اساس شعر مولانا ساخته شد؟",
+    "answers": ["همه موارد", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ بر اساس شعر سعدی ساخته شد؟",
+    "answers": ["همه موارد", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام سبک موسیقی ایرانی از غرب آمده؟",
+    "answers": ["پاپ", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام سبک موسیقی ایرانی سنتی است؟",
+    "answers": ["ردیف", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "ردیف موسیقی ایرانی چند دستگاه دارد؟",
+    "answers": ["۷", "همه موارد", "همه موارد", "۱۲"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "دستگاه‌های موسیقی ایرانی کدامند؟",
+    "answers": ["شور، ماهور، همایون، سه‌گاه، چهارگاه، نوا، راست‌پنجگاه", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام دستگاه موسیقی ایرانی معروف‌ترین است؟",
+    "answers": ["شور", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آواز موسیقی ایرانی از شور است؟",
+    "answers": ["ابوعطا", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام آواز موسیقی ایرانی از ماهور است؟",
+    "answers": ["داد", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام ردیف موسیقی ایرانی توسط میرزاعبدالله ثبت شد؟",
+    "answers": ["میرزاعبدالله", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام موسیقی‌دان ایرانی ردیف را ثبت کرد؟",
+    "answers": ["میرزاعبدالله", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام آهنگ برای عید نوروز معروف است؟",
+    "answers": ["نوروز", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده آهنگ نوروز را خوانده؟",
+    "answers": ["همه موارد", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام ساز برای نوروز نواخته می‌شود؟",
+    "answers": ["همه موارد", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام سبک موسیقی برای رقص است؟",
+    "answers": ["همه موارد", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام سبک موسیقی برای آرامش است؟",
+    "answers": ["کلاسیک", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ برای مطالعه معروف است؟",
+    "answers": ["موسیقی بی‌کلام", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام سبک موسیقی بی‌کلام است؟",
+    "answers": ["کلاسیک", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ‌ساز ایرانی معروف است؟",
+    "answers": ["مرتضی حنانه", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام آهنگ‌ساز ایرانی معروف به «پدر موسیقی نوین» است؟",
+    "answers": ["علینقی وزیری", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام آهنگ‌ساز ایرانی بنیان‌گذار هنرستان موسیقی است؟",
+    "answers": ["علینقی وزیری", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام آهنگ‌ساز ایرانی معروف به «خالق مرغ سحر» است؟",
+    "answers": ["مرتضی نیداوود", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام آهنگ‌ساز ایرانی معروف به «پدر موسیقی ایرانی» است؟",
+    "answers": ["علینقی وزیری", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام موسیقی‌دان ایرانی معروف به «شجریان زمانه» است؟",
+    "answers": ["همایون شجریان", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام موسیقی‌دان ایرانی معروف به «استاد آواز» است؟",
+    "answers": ["محمدرضا شجریان", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام خواننده پاپ ایرانی در خارج از کشور معروف است؟",
+    "answers": ["گوگوش", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده پاپ ایرانی در لس‌آنجلس معروف است؟",
+    "answers": ["داریوش", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده پاپ ایرانی در ایران معروف است؟",
+    "answers": ["محسن یگانه", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام خواننده پاپ ایرانی در اروپا معروف است؟",
+    "answers": ["سی", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام خواننده پاپ ایرانی در کانادا معروف است؟",
+    "answers": ["گوگوش", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام خواننده پاپ ایرانی جدید است؟",
+    "answers": ["ماکان بند", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام گروه پاپ ایرانی جدید معروف است؟",
+    "answers": ["ماکان بند", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده پاپ ایرانی جوان معروف است؟",
+    "answers": ["علی زند وکیلی", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده پاپ ایرانی سنتی معروف است؟",
+    "answers": ["سالار عقیلی", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام خواننده موسیقی تلفیقی معروف است؟",
+    "answers": ["همایون شجریان", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ درباره وطن معروف است؟",
+    "answers": ["ایران", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام آهنگ درباره مادر معروف است؟",
+    "answers": ["مادر", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام آهنگ درباره پدر معروف است؟",
+    "answers": ["پدر", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  }
+]
+
 
