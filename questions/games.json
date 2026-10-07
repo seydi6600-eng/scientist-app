@@ -1,1 +1,2730 @@
-
+[
+  {
+    "question": "کدام شرکت بازی «The Legend of Zelda» را می‌سازد؟",
+    "answers": ["Nintendo", "Sony", "Microsoft", "Sega"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "شخصیت اصلی بازی «Super Mario» چه نام دارد؟",
+    "answers": ["Mario", "Luigi", "Wario", "Yoshi"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "در بازی «Minecraft»، ابزار اصلی برای کندن سنگ چیست؟",
+    "answers": ["کلنگ", "بیل", "تبر", "شمشیر"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «Battle Royale» در سال ۲۰۱۷ منتشر شد؟",
+    "answers": ["Fortnite", "PUBG", "Apex Legends", "Warzone"],
+    "correct": 1,
+    "difficulty": "easy"
+  },
+  {
+    "question": "شخصیت «Master Chief» قهرمان کدام سری بازی است؟",
+    "answers": ["Halo", "Gears of War", "Doom", "Destiny"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی در دسته «شبیه‌ساز زندگی» قرار می‌گیرد؟",
+    "answers": ["The Sims", "GTA", "Skyrim", "Fallout"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "در بازی «Among Us»، تعداد معمول بازیکنان چند نفر است؟",
+    "answers": ["۴ تا ۱۵", "۲ تا ۶", "۲۰ تا ۳۰", "۵ تا ۸"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام شرکت سازنده کنسول «PlayStation» است؟",
+    "answers": ["Sony", "Microsoft", "Nintendo", "Atari"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «Creeper» دارد؟",
+    "answers": ["Minecraft", "Roblox", "Terraria", "Fortnite"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "شخصیت «Sonic» چه نوع حیوانی است؟",
+    "answers": ["جوجه‌تیغی", "خرگوش", "روباه", "موش"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی اولین بار مفهوم «Loot Box» را محبوب کرد؟",
+    "answers": ["Overwatch", "FIFA", "Call of Duty", "Dota 2"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Dark Souls»، درجه سختی اصلی بازی چگونه تغییر می‌کند؟",
+    "answers": ["قابل تنظیم نیست", "با انتخاب درجه", "با Mod", "با DLC"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام استودیو بازی «The Witcher 3» را ساخت؟",
+    "answers": ["CD Projekt Red", "Bethesda", "Ubisoft", "Rockstar"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "شخصیت «Kratos» قهرمان کدام سری بازی است؟",
+    "answers": ["God of War", "Devil May Cry", "Bayonetta", "Dante's Inferno"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Elden Ring» توسط کدام کارگردان ساخته شد؟",
+    "answers": ["Hidetaka Miyazaki", "Hideo Kojima", "Yoko Taro", "Shigeru Miyamoto"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی بیشترین فروش تاریخ را در دسته «پرفروش‌ترین بازی ویدئویی» دارد؟",
+    "answers": ["Minecraft", "GTA V", "Tetris", "Wii Sports"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Cyberpunk 2077»، شهر اصلی بازی چه نام دارد؟",
+    "answers": ["Night City", "Los Santos", "Neo Tokyo", "Liberty City"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی سال ۲۰۲۳ جایزه «Game of the Year» را برد؟",
+    "answers": ["Baldur's Gate 3", "Zelda: Tears of the Kingdom", "Alan Wake 2", "Spider-Man 2"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Red Dead Redemption 2»، اسم اسب اصلی آرتور چیست؟",
+    "answers": ["قابل انتخاب توسط بازیکن", "Boadicea", "Silver", "Trigger"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Souls-like» نیست؟",
+    "answers": ["Hollow Knight", "Nioh", "Bloodborne", "Sekiro"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «The Last of Us»، اسم دختر همراه جوئل چیست؟",
+    "answers": ["Ellie", "Abby", "Sarah", "Tess"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی از موتور گرافیکی «Unreal Engine 5» استفاده می‌کند؟",
+    "answers": ["Fortnite", "Minecraft", "CS2", "Dota 2"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "شخصیت «Geralt of Rivia» در کدام بازی است؟",
+    "answers": ["The Witcher", "Elder Scrolls", "Dragon Age", "Dark Souls"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام سری بازی در دنیای «Hyrule» می‌گذرد؟",
+    "answers": ["The Legend of Zelda", "Fire Emblem", "Pokémon", "Metroid"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "بازی «Tetris» توسط چه کسی ساخته شد؟",
+    "answers": ["Alexey Pajitnov", "Shigeru Miyamoto", "Hideo Kojima", "Will Wright"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Counter-Strike»، تیم تروریست‌ها با چه هدفی بازی می‌کنند؟",
+    "answers": ["کاشتن بمب یا گروگان‌گیری", "دفاع از پایگاه", "نجات گروگان فقط", "تصرف پرچم"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی از موتور «Source 2» استفاده می‌کند؟",
+    "answers": ["Dota 2", "Minecraft", "GTA V", "Overwatch"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "استودیوی «Rockstar Games» زیرمجموعه کدام شرکت است؟",
+    "answers": ["Take-Two Interactive", "Activision", "EA", "Ubisoft"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در «Portal 2»، اسم ربات همراه بازیکن چیست؟",
+    "answers": ["Wheatley", "GLaDOS", "Atlas", "P-Body"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی اولین «Battle Royale» تاریخ محسوب می‌شود؟",
+    "answers": ["PlayerUnknown's Battlegrounds (PUBG)", "Fortnite", "H1Z1", "DayZ"],
+    "correct": 2,
+    "difficulty": "hard"
+  },
+  {
+    "question": "بازی «Half-Life 3» تا امروز چه وضعیتی دارد؟",
+    "answers": ["هرگز منتشر نشده", "در سال ۲۰۲۰ منتشر شد", "لغو رسمی شد", "فقط نسخه VR دارد"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام شرکت سازنده موتور گرافیکی «CryEngine» است؟",
+    "answers": ["Crytek", "Epic Games", "Unity", "Valve"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در «Final Fantasy VII»، اسم شخصیت اصلی چیست؟",
+    "answers": ["Cloud Strife", "Squall Leonhart", "Tidus", "Zidane"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی جزو «سه‌گانه اصلی» Nintendo محسوب نمی‌شود؟",
+    "answers": ["Metroid", "Mario", "Zelda", "Pokémon"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "بازی «Silent Hill 2» توسط کدام تیم ساخته شد؟",
+    "answers": ["Team Silent", "Konami Tokyo", "Kojima Productions", "Capcom"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در «Metal Gear Solid»، اسم شخصیت اصلی چیست؟",
+    "answers": ["Solid Snake", "Big Boss", "Raiden", "Liquid Snake"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی اولین بار مفهوم «Open World» مدرن را جا انداخت؟",
+    "answers": ["Grand Theft Auto III", "The Elder Scrolls II", "Ultima", "Zelda: Ocarina of Time"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «رکورد طولانی‌ترین Development» است؟",
+    "answers": ["Duke Nukem Forever", "Half-Life 3", "Star Citizen", "Final Fantasy XV"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "بازی «Doom» اولین بار در چه سالی منتشر شد؟",
+    "answers": ["۱۹۹۳", "۱۹۹۵", "۱۹۹۰", "۱۹۹۸"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی «Battle Royale» در سال ۲۰۱۹ توسط Respawn منتشر شد؟",
+    "answers": ["Apex Legends", "Fortnite", "Warzone", "PUBG"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «GTA V»، کدام شخصیت یک خلافکار بازنشسته است؟",
+    "answers": ["Michael", "Franklin", "Trevor", "Lamar"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی از سبک «Roguelike» است؟",
+    "answers": ["Hades", "Skyrim", "Witcher 3", "GTA V"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «League of Legends»، اسم نقش «پشتیبان» چیست؟",
+    "answers": ["Support", "Carry", "Jungler", "Mid"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "بازی «Valorant» توسط کدام شرکت ساخته شده؟",
+    "answers": ["Riot Games", "Valve", "Blizzard", "Ubisoft"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «Skyrim» در سال ۲۰۱۱ منتشر شد؟",
+    "answers": ["The Elder Scrolls V: Skyrim", "Oblivion", "Morrowind", "Daggerfall"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "در «Pokémon»، اولین نسخه‌های بازی کدام بودند؟",
+    "answers": ["Red و Green", "Gold و Silver", "Ruby و Sapphire", "Diamond و Pearl"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «پدر بازی‌های FPS مدرن» است؟",
+    "answers": ["Doom", "Wolfenstein 3D", "Quake", "Half-Life"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در «Overwatch»، چند نقش اصلی وجود دارد؟",
+    "answers": ["۳ (Tank, Damage, Support)", "۲", "۴", "۵"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف در دنیای «Wasteland» می‌گذرد؟",
+    "answers": ["Fallout", "Borderlands", "Metro", "Rage"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام شخصیت در «Smash Bros» وجود ندارد؟",
+    "answers": ["Master Chief", "Mario", "Pikachu", "Link"],
+    "correct": 0,
+    "difficulty": "medium"
+  }
+,
+  {
+    "question": "کدام بازی معروف به «Puzzle-Platformer» در سال ۲۰۱۸ منتشر شد و برنده جوایز شد؟",
+    "answers": ["Celeste", "Hollow Knight", "Dead Cells", "Ori 2"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Hollow Knight»، شخصیت اصلی چه نام دارد؟",
+    "answers": ["The Knight", "Hornet", "The Hollow Knight", "Grimm"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Dead Cells» توسط کدام استودیو ساخته شد؟",
+    "answers": ["Motion Twin", "Supergiant", "Team Cherry", "Playdead"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Roguelike Deck-Builder» است؟",
+    "answers": ["Slay the Spire", "Hades", "Dead Cells", "Enter the Gungeon"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Slay the Spire»، هدف اصلی بازیکن چیست؟",
+    "answers": ["صعود از برج و کشتن قلب", "نجات شاهزاده", "فرار از زندان", "ساختن شهر"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Baba Is You» در چه سبکی است؟",
+    "answers": ["پازل تغییر قوانین", "اکشن", "شوتر", "RPG"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Walking Simulator» است؟",
+    "answers": ["Dear Esther", "Firewatch", "What Remains of Edith Finch", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Firewatch» در کدام ایالت آمریکا می‌گذرد؟",
+    "answers": ["وایومینگ", "کلرادو", "مونتانا", "آریزونا"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در «What Remains of Edith Finch»، هر داستان چه چیزی را روایت می‌کند؟",
+    "answers": ["سرنوشت یکی از اعضای خانواده", "تاریخ آمریکا", "سفر به فضا", "جنگ جهانی"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Immersive Sim» است؟",
+    "answers": ["Deus Ex", "System Shock", "Prey", "همه موارد"],
+    "correct": 3,
+    "difficulty": "hard"
+  },
+  {
+    "question": "بازی «Dishonored» توسط کدام استودیو ساخته شد؟",
+    "answers": ["Arkane Studios", "Irrational Games", "Looking Glass", "Eidos"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در «BioShock»، شهر زیر آب چه نام دارد؟",
+    "answers": ["Rapture", "Columbia", "Arcadia", "Poseidon"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «BioShock Infinite» در چه شهری می‌گذرد؟",
+    "answers": ["Columbia", "Rapture", "Liberty", "Avalon"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Time Loop» است؟",
+    "answers": ["Outer Wilds", "Majora's Mask", "The Sexy Brutale", "همه موارد"],
+    "correct": 3,
+    "difficulty": "hard"
+  },
+  {
+    "question": "بازی «Outer Wilds» توسط کدام استودیو ساخته شد؟",
+    "answers": ["Mobius Digital", "Annapurna", "Playdead", "Thatgamecompany"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "بازی «Journey» در چه سبکی است؟",
+    "answers": ["ماجراجویی هنری", "اکشن", "شوتر", "ترسناک"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "«Journey» توسط کدام استودیو ساخته شد؟",
+    "answers": ["thatgamecompany", "Annapurna", "Playdead", "Supergiant"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "بازی «Flower» درباره چیست؟",
+    "answers": ["باد کنترل گل‌ها", "رشد گیاهان", "پرواز پرنده", "سفر به فضا"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Side-Scroller» است؟",
+    "answers": ["Limbo", "Inside", "Little Nightmares", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Limbo» توسط کدام استودیو ساخته شد؟",
+    "answers": ["Playdead", "Thatgamecompany", "Supergiant", "Team Cherry"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در «Little Nightmares»، شخصیت اصلی چه نام دارد؟",
+    "answers": ["Six", "Mono", "Rain", "Nomes"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Survival Horror Co-op» است؟",
+    "answers": ["Phasmophobia", "Dead by Daylight", "Left 4 Dead", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Dead by Daylight»، تعداد قاتل‌ها در هر مسابقه چند نفر است؟",
+    "answers": ["۱", "۲", "۳", "۴"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «Asymmetric Multiplayer» است؟",
+    "answers": ["Dead by Daylight", "Friday the 13th", "Evolve", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Phasmophobia» توسط چند نفر قابل بازی است؟",
+    "answers": ["۱ تا ۴ نفر", "فقط ۱ نفر", "۲ نفر", "۵ نفر"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Party Game» است؟",
+    "answers": ["Mario Party", "Fall Guys", "Among Us", "همه موارد"],
+    "correct": 3,
+    "difficulty": "easy"
+  },
+  {
+    "question": "بازی «Fall Guys» در چه سالی منتشر شد؟",
+    "answers": ["۲۰۲۰", "۲۰۱۸", "۲۰۲۲", "۲۰۱۹"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Fall Guys»، حداکثر چند بازیکن در هر مسابقه شرکت می‌کنند؟",
+    "answers": ["۶۰", "۴۰", "۱۰۰", "۲۰"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Auto Chess» است؟",
+    "answers": ["Dota Auto Chess", "Teamfight Tactics", "Dota Underlords", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Teamfight Tactics»، هر تیم چند یونیت دارد؟",
+    "answers": ["قابل تنظیم (معمولاً ۱ تا ۹)", "همیشه ۵", "همیشه ۳", "همیشه ۶"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Extraction Shooter» است؟",
+    "answers": ["Escape from Tarkov", "Hunt: Showdown", "The Cycle", "همه موارد"],
+    "correct": 3,
+    "difficulty": "hard"
+  },
+  {
+    "question": "بازی «Escape from Tarkov» در چه کشوری ساخته شده؟",
+    "answers": ["روسیه", "آمریکا", "آلمان", "ژاپن"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Tactical Shooter» است؟",
+    "answers": ["Rainbow Six Siege", "CS:GO", "Valorant", "همه موارد"],
+    "correct": 3,
+    "difficulty": "easy"
+  },
+  {
+    "question": "در «Rainbow Six Siege»، تعداد اپراتورها در هر تیم چند نفر است؟",
+    "answers": ["۵", "۳", "۴", "۶"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «Hero Shooter» است؟",
+    "answers": ["Overwatch", "Paladins", "Battleborn", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Overwatch»، شخصیت «Tracer» چه توانایی خاصی دارد؟",
+    "answers": ["سفر در زمان", "پرواز", "نامرئی شدن", "یخ زدن"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «MOBA» است؟",
+    "answers": ["Dota 2", "League of Legends", "Smite", "همه موارد"],
+    "correct": 3,
+    "difficulty": "easy"
+  },
+  {
+    "question": "در «League of Legends»، چند لاین اصلی وجود دارد؟",
+    "answers": ["۳ (Top, Mid, Bot)", "۲", "۴", "۵"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Real-Time Strategy» است؟",
+    "answers": ["StarCraft", "Age of Empires", "Command & Conquer", "همه موارد"],
+    "correct": 3,
+    "difficulty": "easy"
+  },
+  {
+    "question": "در «StarCraft»، سه نژاد اصلی چه هستند؟",
+    "answers": ["Terran, Zerg, Protoss", "Human, Orc, Elf", "Fire, Water, Earth", "Red, Blue, Green"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Age of Empires» در چه دوره تاریخی می‌گذرد؟",
+    "answers": ["از عصر حجر تا قرون وسطی", "جنگ جهانی", "آینده", "مصر باستان"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Turn-Based Strategy» است؟",
+    "answers": ["Civilization", "XCOM", "Total War (نبردها)", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Civilization»، هدف اصلی بازیکن چیست؟",
+    "answers": ["رهبری تمدن به پیروزی", "کشتن دشمنان", "ساختن شهر", "کشف فضا"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «Grand Strategy» است؟",
+    "answers": ["Crusader Kings", "Europa Universalis", "Hearts of Iron", "همه موارد"],
+    "correct": 3,
+    "difficulty": "hard"
+  },
+  {
+    "question": "بازی «Crusader Kings III» توسط کدام استودیو ساخته شد؟",
+    "answers": ["Paradox Interactive", "Firaxis", "Creative Assembly", "Relic"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «City Builder» است؟",
+    "answers": ["Cities: Skylines", "SimCity", "Anno", "همه موارد"],
+    "correct": 3,
+    "difficulty": "easy"
+  },
+  {
+    "question": "در «Cities: Skylines»، بازی توسط کدام استودیو ساخته شد؟",
+    "answers": ["Colossal Order", "Maxis", "Paradox", "Ubisoft"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Farming Simulator» است؟",
+    "answers": ["Stardew Valley", "Farming Simulator", "Harvest Moon", "همه موارد"],
+    "correct": 3,
+    "difficulty": "easy"
+  },
+  {
+    "question": "در «Stardew Valley»، بازیکن چه چیزی را به ارث می‌برد؟",
+    "answers": ["مزرعه پدربزرگ", "کارخانه", "کشتی", "قلعه"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «Life Simulation» است؟",
+    "answers": ["The Sims", "Animal Crossing", "Stardew Valley", "همه موارد"],
+    "correct": 3,
+    "difficulty": "easy"
+  },
+  {
+    "question": "بازی «The Sims» توسط کدام طراح معروف ساخته شد؟",
+    "answers": ["Will Wright", "Sid Meier", "Peter Molyneux", "Hideo Kojima"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «4X Strategy» است؟",
+    "answers": ["Civilization", "Endless Space", "Stellaris", "همه موارد"],
+    "correct": 3,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در «Stellaris»، بازیکن چه چیزی را کنترل می‌کند؟",
+    "answers": ["یک امپراتوری فضایی", "یک شهر", "یک کشور", "یک سیاره"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Space Sim» است؟",
+    "answers": ["Elite Dangerous", "Star Citizen", "No Man's Sky", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «No Man's Sky» در چه سالی منتشر شد؟",
+    "answers": ["۲۰۱۶", "۲۰۱۴", "۲۰۱۸", "۲۰۲۰"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «No Man's Sky» توسط کدام استودیو ساخته شد؟",
+    "answers": ["Hello Games", "Frontier", "Cloud Imperium", "Bethesda"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Space Horror» است؟",
+    "answers": ["Dead Space", "Alien: Isolation", "Prey", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Dead Space»، سلاح اصلی آیزاک چیست؟",
+    "answers": ["Plasma Cutter", "Pulse Rifle", "Line Gun", "Flamethrower"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Alien: Isolation» بر اساس کدام فیلم ساخته شد؟",
+    "answers": ["Alien (1979)", "Aliens (1986)", "Alien 3", "Prometheus"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Superhero Game» است؟",
+    "answers": ["Batman: Arkham", "Spider-Man (Marvel)", "Injustice", "همه موارد"],
+    "correct": 3,
+    "difficulty": "easy"
+  },
+  {
+    "question": "بازی «Batman: Arkham Asylum» توسط کدام استودیو ساخته شد؟",
+    "answers": ["Rocksteady", "WB Montreal", "Monolith", "Volition"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در «Marvel's Spider-Man» (۲۰۱۸)، پیتر پارکر چند سال دارد؟",
+    "answers": ["۲۳", "۱۷", "۳۰", "۲۰"],
+    "correct": 0,
+    "difficulty": "hard"
+  }
+,
+  {
+    "question": "در «God of War Ragnarök»، کدام شخصیت نقش antagonist اصلی را دارد؟",
+    "answers": ["Odin", "Thor", "Baldur", "Freya"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی برنده «Game of the Year 2022» شد؟",
+    "answers": ["Elden Ring", "God of War Ragnarök", "Horizon Forbidden West", "Stray"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Elden Ring»، چند «Demigod» اصلی در بازی وجود دارد؟",
+    "answers": ["۶", "۴", "۸", "۵"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "شخصیت «Melina» در «Elden Ring» چه نقشی دارد؟",
+    "answers": ["راهنمای بازیکن", "باس نهایی", "دشمن اصلی", "تاجر"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Soulsborne» نیست؟",
+    "answers": ["Nioh", "Bloodborne", "Dark Souls", "Elden Ring"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در «Sekiro»، شخصیت اصلی چه نام دارد؟",
+    "answers": ["Wolf", "Sekiro", "Kuro", "Genichiro"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Bloodborne» توسط کدام استودیو ساخته شد؟",
+    "answers": ["FromSoftware", "Japan Studio", "Team Ninja", "PlatinumGames"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Bloodborne»، شهر اصلی بازی چه نام دارد؟",
+    "answers": ["Yharnam", "Lordran", "Drangleic", "Lothric"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Puzzle Horror» است؟",
+    "answers": ["Resident Evil", "Silent Hill", "The Evil Within", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Silent Hill 2»، شخصیت اصلی چه نام دارد؟",
+    "answers": ["James Sunderland", "Harry Mason", "Heather", "Henry"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Survival Craft» است؟",
+    "answers": ["The Forest", "Green Hell", "Raft", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Subnautica»، بازیکن روی کدام سیاره سقوط می‌کند؟",
+    "answers": ["4546B", "Kepler-22b", "Proxima B", "Pandora"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Underwater Survival» است؟",
+    "answers": ["Subnautica", "Stranded Deep", "Raft", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Rust»، هدف اصلی بازیکن چیست؟",
+    "answers": ["بقا و ساخت پایگاه", "نجات گروگان", "شکار گنج", "کشتن باس"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «MMO Survival» است؟",
+    "answers": ["Rust", "ARK", "DayZ", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «ARK: Survival Evolved»، چه چیزی در بازی رام می‌شود؟",
+    "answers": ["دایناسورها", "اژدها", "ربات‌ها", "هیولاها"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «Zombie Survival» است؟",
+    "answers": ["DayZ", "Project Zomboid", "7 Days to Die", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «The Last of Us»، بازی توسط کدام استودیو ساخته شد؟",
+    "answers": ["Naughty Dog", "Santa Monica", "Insomniac", "Guerrilla"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "شخصیت «Ellie» در کدام دو بازی حضور دارد؟",
+    "answers": ["The Last of Us 1 و 2", "Uncharted 1 و 2", "Tomb Raider 1 و 2", "Horizon 1 و 2"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «Cinematic Action» است؟",
+    "answers": ["Uncharted 4", "The Last of Us", "God of War", "همه موارد"],
+    "correct": 3,
+    "difficulty": "easy"
+  },
+  {
+    "question": "در «Uncharted 4»، اسم برادر نیتن دریک چیست؟",
+    "answers": ["Sam", "Elena", "Sully", "Nate Jr."],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Ghost of Tsushima» در چه دوره تاریخی می‌گذرد؟",
+    "answers": ["قرن ۱۳ میلادی", "قرن ۱۰", "قرن ۱۶", "قرن ۸"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در «Ghost of Tsushima»، جزیره اصلی چه نام دارد؟",
+    "answers": ["Tsushima", "Kyushu", "Okinawa", "Honshu"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Samurai Action» است؟",
+    "answers": ["Nioh", "Sekiro", "Ghost of Tsushima", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Ninja Action» است؟",
+    "answers": ["Ninja Gaiden", "Nioh", "Sekiro", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Horizon Zero Dawn» توسط کدام استودیو ساخته شد؟",
+    "answers": ["Guerrilla Games", "Naughty Dog", "Insomniac", "Santa Monica"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Horizon»، شخصیت اصلی چه نام دارد؟",
+    "answers": ["Aloy", "Sylens", "Rost", "Erend"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "در «Horizon»، دشمنان اصلی بازی چه هستند؟",
+    "answers": ["ربات‌های دایناسوری", "زامبی‌ها", "بیگانگان", "اژدهایان"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «Post-Apocalyptic RPG» است؟",
+    "answers": ["Fallout", "Wasteland", "Metro", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Fallout 4»، اسم سگ همراه بازیکن چیست؟",
+    "answers": ["Dogmeat", "Rex", "K9", "Cerberus"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Open World Zombie» است؟",
+    "answers": ["Days Gone", "Dying Light", "State of Decay", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Dying Light»، در روز چه تفاوتی با شب وجود دارد؟",
+    "answers": ["زامبی‌ها در شب قوی‌ترن", "زامبی‌ها در روز قوی‌ترن", "تفاوتی نداره", "فقط در شب زامبی هست"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Parkour Action» است؟",
+    "answers": ["Mirror's Edge", "Dying Light", "Titanfall", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Mirror's Edge»، شخصیت اصلی چه نام دارد؟",
+    "answers": ["Faith", "Kate", "Celeste", "Icarus"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Mecha Action» است؟",
+    "answers": ["Titanfall", "Armored Core", "Zone of the Enders", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Titanfall 2»، اسم تایتان اصلی بازیکن چیست؟",
+    "answers": ["BT-7274", "Atlas", "Ogre", "Stryder"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Hero Shooter» توسط Blizzard ساخته شد؟",
+    "answers": ["Overwatch", "Paladins", "Battleborn", "Valorant"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "در «Overwatch»، شخصیت اصلی «Mercy» چه نقشی دارد؟",
+    "answers": ["Support (Healer)", "Tank", "Damage", "Sniper"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «Roguelike Shooter» است؟",
+    "answers": ["Risk of Rain 2", "Enter the Gungeon", "Gunfire Reborn", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Enter the Gungeon»، بازیکن به دنبال چه چیزی است؟",
+    "answers": ["تفنگ افسانه‌ای", "گنج", "شاهزاده", "فرار"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Vampire Survivors»-style است؟",
+    "answers": ["Brotato", "Vampire Survivors", "Halls of Torment", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Vampire Survivors» در چه سبکی است؟",
+    "answers": ["Auto-shooter Roguelike", "Turn-based RPG", "Platformer", "Puzzle"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Bullet Heaven» است؟",
+    "answers": ["Vampire Survivors", "Brotato", "20 Minutes Till Dawn", "همه موارد"],
+    "correct": 3,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Metroidvania» و ساخته Team Cherry است؟",
+    "answers": ["Hollow Knight", "Ori", "Blasphemous", "Dead Cells"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Hollow Knight»، اسم پادشاهی اصلی چیست؟",
+    "answers": ["Hallownest", "Hollownest", "Deepnest", "City of Tears"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Platformer» ساخته Nintendo است؟",
+    "answers": ["Super Mario Odyssey", "Donkey Kong", "Kirby", "همه موارد"],
+    "correct": 3,
+    "difficulty": "easy"
+  },
+  {
+    "question": "در «Super Mario Odyssey»، کلاه همراه ماریو چه نام دارد؟",
+    "answers": ["Cappy", "Tiara", "Bowser Jr.", "Toad"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Zelda: Breath of the Wild» در چه سالی منتشر شد؟",
+    "answers": ["۲۰۱۷", "۲۰۱۵", "۲۰۱۹", "۲۰۲۰"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Breath of the Wild»، چند «Divine Beast» وجود دارد؟",
+    "answers": ["۴", "۳", "۵", "۶"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Zelda: Tears of the Kingdom» در چه سالی منتشر شد؟",
+    "answers": ["۲۰۲۳", "۲۰۲۱", "۲۰۲۲", "۲۰۲۴"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Tears of the Kingdom»، قابلیت اصلی لینک چیست؟",
+    "answers": ["ساختن وسایل و Ultrahand", "پرواز", "سفر در زمان", "تغییر شکل"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Pokémon Open World» است؟",
+    "answers": ["Pokémon Legends: Arceus", "Pokémon Scarlet", "Pokémon Sword", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Pokémon»، چند نوع (Type) اصلی وجود دارد؟",
+    "answers": ["۱۸", "۱۲", "۱۵", "۲۰"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Monster Catching» است؟",
+    "answers": ["Pokémon", "Digimon", "Yo-Kai Watch", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Palworld» در چه سبکی است؟",
+    "answers": ["Survival + Monster Catching", "FPS", "RPG نوبتی", "Puzzle"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Turn-Based RPG ژاپنی» است؟",
+    "answers": ["Persona 5", "Dragon Quest XI", "Final Fantasy VII", "همه موارد"],
+    "correct": 3,
+    "difficulty": "easy"
+  },
+  {
+    "question": "در «Persona 5»، شخصیت اصلی چه نام دارد؟",
+    "answers": ["Joker", "Skull", "Panther", "Fox"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Persona 5» توسط کدام استودیو ساخته شد؟",
+    "answers": ["Atlus", "Square Enix", "Bandai Namco", "Capcom"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Action RPG ژاپنی» است؟",
+    "answers": ["Nier: Automata", "Devil May Cry 5", "Bayonetta", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Nier: Automata»، شخصیت اصلی چه نام دارد؟",
+    "answers": ["2B", "9S", "A2", "Adam"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Nier: Automata» توسط کدام کارگردان ساخته شد؟",
+    "answers": ["Yoko Taro", "Hideo Kojima", "Hidetaka Miyazaki", "Tetsuya Nomura"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Stylish Action» است؟",
+    "answers": ["Devil May Cry", "Bayonetta", "Metal Gear Rising", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Devil May Cry 5»، سه شخصیت قابل بازی چه کسانی هستند؟",
+    "answers": ["Nero, Dante, V", "Nero, Vergil, Trish", "Dante, Lady, Trish", "V, Vergil, Nero"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "بازی «Bayonetta» توسط کدام استودیو ساخته شد؟",
+    "answers": ["PlatinumGames", "Capcom", "Konami", "Square Enix"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Hack and Slash» است؟",
+    "answers": ["God of War", "Devil May Cry", "Bayonetta", "همه موارد"],
+    "correct": 3,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «Souls-Like 2D» است؟",
+    "answers": ["Salt and Sanctuary", "Blasphemous", "Hollow Knight", "همه موارد"],
+    "correct": 3,
+    "difficulty": "hard"
+  },
+  {
+    "question": "بازی «Blasphemous» در چه فضایی می‌گذرد؟",
+    "answers": ["دنیای گوتیک مذهبی", "فضا", "ژاپن فئودال", "مصر باستان"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Pixel Art Platformer» است؟",
+    "answers": ["Celeste", "Hollow Knight", "Dead Cells", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Celeste»، شخصیت اصلی چه نام دارد؟",
+    "answers": ["Madeline", "Theo", "Badeline", "Mr. Oshiro"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Precision Platformer» است؟",
+    "answers": ["Super Meat Boy", "Celeste", "The End Is Nigh", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Rhythm Platformer» است؟",
+    "answers": ["Geometry Dash", "Rhythm Doctor", "A Dance of Fire and Ice", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Bullet Hell» است؟",
+    "answers": ["Touhou", "Ikaruga", "Enter the Gungeon", "همه موارد"],
+    "correct": 3,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در «Ikaruga»، مکانیک اصلی بازی چیست؟",
+    "answers": ["تغییر رنگ سفید/سیاه", "جمع‌آوری سکه", "پرش", "شلیک موشک"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Shoot 'em up» است؟",
+    "answers": ["Gradius", "R-Type", "Raiden", "همه موارد"],
+    "correct": 3,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Fighting Game» ساخته Capcom است؟",
+    "answers": ["Street Fighter", "Marvel vs Capcom", "Darkstalkers", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Street Fighter»، شخصیت «Chun-Li» از کدام کشور است؟",
+    "answers": ["چین", "ژاپن", "کره", "تایلند"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Tekken» توسط کدام شرکت ساخته شد؟",
+    "answers": ["Bandai Namco", "Capcom", "SNK", "Sega"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Tekken»، شخصیت «Kazuya» چه رابطه‌ای با «Jin» دارد؟",
+    "answers": ["پدر", "برادر", "عمو", "پسرعمو"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Fighting Game» ساخته NetherRealm است؟",
+    "answers": ["Mortal Kombat", "Injustice", "همه موارد", "Killer Instinct"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Mortal Kombat»، شخصیت «Scorpion» از چه قبیله‌ای است؟",
+    "answers": ["Shirai Ryu", "Lin Kuei", "Black Dragon", "White Lotus"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Platform Fighter» است؟",
+    "answers": ["Super Smash Bros", "Brawlhalla", "MultiVersus", "همه موارد"],
+    "correct": 3,
+    "difficulty": "easy"
+  },
+  {
+    "question": "در «Super Smash Bros Ultimate»، چند شخصیت قابل بازی وجود دارد؟",
+    "answers": ["بیش از ۸۰", "بیش از ۵۰", "بیش از ۱۰۰", "بیش از ۴۰"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «MOBA» ساخته Riot است؟",
+    "answers": ["League of Legends", "Teamfight Tactics", "Valorant", "همه موارد"],
+    "correct": 3,
+    "difficulty": "easy"
+  },
+  {
+    "question": "در «League of Legends»، چند چمپیون وجود دارد (تقریباً)؟",
+    "answers": ["بیش از ۱۶۰", "بیش از ۱۰۰", "بیش از ۲۰۰", "بیش از ۸۰"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Battle Royale» ساخته Respawn است؟",
+    "answers": ["Apex Legends", "Titanfall", "Star Wars Jedi", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Apex Legends»، حداکثر چند نفر در یک squad هستند؟",
+    "answers": ["۳", "۴", "۲", "۵"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «Hero Battle Royale» است؟",
+    "answers": ["Apex Legends", "Fortnite", "Warzone", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Extraction Shooter» ساخته Battlestate است؟",
+    "answers": ["Escape from Tarkov", "Hunt: Showdown", "The Cycle", "همه موارد"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Tactical FPS» ساخته Ubisoft است؟",
+    "answers": ["Rainbow Six Siege", "Ghost Recon", "The Division", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Rainbow Six Siege»، هر اپراتور چند توانایی خاص دارد؟",
+    "answers": ["۱ اصلی + پسیو", "۲", "۳", "۴"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Military Simulator» است؟",
+    "answers": ["Arma", "Squad", "Hell Let Loose", "همه موارد"],
+    "correct": 3,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «World War II FPS» است؟",
+    "answers": ["Call of Duty WWII", "Battlefield V", "Hell Let Loose", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Modern Military FPS» است؟",
+    "answers": ["Call of Duty", "Battlefield", "Medal of Honor", "همه موارد"],
+    "correct": 3,
+    "difficulty": "easy"
+  },
+  {
+    "question": "بازی «Call of Duty: Modern Warfare» (۲۰۱۹) توسط کدام استودیو ساخته شد؟",
+    "answers": ["Infinity Ward", "Treyarch", "Sledgehammer", "Raven"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Futuristic FPS» است؟",
+    "answers": ["Halo", "Titanfall", "Destiny", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Halo» توسط کدام استودیو ساخته شد؟",
+    "answers": ["Bungie (اصلی)", "343 Industries", "همه موارد", "Ensemble"],
+    "correct": 2,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در «Halo»، شخصیت اصلی چه نام دارد؟",
+    "answers": ["Master Chief", "Cortana", "Arbiter", "Johnson"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «Looter Shooter» ساخته Bungie است؟",
+    "answers": ["Destiny", "Borderlands", "The Division", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Borderlands»، سبک گرافیکی بازی چگونه است؟",
+    "answers": ["سل‌شیدینگ", "پیکسلی", "سه‌بعدی واقع‌گرایانه", "آنیمه"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Looter Shooter» ساخته Gearbox است؟",
+    "answers": ["Borderlands", "Battleborn", "Duke Nukem", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «FPS-RPG» ساخته Bethesda است؟",
+    "answers": ["Fallout", "Starfield", "The Elder Scrolls", "همه موارد"],
+    "correct": 3,
+    "difficulty": "easy"
+  },
+  {
+    "question": "بازی «Starfield» در چه سالی منتشر شد؟",
+    "answers": ["۲۰۲۳", "۲۰۲۱", "۲۰۲۴", "۲۰۲۲"],
+    "correct": 0,
+    "difficulty": "medium"
+  }
+,
+  {
+    "question": "کدام بازی معروف به «Open World Racing» است؟",
+    "answers": ["Forza Horizon", "Need for Speed", "The Crew", "همه موارد"],
+    "correct": 3,
+    "difficulty": "easy"
+  },
+  {
+    "question": "در «Forza Horizon 5»، بازی در کدام کشور می‌گذرد؟",
+    "answers": ["مکزیک", "ایتالیا", "ژاپن", "انگلیس"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Gran Turismo» توسط کدام شرکت ساخته شد؟",
+    "answers": ["Polyphony Digital", "Turn 10", "Codemasters", "Playground"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Realistic Racing Sim» است؟",
+    "answers": ["Assetto Corsa", "iRacing", "rFactor 2", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Need for Speed» توسط کدام شرکت منتشر شده؟",
+    "answers": ["EA", "Ubisoft", "Activision", "Sony"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «Arcade Racing» است؟",
+    "answers": ["Mario Kart", "Crash Team Racing", "Sonic Racing", "همه موارد"],
+    "correct": 3,
+    "difficulty": "easy"
+  },
+  {
+    "question": "در «Mario Kart 8»، چند شخصیت قابل بازی وجود دارد؟",
+    "answers": ["بیش از ۴۰", "بیش از ۲۰", "بیش از ۶۰", "بیش از ۳۰"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Football Simulation» است؟",
+    "answers": ["FIFA / EA Sports FC", "PES / eFootball", "Football Manager", "همه موارد"],
+    "correct": 3,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «Basketball Simulation» است؟",
+    "answers": ["NBA 2K", "NBA Live", "Basketball GM", "همه موارد"],
+    "correct": 3,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «Wrestling Game» است؟",
+    "answers": ["WWE 2K", "AEW Fight Forever", "Fire Pro Wrestling", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Boxing Game» است؟",
+    "answers": ["Fight Night", "Undisputed", "Creed", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Tennis Game» است؟",
+    "answers": ["Top Spin", "AO Tennis", "Virtua Tennis", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Golf Game» است؟",
+    "answers": ["PGA Tour 2K", "EA Sports PGA", "Mario Golf", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Skateboarding Game» است؟",
+    "answers": ["Tony Hawk's Pro Skater", "Skate", "Session", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Snowboarding Game» است؟",
+    "answers": ["SSX", "Steep", "Shredders", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Fishing Game» است؟",
+    "answers": ["Fishing Planet", "Russian Fishing 4", "Sega Bass Fishing", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Hunting Game» است؟",
+    "answers": ["theHunter", "Hunting Simulator", "Cabela's", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Flight Simulator» است؟",
+    "answers": ["Microsoft Flight Simulator", "X-Plane", "DCS World", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Microsoft Flight Simulator» (۲۰۲۰) توسط کدام استودیو ساخته شد؟",
+    "answers": ["Asobo Studio", "Microsoft", "Lockheed Martin", "Laminar Research"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Space Combat Sim» است؟",
+    "answers": ["Star Wars: Squadrons", "Elite Dangerous", "Everspace", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Truck Simulator» است؟",
+    "answers": ["Euro Truck Simulator", "American Truck Simulator", "SnowRunner", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Euro Truck Simulator 2» توسط کدام استودیو ساخته شد؟",
+    "answers": ["SCS Software", "Aerosoft", "Giants Software", "Colossal Order"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Train Simulator» است؟",
+    "answers": ["Train Sim World", "Derail Valley", "Railway Empire", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Ship Simulator» است؟",
+    "answers": ["Sea of Thieves", "Ship Simulator", "Sailwind", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Sea of Thieves» توسط کدام استودیو ساخته شد؟",
+    "answers": ["Rare", "Ubisoft", "Rockstar", "Playground"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Pirate Game» است؟",
+    "answers": ["Sea of Thieves", "Assassin's Creed Black Flag", "Sid Meier's Pirates", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Ninja Game» ساخته FromSoftware است؟",
+    "answers": ["Sekiro", "Nioh", "Ninja Gaiden", "Ghost of Tsushima"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Samurai Game» ساخته Sucker Punch است؟",
+    "answers": ["Ghost of Tsushima", "Nioh", "Sekiro", "Onimusha"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Cowboy Game» ساخته Rockstar است؟",
+    "answers": ["Red Dead Redemption", "Call of Juarez", "Desperados", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "در «Red Dead Redemption 2»، سال وقوع داستان کدام است؟",
+    "answers": ["۱۸۹۹", "۱۹۰۰", "۱۹۲۰", "۱۸۸۰"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Medieval RPG» ساخته CD Projekt Red است؟",
+    "answers": ["The Witcher 3", "Cyberpunk 2077", "همه موارد", "Thronebreaker"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "در «The Witcher 3»، اسم اسب جرالت چیست؟",
+    "answers": ["Roach", "Kelpie", "Płotka", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام DLC از «The Witcher 3» برنده جایزه شد؟",
+    "answers": ["Blood and Wine", "Hearts of Stone", "همه موارد", "Wild Hunt"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Cyberpunk 2077» در چه سالی منتشر شد؟",
+    "answers": ["۲۰۲۰", "۲۰۱۸", "۲۰۲۲", "۲۰۱۹"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام شخصیت معروف در «Cyberpunk 2077» نقش‌آفرینی می‌کند؟",
+    "answers": ["Keanu Reeves", "Idris Elba", "همه موارد", "Tom Hardy"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام DLC از «Cyberpunk 2077» در سال ۲۰۲۳ منتشر شد؟",
+    "answers": ["Phantom Liberty", "Blood and Wine", "Hearts of Stone", "Waking the Tiger"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Sci-Fi RPG» ساخته Bethesda است؟",
+    "answers": ["Starfield", "Fallout", "The Elder Scrolls", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Post-Nuclear RPG» ساخته Interplay است؟",
+    "answers": ["Fallout (اصلی)", "Wasteland", "Fallout 2", "همه موارد"],
+    "correct": 3,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Fantasy RPG» ساخته BioWare است؟",
+    "answers": ["Dragon Age", "Mass Effect", "Baldur's Gate", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Mass Effect» توسط کدام استودیو ساخته شد؟",
+    "answers": ["BioWare", "Bethesda", "Obsidian", "Larian"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Mass Effect»، شخصیت اصلی چه نام دارد؟",
+    "answers": ["Commander Shepard", "Kaidan", "Garrus", "Liara"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Isometric RPG» ساخته Larian است؟",
+    "answers": ["Baldur's Gate 3", "Divinity Original Sin", "همه موارد", "Pillars of Eternity"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Baldur's Gate 3» در چه سالی منتشر شد؟",
+    "answers": ["۲۰۲۳", "۲۰۲۱", "۲۰۲۲", "۲۰۲۴"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Isometric RPG» ساخته Obsidian است؟",
+    "answers": ["Pillars of Eternity", "Tyranny", "همه موارد", "Fallout New Vegas"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Fallout: New Vegas» توسط کدام استودیو ساخته شد؟",
+    "answers": ["Obsidian", "Bethesda", "Interplay", "Black Isle"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Open World Fantasy» ساخته Bethesda است؟",
+    "answers": ["The Elder Scrolls", "Fallout", "Starfield", "همه موارد"],
+    "correct": 3,
+    "difficulty": "easy"
+  },
+  {
+    "question": "در «Skyrim»، چند «Hold» اصلی در بازی وجود دارد؟",
+    "answers": ["۹", "۵", "۷", "۱۲"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Fantasy Action RPG» ساخته Bethesda نیست؟",
+    "answers": ["The Witcher 3", "Skyrim", "Oblivion", "Morrowind"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Vampire RPG» است؟",
+    "answers": ["Vampire: The Masquerade", "Vampyr", "همه موارد", "Bloodlines"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Horror RPG» است؟",
+    "answers": ["Bloodborne", "Dark Souls", "همه موارد", "Vampyr"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Turn-Based Tactics» ساخته Firaxis است؟",
+    "answers": ["XCOM", "Civilization", "همه موارد", "Marvel's Midnight Suns"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Turn-Based Tactics» با مضمون جنگ جهانی دوم است؟",
+    "answers": ["XCOM", "Valkyria Chronicles", "همه موارد", "Wasteland"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Real-Time Tactics» است؟",
+    "answers": ["Company of Heroes", "Total War", "همه موارد", "Men of War"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Total War» در ژاپن فئودال می‌گذرد؟",
+    "answers": ["Shogun 2", "Three Kingdoms", "همه موارد", "Rome II"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Total War» توسط کدام استودیو ساخته شد؟",
+    "answers": ["Creative Assembly", "Firaxis", "Paradox", "Relic"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «RTS کلاسیک» ساخته Blizzard است؟",
+    "answers": ["StarCraft", "Warcraft", "همه موارد", "همه موارد"],
+    "correct": 2,
+    "difficulty": "easy"
+  },
+  {
+    "question": "بازی «Warcraft III» در چه سالی منتشر شد؟",
+    "answers": ["۲۰۰۲", "۲۰۰۰", "۲۰۰۴", "۱۹۹۸"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «RTS» ساخته Relic است؟",
+    "answers": ["Company of Heroes", "Warhammer 40K Dawn of War", "همه موارد", "Age of Empires IV"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Age of Empires IV» توسط کدام استودیو ساخته شد؟",
+    "answers": ["Relic", "Ensemble", "همه موارد", "Forgotten Empires"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «City-Building» ساخته Maxis است؟",
+    "answers": ["SimCity", "The Sims", "همه موارد", "Spore"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «God Game» ساخته Peter Molyneux است؟",
+    "answers": ["Black & White", "Fable", "همه موارد", "Dungeon Keeper"],
+    "correct": 2,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Management Sim» است؟",
+    "answers": ["Football Manager", "Planet Coaster", "همه موارد", "Two Point Hospital"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Theme Park Sim» است؟",
+    "answers": ["Planet Coaster", "RollerCoaster Tycoon", "همه موارد", "Parkitect"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Hospital Sim» است؟",
+    "answers": ["Two Point Hospital", "Theme Hospital", "همه موارد", "Project Hospital"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Prison Sim» است؟",
+    "answers": ["Prison Architect", "RimWorld", "همه موارد", "Dwarf Fortress"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Colony Sim» است؟",
+    "answers": ["RimWorld", "Dwarf Fortress", "همه موارد", "Oxygen Not Included"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «RimWorld» توسط کدام استودیو ساخته شد؟",
+    "answers": ["Ludeon Studios", "Klei", "همه موارد", "Bay 12 Games"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Colony Sim» ساخته Klei است؟",
+    "answers": ["Oxygen Not Included", "Don't Starve", "همه موارد", "Griftlands"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Survival Craft» ساخته Klei است؟",
+    "answers": ["Don't Starve", "Oxygen Not Included", "همه موارد", "Griftlands"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Deck-Builder Roguelike» ساخته Mega Crit است؟",
+    "answers": ["Slay the Spire", "Monster Train", "همه موارد", "Griftlands"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Deck-Builder» ساخته Klei است؟",
+    "answers": ["Griftlands", "Slay the Spire", "همه موارد", "Monster Train"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Digital Card Game» ساخته Blizzard است؟",
+    "answers": ["Hearthstone", "همه موارد", "Legends of Runeterra", "Magic Arena"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "بازی «Hearthstone» بر اساس کدام دنیا ساخته شده؟",
+    "answers": ["Warcraft", "StarCraft", "همه موارد", "Diablo"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Digital Card Game» ساخته Riot است؟",
+    "answers": ["Legends of Runeterra", "Hearthstone", "همه موارد", "Magic Arena"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Auto-Battler» ساخته Riot است؟",
+    "answers": ["Teamfight Tactics", "Dota Underlords", "همه موارد", "Hearthstone Battlegrounds"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Battle Royale MOBA» است؟",
+    "answers": ["Battlerite Royale", "همه موارد", "Dota 2", "League of Legends"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Mobile MOBA» است؟",
+    "answers": ["Mobile Legends", "Arena of Valor", "همه موارد", "Wild Rift"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Mobile Battle Royale» است؟",
+    "answers": ["PUBG Mobile", "Free Fire", "همه موارد", "Call of Duty Mobile"],
+    "correct": 2,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «Mobile Gacha» است؟",
+    "answers": ["Genshin Impact", "همه موارد", "Fate/Grand Order", "Honkai Star Rail"],
+    "correct": 2,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Mobile RPG» ساخته HoYoverse است؟",
+    "answers": ["Genshin Impact", "همه موارد", "Honkai Impact", "Honkai Star Rail"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Mobile Puzzle» است؟",
+    "answers": ["Candy Crush", "همه موارد", "Bejeweled", "Two Dots"],
+    "correct": 1,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «Mobile Tower Defense» است؟",
+    "answers": ["Bloons TD", "همه موارد", "Kingdom Rush", "Arknights"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «VR Game» است؟",
+    "answers": ["Beat Saber", "همه موارد", "Half-Life: Alyx", "Superhot VR"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Half-Life: Alyx» در چه سالی منتشر شد؟",
+    "answers": ["۲۰۲۰", "۲۰۱۸", "همه موارد", "۲۰۲۲"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «AR Game» است؟",
+    "answers": ["Pokémon GO", "همه موارد", "Ingress", "Minecraft Earth"],
+    "correct": 1,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «Idle Game» است؟",
+    "answers": ["Cookie Clicker", "همه موارد", "AdVenture Capitalist", "Clicker Heroes"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Visual Novel» است؟",
+    "answers": ["Steins;Gate", "همه موارد", "Doki Doki Literature Club", "Clannad"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Dating Sim» است؟",
+    "answers": ["Persona", "همه موارد", "Hatoful Boyfriend", "Doki Doki"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Interactive Movie» است؟",
+    "answers": ["Detroit: Become Human", "همه موارد", "Late Shift", "Erica"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Detroit: Become Human» توسط کدام استودیو ساخته شد؟",
+    "answers": ["Quantic Dream", "همه موارد", "Supermassive", "Telltale"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Episodic Adventure» ساخته Telltale است؟",
+    "answers": ["The Walking Dead", "همه موارد", "Wolf Among Us", "Batman Telltale"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Horror Adventure» ساخته Supermassive است؟",
+    "answers": ["Until Dawn", "همه موارد", "The Quarry", "Man of Medan"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Point-and-Click Adventure» است؟",
+    "answers": ["Monkey Island", "همه موارد", "Broken Sword", "Deponia"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Detective Game» است؟",
+    "answers": ["Return of the Obra Dinn", "همه موارد", "Her Story", "L.A. Noire"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Mystery Puzzle» است؟",
+    "answers": ["The Witness", "همه موارد", "Outer Wilds", "Return of the Obra Dinn"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Escape Room» است؟",
+    "answers": ["We Were Here", "همه موارد", "The Room", "Escape Simulator"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Physics Puzzle» است؟",
+    "answers": ["Portal", "همه موارد", "The Talos Principle", "Human Fall Flat"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «First-Person Puzzle» ساخته Valve است؟",
+    "answers": ["Portal", "همه موارد", "Half-Life", "The Lab"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «Sandbox Physics» است؟",
+    "answers": ["Garry's Mod", "همه موارد", "Besiege", "Human Fall Flat"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Creative Sandbox» ساخته Media Molecule است؟",
+    "answers": ["Dreams", "همه موارد", "LittleBigPlanet", "Tearaway"],
+    "correct": 1,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Party Game» ساخته Nintendo است؟",
+    "answers": ["Mario Party", "همه موارد", "WarioWare", "Animal Crossing"],
+    "correct": 1,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «Mini-Game Collection» است؟",
+    "answers": ["WarioWare", "همه موارد", "Mario Party", "1-2-Switch"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Rhythm Game» ساخته Nintendo است؟",
+    "answers": ["Rhythm Heaven", "همه موارد", "Donkey Konga", "Wii Music"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Fitness Game» ساخته Nintendo است؟",
+    "answers": ["Ring Fit Adventure", "همه موارد", "Wii Fit", "Nintendo Switch Sports"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Cooking Game» است؟",
+    "answers": ["Overcooked", "همه موارد", "Cooking Mama", "Cook Serve Delicious"],
+    "correct": 1,
+    "difficulty": "easy"
+  }
+,
+  {
+    "question": "در «The Witcher 3»، جرالت به دنبال چه کسی است؟",
+    "answers": ["Ciri", "Yennefer", "Triss", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «Assassin's Creed» در مصر می‌گذرد؟",
+    "answers": ["Origins", "Odyssey", "Valhalla", "Mirage"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی «Assassin's Creed» در یونان باستان می‌گذرد؟",
+    "answers": ["Odyssey", "Origins", "Valhalla", "Unity"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی «Assassin's Creed» در دوره وایکینگ‌ها می‌گذرد؟",
+    "answers": ["Valhalla", "Odyssey", "Origins", "Mirage"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی «Assassin's Creed» در لندن قرن ۱۹ می‌گذرد؟",
+    "answers": ["Syndicate", "Unity", "Valhalla", "Mirage"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی «Assassin's Creed» در پاریس انقلاب فرانسه می‌گذرد؟",
+    "answers": ["Unity", "Syndicate", "Origins", "Valhalla"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی «Assassin's Creed» در دنیای دزدان دریایی می‌گذرد؟",
+    "answers": ["Black Flag", "Rogue", "Freedom Cry", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Assassin's Creed»، آیتم اصلی برای تماس با گذشته چیست؟",
+    "answers": ["Animus", "Apple of Eden", "Staff of Eden", "Piece of Eden"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Medieval Open World RPG» ساخته Warhorse است؟",
+    "answers": ["Kingdom Come Deliverance", "همه موارد", "The Witcher", "Mount & Blade"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "در «Kingdom Come Deliverance»، شخصیت اصلی چه نام دارد؟",
+    "answers": ["Henry", "Hans", "Radzig", "Bernard"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Medieval Sandbox RPG» است؟",
+    "answers": ["Mount & Blade", "همه موارد", "Bannerlord", "Warband"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Space Exploration» ساخته Hello Games است؟",
+    "answers": ["No Man's Sky", "همه موارد", "Elite Dangerous", "Star Citizen"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Space Sim» ساخته Cloud Imperium است؟",
+    "answers": ["Star Citizen", "همه موارد", "Elite Dangerous", "Everspace"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Space Exploration Sandbox» ساخته Squad است؟",
+    "answers": ["Kerbal Space Program", "همه موارد", "Space Engineers", "Astroneer"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Space Colony Sim» است؟",
+    "answers": ["Surviving Mars", "همه موارد", "RimWorld", "Oxygen Not Included"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Space Survival» است؟",
+    "answers": ["Astroneer", "همه موارد", "Empyrion", "Space Engineers"],
+    "correct": 1,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Space Horror» ساخته Frictional است؟",
+    "answers": ["SOMA", "همه موارد", "Amnesia", "Penumbra"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Horror Adventure» ساخته Frictional است؟",
+    "answers": ["Amnesia", "همه موارد", "SOMA", "Penumbra"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Stealth Horror» است؟",
+    "answers": ["Alien: Isolation", "همه موارد", "Outlast", "Amnesia"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Asymmetric Horror» است؟",
+    "answers": ["Dead by Daylight", "همه موارد", "Friday the 13th", "The Texas Chain Saw Massacre"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Co-op Horror» است؟",
+    "answers": ["Phasmophobia", "همه موارد", "The Forest", "Lethal Company"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Co-op Survival» ساخته Endnight است؟",
+    "answers": ["The Forest", "همه موارد", "Sons of the Forest", "Green Hell"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Co-op Shooter» ساخته Valve است؟",
+    "answers": ["Left 4 Dead", "همه موارد", "Portal 2", "Team Fortress 2"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Team-Based FPS» ساخته Valve است؟",
+    "answers": ["Team Fortress 2", "همه موارد", "Counter-Strike", "Left 4 Dead"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "در «Team Fortress 2»، چند کلاس اصلی وجود دارد؟",
+    "answers": ["۹", "همه موارد", "۷", "۱۲"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Hero-Based FPS» ساخته Valve نیست؟",
+    "answers": ["Overwatch", "همه موارد", "Team Fortress 2", "Valorant"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Tactical FPS» ساخته Valve است؟",
+    "answers": ["Counter-Strike", "همه موارد", "Team Fortress", "Day of Defeat"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "در «Counter-Strike 2»، بازی بر اساس کدام موتور ساخته شده؟",
+    "answers": ["Source 2", "همه موارد", "Unreal Engine", "Unity"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Battle Royale» ساخته Krafton است؟",
+    "answers": ["PUBG", "همه موارد", "Fortnite", "Apex Legends"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «Extraction Battle Royale» ساخته Activision است؟",
+    "answers": ["Warzone", "همه موارد", "DMZ", "Blackout"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Battle Royale» ساخته EA است؟",
+    "answers": ["Apex Legends", "همه موارد", "Battlefield Firestorm", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Sports Battle Royale» است؟",
+    "answers": ["Fall Guys", "همه موارد", "Rocket League", "Knockout City"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Car Soccer» است؟",
+    "answers": ["Rocket League", "همه موارد", "SARB", "Supersonic Acrobatic"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "بازی «Rocket League» توسط کدام استودیو ساخته شد؟",
+    "answers": ["Psyonix", "همه موارد", "Epic Games", "505 Games"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Open World Superhero» ساخته Insomniac است؟",
+    "answers": ["Spider-Man", "همه موارد", "Sunset Overdrive", "Ratchet & Clank"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "در «Spider-Man: Miles Morales»، شخصیت اصلی چه توانایی خاصی دارد؟",
+    "answers": ["شوک الکتریکی و نامرئی شدن", "پرواز", "فقط تار", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Open World Racing» ساخته Playground است؟",
+    "answers": ["Forza Horizon", "همه موارد", "Forza Motorsport", "Fable"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Simulation Racing» ساخته Turn 10 است؟",
+    "answers": ["Forza Motorsport", "همه موارد", "Forza Horizon", "Project Cars"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Open World Action» ساخته Rockstar است؟",
+    "answers": ["GTA", "همه موارد", "Red Dead", "Bully"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "در «GTA V»، سه شخصیت اصلی چه کسانی هستند؟",
+    "answers": ["Michael, Franklin, Trevor", "همه موارد", "Niko, CJ, Tommy", "Claude, Luis, Johnny"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "بازی «GTA V» در چه شهری می‌گذرد؟",
+    "answers": ["Los Santos", "همه موارد", "Liberty City", "Vice City"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی «GTA» در میامی الهام‌گرفته شده؟",
+    "answers": ["Vice City", "همه موارد", "San Andreas", "Liberty City"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی «GTA» در لس‌آنجلس الهام‌گرفته شده؟",
+    "answers": ["San Andreas", "همه موارد", "Vice City", "GTA V"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Cyberpunk Action» ساخته CD Projekt است؟",
+    "answers": ["Cyberpunk 2077", "همه موارد", "Deus Ex", "Ghostrunner"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «Cyberpunk Platformer» است؟",
+    "answers": ["Ghostrunner", "همه موارد", "Cloudpunk", "Katana Zero"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Cyberpunk Adventure» است؟",
+    "answers": ["Cloudpunk", "همه موارد", "Ghostrunner", "Katana Zero"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Time Manipulation Shooter» ساخته Remedy است؟",
+    "answers": ["Quantum Break", "همه موارد", "Control", "Max Payne"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Supernatural Action» ساخته Remedy است؟",
+    "answers": ["Control", "همه موارد", "Alan Wake", "Quantum Break"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Horror Action» ساخته Remedy است؟",
+    "answers": ["Alan Wake", "همه موارد", "Control", "Quantum Break"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Alan Wake 2» در چه سالی منتشر شد؟",
+    "answers": ["۲۰۲۳", "همه موارد", "۲۰۲۱", "۲۰۲۴"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Action Adventure» ساخته Santa Monica است؟",
+    "answers": ["God of War", "همه موارد", "همه موارد", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "در «God of War»، کریتوس از کدام سرزمین آمده؟",
+    "answers": ["یونان", "همه موارد", "اسکاندیناوی", "مصر"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Action Adventure» ساخته Naughty Dog است؟",
+    "answers": ["Uncharted", "همه موارد", "The Last of Us", "Jak and Daxter"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Post-Apocalyptic Adventure» ساخته Naughty Dog است؟",
+    "answers": ["The Last of Us", "همه موارد", "Uncharted", "Crash Bandicoot"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «Platformer» ساخته Naughty Dog است؟",
+    "answers": ["Crash Bandicoot", "همه موارد", "Jak and Daxter", "Uncharted"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Action Platformer» ساخته Insomniac است؟",
+    "answers": ["Ratchet & Clank", "همه موارد", "Spyro", "Spider-Man"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Platformer» ساخته Insomniac درباره اژدها است؟",
+    "answers": ["Spyro", "همه موارد", "Ratchet & Clank", "Crash"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «3D Platformer» ساخته Nintendo است؟",
+    "answers": ["Super Mario", "همه موارد", "Donkey Kong", "Kirby"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «2D Platformer» ساخته Nintendo است؟",
+    "answers": ["Super Mario Bros", "همه موارد", "Donkey Kong Country", "Kirby"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «Metroidvania» ساخته Nintendo است؟",
+    "answers": ["Metroid", "همه موارد", "Castlevania", "Hollow Knight"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Metroidvania» ساخته Konami است؟",
+    "answers": ["Castlevania", "همه موارد", "Metroid", "Bloodstained"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Castlevania: Symphony of the Night» در چه سالی منتشر شد؟",
+    "answers": ["۱۹۹۷", "همه موارد", "۱۹۹۵", "۲۰۰۰"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Metroidvania» ساخته Igarashi است؟",
+    "answers": ["Bloodstained", "همه موارد", "Castlevania", "Metroid"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Co-op Puzzle Platformer» است؟",
+    "answers": ["It Takes Two", "همه موارد", "A Way Out", "Unravel Two"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «It Takes Two» توسط کدام استودیو ساخته شد؟",
+    "answers": ["Hazelight", "همه موارد", "Josef Fares", "EA Originals"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Co-op Prison Break» ساخته Hazelight است؟",
+    "answers": ["A Way Out", "همه موارد", "It Takes Two", "Unravel"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Co-op Yarn Platformer» است؟",
+    "answers": ["Unravel", "همه موارد", "Little Nightmares", "Inside"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Atmospheric Adventure» ساخته Playdead است؟",
+    "answers": ["Limbo", "همه موارد", "Inside", "Little Nightmares"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Atmospheric Puzzle Platformer» ساخته Playdead است؟",
+    "answers": ["Inside", "همه موارد", "Limbo", "Little Nightmares"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Atmospheric Puzzle Adventure» است؟",
+    "answers": ["Little Nightmares", "همه موارد", "Limbo", "Inside"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Surreal Horror» است؟",
+    "answers": ["Little Nightmares", "همه موارد", "Inside", "Limbo"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Puzzle Adventure» ساخته Amanita است؟",
+    "answers": ["Machinarium", "همه موارد", "Samorost", "Botanicula"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Point-and-Click» ساخته Double Fine است؟",
+    "answers": ["Broken Age", "همه موارد", "Psychonauts", "Grim Fandango"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Platformer Adventure» ساخته Double Fine است؟",
+    "answers": ["Psychonauts", "همه موارد", "Broken Age", "Brütal Legend"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Rhythm Platformer» ساخته Double Fine نیست؟",
+    "answers": ["Rayman Legends", "همه موارد", "Psychonauts", "Brütal Legend"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Puzzle Platformer» ساخته Ubisoft است؟",
+    "answers": ["Rayman Legends", "همه موارد", "Rayman Origins", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Open World Action» ساخته Ubisoft است؟",
+    "answers": ["Assassin's Creed", "همه موارد", "Far Cry", "Watch Dogs"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «Open World Shooter» ساخته Ubisoft است؟",
+    "answers": ["Far Cry", "همه موارد", "Ghost Recon", "The Division"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Hacking Adventure» ساخته Ubisoft است؟",
+    "answers": ["Watch Dogs", "همه موارد", "Far Cry", "Assassin's Creed"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Military Shooter» ساخته Ubisoft است؟",
+    "answers": ["Ghost Recon", "همه موارد", "Rainbow Six", "The Division"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Action RPG» ساخته Ubisoft است؟",
+    "answers": ["The Division", "همه موارد", "Ghost Recon", "Assassin's Creed"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Space Adventure» ساخته Bethesda است؟",
+    "answers": ["Starfield", "همه موارد", "Prey", "Doom"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Sci-Fi Horror FPS» ساخته Arkane است؟",
+    "answers": ["Prey", "همه موارد", "System Shock", "Deus Ex"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «First-Person Action» ساخته Arkane است؟",
+    "answers": ["Dishonored", "همه موارد", "Prey", "Deathloop"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Time Loop FPS» ساخته Arkane است؟",
+    "answers": ["Deathloop", "همه موارد", "Dishonored", "Prey"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Stealth Action» ساخته Kojima است؟",
+    "answers": ["Metal Gear", "همه موارد", "Death Stranding", "Zone of the Enders"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «Post-Apocalyptic Delivery» ساخته Kojima است؟",
+    "answers": ["Death Stranding", "همه موارد", "Metal Gear", "PT"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Stealth Action» با شخصیت «Snake» است؟",
+    "answers": ["Metal Gear Solid", "همه موارد", "Splinter Cell", "Hitman"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «Stealth Action» ساخته Ubisoft است؟",
+    "answers": ["Splinter Cell", "همه موارد", "Assassin's Creed", "Watch Dogs"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Stealth Assassin» است؟",
+    "answers": ["Hitman", "همه موارد", "Splinter Cell", "Thief"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Hitman» توسط کدام استودیو ساخته شد؟",
+    "answers": ["IO Interactive", "همه موارد", "Ubisoft", "Eidos"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Stealth Action» ساخته Looking Glass است؟",
+    "answers": ["Thief", "همه موارد", "System Shock", "Deus Ex"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Cyberpunk Immersive Sim» ساخته Looking Glass است؟",
+    "answers": ["System Shock", "همه موارد", "Deus Ex", "Thief"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Cyberpunk RPG» ساخته Ion Storm است؟",
+    "answers": ["Deus Ex", "همه موارد", "System Shock", "Prey"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام استودیو بازی «Baldur's Gate 3» را ساخت؟",
+    "answers": ["Larian", "همه موارد", "BioWare", "Obsidian"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «Isometric RPG» ساخته Larian است؟",
+    "answers": ["Divinity Original Sin", "همه موارد", "Baldur's Gate 3", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Isometric RPG» ساخته Black Isle است؟",
+    "answers": ["Fallout", "همه موارد", "Planescape Torment", "همه موارد"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Isometric RPG» فلسفی است؟",
+    "answers": ["Planescape Torment", "همه موارد", "Disco Elysium", "همه موارد"],
+    "correct": 3,
+    "difficulty": "hard"
+  },
+  {
+    "question": "بازی «Disco Elysium» توسط کدام استودیو ساخته شد؟",
+    "answers": ["ZA/UM", "همه موارد", "Larian", "Obsidian"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Detective RPG» است؟",
+    "answers": ["Disco Elysium", "همه موارد", "Return of the Obra Dinn", "همه موارد"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Painting Adventure» ساخته LucasArts است؟",
+    "answers": ["Grim Fandango", "همه موارد", "Monkey Island", "همه موارد"],
+    "correct": 3,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Pirate Adventure» ساخته LucasArts است؟",
+    "answers": ["Monkey Island", "همه موارد", "Grim Fandango", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Fantasy Adventure» ساخته LucasArts است؟",
+    "answers": ["Loom", "همه موارد", "Monkey Island", "همه موارد"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Adventure Game» ساخته Sierra است؟",
+    "answers": ["King's Quest", "همه موارد", "Space Quest", "همه موارد"],
+    "correct": 3,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Horror Adventure» ساخته Infocom است؟",
+    "answers": ["The Lurking Horror", "همه موارد", "Zork", "همه موارد"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Text Adventure» است؟",
+    "answers": ["Zork", "همه موارد", "The Hobbit", "همه موارد"],
+    "correct": 3,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Interactive Fiction» است؟",
+    "answers": ["80 Days", "همه موارد", "Sorcery!", "همه موارد"],
+    "correct": 3,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Text-Based RPG» است؟",
+    "answers": ["A Dark Room", "همه موارد", "Candy Box", "همه موارد"],
+    "correct": 3,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Roguelike» سنتی است؟",
+    "answers": ["NetHack", "همه موارد", "Rogue", "همه موارد"],
+    "correct": 3,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Modern Roguelike» است؟",
+    "answers": ["The Binding of Isaac", "همه موارد", "Enter the Gungeon", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «The Binding of Isaac» توسط کدام طراح ساخته شد؟",
+    "answers": ["Edmund McMillen", "همه موارد", "Toby Fox", "همه موارد"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Roguelike Platformer» است؟",
+    "answers": ["Dead Cells", "همه موارد", "Rogue Legacy", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Roguelike Shooter» است؟",
+    "answers": ["Enter the Gungeon", "همه موارد", "Nuclear Throne", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Roguelike RPG» است؟",
+    "answers": ["Hades", "همه موارد", "Dead Cells", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Hades» توسط کدام استودیو ساخته شد؟",
+    "answers": ["Supergiant Games", "همه موارد", "Motion Twin", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Roguelike Deck-Builder» ساخته Mega Crit است؟",
+    "answers": ["Slay the Spire", "همه موارد", "Monster Train", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Real-Time Roguelike» است؟",
+    "answers": ["Risk of Rain 2", "همه موارد", "Hades", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Auto-Battler Roguelike» است؟",
+    "answers": ["The Last Flame", "همه موارد", "Backpack Hero", "همه موارد"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Vampire Survivors-like» است؟",
+    "answers": ["Brotato", "همه موارد", "20 Minutes Till Dawn", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Co-op Roguelike» است؟",
+    "answers": ["Risk of Rain 2", "همه موارد", "Gunfire Reborn", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Puzzle Roguelike» است؟",
+    "answers": ["Slay the Spire", "همه موارد", "Griftlands", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Rhythm Roguelike» است؟",
+    "answers": ["Crypt of the NecroDancer", "همه موارد", "Soundfall", "همه موارد"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Fishing Roguelike» است؟",
+    "answers": ["Dredge", "همه موارد", "Cat Goes Fishing", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Cozy Farming Sim» است؟",
+    "answers": ["Stardew Valley", "همه موارد", "Harvest Moon", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "کدام بازی معروف به «Cozy Life Sim» است؟",
+    "answers": ["Animal Crossing", "همه موارد", "Stardew Valley", "همه موارد"],
+    "correct": 0,
+    "difficulty": "easy"
+  },
+  {
+    "question": "بازی «Animal Crossing: New Horizons» در چه سالی منتشر شد؟",
+    "answers": ["۲۰۲۰", "همه موارد", "۲۰۱۸", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Cosy Crafting» است؟",
+    "answers": ["Cozy Grove", "همه موارد", "Spiritfarer", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Emotional Management» است؟",
+    "answers": ["Spiritfarer", "همه موارد", "Gris", "همه موارد"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Grief Adventure» است؟",
+    "answers": ["Gris", "همه موارد", "Journey", "همه موارد"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Artistic Platformer» است؟",
+    "answers": ["Ori and the Blind Forest", "همه موارد", "Gris", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Ori and the Blind Forest» توسط کدام استودیو ساخته شد؟",
+    "answers": ["Moon Studios", "همه موارد", "Playdead", "همه موارد"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Metroidvania Platformer» است؟",
+    "answers": ["Ori and the Will of the Wisps", "همه موارد", "Hollow Knight", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  },
+  {
+    "question": "کدام بازی معروف به «Fishing Adventure» است؟",
+    "answers": ["Dredge", "همه موارد", "Dave the Diver", "همه موارد"],
+    "correct": 3,
+    "difficulty": "medium"
+  },
+  {
+    "question": "بازی «Dave the Diver» توسط کدام استودیو ساخته شد؟",
+    "answers": ["Mintrocket", "همه موارد", "Nexon", "همه موارد"],
+    "correct": 0,
+    "difficulty": "hard"
+  },
+  {
+    "question": "کدام بازی معروف به «Sushi Restaurant Sim» است؟",
+    "answers": ["Dave the Diver", "همه موارد", "Cook Serve Delicious", "همه موارد"],
+    "correct": 0,
+    "difficulty": "medium"
+  }
+] 
