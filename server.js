@@ -1,3 +1,4 @@
+
 // server.js — سرور اصلی
 require("dotenv").config();
 
@@ -6,14 +7,13 @@ const cors = require("cors");
 const path = require("path");
 
 const { testConnection, query } = require("./db");
-const { startCronJobs } = require("./cron/league");
-
-const authRoutes = require("./routes/auth");
-const userRoutes = require("./routes/user");
-const leagueRoutes = require("./routes/league");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+console.log("🚀 Booting Daneshmand backend...");
+console.log("📡 PORT =", PORT);
+console.log("🗄️ DB_HOST =", process.env.DB_HOST);
 
 // Middleware
 app.use(cors());
@@ -26,35 +26,14 @@ app.use((req, res, next) => {
     next();
 });
 
-// API Routes
-app.use("/auth", authRoutes);
-app.use("/user", userRoutes);
-app.use("/league", leagueRoutes);
-
-// Health check
+// Health check (بدون وابستگی به دیتابیس)
 app.get("/health", (req, res) => {
     res.json({ ok: true, timestamp: Date.now() });
 });
 
-// Static files (کلاینت)
-app.use(express.static(path.join(__dirname, "public")));
-app.use(express.static(__dirname));
-
-// SPA fallback
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "index.html"));
-});
-
-// Error handler
-app.use((err, req, res, next) => {
-    console.error("❌ Error:", err.message);
-    res.status(500).json({ ok: false, error: "خطای سرور" });
-});
-
-// ─── Setup Database (اجرای خودکار) ───
+// ─── Setup Database ───
 async function setupDatabase() {
     try {
-        // چک کن آیا جدول users وجود داره
         const result = await query(`
             SELECT table_name FROM information_schema.tables 
             WHERE table_schema = 'public' AND table_name = 'users'
@@ -150,41 +129,63 @@ async function setupDatabase() {
             );
         `);
 
-        await query(`
-            CREATE INDEX IF NOT EXISTS idx_members_season ON league_members(season_id);
-            CREATE INDEX IF NOT EXISTS idx_members_phone ON league_members(user_phone);
-            CREATE INDEX IF NOT EXISTS idx_matches_season ON league_matches(season_id);
-            CREATE INDEX IF NOT EXISTS idx_matches_status ON league_matches(status);
-            CREATE INDEX IF NOT EXISTS idx_users_username ON users(username);
-        `);
-
         console.log("✅ All tables created successfully!");
     } catch (err) {
         console.error("❌ Setup DB error:", err.message);
-        throw err;
     }
 }
 
+// ─── Load Routes (بعد از Setup) ───
+async function loadRoutes() {
+    try {
+        const authRoutes = require("./routes/auth");
+        const userRoutes = require("./routes/user");
+        const leagueRoutes = require("./routes/league");
+
+        app.use("/auth", authRoutes);
+        app.use("/user", userRoutes);
+        app.use("/league", leagueRoutes);
+
+        console.log("✅ Routes loaded");
+    } catch (err) {
+        console.error("❌ Routes error:", err.message);
+    }
+}
+
+// ─── Static files ───
+app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(__dirname));
+
+// SPA fallback
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "index.html"));
+});
+
+// Error handler
+app.use((err, req, res, next) => {
+    console.error("❌ Error:", err.message);
+    res.status(500).json({ ok: false, error: "خطای سرور" });
+});
+
 // ─── Start Server ───
 async function start() {
-    console.log("🚀 Starting Daneshmand backend...");
-
-    const dbOk = await testConnection();
-    if (!dbOk) {
-        console.error("❌ Cannot start without database");
-        process.exit(1);
-    }
-
-    // اجرای خودکار setup
-    await setupDatabase();
-
-    // شروع Cron
-    startCronJobs();
-
-    app.listen(PORT, () => {
+    // اول سرور رو راه بنداز (تا لیارا ببینه)
+    app.listen(PORT, "0.0.0.0", () => {
         console.log(`✅ Server running on port ${PORT}`);
-        console.log(`🌐 http://localhost:${PORT}`);
     });
+
+    // بعد با دیتابیس کار کن
+    try {
+        const dbOk = await testConnection();
+        if (dbOk) {
+            await setupDatabase();
+            await loadRoutes();
+        } else {
+            console.error("⚠️ Database not available, continuing without DB");
+        }
+    } catch (err) {
+        console.error("⚠️ Startup warning:", err.message);
+    }
 }
 
 start();
