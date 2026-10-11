@@ -3762,3 +3762,90 @@ input::placeholder { color: var(--text-4); font-weight: 500; }
         font-size: 26px;
     }
 }
+/* ============================================
+   ⭐ پروفایل با تم آبی — Override
+   ============================================ */
+
+/* پس‌زمینه‌ی کلی صفحه پروفایل */
+body.profile-page {
+    background: linear-gradient(180deg, #dbeafe 0%, #bfdbfe 100%);
+    background-attachment: fixed;
+}
+
+/* کارت هدر پروفایل — آبی */
+.profile-header-card {
+    background: linear-gradient(180deg, #1e40af 0%, #1e3a8a 100%) !important;
+    border: 3px solid #3b82f6 !important;
+    border-radius: 26px;
+    padding: 26px 20px;
+    text-align: center;
+    box-shadow: 0 10px 0 #0f172a, 0 15px 40px rgba(30, 64, 175, 0.4) !important;
+    margin-bottom: 18px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* افکت درخشش روی کارت */
+.profile-header-card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -100%;
+    width: 60%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    animation: shine 5s ease infinite;
+    pointer-events: none;
+}
+
+/* آواتار پروفایل */
+.profile-header-card .profile-avatar-ring,
+.profile-header-avatar .profile-avatar-ring {
+    border-color: #fbbf24 !important;
+    border-width: 4px !important;
+    box-shadow: 0 0 25px rgba(251,191,36,0.6) !important;
+}
+
+.profile-header-card .profile-avatar,
+.profile-header-avatar .profile-avatar {
+    background: linear-gradient(135deg, #fef3c7, #fde68a) !important;
+    border: 3px solid white !important;
+}
+
+/* اسم کاربر روی کارت */
+.profile-header-name,
+.profile-name {
+    color: white !important;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.4) !important;
+}
+
+/* سطح زیر اسم */
+.profile-header-subtitle {
+    color: #fbbf24 !important;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4) !important;
+}
+
+/* کارت پروفایل کوچک توی خانه */
+.profile-card {
+    background: linear-gradient(180deg, #ffffff 0%, #eff6ff 100%) !important;
+    border: 3px solid #3b82f6 !important;
+    box-shadow: 0 8px 0 #1e3a8a, 0 15px 40px rgba(30, 64, 175, 0.3) !important;
+}
+
+/* ردیف بالا (TopBar) — آبی پررنگ‌تر توی پروفایل */
+body.profile-page .top-bar {
+    background: linear-gradient(180deg, #1e40af 0%, #1e3a8a 100%) !important;
+    border-bottom: 3px solid #3b82f6 !important;
+}
+
+/* نوار پایین (BottomBar) — آبی پررنگ‌تر توی پروفایل */
+body.profile-page .bottom-bar {
+    background: linear-gradient(180deg, #1e40af 0%, #1e3a8a 100%) !important;
+    border-top: 3px solid #3b82f6 !important;
+}
+
+/* تب فعال — زرد که با آبی کنتراست داشته باشه */
+body.profile-page .tab-btn.active {
+    color: #fbbf24 !important;
+    background: rgba(251, 191, 36, 0.15) !important;
+}
