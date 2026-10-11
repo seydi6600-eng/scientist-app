@@ -4525,7 +4525,6 @@ function showPvPResult(match, winnerPhone) {
 
 // ⚠️ نسخه‌ی لیگ فعلاً همون قبلیه، فقط بدون تغییر.
 // اگه خواستی آپدیت لیگ رو جدا بفرستم، بگو.
-
 function showLeagueScreen() {
     resetCategoriesDiv();
     categoriesDiv.classList.remove("no-scroll");
@@ -4537,12 +4536,16 @@ function showLeagueScreen() {
     if (!user) { showLoginScreen(); return; }
     User.updateTopBar();
     
-    showLeagueMessage(
-        "🏆 لیگ هفتگی",
-        "لیگ در نسخه‌ی بعدی آپدیت می‌شه.<br>فعلاً روی PvP تمرکز کن!",
-        "بریم PvP",
-        showGameModeScreen
-    );
+    if (typeof showLeagueMain === "function") {
+        showLeagueMain();
+    } else {
+        showLeagueMessage(
+            "🏆 لیگ هفتگی",
+            "کدهای لیگ در حال بارگذاری...",
+            "بازگشت",
+            showGameModeScreen
+        );
+    }
 }
 
 function showLeagueMessage(title, text, buttonText, action) {
