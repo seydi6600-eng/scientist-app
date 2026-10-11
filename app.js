@@ -51,14 +51,14 @@ const ONLINE_UNLOCK_LEVEL = 5;
 const SIGNING_KEY = "SCIENTIST_APP_2026_SECRET_v4";
 
 /* 🔌 API جدید (لیارا) */
-const API_BASE = "https://daneshmand.liara.run";
+const API_BASE = "";
 
 /* 🏆 League API */
 const LEAGUE_API_MODE = "online";
-const LEAGUE_API_BASE = "https://daneshmand.liara.run/league";
+const LEAGUE_API_BASE = "/league";
 
 /* 🎮 PvP API */
-const PVP_API_BASE = "https://daneshmand.liara.run/pvp";
+const PVP_API_BASE = "/pvp";
 
 /* 🎮 PvP Config */
 const PVP_TOPIC_TIME = 10;
