@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>دانشمند</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=99">
 </head>
 <body>
 
@@ -48,18 +48,10 @@
             <span class="tab-label">پروفایل</span>
         </button>
     </div>
-
-    <!-- ===== اسکریپت‌ها: ترتیب صحیح + defer ===== -->
-    
-    <!-- ۱. موسیقی (مستقل) -->
-    <script src="music.js" defer></script>
-    
-    <!-- ۲. اسکریپت اصلی — هسته‌ی اپ -->
-    <script src="app.js" defer></script>
-    
-    <!-- ۳. ماژول‌ها — بعد از script.js -->
-    <script src="league.js" defer></script>
-    <script src="shop.js" defer></script>
+<script src="music.js"></script>       <!-- ===== اسکریپت‌ها: ترتیب صحیح + defer ===== -->   
+<script src="app.js"></script>
+<script src="league.js"></script>
+<script src="shop.js"></script>
 
 </body>
 </html>
