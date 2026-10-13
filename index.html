@@ -53,6 +53,13 @@
 <script src="app.js"></script>
 <script src="league.js"></script>
 <script src="shop.js"></script>
+    <script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("./service-worker.js");
+  });
+}
+    </script>
 
 </body>
 </html>
