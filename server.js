@@ -16,7 +16,9 @@ console.log("📡 PORT =", PORT);
 console.log("🗄️ DB_HOST =", process.env.DB_HOST);
 
 // ─── Middleware ───
-app.use(cors());
+app.use(cors({
+    origin: 'https://daneshmand-app.ir'
+}));
 app.use(express.json({ limit: "5mb" }));
 app.use(express.urlencoded({ extended: true }));
 
