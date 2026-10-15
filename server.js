@@ -16,9 +16,7 @@ console.log("📡 PORT =", PORT);
 console.log("🗄️ DB_HOST =", process.env.DB_HOST);
 
 // ─── Middleware ───
-app.use(cors({
-    origin: 'https://daneshmand-app.ir'
-}));
+app.use(cors());
 app.use(express.json({ limit: "5mb" }));
 app.use(express.urlencoded({ extended: true }));
 
@@ -34,7 +32,89 @@ app.get("/health", (req, res) => {
 });
 
 // ═══════════════════════════════════════════════════════
-// ✅ مسیرهای عمومی برای PWABuilder (بدون نیاز به JWT)
+// ✅ چک کردن User-Agent (اپ یا مرورگر)
+// ═══════════════════════════════════════════════════════
+app.use((req, res, next) => {
+    const ua = req.headers["user-agent"] || "";
+    const isApp = ua.includes("DaneshmandApp");
+    const isStaticFile = req.path.match(/\.(css|js|png|jpg|jpeg|gif|svg|ico|mp3|mp4|json|woff|woff2|ttf|eot)$/i);
+    const isApiPath = req.path.startsWith("/api") ||
+                      req.path.startsWith("/auth") ||
+                      req.path.startsWith("/user") ||
+                      req.path.startsWith("/league") ||
+                      req.path.startsWith("/pvp") ||
+                      req.path.startsWith("/questions");
+    const isAllowedPath = req.path === "/guest" ||
+                          req.path === "/download-app" ||
+                          req.path === "/health" ||
+                          req.path === "/manifest.json" ||
+                          req.path === "/service-worker.js";
+
+    // اگه از اپ نیومده و مسیر مجاز نیست، به صفحه دانلود بره
+    if (!isApp && !isStaticFile && !isApiPath && !isAllowedPath) {
+        return res.redirect("/download-app");
+    }
+
+    next();
+});
+
+// ─── صفحه دانلود اپ ───
+app.get("/download-app", (req, res) => {
+    res.send(`
+        <!DOCTYPE html>
+        <html lang="fa" dir="rtl">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>دانلود اپ دانشمند</title>
+            <style>
+                * { margin: 0; padding: 0; box-sizing: border-box; }
+                body {
+                    min-height: 100vh;
+                    display: flex; flex-direction: column;
+                    justify-content: center; align-items: center;
+                    font-family: Tahoma, sans-serif;
+                    background: linear-gradient(180deg, #0f172a, #1e3a8a);
+                    color: white; padding: 24px; text-align: center;
+                }
+                .card {
+                    max-width: 380px; width: 100%;
+                    background: rgba(255,255,255,0.05);
+                    border: 2px solid rgba(255,255,255,0.15);
+                    border-radius: 24px; padding: 40px 24px;
+                    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+                }
+                .emoji { font-size: 80px; margin-bottom: 20px; }
+                h1 { font-size: 26px; margin-bottom: 12px; }
+                p { color: #94a3b8; font-size: 15px; line-height: 1.8; margin-bottom: 30px; }
+                a {
+                    display: inline-block;
+                    padding: 16px 36px;
+                    background: linear-gradient(180deg, #22c55e, #16a34a);
+                    color: white; text-decoration: none;
+                    border-radius: 14px; font-size: 16px; font-weight: bold;
+                    box-shadow: 0 6px 0 #14532d;
+                    transition: transform 0.15s;
+                }
+                a:active { transform: translateY(3px); box-shadow: 0 3px 0 #14532d; }
+            </style>
+        </head>
+        <body>
+            <div class="card">
+                <div class="emoji">🧠</div>
+                <h1>اپلیکیشن دانشمند</h1>
+                <p>برای استفاده از بازی فکری دانشمند، لطفاً اپلیکیشن رو دانلود و نصب کن</p>
+                <a href="https://cafebazaar.ir/app/ir.daneshmand.app" target="_blank">
+                    📥 دانلود از کافه‌بازار
+                </a>
+            </div>
+        </body>
+        </html>
+    `);
+});
+
+// ═══════════════════════════════════════════════════════
+// ✅ مسیرهای عمومی برای PWABuilder
 // ═══════════════════════════════════════════════════════
 
 app.get('/api/public/hello', (req, res) => {
@@ -67,10 +147,6 @@ app.get('/guest', (req, res) => {
         </html>
     `);
 });
-
-// ═══════════════════════════════════════════════════════
-// پایان مسیرهای عمومی
-// ═══════════════════════════════════════════════════════
 
 // ─── Setup Database ───
 async function setupDatabase() {
@@ -272,10 +348,6 @@ function sendFileSafe(res, fileName, contentType) {
     const rootPath = path.join(__dirname, fileName);
     const publicPath = path.join(__dirname, "public", fileName);
 
-    console.log("🔍 Looking for:", fileName);
-    console.log("   - rootPath:", rootPath, "exists:", fs.existsSync(rootPath));
-    console.log("   - publicPath:", publicPath, "exists:", fs.existsSync(publicPath));
-
     if (fs.existsSync(rootPath)) {
         res.setHeader("Content-Type", contentType);
         return res.sendFile(rootPath);
@@ -333,3 +405,4 @@ async function start() {
 }
 
 start();
+                
