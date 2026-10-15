@@ -2,10 +2,11 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>دانشمند</title>
     <link rel="stylesheet" href="style.css?v=99">
     <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#0f172a">
 </head>
 <body>
 
@@ -49,16 +50,18 @@
             <span class="tab-label">پروفایل</span>
         </button>
     </div>
-<script src="music.js"></script>       <!-- ===== اسکریپت‌ها: ترتیب صحیح + defer ===== -->   
-<script src="app.js"></script>
-<script src="league.js"></script>
-<script src="shop.js"></script>
+
+    <script src="music.js?v=9.0.2"></script>
+    <script src="app.js?v=9.0.2"></script>
+    <script src="league.js?v=9.0.2"></script>
+    <script src="shop.js?v=9.0.2"></script>
+
     <script>
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", function () {
-    navigator.serviceWorker.register("./service-worker.js");
-  });
-}
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker.register("./service-worker.js");
+      });
+    }
     </script>
 
 </body>
