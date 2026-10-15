@@ -33,39 +33,7 @@ app.get("/health", (req, res) => {
     res.json({ ok: true, timestamp: Date.now() });
 });
 
-// ═══════════════════════════════════════════════════════
-// ✅ چک کردن User-Agent (اپ یا مرورگر)
-// ═══════════════════════════════════════════════════════
-app.use((req, res, next) => {
-    const ua = req.headers["user-agent"] || "";
-    const isApp = ua.includes("DaneshmandApp");
-    const isStaticFile = req.path.match(/\.(css|js|png|jpg|jpeg|gif|svg|ico|mp3|mp4|json|woff|woff2|ttf|eot)$/i);
-    const isApiPath = req.path.startsWith("/api") ||
-                      req.path.startsWith("/auth") ||
-                      req.path.startsWith("/user") ||
-                      req.path.startsWith("/league") ||
-                      req.path.startsWith("/pvp") ||
-                      req.path.startsWith("/questions");
-    const isAllowedPath = req.path === "/guest" ||
-                          req.path === "/download-app" ||
-                          req.path === "/health" ||
-                          req.path === "/manifest.json" ||
-                          req.path === "/service-worker.js";
-
-    // ✅ حالت تست موقت: اگه ?test=1 توی URL بود، از مرورگر هم باز شه
-    if (req.query.test === "1") {
-        return next();
-    }
-
-    // اگه از اپ نیومده و مسیر مجاز نیست، به صفحه دانلود بره
-    if (!isApp && !isStaticFile && !isApiPath && !isAllowedPath) {
-        return res.redirect("/download-app");
-    }
-
-    next();
-});
-
-// ─── صفحه دانلود اپ ───
+// ─── صفحه دانلود اپ (فقط اگه کسی دستی زد) ───
 app.get("/download-app", (req, res) => {
     res.send(`
         <!DOCTYPE html>
@@ -121,7 +89,7 @@ app.get("/download-app", (req, res) => {
 });
 
 // ═══════════════════════════════════════════════════════
-// ✅ مسیرهای عمومی برای PWABuilder
+// ✅ مسیرهای عمومی
 // ═══════════════════════════════════════════════════════
 
 app.get('/api/public/hello', (req, res) => {
