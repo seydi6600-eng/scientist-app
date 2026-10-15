@@ -14,6 +14,7 @@ const PORT = process.env.PORT || 3000;
 console.log("🚀 Booting Daneshmand backend...");
 console.log("📡 PORT =", PORT);
 console.log("🗄️ DB_HOST =", process.env.DB_HOST);
+
 // ✅ اعتماد به proxy (Liara)
 app.set("trust proxy", 1);
 
@@ -33,7 +34,7 @@ app.get("/health", (req, res) => {
     res.json({ ok: true, timestamp: Date.now() });
 });
 
-// ─── صفحه دانلود اپ (فقط اگه کسی دستی زد) ───
+// ─── صفحه دانلود اپ (فقط برای دسترسی مستقیم) ───
 app.get("/download-app", (req, res) => {
     res.send(`
         <!DOCTYPE html>
