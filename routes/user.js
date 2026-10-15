@@ -1,32 +1,12 @@
 // routes/user.js — مدیریت کاربران
 const express = require("express");
-const jwt = require("jsonwebtoken");
 const { query } = require("../db");
+const { authMiddleware } = require("../middleware/auth");
 
 const router = express.Router();
 
-// ─── Middleware داخلی برای احراز هویت ───
-function verifyToken(req, res, next) {
-    try {
-        const authHeader = req.headers["authorization"];
-        if (!authHeader || !authHeader.startsWith("Bearer ")) {
-            return res.status(401).json({ ok: false, error: "توکن ارسال نشده" });
-        }
-
-        const token = authHeader.slice(7);
-        const secret = process.env.JWT_SECRET || "daneshmand-secret-key";
-
-        const decoded = jwt.verify(token, secret);
-        req.user = decoded;
-        next();
-    } catch (err) {
-        console.error("Token verify error:", err.message);
-        return res.status(401).json({ ok: false, error: "توکن نامعتبر" });
-    }
-}
-
 // ─── گرفتن اطلاعات کاربر ───
-router.get("/get", verifyToken, async (req, res) => {
+router.get("/get", authMiddleware, async (req, res) => {
     try {
         const phone = req.user.phone;
         const result = await query(
@@ -78,7 +58,7 @@ router.get("/get", verifyToken, async (req, res) => {
 });
 
 // ─── آپدیت اطلاعات کاربر ───
-router.post("/update", verifyToken, async (req, res) => {
+router.post("/update", authMiddleware, async (req, res) => {
     try {
         const phone = req.user.phone;
         const updates = req.body.updates || {};
