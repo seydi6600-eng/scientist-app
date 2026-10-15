@@ -1,4 +1,101 @@
 /* ============================================
+   ✅ FIX: Safe Area + Top Bar Layout
+   ============================================ */
+html, body {
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.top-bar {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 8px 10px !important;
+    padding-top: max(8px, env(safe-area-inset-top)) !important;
+    gap: 6px !important;
+    background: linear-gradient(135deg, #1e40af, #3b82f6) !important;
+    border-bottom: 3px solid #fbbf24 !important;
+    min-height: 56px !important;
+    height: auto !important;
+    direction: rtl !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+}
+
+.currency {
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    padding: 4px 10px !important;
+    background: linear-gradient(180deg, #fef3c7, #fde68a) !important;
+    border: 2px solid #fbbf24 !important;
+    border-radius: 12px !important;
+    font-size: 13px !important;
+    font-weight: 900 !important;
+    color: #92400e !important;
+    flex-shrink: 0 !important;
+    box-shadow: 0 3px 0 #b45309 !important;
+    white-space: nowrap !important;
+    height: auto !important;
+}
+
+.currency-img {
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 50% !important;
+}
+
+.currency-icon {
+    font-size: 16px !important;
+}
+
+.currency-plus {
+    font-size: 16px !important;
+    font-weight: 900 !important;
+    color: #16a34a !important;
+}
+
+.hearts-mini {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 1px !important;
+    font-size: 11px !important;
+    flex-shrink: 1 !important;
+    max-width: 130px !important;
+    overflow: hidden !important;
+    line-height: 1 !important;
+}
+
+.top-bar-title {
+    font-size: 14px !important;
+    font-weight: 900 !important;
+    color: white !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+.music-toggle-btn {
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+    border: 2px solid #fbbf24 !important;
+    background: linear-gradient(180deg, #fbbf24, #d97706) !important;
+    font-size: 17px !important;
+    cursor: pointer !important;
+    flex-shrink: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 3px 0 #92400e !important;
+}
+/* ============================================
    اپ دانشمند — استایل کامل
    ============================================ */
 
