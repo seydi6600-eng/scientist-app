@@ -4390,3 +4390,15 @@ body::before {
   position: relative !important;
   z-index: 8 !important;
 }
+
+/* اصلاح موقعیت نام و آواتار پروفایل */
+.profile-card .profile-name {
+    position: relative;
+    top: -12px;
+}
+
+.profile-card .profile-avatar-wrapper {
+    position: relative;
+    top: -10px;
+}
+
