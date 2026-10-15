@@ -3061,6 +3061,78 @@ function runQuiz(questions, title, difficulty) {
             answerButtons.push(button);
             categoriesDiv.appendChild(button);
         });
+       /* ---------- دکمه‌های آیتم‌های کمکی ---------- */
+const currentUserItems = Users.loadCurrent();
+const myItems = currentUserItems && currentUserItems.items ? currentUserItems.items : {};
+const hasRemoveTwo = (myItems.removeTwo || 0) > 0;
+const hasExtraTime = (myItems.extraTime || 0) > 0;
+
+if (hasRemoveTwo || hasExtraTime) {
+    const itemsRow = document.createElement("div");
+    itemsRow.style.cssText =
+        "display:flex;gap:8px;justify-content:center;flex-shrink:0;margin:6px 0;";
+
+    if (hasRemoveTwo) {
+        const removeBtn = document.createElement("button");
+        removeBtn.textContent = "⏭ حذف دو گزینه (" + toPersianNumber(myItems.removeTwo) + ")";
+        removeBtn.style.cssText =
+            "padding:10px 14px;border-radius:14px;" +
+            "background:linear-gradient(180deg,#8b5cf6,#7c3aed);" +
+            "color:white;border:3px solid #c4b5fd;" +
+            "font-family:inherit;font-size:12px;font-weight:900;" +
+            "cursor:pointer;box-shadow:0 4px 0 #5b21b6;";
+        removeBtn.onclick = function () {
+            if (removeBtn.disabled) return;
+            removeBtn.disabled = true;
+            removeBtn.style.opacity = "0.5";
+
+            const freshUser = Users.loadCurrent();
+            const items = Object.assign({}, freshUser.items || {});
+            items.removeTwo = Math.max(0, (items.removeTwo || 0) - 1);
+            Users.updateCurrent({ items: items });
+
+            const wrongIndices = [];
+            answerButtons.forEach(function (b, idx) {
+                if (idx !== q.correct) wrongIndices.push(idx);
+            });
+            const toRemove = wrongIndices.sort(() => Math.random() - 0.5).slice(0, 2);
+            toRemove.forEach(function (idx) {
+                if (answerButtons[idx]) {
+                    answerButtons[idx].style.visibility = "hidden";
+                    answerButtons[idx].disabled = true;
+                }
+            });
+        };
+        itemsRow.appendChild(removeBtn);
+    }
+
+    if (hasExtraTime) {
+        const timeBtn = document.createElement("button");
+        timeBtn.textContent = "⏰ +۱۰ ثانیه (" + toPersianNumber(myItems.extraTime) + ")";
+        timeBtn.style.cssText =
+            "padding:10px 14px;border-radius:14px;" +
+            "background:linear-gradient(180deg,#f59e0b,#d97706);" +
+            "color:white;border:3px solid #fcd34d;" +
+            "font-family:inherit;font-size:12px;font-weight:900;" +
+            "cursor:pointer;box-shadow:0 4px 0 #b45309;";
+        timeBtn.onclick = function () {
+            if (timeBtn.disabled) return;
+            timeBtn.disabled = true;
+            timeBtn.style.opacity = "0.5";
+
+            const freshUser = Users.loadCurrent();
+            const items = Object.assign({}, freshUser.items || {});
+            items.extraTime = Math.max(0, (items.extraTime || 0) - 1);
+            Users.updateCurrent({ items: items });
+
+            timeLeft += 10;
+            updateTimerDisplay();
+        };
+        itemsRow.appendChild(timeBtn);
+    }
+
+    categoriesDiv.appendChild(itemsRow);
+}
 
         startTimer(async function () {
             if (answerButtons.every(b => b.disabled)) return;
