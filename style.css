@@ -4644,3 +4644,85 @@ body::before {
     color: #e0f2fe !important;
     text-shadow: 0 1px 3px rgba(3, 105, 161, 0.4) !important;
 }
+/* ============================================
+   🌤️ FIX نهایی پروفایل آبی آسمانی
+   ============================================ */
+html body #categories .profile-card,
+body #categories .profile-card,
+#categories .profile-card {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 40%, #bae6fd 100%) !important;
+    border: 4px solid #38bdf8 !important;
+    box-shadow:
+        0 8px 0 #0284c7,
+        0 12px 30px rgba(14, 165, 233, 0.35),
+        inset 0 2px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+html body #categories .profile-card .profile-name,
+body #categories .profile-card .profile-name,
+#categories .profile-card .profile-name {
+    display: table !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    margin: 0 auto 6px !important;
+    padding: 6px 24px !important;
+    border: 2px solid #7dd3fc !important;
+    border-radius: 999px !important;
+    background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 55%, #0284c7 100%) !important;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    font-weight: 900 !important;
+    text-shadow: 0 2px 4px rgba(3, 105, 161, 0.4) !important;
+    box-shadow:
+        0 3px 0 #075985,
+        inset 0 1px 0 rgba(255, 255, 255, 0.5) !important;
+}
+
+html body #categories .profile-card .profile-avatar-ring,
+body #categories .profile-card .profile-avatar-ring,
+#categories .profile-card .profile-avatar-ring {
+    background: conic-gradient(
+        from 0deg,
+        #bae6fd, #38bdf8, #0284c7, #0ea5e9, #7dd3fc, #bae6fd
+    ) !important;
+    box-shadow: 0 0 22px rgba(56, 189, 248, 0.65) !important;
+}
+
+html body #categories .profile-card .profile-avatar,
+body #categories .profile-card .profile-avatar,
+#categories .profile-card .profile-avatar {
+    background: linear-gradient(180deg, #f0f9ff, #bae6fd) !important;
+    border: 3px solid #ffffff !important;
+}
+
+html body .profile-header-card {
+    background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 50%, #0284c7 100%) !important;
+    border: 4px solid #7dd3fc !important;
+    box-shadow:
+        0 10px 0 #075985,
+        0 15px 40px rgba(14, 165, 233, 0.4),
+        inset 0 2px 0 rgba(255, 255, 255, 0.4) !important;
+}
+
+html body .profile-header-card .profile-avatar-ring {
+    background: conic-gradient(
+        from 0deg,
+        #bae6fd, #38bdf8, #0284c7, #0ea5e9, #e0f2fe, #bae6fd
+    ) !important;
+    box-shadow: 0 0 22px rgba(56, 189, 248, 0.7) !important;
+}
+
+html body .profile-header-card .profile-avatar {
+    background: linear-gradient(180deg, #f0f9ff, #bae6fd) !important;
+    border: 3px solid #ffffff !important;
+}
+
+html body .profile-header-name {
+    color: #ffffff !important;
+    text-shadow: 0 2px 6px rgba(3, 105, 161, 0.5) !important;
+}
+
+html body .profile-header-subtitle {
+    color: #e0f2fe !important;
+    text-shadow: 0 1px 3px rgba(3, 105, 161, 0.4) !important;
+}
