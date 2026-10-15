@@ -3865,3 +3865,12 @@ body.profile-page .tab-btn[data-tab="profile"] .tab-label {
 body.profile-page .tab-btn[data-tab="profile"] {
     border-color: #60a5fa !important;
 }
+/* ✅ فاصله از بالای صفحه (برای گوشی‌های نوچ‌دار) */
+body {
+    padding-top: env(safe-area-inset-top);
+}
+
+#topBar {
+    padding-top: env(safe-area-inset-top);
+    margin-top: env(safe-area-inset-top);
+}
