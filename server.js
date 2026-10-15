@@ -14,6 +14,8 @@ const PORT = process.env.PORT || 3000;
 console.log("🚀 Booting Daneshmand backend...");
 console.log("📡 PORT =", PORT);
 console.log("🗄️ DB_HOST =", process.env.DB_HOST);
+// ✅ اعتماد به proxy (Liara)
+app.set("trust proxy", 1);
 
 // ─── Middleware ───
 app.use(cors());
