@@ -52,6 +52,11 @@ app.use((req, res, next) => {
                           req.path === "/manifest.json" ||
                           req.path === "/service-worker.js";
 
+    // ✅ حالت تست موقت: اگه ?test=1 توی URL بود، از مرورگر هم باز شه
+    if (req.query.test === "1") {
+        return next();
+    }
+
     // اگه از اپ نیومده و مسیر مجاز نیست، به صفحه دانلود بره
     if (!isApp && !isStaticFile && !isApiPath && !isAllowedPath) {
         return res.redirect("/download-app");
@@ -407,4 +412,3 @@ async function start() {
 }
 
 start();
-                
