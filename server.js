@@ -28,23 +28,22 @@ app.use((req, res, next) => {
     next();
 });
 
+// ============================================
+// 🚫 جلوگیری کامل از کش (نسخه قوی)
+// ============================================
+app.use((req, res, next) => {
+    res.set({
+        "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0",
+        "Pragma": "no-cache",
+        "Expires": "0",
+        "Surrogate-Control": "no-store"
+    });
+    next();
+});
+
 // ─── Health check ───
 app.get("/health", (req, res) => {
     res.json({ ok: true, timestamp: Date.now() });
-});
-
-// ============================================
-// 🚫 جلوگیری از کش شدن فایل‌های مهم
-// ============================================
-app.use((req, res, next) => {
-    if (req.path.match(/\.(css|js|html)$/i) ||
-        req.path === "/" ||
-        req.path === "/index.html") {
-        res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate, max-age=0");
-        res.setHeader("Pragma", "no-cache");
-        res.setHeader("Expires", "0");
-    }
-    next();
 });
 
 // ─── صفحه دانلود اپ ───
@@ -329,8 +328,16 @@ function loadRoutes() {
 }
 
 // ─── Static files ───
-app.use(express.static(path.join(__dirname, "public")));
-app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, "public"), {
+    etag: false,
+    lastModified: false,
+    maxAge: 0
+}));
+app.use(express.static(__dirname, {
+    etag: false,
+    lastModified: false,
+    maxAge: 0
+}));
 
 // ─── Serve manifest.json and service-worker.js safely ───
 function sendFileSafe(res, fileName, contentType) {
@@ -339,10 +346,16 @@ function sendFileSafe(res, fileName, contentType) {
 
     if (fs.existsSync(rootPath)) {
         res.setHeader("Content-Type", contentType);
+        res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0");
+        res.setHeader("Pragma", "no-cache");
+        res.setHeader("Expires", "0");
         return res.sendFile(rootPath);
     }
     if (fs.existsSync(publicPath)) {
         res.setHeader("Content-Type", contentType);
+        res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0");
+        res.setHeader("Pragma", "no-cache");
+        res.setHeader("Expires", "0");
         return res.sendFile(publicPath);
     }
     console.warn("⚠️ File not found:", fileName);
@@ -354,11 +367,23 @@ app.get("/manifest.json", (req, res) => {
 });
 
 app.get("/service-worker.js", (req, res) => {
+    res.set({
+        "Cache-Control": "no-store, no-cache, must-revalidate, max-age=0",
+        "Pragma": "no-cache",
+        "Expires": "0",
+        "Service-Worker-Allowed": "/",
+        "Content-Type": "application/javascript"
+    });
     sendFileSafe(res, "service-worker.js", "application/javascript");
 });
 
 // ─── SPA fallback ───
 app.get("*", (req, res) => {
+    res.set({
+        "Cache-Control": "no-store, no-cache, must-revalidate, max-age=0",
+        "Pragma": "no-cache",
+        "Expires": "0"
+    });
     res.sendFile(path.join(__dirname, "index.html"));
 });
 
