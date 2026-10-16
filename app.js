@@ -168,7 +168,7 @@ const BANNED_ROOTS = [
 
 const RESERVED_USERNAMES = ["admin", "system", "bot", "demo", "moderator", "support"];
 
-const categoriesDiv = document.getElementById("categories");
+let categoriesDiv = document.getElementById("categories");
 let isExitingApp = false;
 
 /* ============================================
