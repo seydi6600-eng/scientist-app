@@ -4726,3 +4726,196 @@ html body .profile-header-subtitle {
     color: #e0f2fe !important;
     text-shadow: 0 1px 3px rgba(3, 105, 161, 0.4) !important;
 }
+/* ============================================
+   🎯 FIX نهایی — همه چیز رو یکجا درست می‌کنه
+   ============================================ */
+
+/* حذف فاصله اضافی از body و topBar */
+html, body {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+#topBar,
+.top-bar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin: 0 !important;
+    padding: 6px 10px !important;
+    padding-top: calc(6px + env(safe-area-inset-top, 0px)) !important;
+    height: auto !important;
+    min-height: 54px !important;
+    max-height: none !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 6px !important;
+    background: linear-gradient(135deg, #1e40af, #3b82f6) !important;
+    border-bottom: 3px solid #fbbf24 !important;
+    box-sizing: border-box !important;
+    z-index: 1000 !important;
+}
+
+/* قلب‌ها در یک خط افقی (override همه قوانین قبلی) */
+#topBar .hearts-mini,
+.top-bar .hearts-mini {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 1px !important;
+    padding: 3px 8px !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    background: rgba(255,255,255,0.15) !important;
+    border: 2px solid rgba(255,255,255,0.35) !important;
+    border-radius: 14px !important;
+    line-height: 1 !important;
+    flex-shrink: 1 !important;
+    letter-spacing: 0 !important;
+}
+
+#topBar .hearts-mini .hearts-row,
+.top-bar .hearts-mini .hearts-row {
+    display: contents !important;
+}
+
+#topBar .hearts-mini .heart-item,
+.top-bar .hearts-mini .heart-item {
+    font-size: 11px !important;
+    width: auto !important;
+    height: auto !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    line-height: 1 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* سکه */
+#topBar .currency {
+    padding: 4px 8px !important;
+    gap: 3px !important;
+    font-size: 12px !important;
+    flex-shrink: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+}
+
+#topBar .currency-img {
+    width: 16px !important;
+    height: 16px !important;
+}
+
+/* عنوان */
+#topBar .top-bar-title {
+    font-size: 13px !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    text-align: center !important;
+    padding: 0 4px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+}
+
+/* دکمه موزیک */
+#topBar .music-toggle-btn {
+    width: 34px !important;
+    height: 34px !important;
+    padding: 0 !important;
+    font-size: 15px !important;
+    flex-shrink: 0 !important;
+}
+
+/* فاصله محتوا از نوار بالا */
+.categories-container,
+#categories {
+    padding-top: calc(68px + env(safe-area-inset-top, 0px)) !important;
+}
+
+/* ============================================
+   🌤️ پروفایل آبی آسمانی — اولویت بالا
+   ============================================ */
+html body #categories .profile-card,
+body #categories .profile-card,
+#categories .profile-card {
+    background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 50%, #0284c7 100%) !important;
+    border: 4px solid #7dd3fc !important;
+    border-radius: 26px !important;
+    box-shadow:
+        0 8px 0 #075985,
+        0 12px 30px rgba(2, 132, 199, 0.5),
+        inset 0 2px 0 rgba(255, 255, 255, 0.35) !important;
+}
+
+html body #categories .profile-card .profile-name,
+body #categories .profile-card .profile-name,
+#categories .profile-card .profile-name {
+    display: table !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    margin: 0 auto 6px !important;
+    padding: 6px 24px !important;
+    border: 2px solid #ffffff !important;
+    border-radius: 999px !important;
+    background: rgba(255, 255, 255, 0.25) !important;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    font-weight: 900 !important;
+    text-shadow: 0 2px 4px rgba(3, 105, 161, 0.5) !important;
+    box-shadow:
+        0 3px 0 rgba(7, 89, 133, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
+    top: 0 !important;
+    transform: none !important;
+    position: relative !important;
+    z-index: 5 !important;
+}
+
+html body #categories .profile-card .profile-avatar-ring,
+body #categories .profile-card .profile-avatar-ring,
+#categories .profile-card .profile-avatar-ring {
+    background: conic-gradient(
+        from 0deg,
+        #e0f2fe, #7dd3fc, #38bdf8, #0284c7, #bae6fd, #e0f2fe
+    ) !important;
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.9) !important;
+}
+
+html body #categories .profile-card .profile-avatar,
+body #categories .profile-card .profile-avatar,
+#categories .profile-card .profile-avatar {
+    background: linear-gradient(180deg, #ffffff, #e0f2fe) !important;
+    border: 3px solid #ffffff !important;
+}
+
+html body #categories .profile-card .stat-box,
+body #categories .profile-card .stat-box,
+#categories .profile-card .stat-box {
+    background: rgba(255, 255, 255, 0.92) !important;
+    border: 2px solid #7dd3fc !important;
+    box-shadow:
+        0 3px 0 #075985,
+        inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+html body #categories .profile-card .stat-box .stat-value,
+body #categories .profile-card .stat-box .stat-value {
+    color: #0369a1 !important;
+}
+
+html body #categories .profile-card .stat-box .stat-label,
+body #categories .profile-card .stat-box .stat-label {
+    color: #0284c7 !important;
+}
