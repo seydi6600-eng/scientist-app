@@ -4919,4 +4919,21 @@ html body #categories .profile-card .stat-box .stat-label,
 body #categories .profile-card .stat-box .stat-label {
     color: #0284c7 !important;
 }
+/* ============================================
+   🎯 مخفی کردن نوار بالا وقتی لازمه
+   ============================================ */
+#topBar[style*="display: none"],
+#topBar[style*="display:none"],
+.top-bar[style*="display: none"],
+.top-bar[style*="display:none"] {
+    display: none !important;
+}
+
+/* همین برای نوار پایین */
+#bottomBar[style*="display: none"],
+#bottomBar[style*="display:none"],
+.bottom-bar[style*="display: none"],
+.bottom-bar[style*="display:none"] {
+    display: none !important;
+}
 
