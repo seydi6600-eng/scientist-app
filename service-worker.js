@@ -1,41 +1,51 @@
 /* ============================================
-   Service Worker — Self-Destruct
-   این نسخه خودش رو حذف می‌کنه تا کش قدیمی پاک شه
+   Service Worker — Self-Destruct + No Cache
+   نسخه کامل و تمیز
    ============================================ */
 
-self.addEventListener("install", (event) => {
-    console.log("🔥 SW installing — will self-destruct");
+// هنگام نصب → فوراً فعال شو
+self.addEventListener('install', (event) => {
+    console.log('[SW] Installing... skipWaiting');
     self.skipWaiting();
 });
 
-self.addEventListener("activate", (event) => {
-    console.log("🔥 SW activating — destroying all caches");
+// هنگام فعال شدن → همه کش‌ها رو پاک کن و خودت رو unregister کن
+self.addEventListener('activate', (event) => {
+    console.log('[SW] Activating... destroying everything');
+
     event.waitUntil(
         caches.keys()
-            .then((names) => {
+            .then((cacheNames) => {
                 return Promise.all(
-                    names.map((n) => {
-                        console.log("🗑 Deleting cache:", n);
-                        return caches.delete(n);
+                    cacheNames.map((cacheName) => {
+                        console.log('[SW] Deleting cache:', cacheName);
+                        return caches.delete(cacheName);
                     })
                 );
             })
             .then(() => {
-                console.log("🗑 Unregistering SW");
+                console.log('[SW] Claiming clients');
+                return self.clients.claim();
+            })
+            .then(() => {
+                console.log('[SW] Unregistering myself');
                 return self.registration.unregister();
             })
             .then(() => {
-                return self.clients.matchAll({ type: "window" });
+                // همه تب‌های باز رو رفرش کن
+                return self.clients.matchAll({ type: 'window' });
             })
             .then((clients) => {
-                clients.forEach((c) => {
-                    try { c.navigate(c.url); } catch (e) {}
+                clients.forEach((client) => {
+                    try {
+                        client.navigate(client.url);
+                    } catch (e) {
+                        // ignore
+                    }
                 });
             })
     );
 });
 
-self.addEventListener("fetch", (event) => {
-    // هیچ کشی، همه چیز مستقیم از شبکه
-    event.respondWith(fetch(event.request));
-});
+// هیچ fetch listener نداشته باش
+// یعنی هیچ کشی انجام نمی‌شه و همه درخواست‌ها مستقیم از شبکه میرن
