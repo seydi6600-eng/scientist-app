@@ -15,7 +15,6 @@ console.log("🚀 Booting Daneshmand backend...");
 console.log("📡 PORT =", PORT);
 console.log("🗄️ DB_HOST =", process.env.DB_HOST);
 
-// ✅ اعتماد به proxy (Liara)
 app.set("trust proxy", 1);
 
 // ─── Middleware ───
@@ -34,7 +33,21 @@ app.get("/health", (req, res) => {
     res.json({ ok: true, timestamp: Date.now() });
 });
 
-// ─── صفحه دانلود اپ (فقط برای دسترسی مستقیم) ───
+// ============================================
+// 🚫 جلوگیری از کش شدن فایل‌های مهم
+// ============================================
+app.use((req, res, next) => {
+    if (req.path.match(/\.(css|js|html)$/i) ||
+        req.path === "/" ||
+        req.path === "/index.html") {
+        res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate, max-age=0");
+        res.setHeader("Pragma", "no-cache");
+        res.setHeader("Expires", "0");
+    }
+    next();
+});
+
+// ─── صفحه دانلود اپ ───
 app.get("/download-app", (req, res) => {
     res.send(`
         <!DOCTYPE html>
