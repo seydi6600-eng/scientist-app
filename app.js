@@ -1451,14 +1451,27 @@ function getAvatarHTML(avatarId, size) {
 }
 
 function resetCategoriesDiv() {
-    categoriesDiv.innerHTML = "";
-    categoriesDiv.style.display = "";
-    categoriesDiv.style.overflow = "";
-    categoriesDiv.style.paddingTop = "";
-    categoriesDiv.style.paddingBottom = "";
-    categoriesDiv.style.flexDirection = "";
-    categoriesDiv.style.gap = "";
-    categoriesDiv.style.height = "";
+    // ۱. حذف کامل صفحه قبلی از حافظه (به جای پاک کردن محتوا)
+    if (categoriesDiv && categoriesDiv.parentNode) {
+        categoriesDiv.parentNode.removeChild(categoriesDiv);
+    }
+    
+    // ۲. ساخت یک صفحه جدید کاملاً تمیز
+    const newDiv = document.createElement("div");
+    newDiv.id = "categories";
+    newDiv.className = "categories-container";
+    
+    // ۳. اضافه کردن به body
+    document.body.appendChild(newDiv);
+    
+    // ۴. به‌روزرسانی متغیر جهانی
+    categoriesDiv = newDiv;
+    
+    // ۵. اطمینان از اینکه نوار پایین بالای صفحه جدید باقی می‌ماند
+    const bottomBar = document.getElementById("bottomBar");
+    if (bottomBar) {
+        document.body.appendChild(bottomBar);
+    }
 }
 
 function setActiveTab(tabName) {
