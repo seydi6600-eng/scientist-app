@@ -51,7 +51,7 @@ const ONLINE_UNLOCK_LEVEL = 5;
 const SIGNING_KEY = "SCIENTIST_APP_2026_SECRET_v4";
 
 /* 🔌 API */
-const API_BASE = "http://127.0.0.1:3000";
+const API_BASE = "https://daneshmand.ir";
 const LEAGUE_API_MODE = "online";
 const LEAGUE_API_BASE = "/league";
 const PVP_API_BASE = "/pvp";
