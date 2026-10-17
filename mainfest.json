@@ -3,7 +3,7 @@
   "name": "دانشمند - بازی فکری آنلاین",
   "short_name": "دانشمند",
   "description": "بازی فکری آنلاین دانشمند - چالش، لیگ و رقابت",
-  "start_url": "/guest",
+  "start_url": "/?v=910",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait",

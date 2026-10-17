@@ -1,4 +1,101 @@
 /* ============================================
+   ✅ FIX: Safe Area + Top Bar Layout
+   ============================================ */
+html, body {
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.top-bar {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 8px 10px !important;
+    padding-top: max(8px, env(safe-area-inset-top)) !important;
+    gap: 6px !important;
+    background: linear-gradient(135deg, #1e40af, #3b82f6) !important;
+    border-bottom: 3px solid #fbbf24 !important;
+    min-height: 56px !important;
+    height: auto !important;
+    direction: rtl !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+}
+
+.currency {
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    padding: 4px 10px !important;
+    background: linear-gradient(180deg, #fef3c7, #fde68a) !important;
+    border: 2px solid #fbbf24 !important;
+    border-radius: 12px !important;
+    font-size: 13px !important;
+    font-weight: 900 !important;
+    color: #92400e !important;
+    flex-shrink: 0 !important;
+    box-shadow: 0 3px 0 #b45309 !important;
+    white-space: nowrap !important;
+    height: auto !important;
+}
+
+.currency-img {
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 50% !important;
+}
+
+.currency-icon {
+    font-size: 16px !important;
+}
+
+.currency-plus {
+    font-size: 16px !important;
+    font-weight: 900 !important;
+    color: #16a34a !important;
+}
+
+.hearts-mini {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 1px !important;
+    font-size: 11px !important;
+    flex-shrink: 1 !important;
+    max-width: 130px !important;
+    overflow: hidden !important;
+    line-height: 1 !important;
+}
+
+.top-bar-title {
+    font-size: 14px !important;
+    font-weight: 900 !important;
+    color: white !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+.music-toggle-btn {
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+    border: 2px solid #fbbf24 !important;
+    background: linear-gradient(180deg, #fbbf24, #d97706) !important;
+    font-size: 17px !important;
+    cursor: pointer !important;
+    flex-shrink: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 3px 0 #92400e !important;
+}
+/* ============================================
    اپ دانشمند — استایل کامل
    ============================================ */
 
@@ -3865,3 +3962,978 @@ body.profile-page .tab-btn[data-tab="profile"] .tab-label {
 body.profile-page .tab-btn[data-tab="profile"] {
     border-color: #60a5fa !important;
 }
+/* ✅ فاصله از بالای صفحه (برای گوشی‌های نوچ‌دار) */
+body {
+    padding-top: env(safe-area-inset-top);
+}
+
+#topBar {
+    padding-top: env(safe-area-inset-top);
+    margin-top: env(safe-area-inset-top);
+}
+
+
+
+/* =========================================================
+   FIX نهایی چیدمان موبایل: نوارها، اسکرول و Safe Area
+   این بخش عمداً در انتهای فایل قرار دارد تا قوانین تکراری قبلی را خنثی کند.
+   ========================================================= */
+
+html {
+    height: 100%;
+    min-height: 100%;
+    padding: 0 !important;
+    margin: 0;
+    overflow: hidden;
+}
+
+body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    min-height: 100dvh;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+    overscroll-behavior: none;
+}
+
+body::before {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+}
+
+#topBar,
+.top-bar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: calc(60px + env(safe-area-inset-top, 0px)) !important;
+    margin-top: 0 !important;
+    padding: calc(8px + env(safe-area-inset-top, 0px)) 10px 8px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 6px !important;
+    box-sizing: border-box !important;
+    direction: rtl !important;
+    z-index: 1000 !important;
+}
+
+.top-bar > *,
+#topBar > * {
+    min-width: 0;
+}
+
+.top-bar-title {
+    flex: 1 1 auto !important;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    font-size: clamp(12px, 3.5vw, 16px) !important;
+}
+
+.currency,
+.hearts-mini {
+    flex-shrink: 1 !important;
+    min-width: 0;
+}
+
+.currency {
+    max-width: 42%;
+    white-space: nowrap;
+}
+
+.hearts-mini {
+    max-width: 36%;
+    overflow: hidden;
+}
+
+.categories-container,
+#categories {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    height: 100%;
+    height: 100dvh;
+    min-height: 0;
+    margin: 0 auto;
+    padding-top: calc(72px + env(safe-area-inset-top, 0px)) !important;
+    padding-right: max(12px, env(safe-area-inset-right, 0px)) !important;
+    padding-bottom: calc(116px + env(safe-area-inset-bottom, 0px)) !important;
+    padding-left: max(12px, env(safe-area-inset-left, 0px)) !important;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+    scrollbar-width: none;
+    box-sizing: border-box;
+}
+
+.categories-container::-webkit-scrollbar,
+#categories::-webkit-scrollbar {
+    display: none;
+}
+
+.categories-container.no-scroll {
+    overflow-y: auto !important;
+    min-height: 0;
+}
+
+.bottom-bar {
+    position: fixed !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: calc(100px + env(safe-area-inset-bottom, 0px)) !important;
+    padding: 6px 6px calc(8px + env(safe-area-inset-bottom, 0px)) !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-around !important;
+    z-index: 1200 !important;
+}
+
+.tab-btn {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    padding: 4px 2px !important;
+    gap: 4px !important;
+}
+
+.tab-btn .tab-img,
+.tab-btn .tab-icon-fallback {
+    width: clamp(40px, 12vw, 52px) !important;
+    height: clamp(40px, 12vw, 52px) !important;
+}
+
+.tab-btn .tab-icon-fallback {
+    font-size: clamp(30px, 9vw, 42px) !important;
+}
+
+.tab-btn .tab-label {
+    font-size: clamp(9px, 2.8vw, 11px) !important;
+    white-space: nowrap;
+}
+
+.profile-card,
+.promo-banner,
+.category-grid,
+.menu-grid,
+.profile-info-grid,
+.avatar-grid {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.profile-mid-row {
+    min-width: 0;
+    gap: 10px;
+}
+
+.profile-stats-grid {
+    min-width: 0;
+}
+
+@media (max-width: 400px) {
+    .top-bar,
+    #topBar {
+        gap: 4px !important;
+        padding-right: 8px !important;
+        padding-left: 8px !important;
+    }
+
+    .currency {
+        gap: 3px !important;
+        padding: 4px 7px !important;
+        font-size: 12px !important;
+    }
+
+    .currency-img {
+        width: 18px !important;
+        height: 18px !important;
+    }
+
+    .hearts-mini {
+        font-size: 11px !important;
+        padding: 4px 6px !important;
+        letter-spacing: 0 !important;
+    }
+
+    .categories-container,
+    #categories {
+        padding-top: calc(68px + env(safe-area-inset-top, 0px)) !important;
+        padding-bottom: calc(108px + env(safe-area-inset-bottom, 0px)) !important;
+    }
+
+    .bottom-bar {
+        height: calc(92px + env(safe-area-inset-bottom, 0px)) !important;
+    }
+}
+
+@media (max-height: 650px) {
+    .categories-container,
+    #categories {
+        padding-top: calc(64px + env(safe-area-inset-top, 0px)) !important;
+        padding-bottom: calc(90px + env(safe-area-inset-bottom, 0px)) !important;
+    }
+
+    .bottom-bar {
+        height: calc(82px + env(safe-area-inset-bottom, 0px)) !important;
+    }
+
+    .tab-btn .tab-img,
+    .tab-btn .tab-icon-fallback {
+        width: 38px !important;
+        height: 38px !important;
+    }
+}
+
+
+/* ============================================
+   Sky-blue profile theme + username badge
+   ============================================ */
+
+/* Main profile card on the home screen */
+.profile-card {
+    background: linear-gradient(135deg, #f8fdff 0%, #e0f5ff 55%, #c7edff 100%) !important;
+    border: 4px solid #38bdf8 !important;
+    box-shadow:
+        0 8px 0 #0369a1,
+        0 12px 30px rgba(14, 165, 233, 0.30),
+        inset 0 2px 0 rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Username label: sky-blue pill */
+.profile-card .profile-name {
+    display: table !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    margin: 0 auto 4px !important;
+    padding: 5px 22px !important;
+    border: 2px solid #7dd3fc !important;
+    border-radius: 999px !important;
+    background: linear-gradient(135deg, #67e8f9 0%, #38bdf8 55%, #0ea5e9 100%) !important;
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(3, 105, 161, 0.35) !important;
+    box-shadow:
+        0 3px 0 #0284c7,
+        inset 0 1px 0 rgba(255, 255, 255, 0.55) !important;
+}
+
+/* Sky-blue avatar ring */
+.profile-card .profile-avatar-ring {
+    background: conic-gradient(
+        from 0deg,
+        #7dd3fc,
+        #38bdf8,
+        #0284c7,
+        #60a5fa,
+        #bae6fd,
+        #7dd3fc
+    ) !important;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.55) !important;
+}
+
+/* Match the profile page's larger card to the same palette */
+.profile-header-card {
+    background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 55%, #2563eb 100%) !important;
+    border-color: #7dd3fc !important;
+    box-shadow:
+        0 10px 0 #075985,
+        0 15px 40px rgba(14, 165, 233, 0.35),
+        inset 0 2px 0 rgba(255, 255, 255, 0.35) !important;
+}
+
+/* Sky-blue profile avatar ring on the profile page */
+.profile-header-card .profile-avatar-ring {
+    background: conic-gradient(
+        from 0deg,
+        #bae6fd,
+        #38bdf8,
+        #0284c7,
+        #60a5fa,
+        #e0f2fe,
+        #bae6fd
+    ) !important;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.55) !important;
+}
+
+
+/* Move username badge and profile photo upward */
+.profile-card .profile-name {
+    transform: translateY(-8px) !important;
+}
+
+.profile-card .profile-avatar-wrapper {
+    transform: translateY(-8px) !important;
+}
+
+/* Keep the moved elements from feeling cramped */
+.profile-card {
+    gap: 8px !important;
+    padding-top: 12px !important;
+}
+
+
+/* Stronger positioning override for username + avatar */
+.profile-card .profile-name,
+.profile-card > .profile-name {
+    position: relative !important;
+    top: -12px !important;
+    transform: none !important;
+    margin-bottom: -4px !important;
+}
+
+.profile-card .profile-avatar-wrapper,
+.profile-card .profile-mid-row .profile-avatar-wrapper,
+.profile-card .profile-avatar,
+.profile-card .profile-mid-row {
+    position: relative !important;
+    top: -10px !important;
+}
+
+.profile-card .profile-avatar-wrapper {
+    margin-bottom: -10px !important;
+}
+
+/* Ensure the stylesheet override remains active on small screens */
+@media (max-width: 600px) {
+    .profile-card .profile-name,
+    .profile-card > .profile-name {
+        top: -12px !important;
+    }
+
+    .profile-card .profile-avatar-wrapper,
+    .profile-card .profile-mid-row .profile-avatar-wrapper,
+    .profile-card .profile-avatar,
+    .profile-card .profile-mid-row {
+        top: -10px !important;
+    }
+}
+
+
+/* Final fix based on the actual class names in the project CSS */
+.profile-card .profile-name {
+    position: relative !important;
+    top: -14px !important;
+    transform: none !important;
+    margin-bottom: -8px !important;
+    z-index: 5 !important;
+}
+
+.profile-card .profile-avatar-wrapper {
+    position: relative !important;
+    top: -12px !important;
+    transform: none !important;
+    z-index: 3 !important;
+}
+
+/* Avoid moving the statistics row itself; only lift the avatar */
+.profile-card .profile-mid-row {
+    top: 0 !important;
+    transform: none !important;
+}
+
+
+/* Final positioning fix using the exact classes created in app.js */
+#categories .profile-card > .profile-name {
+    position: relative !important;
+    top: -12px !important;
+    margin-bottom: -12px !important;
+    transform: none !important;
+    z-index: 5 !important;
+}
+
+#categories .profile-card .profile-mid-row > .profile-avatar-wrapper {
+    position: relative !important;
+    top: -10px !important;
+    transform: none !important;
+    margin-bottom: -10px !important;
+    z-index: 3 !important;
+}
+
+/* Keep the stats row in its original position */
+#categories .profile-card .profile-mid-row {
+    top: 0 !important;
+    transform: none !important;
+}
+
+/* Make sure the overrides apply on narrow mobile screens too */
+@media (max-width: 600px) {
+    #categories .profile-card > .profile-name {
+        top: -12px !important;
+        margin-bottom: -12px !important;
+    }
+
+    #categories .profile-card .profile-mid-row > .profile-avatar-wrapper {
+        top: -10px !important;
+        margin-bottom: -10px !important;
+    }
+}
+
+/* Stronger final override: visually lift profile name and avatar */
+#categories .profile-card .profile-name {
+  transform: translateY(-18px) !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+#categories .profile-card .profile-avatar-wrapper {
+  transform: translateY(-16px) !important;
+  position: relative !important;
+  z-index: 8 !important;
+}
+
+/* اصلاح موقعیت نام و آواتار پروفایل */
+.profile-card .profile-name {
+    position: relative;
+    top: -12px;
+}
+
+.profile-card .profile-avatar-wrapper {
+    position: relative;
+    top: -10px;
+}
+/* ============================================
+   🎯 FIX نهایی نوار بالا (همه قوانین قبلی رو override می‌کنه)
+   ============================================ */
+
+#topBar,
+.top-bar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: calc(52px + env(safe-area-inset-top, 0px)) !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 6px 10px !important;
+    padding-top: calc(6px + env(safe-area-inset-top, 0px)) !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 6px !important;
+    background: linear-gradient(135deg, #1e40af, #3b82f6) !important;
+    border-bottom: 3px solid #fbbf24 !important;
+    box-sizing: border-box !important;
+    direction: rtl !important;
+    z-index: 1000 !important;
+    overflow: visible !important;
+}
+
+#topBar > * {
+    flex-shrink: 0 !important;
+    min-width: 0 !important;
+}
+
+/* قلب‌ها — یک خط افقی */
+#topBar .hearts-mini {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 1px !important;
+    padding: 3px 8px !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    background: rgba(255,255,255,0.15) !important;
+    border: 2px solid rgba(255,255,255,0.35) !important;
+    border-radius: 14px !important;
+    line-height: 1 !important;
+    flex-shrink: 1 !important;
+    letter-spacing: 0 !important;
+}
+
+/* ردیف‌های قلب داخل — همه‌شون یک خط افقی */
+#topBar .hearts-mini .hearts-row {
+    display: contents !important;
+}
+
+#topBar .hearts-mini .heart-item {
+    font-size: 11px !important;
+    width: auto !important;
+    height: auto !important;
+    min-width: 0 !important;
+    line-height: 1 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* سکه */
+#topBar .currency {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 3px !important;
+    padding: 4px 8px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-width: none !important;
+    white-space: nowrap !important;
+    font-size: 12px !important;
+    flex-shrink: 0 !important;
+}
+
+#topBar .currency-img {
+    width: 16px !important;
+    height: 16px !important;
+}
+
+#topBar .currency-plus {
+    font-size: 13px !important;
+    width: 18px !important;
+    height: 18px !important;
+    margin: 0 !important;
+}
+
+/* عنوان */
+#topBar .top-bar-title {
+    font-size: 13px !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    padding: 0 4px !important;
+}
+
+/* دکمه موزیک */
+#topBar .music-toggle-btn {
+    width: 34px !important;
+    height: 34px !important;
+    padding: 0 !important;
+    font-size: 15px !important;
+    flex-shrink: 0 !important;
+}
+
+/* فاصله محتوا از نوار بالا */
+.categories-container,
+#categories {
+    padding-top: calc(68px + env(safe-area-inset-top, 0px)) !important;
+}
+/* ============================================
+   🌤️ پروفایل آبی آسمانی
+   ============================================ */
+
+/* کارت پروفایل — آبی آسمانی */
+.profile-card {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 40%, #bae6fd 100%) !important;
+    border: 4px solid #38bdf8 !important;
+    border-radius: 26px !important;
+    box-shadow:
+        0 8px 0 #0284c7,
+        0 12px 30px rgba(14, 165, 233, 0.35),
+        inset 0 2px 0 rgba(255, 255, 255, 0.9) !important;
+    padding: 16px !important;
+    gap: 10px !important;
+}
+
+/* اسم کاربر — قرص آبی آسمانی */
+.profile-card .profile-name {
+    display: table !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    margin: 0 auto 6px !important;
+    padding: 6px 24px !important;
+    border: 2px solid #7dd3fc !important;
+    border-radius: 999px !important;
+    background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 55%, #0284c7 100%) !important;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    font-weight: 900 !important;
+    text-shadow: 0 2px 4px rgba(3, 105, 161, 0.4) !important;
+    box-shadow:
+        0 3px 0 #075985,
+        inset 0 1px 0 rgba(255, 255, 255, 0.5) !important;
+}
+
+/* حلقه دور آواتار — آبی آسمانی */
+.profile-card .profile-avatar-ring {
+    background: conic-gradient(
+        from 0deg,
+        #bae6fd,
+        #38bdf8,
+        #0284c7,
+        #0ea5e9,
+        #7dd3fc,
+        #bae6fd
+    ) !important;
+    box-shadow: 0 0 22px rgba(56, 189, 248, 0.65) !important;
+}
+
+/* آواتار */
+.profile-card .profile-avatar {
+    background: linear-gradient(180deg, #f0f9ff, #bae6fd) !important;
+    border: 3px solid #ffffff !important;
+}
+
+/* کارت‌های سطح و امتیاز */
+.profile-card .stat-box {
+    background: linear-gradient(180deg, #ffffff, #f0f9ff) !important;
+    border: 2px solid #7dd3fc !important;
+    box-shadow:
+        0 3px 0 #0284c7,
+        inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+.profile-card .stat-box .stat-value {
+    color: #0369a1 !important;
+}
+
+.profile-card .stat-box .stat-label {
+    color: #0284c7 !important;
+}
+
+/* ============================================
+   🌤️ صفحه پروفایل (تب پروفایل) هم آبی آسمانی
+   ============================================ */
+
+.profile-header-card {
+    background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 50%, #0284c7 100%) !important;
+    border: 4px solid #7dd3fc !important;
+    box-shadow:
+        0 10px 0 #075985,
+        0 15px 40px rgba(14, 165, 233, 0.4),
+        inset 0 2px 0 rgba(255, 255, 255, 0.4) !important;
+}
+
+.profile-header-card .profile-avatar-ring {
+    background: conic-gradient(
+        from 0deg,
+        #bae6fd,
+        #38bdf8,
+        #0284c7,
+        #0ea5e9,
+        #e0f2fe,
+        #bae6fd
+    ) !important;
+    box-shadow: 0 0 22px rgba(56, 189, 248, 0.7) !important;
+}
+
+.profile-header-card .profile-avatar {
+    background: linear-gradient(180deg, #f0f9ff, #bae6fd) !important;
+    border: 3px solid #ffffff !important;
+}
+
+.profile-header-name {
+    color: #ffffff !important;
+    text-shadow: 0 2px 6px rgba(3, 105, 161, 0.5) !important;
+}
+
+.profile-header-subtitle {
+    color: #e0f2fe !important;
+    text-shadow: 0 1px 3px rgba(3, 105, 161, 0.4) !important;
+}
+/* ============================================
+   🌤️ FIX نهایی پروفایل آبی آسمانی
+   ============================================ */
+html body #categories .profile-card,
+body #categories .profile-card,
+#categories .profile-card {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 40%, #bae6fd 100%) !important;
+    border: 4px solid #38bdf8 !important;
+    box-shadow:
+        0 8px 0 #0284c7,
+        0 12px 30px rgba(14, 165, 233, 0.35),
+        inset 0 2px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+html body #categories .profile-card .profile-name,
+body #categories .profile-card .profile-name,
+#categories .profile-card .profile-name {
+    display: table !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    margin: 0 auto 6px !important;
+    padding: 6px 24px !important;
+    border: 2px solid #7dd3fc !important;
+    border-radius: 999px !important;
+    background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 55%, #0284c7 100%) !important;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    font-weight: 900 !important;
+    text-shadow: 0 2px 4px rgba(3, 105, 161, 0.4) !important;
+    box-shadow:
+        0 3px 0 #075985,
+        inset 0 1px 0 rgba(255, 255, 255, 0.5) !important;
+}
+
+html body #categories .profile-card .profile-avatar-ring,
+body #categories .profile-card .profile-avatar-ring,
+#categories .profile-card .profile-avatar-ring {
+    background: conic-gradient(
+        from 0deg,
+        #bae6fd, #38bdf8, #0284c7, #0ea5e9, #7dd3fc, #bae6fd
+    ) !important;
+    box-shadow: 0 0 22px rgba(56, 189, 248, 0.65) !important;
+}
+
+html body #categories .profile-card .profile-avatar,
+body #categories .profile-card .profile-avatar,
+#categories .profile-card .profile-avatar {
+    background: linear-gradient(180deg, #f0f9ff, #bae6fd) !important;
+    border: 3px solid #ffffff !important;
+}
+
+html body .profile-header-card {
+    background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 50%, #0284c7 100%) !important;
+    border: 4px solid #7dd3fc !important;
+    box-shadow:
+        0 10px 0 #075985,
+        0 15px 40px rgba(14, 165, 233, 0.4),
+        inset 0 2px 0 rgba(255, 255, 255, 0.4) !important;
+}
+
+html body .profile-header-card .profile-avatar-ring {
+    background: conic-gradient(
+        from 0deg,
+        #bae6fd, #38bdf8, #0284c7, #0ea5e9, #e0f2fe, #bae6fd
+    ) !important;
+    box-shadow: 0 0 22px rgba(56, 189, 248, 0.7) !important;
+}
+
+html body .profile-header-card .profile-avatar {
+    background: linear-gradient(180deg, #f0f9ff, #bae6fd) !important;
+    border: 3px solid #ffffff !important;
+}
+
+html body .profile-header-name {
+    color: #ffffff !important;
+    text-shadow: 0 2px 6px rgba(3, 105, 161, 0.5) !important;
+}
+
+html body .profile-header-subtitle {
+    color: #e0f2fe !important;
+    text-shadow: 0 1px 3px rgba(3, 105, 161, 0.4) !important;
+}
+/* ============================================
+   🎯 FIX نهایی — همه چیز رو یکجا درست می‌کنه
+   ============================================ */
+
+/* حذف فاصله اضافی از body و topBar */
+html, body {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+#topBar,
+.top-bar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin: 0 !important;
+    padding: 6px 10px !important;
+    padding-top: calc(6px + env(safe-area-inset-top, 0px)) !important;
+    height: auto !important;
+    min-height: 54px !important;
+    max-height: none !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 6px !important;
+    background: linear-gradient(135deg, #1e40af, #3b82f6) !important;
+    border-bottom: 3px solid #fbbf24 !important;
+    box-sizing: border-box !important;
+    z-index: 1000 !important;
+}
+
+/* قلب‌ها در یک خط افقی (override همه قوانین قبلی) */
+#topBar .hearts-mini,
+.top-bar .hearts-mini {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 1px !important;
+    padding: 3px 8px !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    background: rgba(255,255,255,0.15) !important;
+    border: 2px solid rgba(255,255,255,0.35) !important;
+    border-radius: 14px !important;
+    line-height: 1 !important;
+    flex-shrink: 1 !important;
+    letter-spacing: 0 !important;
+}
+
+#topBar .hearts-mini .hearts-row,
+.top-bar .hearts-mini .hearts-row {
+    display: contents !important;
+}
+
+#topBar .hearts-mini .heart-item,
+.top-bar .hearts-mini .heart-item {
+    font-size: 11px !important;
+    width: auto !important;
+    height: auto !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    line-height: 1 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* سکه */
+#topBar .currency {
+    padding: 4px 8px !important;
+    gap: 3px !important;
+    font-size: 12px !important;
+    flex-shrink: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+}
+
+#topBar .currency-img {
+    width: 16px !important;
+    height: 16px !important;
+}
+
+/* عنوان */
+#topBar .top-bar-title {
+    font-size: 13px !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    text-align: center !important;
+    padding: 0 4px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+}
+
+/* دکمه موزیک */
+#topBar .music-toggle-btn {
+    width: 34px !important;
+    height: 34px !important;
+    padding: 0 !important;
+    font-size: 15px !important;
+    flex-shrink: 0 !important;
+}
+
+/* فاصله محتوا از نوار بالا */
+.categories-container,
+#categories {
+    padding-top: calc(68px + env(safe-area-inset-top, 0px)) !important;
+}
+
+/* ============================================
+   🌤️ پروفایل آبی آسمانی — اولویت بالا
+   ============================================ */
+html body #categories .profile-card,
+body #categories .profile-card,
+#categories .profile-card {
+    background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 50%, #0284c7 100%) !important;
+    border: 4px solid #7dd3fc !important;
+    border-radius: 26px !important;
+    box-shadow:
+        0 8px 0 #075985,
+        0 12px 30px rgba(2, 132, 199, 0.5),
+        inset 0 2px 0 rgba(255, 255, 255, 0.35) !important;
+}
+
+html body #categories .profile-card .profile-name,
+body #categories .profile-card .profile-name,
+#categories .profile-card .profile-name {
+    display: table !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    margin: 0 auto 6px !important;
+    padding: 6px 24px !important;
+    border: 2px solid #ffffff !important;
+    border-radius: 999px !important;
+    background: rgba(255, 255, 255, 0.25) !important;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    font-weight: 900 !important;
+    text-shadow: 0 2px 4px rgba(3, 105, 161, 0.5) !important;
+    box-shadow:
+        0 3px 0 rgba(7, 89, 133, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
+    top: 0 !important;
+    transform: none !important;
+    position: relative !important;
+    z-index: 5 !important;
+}
+
+html body #categories .profile-card .profile-avatar-ring,
+body #categories .profile-card .profile-avatar-ring,
+#categories .profile-card .profile-avatar-ring {
+    background: conic-gradient(
+        from 0deg,
+        #e0f2fe, #7dd3fc, #38bdf8, #0284c7, #bae6fd, #e0f2fe
+    ) !important;
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.9) !important;
+}
+
+html body #categories .profile-card .profile-avatar,
+body #categories .profile-card .profile-avatar,
+#categories .profile-card .profile-avatar {
+    background: linear-gradient(180deg, #ffffff, #e0f2fe) !important;
+    border: 3px solid #ffffff !important;
+}
+
+html body #categories .profile-card .stat-box,
+body #categories .profile-card .stat-box,
+#categories .profile-card .stat-box {
+    background: rgba(255, 255, 255, 0.92) !important;
+    border: 2px solid #7dd3fc !important;
+    box-shadow:
+        0 3px 0 #075985,
+        inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+html body #categories .profile-card .stat-box .stat-value,
+body #categories .profile-card .stat-box .stat-value {
+    color: #0369a1 !important;
+}
+
+html body #categories .profile-card .stat-box .stat-label,
+body #categories .profile-card .stat-box .stat-label {
+    color: #0284c7 !important;
+}
+/* ============================================
+   🎯 مخفی کردن نوار بالا وقتی لازمه
+   ============================================ */
+#topBar[style*="display: none"],
+#topBar[style*="display:none"],
+.top-bar[style*="display: none"],
+.top-bar[style*="display:none"] {
+    display: none !important;
+}
+
+/* همین برای نوار پایین */
+#bottomBar[style*="display: none"],
+#bottomBar[style*="display:none"],
+.bottom-bar[style*="display: none"],
+.bottom-bar[style*="display:none"] {
+    display: none !important;
+}
+

@@ -15,6 +15,8 @@ console.log("🚀 Booting Daneshmand backend...");
 console.log("📡 PORT =", PORT);
 console.log("🗄️ DB_HOST =", process.env.DB_HOST);
 
+app.set("trust proxy", 1);
+
 // ─── Middleware ───
 app.use(cors());
 app.use(express.json({ limit: "5mb" }));
@@ -26,13 +28,81 @@ app.use((req, res, next) => {
     next();
 });
 
+// ============================================
+// 🚫 جلوگیری کامل از کش (نسخه قوی)
+// ============================================
+app.use((req, res, next) => {
+    res.set({
+        "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0",
+        "Pragma": "no-cache",
+        "Expires": "0",
+        "Surrogate-Control": "no-store"
+    });
+    next();
+});
+
 // ─── Health check ───
 app.get("/health", (req, res) => {
     res.json({ ok: true, timestamp: Date.now() });
 });
 
+// ─── صفحه دانلود اپ ───
+app.get("/download-app", (req, res) => {
+    res.send(`
+        <!DOCTYPE html>
+        <html lang="fa" dir="rtl">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>دانلود اپ دانشمند</title>
+            <style>
+                * { margin: 0; padding: 0; box-sizing: border-box; }
+                body {
+                    min-height: 100vh;
+                    display: flex; flex-direction: column;
+                    justify-content: center; align-items: center;
+                    font-family: Tahoma, sans-serif;
+                    background: linear-gradient(180deg, #0f172a, #1e3a8a);
+                    color: white; padding: 24px; text-align: center;
+                }
+                .card {
+                    max-width: 380px; width: 100%;
+                    background: rgba(255,255,255,0.05);
+                    border: 2px solid rgba(255,255,255,0.15);
+                    border-radius: 24px; padding: 40px 24px;
+                    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+                }
+                .emoji { font-size: 80px; margin-bottom: 20px; }
+                h1 { font-size: 26px; margin-bottom: 12px; }
+                p { color: #94a3b8; font-size: 15px; line-height: 1.8; margin-bottom: 30px; }
+                a {
+                    display: inline-block;
+                    padding: 16px 36px;
+                    background: linear-gradient(180deg, #22c55e, #16a34a);
+                    color: white; text-decoration: none;
+                    border-radius: 14px; font-size: 16px; font-weight: bold;
+                    box-shadow: 0 6px 0 #14532d;
+                    transition: transform 0.15s;
+                }
+                a:active { transform: translateY(3px); box-shadow: 0 3px 0 #14532d; }
+            </style>
+        </head>
+        <body>
+            <div class="card">
+                <div class="emoji">🧠</div>
+                <h1>اپلیکیشن دانشمند</h1>
+                <p>برای استفاده از بازی فکری دانشمند، لطفاً اپلیکیشن رو دانلود و نصب کن</p>
+                <a href="https://cafebazaar.ir/app/ir.daneshmand.app" target="_blank">
+                    📥 دانلود از کافه‌بازار
+                </a>
+            </div>
+        </body>
+        </html>
+    `);
+});
+
 // ═══════════════════════════════════════════════════════
-// ✅ مسیرهای عمومی برای PWABuilder (بدون نیاز به JWT)
+// ✅ مسیرهای عمومی
 // ═══════════════════════════════════════════════════════
 
 app.get('/api/public/hello', (req, res) => {
@@ -65,10 +135,6 @@ app.get('/guest', (req, res) => {
         </html>
     `);
 });
-
-// ═══════════════════════════════════════════════════════
-// پایان مسیرهای عمومی
-// ═══════════════════════════════════════════════════════
 
 // ─── Setup Database ───
 async function setupDatabase() {
@@ -262,24 +328,34 @@ function loadRoutes() {
 }
 
 // ─── Static files ───
-app.use(express.static(path.join(__dirname, "public")));
-app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, "public"), {
+    etag: false,
+    lastModified: false,
+    maxAge: 0
+}));
+app.use(express.static(__dirname, {
+    etag: false,
+    lastModified: false,
+    maxAge: 0
+}));
 
 // ─── Serve manifest.json and service-worker.js safely ───
 function sendFileSafe(res, fileName, contentType) {
     const rootPath = path.join(__dirname, fileName);
     const publicPath = path.join(__dirname, "public", fileName);
 
-    console.log("🔍 Looking for:", fileName);
-    console.log("   - rootPath:", rootPath, "exists:", fs.existsSync(rootPath));
-    console.log("   - publicPath:", publicPath, "exists:", fs.existsSync(publicPath));
-
     if (fs.existsSync(rootPath)) {
         res.setHeader("Content-Type", contentType);
+        res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0");
+        res.setHeader("Pragma", "no-cache");
+        res.setHeader("Expires", "0");
         return res.sendFile(rootPath);
     }
     if (fs.existsSync(publicPath)) {
         res.setHeader("Content-Type", contentType);
+        res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0");
+        res.setHeader("Pragma", "no-cache");
+        res.setHeader("Expires", "0");
         return res.sendFile(publicPath);
     }
     console.warn("⚠️ File not found:", fileName);
@@ -291,11 +367,23 @@ app.get("/manifest.json", (req, res) => {
 });
 
 app.get("/service-worker.js", (req, res) => {
+    res.set({
+        "Cache-Control": "no-store, no-cache, must-revalidate, max-age=0",
+        "Pragma": "no-cache",
+        "Expires": "0",
+        "Service-Worker-Allowed": "/",
+        "Content-Type": "application/javascript"
+    });
     sendFileSafe(res, "service-worker.js", "application/javascript");
 });
 
 // ─── SPA fallback ───
 app.get("*", (req, res) => {
+    res.set({
+        "Cache-Control": "no-store, no-cache, must-revalidate, max-age=0",
+        "Pragma": "no-cache",
+        "Expires": "0"
+    });
     res.sendFile(path.join(__dirname, "index.html"));
 });
 

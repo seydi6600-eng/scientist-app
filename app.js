@@ -51,7 +51,7 @@ const ONLINE_UNLOCK_LEVEL = 5;
 const SIGNING_KEY = "SCIENTIST_APP_2026_SECRET_v4";
 
 /* 🔌 API */
-const API_BASE = "";
+const API_BASE = "https://daneshmand-app.ir";
 const LEAGUE_API_MODE = "online";
 const LEAGUE_API_BASE = "/league";
 const PVP_API_BASE = "/pvp";
@@ -168,7 +168,7 @@ const BANNED_ROOTS = [
 
 const RESERVED_USERNAMES = ["admin", "system", "bot", "demo", "moderator", "support"];
 
-const categoriesDiv = document.getElementById("categories");
+let categoriesDiv = document.getElementById("categories");
 let isExitingApp = false;
 
 /* ============================================
@@ -581,6 +581,19 @@ const Users = {
         if (Array.isArray(vipBackup)) vip = vip.concat(vipBackup);
         merged.vipAvatars = Array.from(new Set(vip.filter(Boolean)));
 
+        // ✅ ادغام items (آیتم‌های فروشگاه)
+        let items = Object.assign({ removeTwo: 0, extraTime: 0, rename: 0 }, serverUser.items || {});
+        for (let i = 0; i < sources.length; i++) {
+            if (sources[i].items && typeof sources[i].items === "object") {
+                const si = sources[i].items;
+                for (const k in si) {
+                    if (!si.hasOwnProperty(k)) continue;
+                    items[k] = Math.max(items[k] || 0, si[k] || 0);
+                }
+            }
+        }
+        merged.items = items;
+
         let cat = Object.assign({}, serverUser.categoryStats || {});
         for (let i = 0; i < sources.length; i++) {
             if (sources[i].categoryStats && typeof sources[i].categoryStats === "object") {
@@ -761,6 +774,14 @@ const Users = {
             user.categoryStats = {};
         }
 
+        // ✅ مقداردهی اولیه items
+        if (!user.items || typeof user.items !== "object") {
+            user.items = { removeTwo: 0, extraTime: 0, rename: 0 };
+        }
+        if (typeof user.items.removeTwo !== "number") user.items.removeTwo = 0;
+        if (typeof user.items.extraTime !== "number") user.items.extraTime = 0;
+        if (typeof user.items.rename !== "number") user.items.rename = 0;
+
         const level = (typeof user.level === "number" && isFinite(user.level) && user.level >= 1)
             ? user.level : 1;
         const xp = (typeof user.xp === "number" && isFinite(user.xp) && user.xp >= 0)
@@ -886,7 +907,8 @@ const Users = {
             categoryStats: "category_stats",
             lastDailyHeartClaim: "last_daily_heart_claim",
             subscriptionUntil: "subscription_until",
-            subscriptionType: "subscription_type"
+            subscriptionType: "subscription_type",
+            items: "items"
         };
 
         for (const key in updates) {
@@ -990,6 +1012,15 @@ const Shop = {
         try {
             await this.logTransaction(user, "coin_earn", amount, reason);
         } catch (e) {}
+        return true;
+    },
+
+    async addItem(itemId, amount = 1) {
+        const user = Users.loadCurrent();
+        if (!user) return false;
+        const items = Object.assign({ removeTwo: 0, extraTime: 0, rename: 0 }, user.items || {});
+        items[itemId] = (items[itemId] || 0) + amount;
+        Users.updateCurrent({ items: items });
         return true;
     }
 };
@@ -1420,14 +1451,27 @@ function getAvatarHTML(avatarId, size) {
 }
 
 function resetCategoriesDiv() {
-    categoriesDiv.innerHTML = "";
-    categoriesDiv.style.display = "";
-    categoriesDiv.style.overflow = "";
-    categoriesDiv.style.paddingTop = "";
-    categoriesDiv.style.paddingBottom = "";
-    categoriesDiv.style.flexDirection = "";
-    categoriesDiv.style.gap = "";
-    categoriesDiv.style.height = "";
+    // ۱. حذف کامل صفحه قبلی از حافظه (به جای پاک کردن محتوا)
+    if (categoriesDiv && categoriesDiv.parentNode) {
+        categoriesDiv.parentNode.removeChild(categoriesDiv);
+    }
+    
+    // ۲. ساخت یک صفحه جدید کاملاً تمیز
+    const newDiv = document.createElement("div");
+    newDiv.id = "categories";
+    newDiv.className = "categories-container";
+    
+    // ۳. اضافه کردن به body
+    document.body.appendChild(newDiv);
+    
+    // ۴. به‌روزرسانی متغیر جهانی
+    categoriesDiv = newDiv;
+    
+    // ۵. اطمینان از اینکه نوار پایین بالای صفحه جدید باقی می‌ماند
+    const bottomBar = document.getElementById("bottomBar");
+    if (bottomBar) {
+        document.body.appendChild(bottomBar);
+    }
 }
 
 function setActiveTab(tabName) {
@@ -1436,7 +1480,6 @@ function setActiveTab(tabName) {
     });
 }
 
-/* ✅✅✅ تابع اصلی پروفایل آبی ✅✅✅ */
 function setProfilePageMode(isProfile) {
     if (isProfile) {
         document.body.classList.add("profile-page");
@@ -1446,7 +1489,6 @@ function setProfilePageMode(isProfile) {
 }
 
 function goTab(tabName) {
-    /* ✅ غیرفعال کردن حالت پروفایل در همه تب‌ها */
     setProfilePageMode(false);
     
     setActiveTab(tabName);
@@ -2450,7 +2492,6 @@ function renderOpponentCard(opponent, options) {
    ============================================ */
 
 function showHomeScreen() {
-    /* ✅ غیرفعال کردن حالت پروفایل — برگشت به تم عادی */
     setProfilePageMode(false);
     
     if (typeof clearPvPTimer === "function") clearPvPTimer();
@@ -2949,7 +2990,58 @@ function runQuiz(questions, title, difficulty) {
     let timeLeft = QUESTION_TIME;
 
     User.hideBottomBar();
+    
+    // ۱. آماده‌سازی صفحه (فقط یک بار)
+    categoriesDiv.innerHTML = "";
+    categoriesDiv.className = "quiz-screen-container";
 
+    // ۲. ساخت المان‌های UI به صورت کش شده (فقط یک بار)
+    const ui = {};
+    ui.topRow = document.createElement("div");
+    ui.topRow.className = "quiz-header";
+    
+    ui.heartsEl = document.createElement("span");
+    ui.timerEl = document.createElement("span");
+    ui.timerEl.id = "quizTimerDisplay";
+    ui.progressEl = document.createElement("span");
+    ui.exitBtn = document.createElement("button");
+    ui.exitBtn.className = "exit-btn";
+    ui.exitBtn.textContent = "خروج";
+    
+    ui.topRow.appendChild(ui.heartsEl);
+    ui.topRow.appendChild(ui.timerEl);
+    ui.topRow.appendChild(ui.progressEl);
+    ui.topRow.appendChild(ui.exitBtn);
+
+    ui.questionCard = document.createElement("div");
+    ui.questionCard.className = "quiz-question-card";
+    ui.qText = document.createElement("p");
+    ui.qText.className = "quiz-question-text";
+    ui.questionCard.appendChild(ui.qText);
+
+    ui.itemsRow = document.createElement("div");
+    ui.itemsRow.className = "quiz-items-row";
+    ui.removeBtn = document.createElement("button");
+    ui.timeBtn = document.createElement("button");
+    ui.itemsRow.appendChild(ui.removeBtn);
+    ui.itemsRow.appendChild(ui.timeBtn);
+
+    ui.answersContainer = document.createElement("div");
+    ui.answersContainer.className = "quiz-answers-container";
+    ui.answerButtons = [];
+    for (let i = 0; i < 4; i++) {
+        const btn = document.createElement("button");
+        btn.className = "category quiz-answer-btn";
+        ui.answerButtons.push(btn);
+        ui.answersContainer.appendChild(btn);
+    }
+
+    categoriesDiv.appendChild(ui.topRow);
+    categoriesDiv.appendChild(ui.questionCard);
+    categoriesDiv.appendChild(ui.itemsRow);
+    categoriesDiv.appendChild(ui.answersContainer);
+
+    // ۳. توابع کمکی تایمر
     function stopTimer() { if (timer) { clearInterval(timer); timer = null; } }
 
     function startTimer(onExpire) {
@@ -2964,81 +3056,71 @@ function runQuiz(questions, title, difficulty) {
     }
 
     function updateTimerDisplay() {
-        const el = document.getElementById("quizTimerDisplay");
-        if (!el) return;
-        el.textContent = "⏱ " + toPersianNumber(Math.max(0, timeLeft));
-        el.style.color = timeLeft <= 5 ? "#dc2626" : "#1e40af";
-        el.style.background = timeLeft <= 5 ? "#fee2e2" : "#dbeafe";
-        el.style.borderColor = timeLeft <= 5 ? "#dc2626" : "#3b82f6";
+        if (!ui.timerEl) return;
+        ui.timerEl.textContent = "⏱ " + toPersianNumber(Math.max(0, timeLeft));
+        ui.timerEl.style.color = timeLeft <= 5 ? "#dc2626" : "#1e40af";
+        ui.timerEl.style.background = timeLeft <= 5 ? "#fee2e2" : "#dbeafe";
+        ui.timerEl.style.borderColor = timeLeft <= 5 ? "#dc2626" : "#3b82f6";
     }
 
+    // ۴. تابع نمایش سوال (فقط آپدیت می‌کند، نمی‌سازد)
     function showQuestion() {
-        categoriesDiv.innerHTML = "";
-        categoriesDiv.style.cssText =
-            "overflow:hidden;padding-top:72px;padding-bottom:14px;" +
-            "display:flex;flex-direction:column;gap:10px;height:100vh;";
-
+        if (current >= totalQ) { showResult("complete"); return; }
+        
         const q = selectedQuestions[current];
 
-        const topRow = document.createElement("div");
-        topRow.className = "quiz-header";
-        topRow.style.cssText =
-            "display:flex;justify-content:space-between;align-items:center;" +
-            "gap:6px;padding:8px 10px;background:white;" +
-            "border:2px solid #3b82f6;border-radius:14px;flex-shrink:0;";
-
-        const heartsEl = document.createElement("span");
+        // آپدیت هدر
         if (Subscription.isActive()) {
-            heartsEl.textContent = "🎫 نامحدود";
-            heartsEl.style.cssText = "font-size:12px;font-weight:900;color:#10b981;background:#d1fae5;padding:4px 10px;border-radius:10px;border:1.5px solid #10b981;";
+            ui.heartsEl.textContent = "🎫 نامحدود";
+            ui.heartsEl.style.cssText = "font-size:12px;font-weight:900;color:#10b981;background:#d1fae5;padding:4px 10px;border-radius:10px;border:1.5px solid #10b981;";
         } else {
             const hearts = Hearts.peek();
-            heartsEl.textContent = "❤️".repeat(Math.max(0, hearts)) + "🖤".repeat(Math.max(0, HEART_MAX - hearts));
-            heartsEl.style.fontSize = "10px";
+            ui.heartsEl.textContent = "❤️".repeat(Math.max(0, hearts)) + "🖤".repeat(Math.max(0, HEART_MAX - hearts));
+            ui.heartsEl.style.cssText = "font-size:10px;";
         }
-        topRow.appendChild(heartsEl);
+        
+        ui.progressEl.textContent = toPersianNumber(current + 1) + "/" + toPersianNumber(totalQ);
+        ui.progressEl.style.cssText = "font-size:12px;font-weight:900;color:#64748b;";
 
-        const timerEl = document.createElement("span");
-        timerEl.id = "quizTimerDisplay";
-        timerEl.style.cssText = "font-size:13px;font-weight:900;color:#1e40af;background:#dbeafe;padding:4px 10px;border-radius:10px;border:1.5px solid #3b82f6;";
-        topRow.appendChild(timerEl);
+        // آپدیت سوال
+        ui.qText.textContent = cleanQuestionText(q.question);
 
-        const progress = document.createElement("span");
-        progress.textContent = toPersianNumber(current + 1) + "/" + toPersianNumber(totalQ);
-        progress.style.cssText = "font-size:12px;font-weight:900;color:#64748b;";
-        topRow.appendChild(progress);
+        // آپدیت دکمه‌های آیتم
+        const currentUserItems = Users.loadCurrent();
+        const myItems = currentUserItems && currentUserItems.items ? currentUserItems.items : {};
+        const removeTwoCount = Number(myItems.removeTwo) || 0;
+        const extraTimeCount = Number(myItems.extraTime) || 0;
 
-        const exitBtn = document.createElement("button");
-        exitBtn.className = "exit-btn";
-        exitBtn.textContent = "خروج";
-        exitBtn.onclick = async function () {
-            stopTimer();
-            await showResult("exit");
-        };
-        topRow.appendChild(exitBtn);
-        categoriesDiv.appendChild(topRow);
+        ui.removeBtn.textContent = "⏭ حذف دو گزینه (" + toPersianNumber(removeTwoCount) + ")";
+        if (removeTwoCount > 0) {
+            ui.removeBtn.style.cssText = "padding:10px 14px;border-radius:14px;background:linear-gradient(180deg,#8b5cf6,#7c3aed);color:white;border:3px solid #c4b5fd;font-family:inherit;font-size:12px;font-weight:900;cursor:pointer;box-shadow:0 4px 0 #5b21b6;";
+            ui.removeBtn.disabled = false;
+        } else {
+            ui.removeBtn.style.cssText = "padding:10px 14px;border-radius:14px;background:linear-gradient(180deg,#94a3b8,#64748b);color:#e2e8f0;border:3px solid #cbd5e1;font-family:inherit;font-size:12px;font-weight:900;cursor:not-allowed;box-shadow:0 4px 0 #475569;opacity:0.75;";
+            ui.removeBtn.disabled = true;
+        }
 
-        const questionCard = document.createElement("div");
-        questionCard.style.cssText =
-            "background:white;border:3px solid #3b82f6;border-radius:18px;" +
-            "padding:16px 18px;flex-shrink:0;min-height:80px;" +
-            "display:flex;align-items:center;justify-content:center;";
-        const qText = document.createElement("p");
-        qText.style.cssText = "font-size:17px;font-weight:900;color:#1e293b;line-height:1.6;margin:0;text-align:center;";
-        qText.textContent = cleanQuestionText(q.question);
-        questionCard.appendChild(qText);
-        categoriesDiv.appendChild(questionCard);
+        ui.timeBtn.textContent = "⏰ +۱۰ ثانیه (" + toPersianNumber(extraTimeCount) + ")";
+        if (extraTimeCount > 0) {
+            ui.timeBtn.style.cssText = "padding:10px 14px;border-radius:14px;background:linear-gradient(180deg,#f59e0b,#d97706);color:white;border:3px solid #fcd34d;font-family:inherit;font-size:12px;font-weight:900;cursor:pointer;box-shadow:0 4px 0 #b45309;";
+            ui.timeBtn.disabled = false;
+        } else {
+            ui.timeBtn.style.cssText = "padding:10px 14px;border-radius:14px;background:linear-gradient(180deg,#94a3b8,#64748b);color:#e2e8f0;border:3px solid #cbd5e1;font-family:inherit;font-size:12px;font-weight:900;cursor:not-allowed;box-shadow:0 4px 0 #475569;opacity:0.75;";
+            ui.timeBtn.disabled = true;
+        }
 
-        const answerButtons = [];
+        // آپدیت دکمه‌های پاسخ
         q.answers.forEach(function (answerText, i) {
-            const button = document.createElement("button");
+            const button = ui.answerButtons[i];
             button.textContent = answerText;
-            button.className = "category";
-            button.style.cssText = "min-height:auto;padding:14px 18px;font-size:15px;font-weight:900;flex-shrink:0;";
+            button.className = "category quiz-answer-btn";
+            button.disabled = false;
+            button.style.visibility = "visible";
+            
             button.onclick = async function () {
                 if (button.disabled) return;
                 stopTimer();
-                answerButtons.forEach(b => b.disabled = true);
+                ui.answerButtons.forEach(b => b.disabled = true);
                 if (i === q.correct) {
                     score++;
                     button.classList.add("correct");
@@ -3050,7 +3132,7 @@ function runQuiz(questions, title, difficulty) {
                 } else {
                     wrongCount++;
                     button.classList.add("wrong");
-                    if (answerButtons[q.correct]) answerButtons[q.correct].classList.add("correct");
+                    if (ui.answerButtons[q.correct]) ui.answerButtons[q.correct].classList.add("correct");
                 }
                 setTimeout(function () {
                     current++;
@@ -3058,15 +3140,64 @@ function runQuiz(questions, title, difficulty) {
                     else showResult("complete");
                 }, 1200);
             };
-            answerButtons.push(button);
-            categoriesDiv.appendChild(button);
         });
 
+        // هندلر دکمه حذف دو گزینه
+        ui.removeBtn.onclick = function () {
+            if (ui.removeBtn.disabled) return;
+            ui.removeBtn.disabled = true;
+            ui.removeBtn.style.opacity = "0.5";
+
+            const freshUser = Users.loadCurrent();
+            const items = Object.assign({ removeTwo: 0, extraTime: 0, rename: 0 }, freshUser.items || {});
+            items.removeTwo = Math.max(0, (items.removeTwo || 0) - 1);
+            Users.updateCurrent({ items: items });
+
+            const wrongIndices = [];
+            ui.answerButtons.forEach(function (b, idx) {
+                if (idx !== q.correct) wrongIndices.push(idx);
+            });
+            const toRemove = wrongIndices.sort(() => Math.random() - 0.5).slice(0, 2);
+            toRemove.forEach(function (idx) {
+                if (ui.answerButtons[idx]) {
+                    ui.answerButtons[idx].style.visibility = "hidden";
+                    ui.answerButtons[idx].disabled = true;
+                }
+            });
+
+            showInfoModal({
+                emoji: "⏭", title: "حذف دو گزینه فعال شد!",
+                message: "دو جواب غلط حذف شدن",
+                color: "#8b5cf6", shadow: "#5b21b6", buttonText: "ادامه"
+            });
+        };
+
+        // هندلر دکمه زمان اضافه
+        ui.timeBtn.onclick = function () {
+            if (ui.timeBtn.disabled) return;
+            ui.timeBtn.disabled = true;
+            ui.timeBtn.style.opacity = "0.5";
+
+            const freshUser = Users.loadCurrent();
+            const items = Object.assign({ removeTwo: 0, extraTime: 0, rename: 0 }, freshUser.items || {});
+            items.extraTime = Math.max(0, (items.extraTime || 0) - 1);
+            Users.updateCurrent({ items: items });
+
+            timeLeft += 10;
+            updateTimerDisplay();
+
+            showInfoModal({
+                emoji: "⏰", title: "+۱۰ ثانیه اضافه شد!",
+                message: "زمان بیشتری برای فکر کردن داری",
+                color: "#f59e0b", shadow: "#b45309", buttonText: "ادامه"
+            });
+        };
+
         startTimer(async function () {
-            if (answerButtons.every(b => b.disabled)) return;
-            answerButtons.forEach(b => b.disabled = true);
+            if (ui.answerButtons.every(b => b.disabled)) return;
+            ui.answerButtons.forEach(b => b.disabled = true);
             wrongCount++;
-            if (answerButtons[q.correct]) answerButtons[q.correct].classList.add("correct");
+            if (ui.answerButtons[q.correct]) ui.answerButtons[q.correct].classList.add("correct");
             setTimeout(function () {
                 current++;
                 if (current < totalQ) showQuestion();
@@ -3075,13 +3206,15 @@ function runQuiz(questions, title, difficulty) {
         });
     }
 
+    // ۵. تابع نمایش نتیجه
     async function showResult(reason) {
         if (finalized) return;
         finalized = true;
         stopTimer();
         User.hideBottomBar();
         playMusicMain();
-        categoriesDiv.style.cssText = "overflow:auto;display:block;";
+        categoriesDiv.className = ""; 
+        categoriesDiv.style.cssText = "overflow:auto;display:block;padding-top:14px;padding-bottom:14px;";
         categoriesDiv.innerHTML = "";
 
         let bonusXP = 0, bonusCoins = 0;
@@ -3174,9 +3307,13 @@ function runQuiz(questions, title, difficulty) {
         categoriesDiv.appendChild(buttonRow);
     }
 
-    showQuestion();
-}
+    ui.exitBtn.onclick = async function () {
+        stopTimer();
+        await showResult("exit");
+    };
 
+    showQuestion(); // شروع کوییز
+}
 /* ============================================
    🎫 صفحه اشتراک
    ============================================ */
@@ -3298,7 +3435,6 @@ function createSectionTitle(text, gradient, emoji) {
 }
 
 function showProfileScreen() {
-    /* ✅✅✅ فعال کردن حالت پروفایل آبی ✅✅✅ */
     setProfilePageMode(true);
     
     resetCategoriesDiv();

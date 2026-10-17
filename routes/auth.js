@@ -1,10 +1,28 @@
 // routes/auth.js — ثبت‌نام و ورود
 const express = require("express");
 const bcrypt = require("bcryptjs");
+const rateLimit = require("express-rate-limit");
 const { query } = require("../db");
 const { generateToken } = require("../middleware/auth");
 
 const router = express.Router();
+
+// ─── Rate Limiters ───
+const loginLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // ۱۵ دقیقه
+    max: 5, // حداکثر ۵ تلاش
+    message: { ok: false, error: "تلاش‌های زیاد برای ورود. لطفاً ۱۵ دقیقه صبر کنید." },
+    standardHeaders: true,
+    legacyHeaders: false,
+});
+
+const registerLimiter = rateLimit({
+    windowMs: 60 * 60 * 1000, // ۱ ساعت
+    max: 3, // حداکثر ۳ ثبت‌نام در ساعت
+    message: { ok: false, error: "ثبت‌نام‌های زیاد از این IP." },
+    standardHeaders: true,
+    legacyHeaders: false,
+});
 
 function normalizePhone(phone) {
     if (!phone) return "";
@@ -31,7 +49,7 @@ function isValidUsername(username) {
     return true;
 }
 
-router.post("/register", async (req, res) => {
+router.post("/register", registerLimiter, async (req, res) => {
     try {
         const { phone, username, password } = req.body;
 
@@ -86,7 +104,7 @@ router.post("/register", async (req, res) => {
     }
 });
 
-router.post("/login", async (req, res) => {
+router.post("/login", loginLimiter, async (req, res) => {
     try {
         const { phone, password } = req.body;
         if (!phone || !password) {
@@ -100,13 +118,14 @@ router.post("/login", async (req, res) => {
         );
 
         if (result.rows.length === 0) {
-            return res.status(404).json({ ok: false, error: "کاربر پیدا نشد" });
+            return res.status(401).json({ ok: false, error: "شماره یا رمز اشتباهه" });
         }
 
         const user = result.rows[0];
         const valid = await bcrypt.compare(password, user.password_hash);
         if (!valid) {
-            return res.status(401).json({ ok: false, error: "رمز اشتباهه" });
+            console.warn(`❌ Failed login attempt for phone: ${normalizedPhone} from IP: ${req.ip}`);
+            return res.status(401).json({ ok: false, error: "شماره یا رمز اشتباهه" });
         }
 
         const token = generateToken(user);
@@ -133,3 +152,4 @@ router.post("/login", async (req, res) => {
 });
 
 module.exports = router;
+
