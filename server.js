@@ -419,16 +419,3 @@ async function start() {
 }
 
 start();
-app.use((err, req, res, next) => { console.error("🚨 ERROR:", err.stack); res.status(500).json({ ok: false, error: err.message }); });
-
-// ===== رفع مشکل ستون‌های لیگ =====
-(async () => {
-    try {
-        await query("ALTER TABLE league_members ADD COLUMN IF NOT EXISTS season_id VARCHAR(50);");
-        await query("ALTER TABLE league_matches ADD COLUMN IF NOT EXISTS season_id VARCHAR(50);");
-        await query("ALTER TABLE league_matches ADD COLUMN IF NOT EXISTS start_time BIGINT;");
-        console.log("✅ ستون‌های لیگ با موفقیت بررسی/اضافه شدند.");
-    } catch (e) {
-        console.error("❌ خطا در افزودن ستون‌ها:", e.message);
-    }
-})();
