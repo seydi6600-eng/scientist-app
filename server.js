@@ -153,140 +153,81 @@ async function setupDatabase() {
 
         await query(`
             CREATE TABLE IF NOT EXISTS users (
-                phone TEXT PRIMARY KEY,
-                username TEXT UNIQUE NOT NULL,
-                password_hash TEXT NOT NULL,
-                avatar TEXT DEFAULT '👨',
-                xp INTEGER DEFAULT 0,
-                level INTEGER DEFAULT 1,
-                coins INTEGER DEFAULT 50,
-                games_played INTEGER DEFAULT 0,
-                correct_answers INTEGER DEFAULT 0,
-                wrong_answers INTEGER DEFAULT 0,
-                best_score INTEGER DEFAULT 0,
-                league_id TEXT DEFAULT 'division3',
-                league_wins INTEGER DEFAULT 0,
-                online_wins INTEGER DEFAULT 0,
-                online_games INTEGER DEFAULT 0,
-                online_best_score INTEGER DEFAULT 0,
-                category_stats JSONB DEFAULT '{}'::jsonb,
-                vip_avatars JSONB DEFAULT '[]'::jsonb,
-                honors JSONB DEFAULT '[]'::jsonb,
-                subscription_until BIGINT DEFAULT 0,
-                subscription_type TEXT,
-                last_daily_heart_claim BIGINT DEFAULT 0,
-                created_at BIGINT
+                phone TEXT PRIMARY KEY, username TEXT UNIQUE NOT NULL,
+                password_hash TEXT NOT NULL, avatar TEXT DEFAULT '👨',
+                xp INTEGER DEFAULT 0, level INTEGER DEFAULT 1, coins INTEGER DEFAULT 50,
+                games_played INTEGER DEFAULT 0, correct_answers INTEGER DEFAULT 0,
+                wrong_answers INTEGER DEFAULT 0, best_score INTEGER DEFAULT 0,
+                league_id TEXT DEFAULT 'division3', league_wins INTEGER DEFAULT 0,
+                online_wins INTEGER DEFAULT 0, online_games INTEGER DEFAULT 0,
+                online_best_score INTEGER DEFAULT 0, category_stats JSONB DEFAULT '{}'::jsonb,
+                vip_avatars JSONB DEFAULT '[]'::jsonb, honors JSONB DEFAULT '[]'::jsonb,
+                subscription_until BIGINT DEFAULT 0, subscription_type TEXT,
+                last_daily_heart_claim BIGINT DEFAULT 0, created_at BIGINT
             );
         `);
 
         await query(`
             CREATE TABLE IF NOT EXISTS league_seasons (
-                id SERIAL PRIMARY KEY,
-                season_start BIGINT NOT NULL,
-                season_end BIGINT NOT NULL,
-                league_id TEXT NOT NULL,
-                group_number INTEGER NOT NULL,
-                status TEXT DEFAULT 'active'
+                id SERIAL PRIMARY KEY, season_start BIGINT NOT NULL, season_end BIGINT NOT NULL,
+                league_id TEXT NOT NULL, group_number INTEGER NOT NULL, status TEXT DEFAULT 'active'
             );
         `);
 
         await query(`
             CREATE TABLE IF NOT EXISTS league_members (
-                id SERIAL PRIMARY KEY,
-                season_id INTEGER REFERENCES league_seasons(id) ON DELETE CASCADE,
-                user_phone TEXT NOT NULL,
-                username TEXT NOT NULL,
-                avatar TEXT DEFAULT '👤',
-                points INTEGER DEFAULT 0,
-                correct_answers INTEGER DEFAULT 0,
-                played INTEGER DEFAULT 0,
-                wins INTEGER DEFAULT 0,
-                draws INTEGER DEFAULT 0,
-                losses INTEGER DEFAULT 0,
-                topic1 TEXT,
-                topic2 TEXT,
-                topic3 TEXT,
-                joined_at BIGINT
+                id SERIAL PRIMARY KEY, season_id INTEGER REFERENCES league_seasons(id) ON DELETE CASCADE,
+                user_phone TEXT NOT NULL, username TEXT NOT NULL, avatar TEXT DEFAULT '👤',
+                points INTEGER DEFAULT 0, correct_answers INTEGER DEFAULT 0,
+                played INTEGER DEFAULT 0, wins INTEGER DEFAULT 0, draws INTEGER DEFAULT 0, losses INTEGER DEFAULT 0,
+                topic1 TEXT, topic2 TEXT, topic3 TEXT, joined_at BIGINT
             );
         `);
 
         await query(`
             CREATE TABLE IF NOT EXISTS league_matches (
-                id SERIAL PRIMARY KEY,
-                season_id INTEGER REFERENCES league_seasons(id) ON DELETE CASCADE,
-                round_number INTEGER,
-                home_phone TEXT,
-                away_phone TEXT,
-                home_score INTEGER,
-                away_score INTEGER,
-                home_submitted BOOLEAN DEFAULT false,
-                away_submitted BOOLEAN DEFAULT false,
-                home_topic TEXT,
-                away_topic TEXT,
-                start_time BIGINT,
-                end_time BIGINT,
-                status TEXT DEFAULT 'scheduled',
-                result TEXT
+                id SERIAL PRIMARY KEY, season_id INTEGER REFERENCES league_seasons(id) ON DELETE CASCADE,
+                round_number INTEGER, home_phone TEXT, away_phone TEXT,
+                home_score INTEGER, away_score INTEGER,
+                home_submitted BOOLEAN DEFAULT false, away_submitted BOOLEAN DEFAULT false,
+                home_topic TEXT, away_topic TEXT, start_time BIGINT, end_time BIGINT,
+                status TEXT DEFAULT 'scheduled', result TEXT
             );
         `);
 
         await query(`
             CREATE TABLE IF NOT EXISTS league_bootstrap_queue (
-                user_phone TEXT PRIMARY KEY,
-                username TEXT,
-                avatar TEXT,
-                league_id TEXT,
-                paid_amount INTEGER,
-                registered_at BIGINT
+                user_phone TEXT PRIMARY KEY, username TEXT, avatar TEXT, league_id TEXT,
+                paid_amount INTEGER, registered_at BIGINT
             );
         `);
 
         await query(`
             CREATE TABLE IF NOT EXISTS pvp_queue (
-                id SERIAL PRIMARY KEY,
-                user_phone TEXT NOT NULL UNIQUE,
-                username TEXT NOT NULL,
-                avatar TEXT DEFAULT '👤',
-                level INTEGER DEFAULT 1,
-                joined_at BIGINT NOT NULL
+                id SERIAL PRIMARY KEY, user_phone TEXT NOT NULL UNIQUE,
+                username TEXT NOT NULL, avatar TEXT DEFAULT '👤',
+                level INTEGER DEFAULT 1, joined_at BIGINT NOT NULL
             );
         `);
 
         await query(`
             CREATE TABLE IF NOT EXISTS pvp_matches (
                 id SERIAL PRIMARY KEY,
-                player1_phone TEXT NOT NULL,
-                player1_username TEXT NOT NULL,
-                player1_avatar TEXT,
-                player1_topic TEXT,
-                player1_score INTEGER DEFAULT 0,
-                player1_answered INTEGER DEFAULT 0,
-                player1_finished BOOLEAN DEFAULT false,
-                player2_phone TEXT NOT NULL,
-                player2_username TEXT NOT NULL,
-                player2_avatar TEXT,
-                player2_topic TEXT,
-                player2_score INTEGER DEFAULT 0,
-                player2_answered INTEGER DEFAULT 0,
-                player2_finished BOOLEAN DEFAULT false,
-                questions JSONB NOT NULL,
-                current_set INTEGER DEFAULT 1,
-                status TEXT DEFAULT 'selecting_topics',
-                started_at BIGINT,
-                finished_at BIGINT,
-                winner_phone TEXT,
-                created_at BIGINT DEFAULT (EXTRACT(EPOCH FROM NOW()) * 1000)
+                player1_phone TEXT NOT NULL, player1_username TEXT NOT NULL, player1_avatar TEXT,
+                player1_topic TEXT, player1_score INTEGER DEFAULT 0, player1_answered INTEGER DEFAULT 0, player1_finished BOOLEAN DEFAULT false,
+                player2_phone TEXT NOT NULL, player2_username TEXT NOT NULL, player2_avatar TEXT,
+                player2_topic TEXT, player2_score INTEGER DEFAULT 0, player2_answered INTEGER DEFAULT 0, player2_finished BOOLEAN DEFAULT false,
+                questions JSONB NOT NULL, current_set INTEGER DEFAULT 1,
+                status TEXT DEFAULT 'selecting_topics', started_at BIGINT, finished_at BIGINT,
+                winner_phone TEXT, created_at BIGINT DEFAULT (EXTRACT(EPOCH FROM NOW()) * 1000)
             );
         `);
 
         await query(`
             CREATE TABLE IF NOT EXISTS pvp_topic_selections (
-                id SERIAL PRIMARY KEY,
-                match_id INTEGER REFERENCES pvp_matches(id) ON DELETE CASCADE,
-                user_phone TEXT NOT NULL,
-                topic_id TEXT NOT NULL,
-                selected_at BIGINT DEFAULT (EXTRACT(EPOCH FROM NOW()) * 1000),
-                UNIQUE(match_id, user_phone)
+                id SERIAL PRIMARY KEY, match_id INTEGER REFERENCES pvp_matches(id) ON DELETE CASCADE,
+                user_phone TEXT NOT NULL, topic_id TEXT NOT NULL,
+                selected_at BIGINT DEFAULT (EXTRACT(EPOCH FROM NOW()) * 1000), UNIQUE(match_id, user_phone)
             );
         `);
 
@@ -327,16 +268,15 @@ function loadRoutes() {
     }
 }
 
+// ✅ لود کردن روت‌ها قبل از استاتیک‌ها و Catch-all
+loadRoutes();
+
 // ─── Static files ───
 app.use(express.static(path.join(__dirname, "public"), {
-    etag: false,
-    lastModified: false,
-    maxAge: 0
+    etag: false, lastModified: false, maxAge: 0
 }));
 app.use(express.static(__dirname, {
-    etag: false,
-    lastModified: false,
-    maxAge: 0
+    etag: false, lastModified: false, maxAge: 0
 }));
 
 // ─── Serve manifest.json and service-worker.js safely ───
@@ -377,7 +317,7 @@ app.get("/service-worker.js", (req, res) => {
     sendFileSafe(res, "service-worker.js", "application/javascript");
 });
 
-// ─── SPA fallback ───
+// ─── SPA fallback (باید همیشه آخرین روت باشد) ───
 app.get("*", (req, res) => {
     res.set({
         "Cache-Control": "no-store, no-cache, must-revalidate, max-age=0",
@@ -403,7 +343,6 @@ async function start() {
         const dbOk = await testConnection();
         if (dbOk) {
             await setupDatabase();
-            loadRoutes();
             try {
                 const { startCronJobs } = require("./cron/league");
                 startCronJobs();
