@@ -1,5 +1,4 @@
 // ===== ساخت خودکار جدول‌های لیگ =====
-async function initLeagueTables() {
     try {
         await query(`
             CREATE TABLE IF NOT EXISTS league_queue (
@@ -436,7 +435,6 @@ async function start() {
         const dbOk = await testConnection();
         if (dbOk) {
             await setupDatabase();
-            await initLeagueTables();
             loadRoutes();
             try {
                 const { startCronJobs } = require("./cron/league");
@@ -454,4 +452,5 @@ async function start() {
 
 start();
 });
+start();
 start();
