@@ -31,7 +31,6 @@ async function initLeagueTables() {
         console.error("❌ خطا در ساخت جدول‌های لیگ:", err.message);
     }
 }
-// initLeagueTables();
 // server.js — سرور اصلی
 require("dotenv").config();
 
@@ -454,5 +453,5 @@ async function start() {
 }
 
 start();
-    // initLeagueTables();
 });
+start();
