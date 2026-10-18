@@ -31,7 +31,7 @@ async function initLeagueTables() {
         console.error("❌ خطا در ساخت جدول‌های لیگ:", err.message);
     }
 }
-initLeagueTables();
+// initLeagueTables();
 // server.js — سرور اصلی
 require("dotenv").config();
 
@@ -437,6 +437,7 @@ async function start() {
         const dbOk = await testConnection();
         if (dbOk) {
             await setupDatabase();
+            await initLeagueTables();
             loadRoutes();
             try {
                 const { startCronJobs } = require("./cron/league");
@@ -452,6 +453,6 @@ async function start() {
     }
 }
 
-start().then(() => {
-    initLeagueTables();
+start();
+    // initLeagueTables();
 });
