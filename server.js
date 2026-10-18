@@ -1,3 +1,37 @@
+// ===== ساخت خودکار جدول‌های لیگ =====
+async function initLeagueTables() {
+    try {
+        await query(`
+            CREATE TABLE IF NOT EXISTS league_queue (
+                id SERIAL PRIMARY KEY, user_phone VARCHAR(20) NOT NULL,
+                league_id VARCHAR(50) NOT NULL, paid_amount INT NOT NULL,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            );
+            CREATE TABLE IF NOT EXISTS league_groups (
+                id SERIAL PRIMARY KEY, league_id VARCHAR(50) NOT NULL,
+                group_number INT NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            );
+            CREATE TABLE IF NOT EXISTS league_members (
+                id SERIAL PRIMARY KEY, group_id INT REFERENCES league_groups(id) ON DELETE CASCADE,
+                user_phone VARCHAR(20) NOT NULL, points INT DEFAULT 0, correct_answers INT DEFAULT 0,
+                played INT DEFAULT 0, wins INT DEFAULT 0, draws INT DEFAULT 0, losses INT DEFAULT 0,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            );
+            CREATE TABLE IF NOT EXISTS league_matches (
+                id SERIAL PRIMARY KEY, group_id INT REFERENCES league_groups(id) ON DELETE CASCADE,
+                home_id INT REFERENCES league_members(id), away_id INT REFERENCES league_members(id),
+                home_score INT DEFAULT NULL, away_score INT DEFAULT NULL,
+                home_submitted BOOLEAN DEFAULT FALSE, away_submitted BOOLEAN DEFAULT FALSE,
+                status VARCHAR(20) DEFAULT 'scheduled', round INT DEFAULT 1,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            );
+        `);
+        console.log("✅ جدول‌های لیگ ساخته شدند.");
+    } catch (err) {
+        console.error("❌ خطا در ساخت جدول‌های لیگ:", err.message);
+    }
+}
+initLeagueTables();
 // server.js — سرور اصلی
 require("dotenv").config();
 
