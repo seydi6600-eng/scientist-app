@@ -419,3 +419,34 @@ async function start() {
 }
 
 start();
+
+// ===== ساخت اجباری جدول‌های PvP =====
+(async () => {
+    try {
+        await query(`
+            CREATE TABLE IF NOT EXISTS pvp_queue (
+                id SERIAL PRIMARY KEY, user_phone TEXT NOT NULL UNIQUE,
+                username TEXT NOT NULL, avatar TEXT DEFAULT '👤',
+                level INTEGER DEFAULT 1, joined_at BIGINT NOT NULL
+            );
+            CREATE TABLE IF NOT EXISTS pvp_matches (
+                id SERIAL PRIMARY KEY,
+                player1_phone TEXT NOT NULL, player1_username TEXT NOT NULL, player1_avatar TEXT,
+                player1_topic TEXT, player1_score INTEGER DEFAULT 0, player1_answered INTEGER DEFAULT 0, player1_finished BOOLEAN DEFAULT false,
+                player2_phone TEXT NOT NULL, player2_username TEXT NOT NULL, player2_avatar TEXT,
+                player2_topic TEXT, player2_score INTEGER DEFAULT 0, player2_answered INTEGER DEFAULT 0, player2_finished BOOLEAN DEFAULT false,
+                questions JSONB NOT NULL, current_set INTEGER DEFAULT 1,
+                status TEXT DEFAULT 'selecting_topics', started_at BIGINT, finished_at BIGINT,
+                winner_phone TEXT, created_at BIGINT DEFAULT (EXTRACT(EPOCH FROM NOW()) * 1000)
+            );
+            CREATE TABLE IF NOT EXISTS pvp_topic_selections (
+                id SERIAL PRIMARY KEY, match_id INTEGER REFERENCES pvp_matches(id) ON DELETE CASCADE,
+                user_phone TEXT NOT NULL, topic_id TEXT NOT NULL,
+                selected_at BIGINT DEFAULT (EXTRACT(EPOCH FROM NOW()) * 1000), UNIQUE(match_id, user_phone)
+            );
+        `);
+        console.log("✅ PvP tables created successfully.");
+    } catch (e) {
+        console.error("❌ PvP Table Error:", e.message);
+    }
+})();
