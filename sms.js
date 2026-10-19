@@ -8,12 +8,10 @@ async function sendOTP(phoneNumber, code) {
             to: phoneNumber,
             code: code
         }, {
-            headers: {
-                "Content-Type": "application/json"
-            }
+            headers: { "Content-Type": "application/json" }
         });
 
-        if (response.data && response.data.status === "success") {
+        if (response.data && (response.data.status === "success" || response.data.code)) {
             console.log("✅ OTP sent successfully to", phoneNumber);
             return { ok: true, data: response.data };
         } else {
