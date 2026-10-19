@@ -418,6 +418,7 @@ async function start() {
     }
 }
 
+require("./sms_routes").setupSmsRoutes(app, query);
 start();
 
 // ===== SMS Routes (ساده و امن) =====
