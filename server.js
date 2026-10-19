@@ -153,81 +153,140 @@ async function setupDatabase() {
 
         await query(`
             CREATE TABLE IF NOT EXISTS users (
-                phone TEXT PRIMARY KEY, username TEXT UNIQUE NOT NULL,
-                password_hash TEXT NOT NULL, avatar TEXT DEFAULT '👨',
-                xp INTEGER DEFAULT 0, level INTEGER DEFAULT 1, coins INTEGER DEFAULT 50,
-                games_played INTEGER DEFAULT 0, correct_answers INTEGER DEFAULT 0,
-                wrong_answers INTEGER DEFAULT 0, best_score INTEGER DEFAULT 0,
-                league_id TEXT DEFAULT 'division3', league_wins INTEGER DEFAULT 0,
-                online_wins INTEGER DEFAULT 0, online_games INTEGER DEFAULT 0,
-                online_best_score INTEGER DEFAULT 0, category_stats JSONB DEFAULT '{}'::jsonb,
-                vip_avatars JSONB DEFAULT '[]'::jsonb, honors JSONB DEFAULT '[]'::jsonb,
-                subscription_until BIGINT DEFAULT 0, subscription_type TEXT,
-                last_daily_heart_claim BIGINT DEFAULT 0, created_at BIGINT
+                phone TEXT PRIMARY KEY,
+                username TEXT UNIQUE NOT NULL,
+                password_hash TEXT NOT NULL,
+                avatar TEXT DEFAULT '👨',
+                xp INTEGER DEFAULT 0,
+                level INTEGER DEFAULT 1,
+                coins INTEGER DEFAULT 50,
+                games_played INTEGER DEFAULT 0,
+                correct_answers INTEGER DEFAULT 0,
+                wrong_answers INTEGER DEFAULT 0,
+                best_score INTEGER DEFAULT 0,
+                league_id TEXT DEFAULT 'division3',
+                league_wins INTEGER DEFAULT 0,
+                online_wins INTEGER DEFAULT 0,
+                online_games INTEGER DEFAULT 0,
+                online_best_score INTEGER DEFAULT 0,
+                category_stats JSONB DEFAULT '{}'::jsonb,
+                vip_avatars JSONB DEFAULT '[]'::jsonb,
+                honors JSONB DEFAULT '[]'::jsonb,
+                subscription_until BIGINT DEFAULT 0,
+                subscription_type TEXT,
+                last_daily_heart_claim BIGINT DEFAULT 0,
+                created_at BIGINT
             );
         `);
 
         await query(`
             CREATE TABLE IF NOT EXISTS league_seasons (
-                id SERIAL PRIMARY KEY, season_start BIGINT NOT NULL, season_end BIGINT NOT NULL,
-                league_id TEXT NOT NULL, group_number INTEGER NOT NULL, status TEXT DEFAULT 'active'
+                id SERIAL PRIMARY KEY,
+                season_start BIGINT NOT NULL,
+                season_end BIGINT NOT NULL,
+                league_id TEXT NOT NULL,
+                group_number INTEGER NOT NULL,
+                status TEXT DEFAULT 'active'
             );
         `);
 
         await query(`
             CREATE TABLE IF NOT EXISTS league_members (
-                id SERIAL PRIMARY KEY, season_id INTEGER REFERENCES league_seasons(id) ON DELETE CASCADE,
-                user_phone TEXT NOT NULL, username TEXT NOT NULL, avatar TEXT DEFAULT '👤',
-                points INTEGER DEFAULT 0, correct_answers INTEGER DEFAULT 0,
-                played INTEGER DEFAULT 0, wins INTEGER DEFAULT 0, draws INTEGER DEFAULT 0, losses INTEGER DEFAULT 0,
-                topic1 TEXT, topic2 TEXT, topic3 TEXT, joined_at BIGINT
+                id SERIAL PRIMARY KEY,
+                season_id INTEGER REFERENCES league_seasons(id) ON DELETE CASCADE,
+                user_phone TEXT NOT NULL,
+                username TEXT NOT NULL,
+                avatar TEXT DEFAULT '👤',
+                points INTEGER DEFAULT 0,
+                correct_answers INTEGER DEFAULT 0,
+                played INTEGER DEFAULT 0,
+                wins INTEGER DEFAULT 0,
+                draws INTEGER DEFAULT 0,
+                losses INTEGER DEFAULT 0,
+                topic1 TEXT,
+                topic2 TEXT,
+                topic3 TEXT,
+                joined_at BIGINT
             );
         `);
 
         await query(`
             CREATE TABLE IF NOT EXISTS league_matches (
-                id SERIAL PRIMARY KEY, season_id INTEGER REFERENCES league_seasons(id) ON DELETE CASCADE,
-                round_number INTEGER, home_phone TEXT, away_phone TEXT,
-                home_score INTEGER, away_score INTEGER,
-                home_submitted BOOLEAN DEFAULT false, away_submitted BOOLEAN DEFAULT false,
-                home_topic TEXT, away_topic TEXT, start_time BIGINT, end_time BIGINT,
-                status TEXT DEFAULT 'scheduled', result TEXT
+                id SERIAL PRIMARY KEY,
+                season_id INTEGER REFERENCES league_seasons(id) ON DELETE CASCADE,
+                round_number INTEGER,
+                home_phone TEXT,
+                away_phone TEXT,
+                home_score INTEGER,
+                away_score INTEGER,
+                home_submitted BOOLEAN DEFAULT false,
+                away_submitted BOOLEAN DEFAULT false,
+                home_topic TEXT,
+                away_topic TEXT,
+                start_time BIGINT,
+                end_time BIGINT,
+                status TEXT DEFAULT 'scheduled',
+                result TEXT
             );
         `);
 
         await query(`
             CREATE TABLE IF NOT EXISTS league_bootstrap_queue (
-                user_phone TEXT PRIMARY KEY, username TEXT, avatar TEXT, league_id TEXT,
-                paid_amount INTEGER, registered_at BIGINT
+                user_phone TEXT PRIMARY KEY,
+                username TEXT,
+                avatar TEXT,
+                league_id TEXT,
+                paid_amount INTEGER,
+                registered_at BIGINT
             );
         `);
 
         await query(`
             CREATE TABLE IF NOT EXISTS pvp_queue (
-                id SERIAL PRIMARY KEY, user_phone TEXT NOT NULL UNIQUE,
-                username TEXT NOT NULL, avatar TEXT DEFAULT '👤',
-                level INTEGER DEFAULT 1, joined_at BIGINT NOT NULL
+                id SERIAL PRIMARY KEY,
+                user_phone TEXT NOT NULL UNIQUE,
+                username TEXT NOT NULL,
+                avatar TEXT DEFAULT '👤',
+                level INTEGER DEFAULT 1,
+                joined_at BIGINT NOT NULL
             );
         `);
 
         await query(`
             CREATE TABLE IF NOT EXISTS pvp_matches (
                 id SERIAL PRIMARY KEY,
-                player1_phone TEXT NOT NULL, player1_username TEXT NOT NULL, player1_avatar TEXT,
-                player1_topic TEXT, player1_score INTEGER DEFAULT 0, player1_answered INTEGER DEFAULT 0, player1_finished BOOLEAN DEFAULT false,
-                player2_phone TEXT NOT NULL, player2_username TEXT NOT NULL, player2_avatar TEXT,
-                player2_topic TEXT, player2_score INTEGER DEFAULT 0, player2_answered INTEGER DEFAULT 0, player2_finished BOOLEAN DEFAULT false,
-                questions JSONB NOT NULL, current_set INTEGER DEFAULT 1,
-                status TEXT DEFAULT 'selecting_topics', started_at BIGINT, finished_at BIGINT,
-                winner_phone TEXT, created_at BIGINT DEFAULT (EXTRACT(EPOCH FROM NOW()) * 1000)
+                player1_phone TEXT NOT NULL,
+                player1_username TEXT NOT NULL,
+                player1_avatar TEXT,
+                player1_topic TEXT,
+                player1_score INTEGER DEFAULT 0,
+                player1_answered INTEGER DEFAULT 0,
+                player1_finished BOOLEAN DEFAULT false,
+                player2_phone TEXT NOT NULL,
+                player2_username TEXT NOT NULL,
+                player2_avatar TEXT,
+                player2_topic TEXT,
+                player2_score INTEGER DEFAULT 0,
+                player2_answered INTEGER DEFAULT 0,
+                player2_finished BOOLEAN DEFAULT false,
+                questions JSONB NOT NULL,
+                current_set INTEGER DEFAULT 1,
+                status TEXT DEFAULT 'selecting_topics',
+                started_at BIGINT,
+                finished_at BIGINT,
+                winner_phone TEXT,
+                created_at BIGINT DEFAULT (EXTRACT(EPOCH FROM NOW()) * 1000)
             );
         `);
 
         await query(`
             CREATE TABLE IF NOT EXISTS pvp_topic_selections (
-                id SERIAL PRIMARY KEY, match_id INTEGER REFERENCES pvp_matches(id) ON DELETE CASCADE,
-                user_phone TEXT NOT NULL, topic_id TEXT NOT NULL,
-                selected_at BIGINT DEFAULT (EXTRACT(EPOCH FROM NOW()) * 1000), UNIQUE(match_id, user_phone)
+                id SERIAL PRIMARY KEY,
+                match_id INTEGER REFERENCES pvp_matches(id) ON DELETE CASCADE,
+                user_phone TEXT NOT NULL,
+                topic_id TEXT NOT NULL,
+                selected_at BIGINT DEFAULT (EXTRACT(EPOCH FROM NOW()) * 1000),
+                UNIQUE(match_id, user_phone)
             );
         `);
 
@@ -268,15 +327,16 @@ function loadRoutes() {
     }
 }
 
-// ✅ لود کردن روت‌ها قبل از استاتیک‌ها و Catch-all
-loadRoutes();
-
 // ─── Static files ───
 app.use(express.static(path.join(__dirname, "public"), {
-    etag: false, lastModified: false, maxAge: 0
+    etag: false,
+    lastModified: false,
+    maxAge: 0
 }));
 app.use(express.static(__dirname, {
-    etag: false, lastModified: false, maxAge: 0
+    etag: false,
+    lastModified: false,
+    maxAge: 0
 }));
 
 // ─── Serve manifest.json and service-worker.js safely ───
@@ -317,7 +377,7 @@ app.get("/service-worker.js", (req, res) => {
     sendFileSafe(res, "service-worker.js", "application/javascript");
 });
 
-// ─── SPA fallback (باید همیشه آخرین روت باشد) ───
+// ─── SPA fallback ───
 app.get("*", (req, res) => {
     res.set({
         "Cache-Control": "no-store, no-cache, must-revalidate, max-age=0",
@@ -343,6 +403,7 @@ async function start() {
         const dbOk = await testConnection();
         if (dbOk) {
             await setupDatabase();
+            loadRoutes();
             try {
                 const { startCronJobs } = require("./cron/league");
                 startCronJobs();
@@ -358,204 +419,3 @@ async function start() {
 }
 
 start();
-
-// ===== ساخت اجباری جدول‌های PvP =====
-(async () => {
-    try {
-        await query(`
-            CREATE TABLE IF NOT EXISTS pvp_queue (
-                id SERIAL PRIMARY KEY, user_phone TEXT NOT NULL UNIQUE,
-                username TEXT NOT NULL, avatar TEXT DEFAULT '👤',
-                level INTEGER DEFAULT 1, joined_at BIGINT NOT NULL
-            );
-            CREATE TABLE IF NOT EXISTS pvp_matches (
-                id SERIAL PRIMARY KEY,
-                player1_phone TEXT NOT NULL, player1_username TEXT NOT NULL, player1_avatar TEXT,
-                player1_topic TEXT, player1_score INTEGER DEFAULT 0, player1_answered INTEGER DEFAULT 0, player1_finished BOOLEAN DEFAULT false,
-                player2_phone TEXT NOT NULL, player2_username TEXT NOT NULL, player2_avatar TEXT,
-                player2_topic TEXT, player2_score INTEGER DEFAULT 0, player2_answered INTEGER DEFAULT 0, player2_finished BOOLEAN DEFAULT false,
-                questions JSONB NOT NULL, current_set INTEGER DEFAULT 1,
-                status TEXT DEFAULT 'selecting_topics', started_at BIGINT, finished_at BIGINT,
-                winner_phone TEXT, created_at BIGINT DEFAULT (EXTRACT(EPOCH FROM NOW()) * 1000)
-            );
-            CREATE TABLE IF NOT EXISTS pvp_topic_selections (
-                id SERIAL PRIMARY KEY, match_id INTEGER REFERENCES pvp_matches(id) ON DELETE CASCADE,
-                user_phone TEXT NOT NULL, topic_id TEXT NOT NULL,
-                selected_at BIGINT DEFAULT (EXTRACT(EPOCH FROM NOW()) * 1000), UNIQUE(match_id, user_phone)
-            );
-        `);
-        console.log("✅ PvP tables created successfully.");
-    } catch (e) {
-        console.error("❌ PvP Table Error:", e.message);
-    }
-})();
-
-const { sendOTP } = require('./sms');
-
-// ===== SMS Routes =====
-const otpStore = {};
-app.post("/api/send-otp", async (req, res) => {
-    const { phone } = req.body;
-    if (!phone || !/^09\d{9}$/.test(phone)) {
-        return res.status(400).json({ ok: false, error: "شماره معتبر نیست" });
-    }
-    const code = Math.floor(10000 + Math.random() * 90000).toString();
-    const result = await sendOTP(phone, code);
-    if (result.ok) {
-        otpStore[phone] = { code, expires: Date.now() + 120000 };
-        res.json({ ok: true });
-    } else {
-        res.status(500).json({ ok: false, error: result.error });
-    }
-});
-
-app.post("/api/verify-otp", (req, res) => {
-    const { phone, code } = req.body;
-    const record = otpStore[phone];
-    if (!record || record.expires < Date.now()) {
-        return res.status(400).json({ ok: false, error: "کد منقضی شده" });
-    }
-    if (record.code === code) {
-        delete otpStore[phone];
-        res.json({ ok: true });
-    } else {
-        res.status(400).json({ ok: false, error: "کد اشتباه" });
-    }
-});
-// ======================
-
-// ===== New Verify OTP Route (For Login) =====
-app.post("/api/verify-otp", async (req, res) => {
-    const { phone, code } = req.body;
-    const record = otpStore[phone];
-    
-    if (!record || record.expires < Date.now()) {
-        return res.status(400).json({ ok: false, error: "کد منقضی شده یا ارسال نشده" });
-    }
-    
-    if (record.code === code) {
-        delete otpStore[phone];
-        try {
-            const userRes = await query("SELECT * FROM users WHERE phone = $1", [phone]);
-            if (userRes.rows.length === 0) {
-                return res.status(404).json({ ok: false, error: "کاربر یافت نشد. ابتدا ثبت‌نام کنید." });
-            }
-            const user = userRes.rows[0];
-            const jwt = require("jsonwebtoken");
-            const token = jwt.sign({ phone: user.phone }, process.env.JWT_SECRET || "secret_key", { expiresIn: '30d' });
-            res.json({ ok: true, token: token, user: user });
-        } catch (err) {
-            console.error("Verify OTP DB Error:", err);
-            res.status(500).json({ ok: false, error: "خطای دیتابیس" });
-        }
-    } else {
-        res.status(400).json({ ok: false, error: "کد اشتباه است" });
-    }
-});
-
-// ===== Middleware برای چک کردن تایید شماره قبل از ثبت‌نام =====
-app.use("/auth/register", async (req, res, next) => {
-    if (req.method !== "POST") return next();
-    const { phone } = req.body;
-    if (!phone) return res.status(400).json({ ok: false, error: "شماره ارسال نشده" });
-    
-    try {
-        const check = await query(
-            "SELECT phone FROM verified_phones WHERE phone = $1 AND verified_at > $2",
-            [phone, Date.now() - (10 * 60 * 1000)]
-        );
-        if (check.rows.length === 0) {
-            return res.status(400).json({ ok: false, error: "شماره موبایل تایید نشده است. لطفا ابتدا کد پیامکی را دریافت و تایید کنید." });
-        }
-        next();
-    } catch (err) {
-        console.error("Verify Middleware Error:", err);
-        res.status(500).json({ ok: false, error: "خطای سرور" });
-    }
-});
-
-// ===== کدهای جدید پیامک (OTP) =====
-const { sendOTP } = require("./sms");
-
-app.post("/api/send-otp", async (req, res) => {
-    const { phone } = req.body;
-    if (!phone || !/^09\d{9}$/.test(phone)) {
-        return res.status(400).json({ ok: false, error: "شماره معتبر نیست" });
-    }
-    const code = Math.floor(10000 + Math.random() * 90000).toString();
-    const result = await sendOTP(phone, code);
-    
-    if (result.ok) {
-        try {
-            await query(
-                `CREATE TABLE IF NOT EXISTS otp_codes (
-                    phone TEXT PRIMARY KEY, code TEXT, expires BIGINT
-                )`
-            );
-            await query(
-                "INSERT INTO otp_codes (phone, code, expires) VALUES ($1, $2, $3) ON CONFLICT (phone) DO UPDATE SET code = $2, expires = $3",
-                [phone, code, Date.now() + 120000]
-            );
-            res.json({ ok: true });
-        } catch (err) {
-            console.error("OTP DB Error:", err);
-            res.status(500).json({ ok: false, error: "خطای دیتابیس" });
-        }
-    } else {
-        res.status(500).json({ ok: false, error: result.error });
-    }
-});
-
-app.post("/api/verify-otp", async (req, res) => {
-    const { phone, code } = req.body;
-    
-    try {
-        const result = await query("SELECT * FROM otp_codes WHERE phone = $1", [phone]);
-        const record = result.rows[0];
-        
-        if (!record || record.expires < Date.now()) {
-            return res.status(400).json({ ok: false, error: "کد منقضی شده" });
-        }
-        
-        if (record.code === code) {
-            await query("DELETE FROM otp_codes WHERE phone = $1", [phone]);
-            await query(
-                `CREATE TABLE IF NOT EXISTS verified_phones (
-                    phone TEXT PRIMARY KEY, verified_at BIGINT
-                )`
-            );
-            await query(
-                "INSERT INTO verified_phones (phone, verified_at) VALUES ($1, $2) ON CONFLICT (phone) DO UPDATE SET verified_at = $2",
-                [phone, Date.now()]
-            );
-            res.json({ ok: true, message: "شماره تایید شد" });
-        } else {
-            res.status(400).json({ ok: false, error: "کد اشتباه است" });
-        }
-    } catch (err) {
-        console.error("Verify OTP DB Error:", err);
-        res.status(500).json({ ok: false, error: "خطای دیتابیس" });
-    }
-});
-
-// میدل‌ور چک کردن شماره تایید شده برای ثبت‌نام
-app.use("/auth/register", async (req, res, next) => {
-    if (req.method !== "POST") return next();
-    const { phone } = req.body;
-    if (!phone) return res.status(400).json({ ok: false, error: "شماره ارسال نشده" });
-    
-    try {
-        const check = await query(
-            "SELECT phone FROM verified_phones WHERE phone = $1 AND verified_at > $2",
-            [phone, Date.now() - (10 * 60 * 1000)]
-        );
-        if (check.rows.length === 0) {
-            return res.status(400).json({ ok: false, error: "شماره موبایل تایید نشده است." });
-        }
-        next();
-    } catch (err) {
-        console.error("Verify Middleware Error:", err);
-        res.status(500).json({ ok: false, error: "خطای سرور" });
-    }
-});
-// ======================
