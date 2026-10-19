@@ -423,3 +423,32 @@ app.post("/api/verify-otp", (req, res) => {
     }
 });
 // ======================
+
+// ===== New Verify OTP Route (For Login) =====
+app.post("/api/verify-otp", async (req, res) => {
+    const { phone, code } = req.body;
+    const record = otpStore[phone];
+    
+    if (!record || record.expires < Date.now()) {
+        return res.status(400).json({ ok: false, error: "کد منقضی شده یا ارسال نشده" });
+    }
+    
+    if (record.code === code) {
+        delete otpStore[phone];
+        try {
+            const userRes = await query("SELECT * FROM users WHERE phone = $1", [phone]);
+            if (userRes.rows.length === 0) {
+                return res.status(404).json({ ok: false, error: "کاربر یافت نشد. ابتدا ثبت‌نام کنید." });
+            }
+            const user = userRes.rows[0];
+            const jwt = require("jsonwebtoken");
+            const token = jwt.sign({ phone: user.phone }, process.env.JWT_SECRET || "secret_key", { expiresIn: '30d' });
+            res.json({ ok: true, token: token, user: user });
+        } catch (err) {
+            console.error("Verify OTP DB Error:", err);
+            res.status(500).json({ ok: false, error: "خطای دیتابیس" });
+        }
+    } else {
+        res.status(400).json({ ok: false, error: "کد اشتباه است" });
+    }
+});
