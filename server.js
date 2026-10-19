@@ -452,3 +452,24 @@ app.post("/api/verify-otp", async (req, res) => {
         res.status(400).json({ ok: false, error: "کد اشتباه است" });
     }
 });
+
+// ===== Middleware برای چک کردن تایید شماره قبل از ثبت‌نام =====
+app.use("/auth/register", async (req, res, next) => {
+    if (req.method !== "POST") return next();
+    const { phone } = req.body;
+    if (!phone) return res.status(400).json({ ok: false, error: "شماره ارسال نشده" });
+    
+    try {
+        const check = await query(
+            "SELECT phone FROM verified_phones WHERE phone = $1 AND verified_at > $2",
+            [phone, Date.now() - (10 * 60 * 1000)]
+        );
+        if (check.rows.length === 0) {
+            return res.status(400).json({ ok: false, error: "شماره موبایل تایید نشده است. لطفا ابتدا کد پیامکی را دریافت و تایید کنید." });
+        }
+        next();
+    } catch (err) {
+        console.error("Verify Middleware Error:", err);
+        res.status(500).json({ ok: false, error: "خطای سرور" });
+    }
+});
