@@ -272,9 +272,11 @@ function loadRoutes() {
 loadRoutes();
 
 // ─── Static files ───
+app.use("/api", require("./sms_routes"));
 app.use(express.static(path.join(__dirname, "public"), {
     etag: false, lastModified: false, maxAge: 0
 }));
+app.use("/api", require("./sms_routes"));
 app.use(express.static(__dirname, {
     etag: false, lastModified: false, maxAge: 0
 }));
