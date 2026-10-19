@@ -1,9 +1,7 @@
-// server.js — نسخه نهایی و کامل
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
-const fs = require("fs");
 const jwt = require("jsonwebtoken");
 const { testConnection, query } = require("./db");
 const { sendOTP } = require("./sms");
@@ -15,13 +13,11 @@ app.use(cors());
 app.use(express.json({ limit: "5mb" }));
 app.use(express.urlencoded({ extended: true }));
 
-// جلوگیری از کش
 app.use((req, res, next) => {
     res.set({ "Cache-Control": "no-store, no-cache, must-revalidate, max-age=0" });
     next();
 });
 
-// --- ساخت تمام جداول (کاربر، لیگ، PvP، پیامک) ---
 async function setupDatabase() {
     try {
         await query(`
@@ -50,7 +46,6 @@ async function setupDatabase() {
     } catch (err) { console.error("❌ DB Error:", err.message); }
 }
 
-// --- مسیرهای پیامک (یکپارچه شده) ---
 app.post("/api/send-otp", async (req, res) => {
     const { phone } = req.body;
     if (!phone || !/^09\d{9}$/.test(phone)) return res.status(400).json({ ok: false, error: "شماره معتبر نیست" });
@@ -88,18 +83,23 @@ app.post("/api/verify-otp", async (req, res) => {
     } catch (err) { res.status(500).json({ ok: false, error: "خطای سرور" }); }
 });
 
-// --- مسیرهای اصلی بازی ---
 app.use("/auth", require("./routes/auth"));
 app.use("/user", require("./routes/user"));
 app.use("/league", require("./routes/league"));
 app.use("/pvp", require("./routes/pvp"));
 
-// --- فایل‌های استاتیک ---
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(__dirname));
-app.get("*", (req, res) => { res.sendFile(path.join(__dirname, "index.html")); });
 
-// --- شروع سرور ---
+// روت نهایی (بدون app.get("*") که توی Express 5 ارور میده)
+app.use((req, res, next) => {
+    if (req.method === 'GET' && !req.path.startsWith('/api')) {
+        res.sendFile(path.join(__dirname, "index.html"));
+    } else {
+        next();
+    }
+});
+
 async function start() {
     app.listen(PORT, "0.0.0.0", () => { console.log(`✅ Server running on ${PORT}`); });
     try {
