@@ -91,7 +91,6 @@ app.use("/pvp", require("./routes/pvp"));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(__dirname));
 
-// روت نهایی (بدون app.get("*") که توی Express 5 ارور میده)
 app.use((req, res, next) => {
     if (req.method === 'GET' && !req.path.startsWith('/api')) {
         res.sendFile(path.join(__dirname, "index.html"));
