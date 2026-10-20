@@ -63,30 +63,21 @@ app.post("/api/send-otp", async (req, res) => {
 app.post("/api/verify-otp", async (req, res) => {
     const { phone, code, actionType, username, password } = req.body;
     try {
-        // ۱. چک کردن کد
         const result = await query("SELECT * FROM otp_codes WHERE phone = $1", [phone]);
         const record = result.rows[0];
         if (!record || Number(record.expires) < Date.now()) return res.status(400).json({ ok: false, error: "کد منقضی شده" });
         if (record.code !== code) return res.status(400).json({ ok: false, error: "کد اشتباه" });
         await query("DELETE FROM otp_codes WHERE phone = $1", [phone]);
         
-        // ۲. آیا کاربر وجود دارد؟
         const userRes = await query("SELECT * FROM users WHERE phone = $1", [phone]);
         
-        if (userRes.rows.length > 0) {
-            // اگر کاربر وجود دارد، فقط وارد شود (رمز و نام جدید نادیده گرفته می‌شود تا تداخل ایجاد نکند)
-            const user = userRes.rows[0];
-            const token = jwt.sign({ phone: user.phone }, process.env.JWT_SECRET || "secret", { expiresIn: '30d' });
-            return res.json({ ok: true, token, user });
-        } else {
-            // اگر کاربر وجود ندارد، ثبت‌نام جدید انجام شود
-            let finalUsername = (username && username.trim()) ? username.trim() : "user_" + phone.slice(-4) + Math.floor(Math.random() * 10000);
+        if (actionType === "register_sms") {
+            // ثبت نام جدید
+            if (userRes.rows.length > 0) return res.status(400).json({ ok: false, error: "این شماره قبلا ثبت نام کرده است" });
             
-            // چک کردن تکراری نبودن نام کاربری
+            let finalUsername = (username && username.trim()) ? username.trim() : "user_" + phone.slice(-4);
             const checkUser = await query("SELECT * FROM users WHERE username = $1", [finalUsername]);
-            if (checkUser.rows.length > 0) {
-                finalUsername = finalUsername + Math.floor(Math.random() * 1000);
-            }
+            if (checkUser.rows.length > 0) finalUsername = finalUsername + Math.floor(Math.random() * 1000);
             
             let finalPass = (password && password.trim()) ? password.trim() : "otp";
             
@@ -95,6 +86,20 @@ app.post("/api/verify-otp", async (req, res) => {
                 [phone, finalUsername, finalPass, Date.now()]
             );
             const user = newUser.rows[0];
+            const token = jwt.sign({ phone: user.phone }, process.env.JWT_SECRET || "secret", { expiresIn: '30d' });
+            return res.json({ ok: true, token, user });
+        } 
+        else if (actionType === "login_sms") {
+            // ورود با پیامک (فراموشی رمز)
+            if (userRes.rows.length === 0) return res.status(400).json({ ok: false, error: "کاربری با این شماره ثبت نام نکرده است" });
+            const user = userRes.rows[0];
+            const token = jwt.sign({ phone: user.phone }, process.env.JWT_SECRET || "secret", { expiresIn: '30d' });
+            return res.json({ ok: true, token, user });
+        } 
+        else {
+            // حالت پیش‌فرض (برای اطمینان)
+            if (userRes.rows.length === 0) return res.status(400).json({ ok: false, error: "کاربر یافت نشد" });
+            const user = userRes.rows[0];
             const token = jwt.sign({ phone: user.phone }, process.env.JWT_SECRET || "secret", { expiresIn: '30d' });
             return res.json({ ok: true, token, user });
         }
