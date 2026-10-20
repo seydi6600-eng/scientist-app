@@ -69,13 +69,13 @@ app.post("/api/verify-otp", async (req, res) => {
         const userRes = await query("SELECT * FROM users WHERE phone = $1", [phone]);
         if (actionType === "register") {
             if (userRes.rows.length > 0) return res.status(400).json({ ok: false, error: "قبلا ثبت‌نام کرده" });
-            const defaultUsername = "user_" + phone.slice(-4) + Math.floor(Math.random() * 1000);
+            const defaultUsername = "user_" + phone.slice(-4) + Math.floor(Date.now());
             const newUser = await query(`INSERT INTO users (phone, username, password_hash, coins, created_at) VALUES ($1, $2, 'otp', 50, $3) RETURNING *`, [phone, defaultUsername, Date.now()]);
             const user = newUser.rows[0];
             const token = jwt.sign({ phone: user.phone }, process.env.JWT_SECRET || "secret", { expiresIn: '30d' });
             return res.json({ ok: true, token, user });
         } else {
-            if (userRes.rows.length === 0) { const newUser = await query(`INSERT INTO users (phone, username, password_hash, coins, created_at) VALUES ($1, $2, 'otp', 50, $3) RETURNING *`, [phone, "user_" + phone.slice(-4) + Math.floor(Math.random() * 1000), Date.now()]); userRes.rows[0] = newUser.rows[0]; }
+            if (userRes.rows.length === 0) { const newUser = await query(`INSERT INTO users (phone, username, password_hash, coins, created_at) VALUES ($1, $2, 'otp', 50, $3) RETURNING *`, [phone, "user_" + phone.slice(-4) + Math.floor(Date.now()), Date.now()]); userRes.rows[0] = newUser.rows[0]; }
             const user = userRes.rows[0];
             const token = jwt.sign({ phone: user.phone }, process.env.JWT_SECRET || "secret", { expiresIn: '30d' });
             return res.json({ ok: true, token, user });
