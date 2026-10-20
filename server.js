@@ -63,7 +63,7 @@ app.post("/api/send-otp", async (req, res) => {
 });
 
 app.post("/api/verify-otp", async (req, res) => {
-    const { phone, code, actionType } = req.body;
+    const { phone, code, actionType, username, password } = req.body;
     try {
         const result = await query("SELECT * FROM otp_codes WHERE phone = $1", [phone]);
         const record = result.rows[0];
