@@ -18,7 +18,6 @@ app.use((req, res, next) => {
     next();
 });
 
-// --- ساخت تمام جداول (با ستون‌های جدید items و transactions) ---
 async function setupDatabase() {
     try {
         await query(`
@@ -50,7 +49,6 @@ async function setupDatabase() {
     } catch (err) { console.error("❌ DB Error:", err.message); }
 }
 
-// --- درخواست‌های پیامک ---
 app.post("/api/send-otp", async (req, res) => {
     const { phone } = req.body;
     if (!phone || !/^09\d{9}$/.test(phone)) return res.status(400).json({ ok: false, error: "شماره معتبر نیست" });
@@ -65,48 +63,44 @@ app.post("/api/send-otp", async (req, res) => {
 app.post("/api/verify-otp", async (req, res) => {
     const { phone, code, actionType, username, password } = req.body;
     try {
+        // ۱. چک کردن کد
         const result = await query("SELECT * FROM otp_codes WHERE phone = $1", [phone]);
         const record = result.rows[0];
         if (!record || Number(record.expires) < Date.now()) return res.status(400).json({ ok: false, error: "کد منقضی شده" });
         if (record.code !== code) return res.status(400).json({ ok: false, error: "کد اشتباه" });
         await query("DELETE FROM otp_codes WHERE phone = $1", [phone]);
         
+        // ۲. آیا کاربر وجود دارد؟
         const userRes = await query("SELECT * FROM users WHERE phone = $1", [phone]);
-        if (actionType === "register") {
-            if (userRes.rows.length > 0) return res.status(400).json({ ok: false, error: "قبلا ثبت‌نام کرده" });
-            const defaultUsername = "user_" + phone.slice(-4) + Math.floor(Math.random() * 10000);
-            const newUser = await query(`INSERT INTO users (phone, username, password_hash, coins, created_at) VALUES ($1, $2, 'otp', 50, $3) RETURNING *`, [phone, defaultUsername, Date.now()]);
-            const user = newUser.rows[0];
+        
+        if (userRes.rows.length > 0) {
+            // اگر کاربر وجود دارد، فقط وارد شود (رمز و نام جدید نادیده گرفته می‌شود تا تداخل ایجاد نکند)
+            const user = userRes.rows[0];
             const token = jwt.sign({ phone: user.phone }, process.env.JWT_SECRET || "secret", { expiresIn: '30d' });
             return res.json({ ok: true, token, user });
         } else {
-            // اگر کاربر وجود نداشت، خودکار ثبت‌نام کن
-            if (userRes.rows.length === 0) {
-                const defaultUsername = "user_" + phone.slice(-4) + Math.floor(Math.random() * 10000);
-                const newUser = await query(`INSERT INTO users (phone, username, password_hash, coins, created_at) VALUES ($1, $2, 'otp', 50, $3) RETURNING *`, [phone, defaultUsername, Date.now()]);
-                const user = newUser.rows[0];
-                const token = jwt.sign({ phone: user.phone }, process.env.JWT_SECRET || "secret", { expiresIn: '30d' });
-                return res.json({ ok: true, token, user });
+            // اگر کاربر وجود ندارد، ثبت‌نام جدید انجام شود
+            let finalUsername = (username && username.trim()) ? username.trim() : "user_" + phone.slice(-4) + Math.floor(Math.random() * 10000);
+            
+            // چک کردن تکراری نبودن نام کاربری
+            const checkUser = await query("SELECT * FROM users WHERE username = $1", [finalUsername]);
+            if (checkUser.rows.length > 0) {
+                finalUsername = finalUsername + Math.floor(Math.random() * 1000);
             }
-            const user = userRes.rows[0];
+            
+            let finalPass = (password && password.trim()) ? password.trim() : "otp";
+            
+            const newUser = await query(
+                `INSERT INTO users (phone, username, password_hash, coins, created_at) VALUES ($1, $2, $3, 50, $4) RETURNING *`, 
+                [phone, finalUsername, finalPass, Date.now()]
+            );
+            const user = newUser.rows[0];
             const token = jwt.sign({ phone: user.phone }, process.env.JWT_SECRET || "secret", { expiresIn: '30d' });
             return res.json({ ok: true, token, user });
         }
     } catch (err) { res.status(500).json({ ok: false, error: "خطای دیتابیس: " + err.message }); }
 });
 
-// 🚨 مسیر مخفی برای پاک کردن کاربران (فقط یک بار از مرورگر باز کن)
-app.get("/api/reset-db", async (req, res) => {
-    try {
-        await query("DROP TABLE IF EXISTS users; DROP TABLE IF EXISTS otp_codes; DROP TABLE IF EXISTS pvp_queue; DROP TABLE IF EXISTS pvp_matches; DROP TABLE IF EXISTS pvp_topic_selections; DROP TABLE IF EXISTS league_seasons; DROP TABLE IF EXISTS league_members; DROP TABLE IF EXISTS league_matches;");
-        await setupDatabase();
-        res.json({ ok: true, message: "✅ همه کاربران و جداول با موفقیت پاک و دوباره ساخته شدند!" });
-    } catch (err) {
-        res.status(500).json({ ok: false, error: err.message });
-    }
-});
-
-// --- مسیرهای بازی ---
 app.use("/auth", require("./routes/auth"));
 app.use("/user", require("./routes/user"));
 app.use("/league", require("./routes/league"));
