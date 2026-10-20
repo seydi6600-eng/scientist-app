@@ -18,6 +18,7 @@ app.use((req, res, next) => {
     next();
 });
 
+// --- ساخت تمام جداول (با ستون‌های جدید items و transactions) ---
 async function setupDatabase() {
     try {
         await query(`
@@ -32,7 +33,10 @@ async function setupDatabase() {
                 online_best_score INTEGER DEFAULT 0, category_stats JSONB DEFAULT '{}'::jsonb,
                 vip_avatars JSONB DEFAULT '[]'::jsonb, honors JSONB DEFAULT '[]'::jsonb,
                 subscription_until BIGINT DEFAULT 0, subscription_type TEXT,
-                last_daily_heart_claim BIGINT DEFAULT 0, created_at BIGINT
+                last_daily_heart_claim BIGINT DEFAULT 0, 
+                items JSONB DEFAULT '{"removeTwo":0,"extraTime":0,"rename":0}'::jsonb,
+                transactions JSONB DEFAULT '[]'::jsonb,
+                created_at BIGINT
             );
             CREATE TABLE IF NOT EXISTS otp_codes (phone TEXT PRIMARY KEY, code TEXT, expires BIGINT);
             CREATE TABLE IF NOT EXISTS league_seasons (id SERIAL PRIMARY KEY, season_start BIGINT, season_end BIGINT, league_id TEXT, group_number INTEGER, status TEXT DEFAULT 'active');
@@ -42,10 +46,11 @@ async function setupDatabase() {
             CREATE TABLE IF NOT EXISTS pvp_matches (id SERIAL PRIMARY KEY, player1_phone TEXT, player1_username TEXT, player1_avatar TEXT, player1_topic TEXT, player1_score INTEGER DEFAULT 0, player1_answered INTEGER DEFAULT 0, player1_finished BOOLEAN DEFAULT false, player2_phone TEXT, player2_username TEXT, player2_avatar TEXT, player2_topic TEXT, player2_score INTEGER DEFAULT 0, player2_answered INTEGER DEFAULT 0, player2_finished BOOLEAN DEFAULT false, questions JSONB, current_set INTEGER DEFAULT 1, status TEXT DEFAULT 'selecting_topics', started_at BIGINT, finished_at BIGINT, winner_phone TEXT, created_at BIGINT);
             CREATE TABLE IF NOT EXISTS pvp_topic_selections (id SERIAL PRIMARY KEY, match_id INTEGER, user_phone TEXT, topic_id TEXT, selected_at BIGINT, UNIQUE(match_id, user_phone));
         `);
-        await query(`ALTER TABLE users ADD COLUMN IF NOT EXISTS created_at BIGINT; ALTER TABLE users ADD COLUMN IF NOT EXISTS category_stats JSONB DEFAULT '{}'::jsonb; ALTER TABLE users ADD COLUMN IF NOT EXISTS vip_avatars JSONB DEFAULT '[]'::jsonb; ALTER TABLE users ADD COLUMN IF NOT EXISTS honors JSONB DEFAULT '[]'::jsonb; ALTER TABLE users ADD COLUMN IF NOT EXISTS subscription_until BIGINT DEFAULT 0; ALTER TABLE users ADD COLUMN IF NOT EXISTS subscription_type TEXT; ALTER TABLE users ADD COLUMN IF NOT EXISTS last_daily_heart_claim BIGINT DEFAULT 0; ALTER TABLE users ADD COLUMN IF NOT EXISTS items JSONB DEFAULT '{"removeTwo":0,"extraTime":0,"rename":0}'::jsonb; ALTER TABLE users ADD COLUMN IF NOT EXISTS transactions JSONB DEFAULT '[]'::jsonb;`); console.log("✅ Tables Ready");
+        console.log("✅ Tables Ready");
     } catch (err) { console.error("❌ DB Error:", err.message); }
 }
 
+// --- درخواست‌های پیامک ---
 app.post("/api/send-otp", async (req, res) => {
     const { phone } = req.body;
     if (!phone || !/^09\d{9}$/.test(phone)) return res.status(400).json({ ok: false, error: "شماره معتبر نیست" });
@@ -69,13 +74,20 @@ app.post("/api/verify-otp", async (req, res) => {
         const userRes = await query("SELECT * FROM users WHERE phone = $1", [phone]);
         if (actionType === "register") {
             if (userRes.rows.length > 0) return res.status(400).json({ ok: false, error: "قبلا ثبت‌نام کرده" });
-            const defaultUsername = "user_" + phone.slice(-4) + Math.floor(Date.now());
+            const defaultUsername = "user_" + phone.slice(-4) + Math.floor(Math.random() * 10000);
             const newUser = await query(`INSERT INTO users (phone, username, password_hash, coins, created_at) VALUES ($1, $2, 'otp', 50, $3) RETURNING *`, [phone, defaultUsername, Date.now()]);
             const user = newUser.rows[0];
             const token = jwt.sign({ phone: user.phone }, process.env.JWT_SECRET || "secret", { expiresIn: '30d' });
             return res.json({ ok: true, token, user });
         } else {
-            if (userRes.rows.length === 0) { const newUser = await query(`INSERT INTO users (phone, username, password_hash, coins, created_at) VALUES ($1, $2, 'otp', 50, $3) RETURNING *`, [phone, "user_" + phone.slice(-4) + Math.floor(Date.now()), Date.now()]); userRes.rows[0] = newUser.rows[0]; }
+            // اگر کاربر وجود نداشت، خودکار ثبت‌نام کن
+            if (userRes.rows.length === 0) {
+                const defaultUsername = "user_" + phone.slice(-4) + Math.floor(Math.random() * 10000);
+                const newUser = await query(`INSERT INTO users (phone, username, password_hash, coins, created_at) VALUES ($1, $2, 'otp', 50, $3) RETURNING *`, [phone, defaultUsername, Date.now()]);
+                const user = newUser.rows[0];
+                const token = jwt.sign({ phone: user.phone }, process.env.JWT_SECRET || "secret", { expiresIn: '30d' });
+                return res.json({ ok: true, token, user });
+            }
             const user = userRes.rows[0];
             const token = jwt.sign({ phone: user.phone }, process.env.JWT_SECRET || "secret", { expiresIn: '30d' });
             return res.json({ ok: true, token, user });
@@ -83,6 +95,18 @@ app.post("/api/verify-otp", async (req, res) => {
     } catch (err) { res.status(500).json({ ok: false, error: "خطای دیتابیس: " + err.message }); }
 });
 
+// 🚨 مسیر مخفی برای پاک کردن کاربران (فقط یک بار از مرورگر باز کن)
+app.get("/api/reset-db", async (req, res) => {
+    try {
+        await query("DROP TABLE IF EXISTS users; DROP TABLE IF EXISTS otp_codes; DROP TABLE IF EXISTS pvp_queue; DROP TABLE IF EXISTS pvp_matches; DROP TABLE IF EXISTS pvp_topic_selections; DROP TABLE IF EXISTS league_seasons; DROP TABLE IF EXISTS league_members; DROP TABLE IF EXISTS league_matches;");
+        await setupDatabase();
+        res.json({ ok: true, message: "✅ همه کاربران و جداول با موفقیت پاک و دوباره ساخته شدند!" });
+    } catch (err) {
+        res.status(500).json({ ok: false, error: err.message });
+    }
+});
+
+// --- مسیرهای بازی ---
 app.use("/auth", require("./routes/auth"));
 app.use("/user", require("./routes/user"));
 app.use("/league", require("./routes/league"));
