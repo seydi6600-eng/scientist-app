@@ -80,7 +80,7 @@ app.post("/api/verify-otp", async (req, res) => {
             const token = jwt.sign({ phone: user.phone }, process.env.JWT_SECRET || "secret", { expiresIn: '30d' });
             return res.json({ ok: true, token, user });
         }
-    } catch (err) { res.status(500).json({ ok: false, error: "خطای سرور" }); }
+    } catch (err) { res.status(500).json({ ok: false, error: "خطای دیتابیس: " + err.message }); }
 });
 
 app.use("/auth", require("./routes/auth"));
