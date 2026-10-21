@@ -101,7 +101,7 @@ app.post("/api/verify-otp", async (req, res) => {
         if (!record || Number(record.expires) < Date.now()) return res.status(400).json({ ok: false, error: "کد منقضی شده" });
         
         // تبدیل هر دو به متن برای جلوگیری از خطای نوع داده
-        if (String(record.code) !== String(code)) return res.status(400).json({ ok: false, error: "کد اشتباه | دیتابیس: " + record.code + " | ارسالی: " + code });
+        if (String(record.code) !== String(code)) return res.status(400).json({ ok: false, error: "کد اشتباه است" });
         
         await query("DELETE FROM otp_codes WHERE phone = $1", [phone]);
         
