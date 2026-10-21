@@ -59,17 +59,37 @@ app.get("/api/clean-db-now", async (req, res) => {
         res.send("خطا: " + err.message);
     }
 });
-
 app.post("/api/send-otp", async (req, res) => {
     const { phone } = req.body;
     if (!phone || !/^09\d{9}$/.test(phone)) return res.status(400).json({ ok: false, error: "شماره معتبر نیست" });
-    const code = Math.floor(10000 + Math.random() * 90000).toString();
-    const result = await sendOTP(phone, code);
-    if (result.ok) {
-        // زمان انقضا به 10 دقیقه افزایش یافت
-        await query("INSERT INTO otp_codes (phone, code, expires) VALUES ($1, $2, $3) ON CONFLICT (phone) DO UPDATE SET code = $2, expires = $3", [phone, code, Date.now() + 600000]);
-        res.json({ ok: true });
-    } else { res.status(500).json({ ok: false, error: result.error }); }
+
+    try {
+        // چک کردن اینکه آیا کد معتبری از قبل وجود دارد یا نه
+        const existing = await query("SELECT code, expires FROM otp_codes WHERE phone = $1", [phone]);
+        
+        if (existing.rows.length > 0 && Number(existing.rows[0].expires) > Date.now()) {
+            // اگر کد معتبر وجود دارد، همان را دوباره می‌فرستیم تا دیتابیس و پیامک هماهنگ باشند
+            const code = existing.rows[0].code;
+            const result = await sendOTP(phone, code);
+            if (result.ok) {
+                return res.json({ ok: true });
+            } else {
+                return res.status(500).json({ ok: false, error: result.error });
+            }
+        }
+
+        // اگر کد معتبری وجود نداشت، کد جدید می‌سازیم
+        const code = Math.floor(10000 + Math.random() * 90000).toString();
+        const result = await sendOTP(phone, code);
+        if (result.ok) {
+            await query("INSERT INTO otp_codes (phone, code, expires) VALUES ($1, $2, $3) ON CONFLICT (phone) DO UPDATE SET code = $2, expires = $3", [phone, code, Date.now() + 600000]);
+            return res.json({ ok: true });
+        } else {
+            return res.status(500).json({ ok: false, error: result.error });
+        }
+    } catch (err) {
+        return res.status(500).json({ ok: false, error: "خطای سرور" });
+    }
 });
 
 app.post("/api/verify-otp", async (req, res) => {
