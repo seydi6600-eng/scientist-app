@@ -121,14 +121,31 @@ app.post("/api/send-otp", async (req, res) => {
 });
 app.post("/api/verify-otp", async (req, res) => {
     const { phone, code, actionType, username, password } = req.body;
+    
+    // تابعی برای تبدیل اعداد فارسی/عربی به انگلیسی و حذف فاصله‌ها
+    const normalizeCode = (c) => {
+        if (!c) return "";
+        return String(c)
+            .trim()
+            .replace(/[۰-۹]/g, d => "۰۱۲۳۴۵۶۷۸۹".indexOf(d))
+            .replace(/[٠-٩]/g, d => "٠١٢٣٤٥٦٧٨٩".indexOf(d))
+            .replace(/\s+/g, "");
+    };
+
     try {
         const result = await query("SELECT * FROM otp_codes WHERE phone = $1", [phone]);
         const record = result.rows[0];
         
         if (!record || Number(record.expires) < Date.now()) return res.status(400).json({ ok: false, error: "کد منقضی شده" });
         
-        // تبدیل هر دو به متن برای جلوگیری از خطای نوع داده
-        if (String(record.code) !== String(code)) return res.status(400).json({ ok: false, error: "کد اشتباه است" });
+        const dbCode = normalizeCode(record.code);
+        const userCode = normalizeCode(code);
+
+        console.log(`Verifying OTP for ${phone}: DB=${dbCode}, User=${userCode}`);
+
+        if (dbCode !== userCode) {
+            return res.status(400).json({ ok: false, error: "کد اشتباه" });
+        }
         
         await query("DELETE FROM otp_codes WHERE phone = $1", [phone]);
         
