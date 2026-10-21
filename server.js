@@ -49,13 +49,25 @@ async function setupDatabase() {
     } catch (err) { console.error("❌ DB Error:", err.message); }
 }
 
+// 🧹 لینک مخفی برای پاک کردن دیتابیس
+app.get("/api/clean-db-now", async (req, res) => {
+    try {
+        await query("DELETE FROM otp_codes;");
+        await query("DELETE FROM users;");
+        res.send("✅ دیتابیس کاملاً پاک شد!");
+    } catch (err) {
+        res.send("خطا: " + err.message);
+    }
+});
+
 app.post("/api/send-otp", async (req, res) => {
     const { phone } = req.body;
     if (!phone || !/^09\d{9}$/.test(phone)) return res.status(400).json({ ok: false, error: "شماره معتبر نیست" });
     const code = Math.floor(10000 + Math.random() * 90000).toString();
     const result = await sendOTP(phone, code);
     if (result.ok) {
-        await query("INSERT INTO otp_codes (phone, code, expires) VALUES ($1, $2, $3) ON CONFLICT (phone) DO UPDATE SET code = $2, expires = $3", [phone, code, Date.now() + 120000]);
+        // زمان انقضا به 10 دقیقه افزایش یافت
+        await query("INSERT INTO otp_codes (phone, code, expires) VALUES ($1, $2, $3) ON CONFLICT (phone) DO UPDATE SET code = $2, expires = $3", [phone, code, Date.now() + 600000]);
         res.json({ ok: true });
     } else { res.status(500).json({ ok: false, error: result.error }); }
 });
@@ -65,44 +77,38 @@ app.post("/api/verify-otp", async (req, res) => {
     try {
         const result = await query("SELECT * FROM otp_codes WHERE phone = $1", [phone]);
         const record = result.rows[0];
+        
         if (!record || Number(record.expires) < Date.now()) return res.status(400).json({ ok: false, error: "کد منقضی شده" });
-        if (record.code !== code) return res.status(400).json({ ok: false, error: "کد اشتباه" });
+        
+        // تبدیل هر دو به متن برای جلوگیری از خطای نوع داده
+        if (String(record.code) !== String(code)) return res.status(400).json({ ok: false, error: "کد اشتباه" });
+        
         await query("DELETE FROM otp_codes WHERE phone = $1", [phone]);
         
         const userRes = await query("SELECT * FROM users WHERE phone = $1", [phone]);
         
-        if (actionType === "register_sms") {
-            // ثبت نام جدید
-            if (userRes.rows.length > 0) return res.status(400).json({ ok: false, error: "این شماره قبلا ثبت نام کرده است" });
-            
-            let finalUsername = (username && username.trim()) ? username.trim() : "user_" + phone.slice(-4);
-            const checkUser = await query("SELECT * FROM users WHERE username = $1", [finalUsername]);
-            if (checkUser.rows.length > 0) finalUsername = finalUsername + Math.floor(Math.random() * 1000);
-            
-            let finalPass = (password && password.trim()) ? password.trim() : "otp";
-            
-            const newUser = await query(
-                `INSERT INTO users (phone, username, password_hash, coins, created_at) VALUES ($1, $2, $3, 50, $4) RETURNING *`, 
-                [phone, finalUsername, finalPass, Date.now()]
-            );
-            const user = newUser.rows[0];
-            const token = jwt.sign({ phone: user.phone }, process.env.JWT_SECRET || "secret", { expiresIn: '30d' });
-            return res.json({ ok: true, token, user });
-        } 
-        else if (actionType === "login_sms") {
-            // ورود با پیامک (فراموشی رمز)
-            if (userRes.rows.length === 0) return res.status(400).json({ ok: false, error: "کاربری با این شماره ثبت نام نکرده است" });
+        // اگر کاربر وجود داشت، وارد شود (بدون توجه به actionType)
+        if (userRes.rows.length > 0) {
             const user = userRes.rows[0];
             const token = jwt.sign({ phone: user.phone }, process.env.JWT_SECRET || "secret", { expiresIn: '30d' });
             return res.json({ ok: true, token, user });
         } 
-        else {
-            // حالت پیش‌فرض (برای اطمینان)
-            if (userRes.rows.length === 0) return res.status(400).json({ ok: false, error: "کاربر یافت نشد" });
-            const user = userRes.rows[0];
-            const token = jwt.sign({ phone: user.phone }, process.env.JWT_SECRET || "secret", { expiresIn: '30d' });
-            return res.json({ ok: true, token, user });
-        }
+        
+        // اگر کاربر وجود نداشت، ثبت‌نامش کن
+        let finalUsername = (username && username.trim()) ? username.trim() : "user_" + phone.slice(-4);
+        const checkUser = await query("SELECT * FROM users WHERE username = $1", [finalUsername]);
+        if (checkUser.rows.length > 0) finalUsername = finalUsername + Math.floor(Math.random() * 1000);
+        
+        let finalPass = (password && password.trim()) ? password.trim() : "otp";
+        
+        const newUser = await query(
+            `INSERT INTO users (phone, username, password_hash, coins, created_at) VALUES ($1, $2, $3, 50, $4) RETURNING *`, 
+            [phone, finalUsername, finalPass, Date.now()]
+        );
+        const user = newUser.rows[0];
+        const token = jwt.sign({ phone: user.phone }, process.env.JWT_SECRET || "secret", { expiresIn: '30d' });
+        return res.json({ ok: true, token, user });
+        
     } catch (err) { res.status(500).json({ ok: false, error: "خطای دیتابیس: " + err.message }); }
 });
 
