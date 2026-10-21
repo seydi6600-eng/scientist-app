@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const path = require("path");
 const jwt = require("jsonwebtoken");
-const { testConnection, query } = require("./db");
+const { pool, testConnection, query } = require("./db");
 const { sendOTP } = require("./sms");
 
 const app = express();
@@ -61,37 +61,64 @@ app.get("/api/clean-db-now", async (req, res) => {
 });
 app.post("/api/send-otp", async (req, res) => {
     const { phone } = req.body;
-    if (!phone || !/^09\d{9}$/.test(phone)) return res.status(400).json({ ok: false, error: "شماره معتبر نیست" });
+    if (!phone || !/^09\d{9}$/.test(phone)) {
+        return res.status(400).json({ ok: false, error: "شماره معتبر نیست" });
+    }
+
+    const client = await pool.connect();
 
     try {
-        // چک کردن اینکه آیا کد معتبری از قبل وجود دارد یا نه
-        const existing = await query("SELECT code, expires FROM otp_codes WHERE phone = $1", [phone]);
-        
+        await client.query('BEGIN');
+
+        // قفل ردیف برای جلوگیری از race condition
+        const existing = await client.query(
+            `SELECT code, expires 
+             FROM otp_codes 
+             WHERE phone = $1 
+             FOR UPDATE`,
+            [phone]
+        );
+
+        let codeToSend;
+
         if (existing.rows.length > 0 && Number(existing.rows[0].expires) > Date.now()) {
-            // اگر کد معتبر وجود دارد، همان را دوباره می‌فرستیم تا دیتابیس و پیامک هماهنگ باشند
-            const code = existing.rows[0].code;
-            const result = await sendOTP(phone, code);
-            if (result.ok) {
-                return res.json({ ok: true });
-            } else {
-                return res.status(500).json({ ok: false, error: result.error });
-            }
+            // کد معتبر هنوز هست → همان را استفاده کن
+            codeToSend = existing.rows[0].code;
+        } else {
+            // کد جدید بساز و ذخیره کن
+            codeToSend = Math.floor(10000 + Math.random() * 90000).toString();
+            
+            await client.query(
+                `INSERT INTO otp_codes (phone, code, expires)
+                 VALUES ($1, $2, $3)
+                 ON CONFLICT (phone) 
+                 DO UPDATE SET code = EXCLUDED.code, expires = EXCLUDED.expires`,
+                [phone, codeToSend, Date.now() + 600000]
+            );
         }
 
-        // اگر کد معتبری وجود نداشت، کد جدید می‌سازیم
-        const code = Math.floor(10000 + Math.random() * 90000).toString();
-        const result = await sendOTP(phone, code);
-        if (result.ok) {
-            await query("INSERT INTO otp_codes (phone, code, expires) VALUES ($1, $2, $3) ON CONFLICT (phone) DO UPDATE SET code = $2, expires = $3", [phone, code, Date.now() + 600000]);
-            return res.json({ ok: true });
-        } else {
-            return res.status(500).json({ ok: false, error: result.error });
+        await client.query('COMMIT');
+
+        // بعد از اینکه دیتابیس مطمئن شد، پیامک بفرست
+        const result = await sendOTP(phone, codeToSend);
+        
+        if (!result.ok) {
+            return res.status(500).json({ 
+                ok: false, 
+                error: result.error || "خطا در ارسال پیامک" 
+            });
         }
+
+        return res.json({ ok: true });
+
     } catch (err) {
+        await client.query('ROLLBACK');
+        console.error("خطا در send-otp:", err);
         return res.status(500).json({ ok: false, error: "خطای سرور" });
+    } finally {
+        client.release();
     }
 });
-
 app.post("/api/verify-otp", async (req, res) => {
     const { phone, code, actionType, username, password } = req.body;
     try {
