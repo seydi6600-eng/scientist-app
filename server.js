@@ -49,16 +49,7 @@ async function setupDatabase() {
     } catch (err) { console.error("❌ DB Error:", err.message); }
 }
 
-// 🧹 لینک مخفی برای پاک کردن دیتابیس
-app.get("/api/clean-db-now", async (req, res) => {
-    try {
-        await query("DELETE FROM otp_codes;");
-        await query("DELETE FROM users;");
-        res.send("✅ دیتابیس کاملاً پاک شد!");
-    } catch (err) {
-        res.send("خطا: " + err.message);
-    }
-});
+
 app.post("/api/send-otp", async (req, res) => {
     const { phone } = req.body;
     if (!phone || !/^09\d{9}$/.test(phone)) {
