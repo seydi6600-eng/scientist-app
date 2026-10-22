@@ -6,15 +6,15 @@ const BODY_ID = 562530;
 // کلید API
 const MELIPAYAMAK_API_KEY = "7a85952ffd054761b21587aa06c5ee6c";
 
-// آدرس وب‌سرویس پترن (خدماتی)
-const MELIPAYAMAK_PATTERN_URL = `https://console.melipayamak.com/api/send/pattern/${MELIPAYAMAK_API_KEY}`;
+// آدرس صحیح وب‌سرویس پترن (shared)
+const MELIPAYAMAK_PATTERN_URL = `https://console.melipayamak.com/api/send/shared/${MELIPAYAMAK_API_KEY}`;
 
 async function sendOTP(phoneNumber, code) {
     try {
         const response = await axios.post(MELIPAYAMAK_PATTERN_URL, {
             to: phoneNumber,
             bodyId: BODY_ID,
-            args: [code] // کدی که خودمون ساختیم رو اینجا قرار میدیم
+            args: [code] 
         }, {
             headers: { "Content-Type": "application/json" }
         });
