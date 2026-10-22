@@ -59,6 +59,7 @@ async function setupDatabase() {
             ALTER TABLE users ADD COLUMN IF NOT EXISTS last_daily_heart_claim BIGINT DEFAULT 0;
             ALTER TABLE users ADD COLUMN IF NOT EXISTS items JSONB DEFAULT '{"removeTwo":0,"extraTime":0,"rename":0}'::jsonb;
             ALTER TABLE users ADD COLUMN IF NOT EXISTS transactions JSONB DEFAULT '[]'::jsonb;
+            await query(`ALTER TABLE users ADD COLUMN IF NOT EXISTS weekly_league_points INTEGER DEFAULT 0;`);
         `);
 
         console.log("✅ Tables Ready and Columns Updated");
@@ -170,7 +171,23 @@ app.post("/api/verify-otp", async (req, res) => {
         
     } catch (err) { res.status(500).json({ ok: false, error: "خطای دیتابیس: " + err.message }); }
 });
+app.post("/league/add-points", async (req, res) => {
+    try {
+        const authHeader = req.headers.authorization;
+        if (!authHeader) return res.status(401).json({ ok: false, error: "توکن ندارد" });
+        const token = authHeader.split(" ")[1];
+        const decoded = jwt.verify(token, process.env.JWT_SECRET || "secret");
+        const phone = decoded.phone;
 
+        const { points } = req.body;
+        if (typeof points !== "number" || points < 0) return res.status(400).json({ ok: false, error: "امتیاز نامعتبر" });
+
+        await query("UPDATE users SET weekly_league_points = COALESCE(weekly_league_points, 0) + $1 WHERE phone = $2", [points, phone]);
+        res.json({ ok: true });
+    } catch (err) {
+        res.status(500).json({ ok: false, error: err.message });
+    }
+});
 app.use("/auth", require("./routes/auth"));
 app.use("/user", require("./routes/user"));
 app.use("/league", require("./routes/league"));
