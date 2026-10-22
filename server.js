@@ -59,7 +59,7 @@ async function setupDatabase() {
             ALTER TABLE users ADD COLUMN IF NOT EXISTS last_daily_heart_claim BIGINT DEFAULT 0;
             ALTER TABLE users ADD COLUMN IF NOT EXISTS items JSONB DEFAULT '{"removeTwo":0,"extraTime":0,"rename":0}'::jsonb;
             ALTER TABLE users ADD COLUMN IF NOT EXISTS transactions JSONB DEFAULT '[]'::jsonb;
-            await query(`ALTER TABLE users ADD COLUMN IF NOT EXISTS weekly_league_points INTEGER DEFAULT 0;`);
+            ALTER TABLE users ADD COLUMN IF NOT EXISTS weekly_league_points INTEGER DEFAULT 0;
         `);
 
         console.log("✅ Tables Ready and Columns Updated");
@@ -171,6 +171,7 @@ app.post("/api/verify-otp", async (req, res) => {
         
     } catch (err) { res.status(500).json({ ok: false, error: "خطای دیتابیس: " + err.message }); }
 });
+
 app.post("/league/add-points", async (req, res) => {
     try {
         const authHeader = req.headers.authorization;
@@ -188,6 +189,7 @@ app.post("/league/add-points", async (req, res) => {
         res.status(500).json({ ok: false, error: err.message });
     }
 });
+
 app.use("/auth", require("./routes/auth"));
 app.use("/user", require("./routes/user"));
 app.use("/league", require("./routes/league"));
