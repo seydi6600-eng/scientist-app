@@ -1,21 +1,29 @@
 const axios = require("axios");
 
-const MELIPAYAMAK_API_URL = "https://console.melipayamak.com/api/send/otp/7a85952ffd054761b21587aa06c5ee6c";
+// کد bodyId که از پنل ملی‌پیامک گرفتی
+const BODY_ID = 562530; 
+
+// کلید API
+const MELIPAYAMAK_API_KEY = "7a85952ffd054761b21587aa06c5ee6c";
+
+// آدرس وب‌سرویس پترن (خدماتی)
+const MELIPAYAMAK_PATTERN_URL = `https://console.melipayamak.com/api/send/pattern/${MELIPAYAMAK_API_KEY}`;
 
 async function sendOTP(phoneNumber, code) {
     try {
-        const response = await axios.post(MELIPAYAMAK_API_URL, {
+        const response = await axios.post(MELIPAYAMAK_PATTERN_URL, {
             to: phoneNumber,
-            code: code
+            bodyId: BODY_ID,
+            args: [code] // کدی که خودمون ساختیم رو اینجا قرار میدیم
         }, {
             headers: { "Content-Type": "application/json" }
         });
 
-        if (response.data && (response.data.status === "success" || response.data.code)) {
+        if (response.data && (response.data.recId || response.data.status === "success")) {
             console.log("✅ OTP sent successfully to", phoneNumber);
             return { ok: true, data: response.data };
         } else {
-            console.error("❌ Melipayamak API Error:", response.data);
+            console.error("❌ Melipayamak Pattern API Error:", response.data);
             return { ok: false, error: response.data.message || "خطا در ارسال پیامک" };
         }
     } catch (error) {
