@@ -45,10 +45,25 @@ async function setupDatabase() {
             CREATE TABLE IF NOT EXISTS pvp_matches (id SERIAL PRIMARY KEY, player1_phone TEXT, player1_username TEXT, player1_avatar TEXT, player1_topic TEXT, player1_score INTEGER DEFAULT 0, player1_answered INTEGER DEFAULT 0, player1_finished BOOLEAN DEFAULT false, player2_phone TEXT, player2_username TEXT, player2_avatar TEXT, player2_topic TEXT, player2_score INTEGER DEFAULT 0, player2_answered INTEGER DEFAULT 0, player2_finished BOOLEAN DEFAULT false, questions JSONB, current_set INTEGER DEFAULT 1, status TEXT DEFAULT 'selecting_topics', started_at BIGINT, finished_at BIGINT, winner_phone TEXT, created_at BIGINT);
             CREATE TABLE IF NOT EXISTS pvp_topic_selections (id SERIAL PRIMARY KEY, match_id INTEGER, user_phone TEXT, topic_id TEXT, selected_at BIGINT, UNIQUE(match_id, user_phone));
         `);
-        console.log("✅ Tables Ready");
+
+        // اضافه کردن ستون‌های جدید به جدول کاربران در صورت وجود نداشتن
+        await query(`
+            ALTER TABLE users ADD COLUMN IF NOT EXISTS online_wins INTEGER DEFAULT 0;
+            ALTER TABLE users ADD COLUMN IF NOT EXISTS online_games INTEGER DEFAULT 0;
+            ALTER TABLE users ADD COLUMN IF NOT EXISTS online_best_score INTEGER DEFAULT 0;
+            ALTER TABLE users ADD COLUMN IF NOT EXISTS category_stats JSONB DEFAULT '{}'::jsonb;
+            ALTER TABLE users ADD COLUMN IF NOT EXISTS vip_avatars JSONB DEFAULT '[]'::jsonb;
+            ALTER TABLE users ADD COLUMN IF NOT EXISTS honors JSONB DEFAULT '[]'::jsonb;
+            ALTER TABLE users ADD COLUMN IF NOT EXISTS subscription_until BIGINT DEFAULT 0;
+            ALTER TABLE users ADD COLUMN IF NOT EXISTS subscription_type TEXT;
+            ALTER TABLE users ADD COLUMN IF NOT EXISTS last_daily_heart_claim BIGINT DEFAULT 0;
+            ALTER TABLE users ADD COLUMN IF NOT EXISTS items JSONB DEFAULT '{"removeTwo":0,"extraTime":0,"rename":0}'::jsonb;
+            ALTER TABLE users ADD COLUMN IF NOT EXISTS transactions JSONB DEFAULT '[]'::jsonb;
+        `);
+
+        console.log("✅ Tables Ready and Columns Updated");
     } catch (err) { console.error("❌ DB Error:", err.message); }
 }
-
 
 app.post("/api/send-otp", async (req, res) => {
     const { phone } = req.body;
@@ -61,22 +76,16 @@ app.post("/api/send-otp", async (req, res) => {
     try {
         await client.query('BEGIN');
 
-        // قفل ردیف برای جلوگیری از race condition
         const existing = await client.query(
-            `SELECT code, expires 
-             FROM otp_codes 
-             WHERE phone = $1 
-             FOR UPDATE`,
+            `SELECT code, expires FROM otp_codes WHERE phone = $1 FOR UPDATE`,
             [phone]
         );
 
         let codeToSend;
 
         if (existing.rows.length > 0 && Number(existing.rows[0].expires) > Date.now()) {
-            // کد معتبر هنوز هست → همان را استفاده کن
             codeToSend = existing.rows[0].code;
         } else {
-            // کد جدید بساز و ذخیره کن
             codeToSend = Math.floor(10000 + Math.random() * 90000).toString();
             
             await client.query(
@@ -90,7 +99,6 @@ app.post("/api/send-otp", async (req, res) => {
 
         await client.query('COMMIT');
 
-        // بعد از اینکه دیتابیس مطمئن شد، پیامک بفرست
         const result = await sendOTP(phone, codeToSend);
         
         if (!result.ok) {
@@ -110,10 +118,10 @@ app.post("/api/send-otp", async (req, res) => {
         client.release();
     }
 });
+
 app.post("/api/verify-otp", async (req, res) => {
     const { phone, code, actionType, username, password } = req.body;
     
-    // تابعی برای تبدیل اعداد فارسی/عربی به انگلیسی و حذف فاصله‌ها
     const normalizeCode = (c) => {
         if (!c) return "";
         return String(c)
@@ -132,8 +140,6 @@ app.post("/api/verify-otp", async (req, res) => {
         const dbCode = normalizeCode(record.code);
         const userCode = normalizeCode(code);
 
-        console.log(`Verifying OTP for ${phone}: DB=${dbCode}, User=${userCode}`);
-
         if (dbCode !== userCode) {
             return res.status(400).json({ ok: false, error: "کد اشتباه" });
         }
@@ -142,14 +148,12 @@ app.post("/api/verify-otp", async (req, res) => {
         
         const userRes = await query("SELECT * FROM users WHERE phone = $1", [phone]);
         
-        // اگر کاربر وجود داشت، وارد شود (بدون توجه به actionType)
         if (userRes.rows.length > 0) {
             const user = userRes.rows[0];
             const token = jwt.sign({ phone: user.phone }, process.env.JWT_SECRET || "secret", { expiresIn: '30d' });
             return res.json({ ok: true, token, user });
         } 
         
-        // اگر کاربر وجود نداشت، ثبت‌نامش کن
         let finalUsername = (username && username.trim()) ? username.trim() : "user_" + phone.slice(-4);
         const checkUser = await query("SELECT * FROM users WHERE username = $1", [finalUsername]);
         if (checkUser.rows.length > 0) finalUsername = finalUsername + Math.floor(Math.random() * 1000);
