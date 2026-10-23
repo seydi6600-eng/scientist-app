@@ -60,6 +60,7 @@ async function setupDatabase() {
             ALTER TABLE users ADD COLUMN IF NOT EXISTS items JSONB DEFAULT '{"removeTwo":0,"extraTime":0,"rename":0}'::jsonb;
             ALTER TABLE users ADD COLUMN IF NOT EXISTS transactions JSONB DEFAULT '[]'::jsonb;
             ALTER TABLE users ADD COLUMN IF NOT EXISTS weekly_league_points INTEGER DEFAULT 0;
+            ALTER TABLE users ADD COLUMN IF NOT EXISTS league_joined BOOLEAN DEFAULT false;
         `);
 
         console.log("✅ Tables Ready and Columns Updated");
