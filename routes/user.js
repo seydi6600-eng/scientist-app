@@ -13,8 +13,9 @@ router.get("/get", authMiddleware, async (req, res) => {
             `SELECT phone, username, avatar, xp, level, coins,
                     games_played, correct_answers, wrong_answers, best_score,
                     league_id, league_wins, online_wins, online_games, online_best_score,
-                    category_stats, vip_avatars, honors, items,
-                    subscription_until, subscription_type, last_daily_heart_claim
+                    category_stats, vip_avatars, honors, items, transactions,
+                    subscription_until, subscription_type, last_daily_heart_claim,
+                    league_joined, weekly_league_points
              FROM users WHERE phone = $1`,
             [phone]
         );
@@ -46,9 +47,12 @@ router.get("/get", authMiddleware, async (req, res) => {
                 vipAvatars: u.vip_avatars || [],
                 honors: u.honors || [],
                 items: u.items || {},
+                transactions: u.transactions || [],
                 subscriptionUntil: u.subscription_until || 0,
                 subscriptionType: u.subscription_type || null,
-                lastDailyHeartClaim: u.last_daily_heart_claim || 0
+                lastDailyHeartClaim: u.last_daily_heart_claim || 0,
+                leagueJoined: u.league_joined || false,
+                weeklyLeaguePoints: u.weekly_league_points || 0
             }
         });
     } catch (err) {
@@ -67,19 +71,29 @@ router.post("/update", authMiddleware, async (req, res) => {
             "avatar", "xp", "level", "coins",
             "games_played", "correct_answers", "wrong_answers", "best_score",
             "league_id", "league_wins", "online_wins", "online_games", "online_best_score",
-            "category_stats", "vip_avatars", "honors", "items",
+            "category_stats", "vip_avatars", "honors", "items", "transactions",
             "subscription_until", "subscription_type", "last_daily_heart_claim",
-            "username"
+            "username", "league_joined", "weekly_league_points"
         ];
 
         const sets = [];
         const values = [];
         let idx = 1;
 
+        // فیلدهایی که توی دیتابیس از نوع JSONB هستن و باید به رشته تبدیل بشن
+        const jsonbFields = ["category_stats", "vip_avatars", "honors", "items", "transactions"];
+
         for (const key of Object.keys(updates)) {
             if (!allowedFields.includes(key)) continue;
+            
             sets.push(`${key} = $${idx}`);
-            values.push(updates[key]);
+            
+            if (jsonbFields.includes(key)) {
+                // تبدیل به رشته برای جلوگیری از خطای دیتابیس
+                values.push(JSON.stringify(updates[key])); 
+            } else {
+                values.push(updates[key]);
+            }
             idx++;
         }
 
@@ -96,7 +110,7 @@ router.post("/update", authMiddleware, async (req, res) => {
         res.json({ ok: true });
     } catch (err) {
         console.error("Update user error:", err);
-        res.status(500).json({ ok: false, error: "خطای سرور" });
+        res.status(500).json({ ok: false, error: err.message }); // نمایش خطای واقعی برای دیباگ
     }
 });
 
