@@ -1,4 +1,5 @@
 require("dotenv").config();
+const crypto = require("crypto");
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
@@ -46,7 +47,6 @@ async function setupDatabase() {
             CREATE TABLE IF NOT EXISTS pvp_topic_selections (id SERIAL PRIMARY KEY, match_id INTEGER, user_phone TEXT, topic_id TEXT, selected_at BIGINT, UNIQUE(match_id, user_phone));
         `);
 
-        // اضافه کردن ستون‌های جدید به جدول کاربران در صورت وجود نداشتن
         await query(`
             ALTER TABLE users ADD COLUMN IF NOT EXISTS online_wins INTEGER DEFAULT 0;
             ALTER TABLE users ADD COLUMN IF NOT EXISTS online_games INTEGER DEFAULT 0;
@@ -161,10 +161,12 @@ app.post("/api/verify-otp", async (req, res) => {
         if (checkUser.rows.length > 0) finalUsername = finalUsername + Math.floor(Math.random() * 1000);
         
         let finalPass = (password && password.trim()) ? password.trim() : "otp";
-        
+        // هش کردن رمز برای امنیت
+        const hashedPass = finalPass === "otp" ? "otp" : crypto.createHash("sha256").update(finalPass).digest("hex");
+
         const newUser = await query(
             `INSERT INTO users (phone, username, password_hash, coins, created_at) VALUES ($1, $2, $3, 50, $4) RETURNING *`, 
-            [phone, finalUsername, finalPass, Date.now()]
+            [phone, finalUsername, hashedPass, Date.now()]
         );
         const user = newUser.rows[0];
         const token = jwt.sign({ phone: user.phone }, process.env.JWT_SECRET || "secret", { expiresIn: '30d' });
