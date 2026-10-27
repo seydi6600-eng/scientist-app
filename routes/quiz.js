@@ -307,7 +307,10 @@ answerIndex < -1
 });
 // راهنمای امن حذف دو گزینه اشتباه
 router.post("/hint", auth, async (req, res) => {
+
+router.post("/hint", auth, async (req, res) => {
     const client = await pool.connect();
+    let inTransaction = false;
 
     try {
         const { sessionId, questionIndex } = req.body || {};
@@ -325,6 +328,7 @@ router.post("/hint", auth, async (req, res) => {
 
         await ensureTables(client);
         await client.query("BEGIN");
+        inTransaction = true;
 
         const result = await client.query(
             `SELECT *
@@ -343,6 +347,7 @@ router.post("/hint", auth, async (req, res) => {
             questionIndex !== session.current_index
         ) {
             await client.query("ROLLBACK");
+            inTransaction = false;
             return res.status(400).json({
                 ok: false,
                 error: "این راهنما در دسترس نیست"
@@ -357,6 +362,7 @@ router.post("/hint", auth, async (req, res) => {
 
         if (answered.rows.length > 0) {
             await client.query("ROLLBACK");
+            inTransaction = false;
             return res.status(400).json({
                 ok: false,
                 error: "این سؤال قبلاً پاسخ داده شده است"
@@ -365,11 +371,46 @@ router.post("/hint", auth, async (req, res) => {
 
         const q = session.questions[questionIndex];
 
-        if (!q || !Array.isArray(q.answers)) {
+        if (
+            !q ||
+            !Array.isArray(q.answers) ||
+            !Number.isSafeInteger(q.correct) ||
+            q.correct < 0 ||
+            q.correct >= q.answers.length ||
+            q.answers.length < 3
+        ) {
             await client.query("ROLLBACK");
+            inTransaction = false;
             return res.status(400).json({
                 ok: false,
-                error: "سؤال نامعتبر است"
+                error: "سؤال برای استفاده از راهنما معتبر نیست"
+            });
+        }
+
+        // قفل موجودی کاربر تا آیتم دوبار مصرف نشود
+        const userResult = await client.query(
+            `SELECT items FROM users WHERE phone = $1 FOR UPDATE`,
+            [req.user.phone]
+        );
+
+        if (!userResult.rows[0]) {
+            await client.query("ROLLBACK");
+            inTransaction = false;
+            return res.status(404).json({
+                ok: false,
+                error: "کاربر پیدا نشد"
+            });
+        }
+
+        const items = userResult.rows[0].items || {};
+        const count = Number(items.removeTwo) || 0;
+
+        if (count < 1) {
+            await client.query("ROLLBACK");
+            inTransaction = false;
+            return res.status(400).json({
+                ok: false,
+                error: "آیتم حذف دو گزینه را نداری"
             });
         }
 
@@ -379,28 +420,43 @@ router.post("/hint", auth, async (req, res) => {
 
         const wrongOptions = shuffle(wrongIndices).slice(0, 2);
 
+        const updatedItems = {
+            ...items,
+            removeTwo: count - 1
+        };
+
+        await client.query(
+            `UPDATE users SET items = $1::jsonb WHERE phone = $2`,
+            [JSON.stringify(updatedItems), req.user.phone]
+        );
+
         await client.query("COMMIT");
+        inTransaction = false;
 
         return res.json({
             ok: true,
             questionIndex,
-            wrongIndices: wrongOptions
+            wrongIndices: wrongOptions,
+            remaining: count - 1
         });
     } catch (err) {
-        try {
-            await client.query("ROLLBACK");
-        } catch (_) {}
+        if (inTransaction) {
+            try {
+                await client.query("ROLLBACK");
+            } catch (_) {}
+        }
 
         console.error("Quiz hint error:", err.message);
 
         return res.status(500).json({
             ok: false,
-            error: "دریافت راهنما ناموفق بود"
+            error: "استفاده از راهنما ناموفق بود"
         });
     } finally {
         client.release();
     }
 });
+
 
 // پایان بازی و ثبت امتیاز هفتگی فقط یک بار
 router.post("/finish", auth, async (req, res) => {
