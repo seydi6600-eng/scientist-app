@@ -308,7 +308,6 @@ answerIndex < -1
 // راهنمای امن حذف دو گزینه اشتباه
 router.post("/hint", auth, async (req, res) => {
 
-router.post("/hint", auth, async (req, res) => {
     const client = await pool.connect();
     let inTransaction = false;
 
