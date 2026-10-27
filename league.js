@@ -3,7 +3,7 @@
    ============================================ */
 
 // ─── تنظیمات ───
-const LEAGUE_API = "https://daneshmand-app.ir/league";
+const LEAGUE_API = "/league";
 
 const LEAGUE_NAMES = {
     division3: { name: "لیگ دسته ۳", emoji: "🥉", color: "#cd7f32", shadow: "#92400e" },
