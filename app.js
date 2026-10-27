@@ -2894,43 +2894,47 @@ function showCategorySelection(difficulty) {
 /* ============================================
    کوییز آفلاین
    ============================================ */
-
-
 async function startQuiz(fileName, title, difficulty) {
-    playMusicQuiz();
+playMusicQuiz();
 
-    const diff = difficulty || Storage.load("current_difficulty", "medium");
+const diff = difficulty || Storage.load("current_difficulty", "medium");
 
-    try {
-        if (!Subscription.isActive()) {
-            Hearts.sync();
-            if (Hearts.peek() <= 0) {
-                showNoHeartsMessage();
-                return;
-            }
-            Hearts.use(1);
-        }
-
-        const data = await supabaseFetch("quiz/start", {
-            method: "POST",
-            body: JSON.stringify({
-                fileName: fileName,
-                difficulty: diff
-            })
-        });
-
-        if (!data.ok || !data.sessionId ||
-            !Array.isArray(data.questions) || data.questions.length === 0) {
-            showError(data.error || "شروع بازی ناموفق بود");
+try {
+    if (!Subscription.isActive()) {
+        Hearts.sync();
+        if (Hearts.peek() <= 0) {
+            showNoHeartsMessage();
             return;
         }
-
-        runQuiz(data.questions, title, diff, data.sessionId);
-    } catch (err) {
-        console.error("Quiz start error:", err);
-        showError("خطا در شروع بازی");
     }
+
+    const data = await supabaseFetch("quiz/start", {
+        method: "POST",
+        body: JSON.stringify({
+            fileName: fileName,
+            difficulty: diff
+        })
+    });
+
+    if (!data.ok || !data.sessionId ||
+        !Array.isArray(data.questions) || data.questions.length === 0) {
+        showError(data.error || "شروع بازی ناموفق بود");
+        return;
+    }
+
+    if (!Subscription.isActive()) {
+        Hearts.use(1);
+    }
+
+    runQuiz(data.questions, title, diff, data.sessionId, fileName);
+} catch (err) {
+    console.error("Quiz start error:", err);
+    showError("خطا در شروع بازی");
 }
+
+}
+
+
 
 
 function showNoHeartsMessage() {
