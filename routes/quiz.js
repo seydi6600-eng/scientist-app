@@ -77,9 +77,8 @@ function publicQuestion(q) {
     return {
         question: q.question,
         answers: order.map(i => q.answers[i]),
-        correct: undefined,
-        difficulty: q.difficulty || "medium",
-        answerMap: order.map(i => i === q.correct)
+        correct: order.indexOf(q.correct),
+        difficulty: q.difficulty || "medium"
     };
 }
 
