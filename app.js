@@ -3262,6 +3262,18 @@ try {
         categoriesDiv.className = ""; 
         categoriesDiv.style.cssText = "overflow:auto;display:block;padding-top:14px;padding-bottom:14px;";
         categoriesDiv.innerHTML = "";
+        if (reason === "complete" && sessionId) {
+    const finishResult = await supabaseFetch("quiz/finish", {
+        method: "POST",
+        body: JSON.stringify({
+            sessionId: sessionId
+        })
+    });
+
+    if (!finishResult.ok) {
+        console.error("Quiz finish error:", finishResult.error);
+    }
+        }   
 
         let bonusXP = 0, bonusCoins = 0;
         if (reason === "complete" && score === totalQ) {
