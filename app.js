@@ -3237,7 +3237,6 @@ try {
         };
 
         startTimer(async function () {
-        startTimer(async function () {
     if (ui.answerButtons.every(b => b.disabled)) return;
 
     ui.answerButtons.forEach(b => b.disabled = true);
