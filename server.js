@@ -175,7 +175,7 @@ app.post("/api/verify-otp", async (req, res) => {
     } catch (err) { res.status(500).json({ ok: false, error: "خطای دیتابیس: " + err.message }); }
 });
 
-app.post("/league/add-points", async (req, res) => {
+
 
 
 app.use("/auth", require("./routes/auth"));
