@@ -3000,7 +3000,7 @@ function showNoHeartsMessage() {
     categoriesDiv.appendChild(backBtn);
 }
 
-function runQuiz(questions, title, difficulty) {
+function runQuiz(questions, title, difficulty, sessionId, fileName) {
     const picked = pickQuestionsByLevel(questions, difficulty || "medium");
     const selectedQuestions = picked.map(shuffleQuestion);
     const totalQ = selectedQuestions.length;
