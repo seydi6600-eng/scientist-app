@@ -107,7 +107,7 @@ router.post("/join", auth, async (req, res) => {
     try {
         const result = await query(
             `UPDATE users
-             SET league_id = 3,
+             SET league_id = 'division3',
                  league_joined = true,
                  weekly_league_points = 0
              WHERE phone = $1 AND COALESCE(league_joined, false) = false
