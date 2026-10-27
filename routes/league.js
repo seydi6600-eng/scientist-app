@@ -136,4 +136,50 @@ router.post("/join", auth, async (req, res) => {
     }
 });
 
+router.post("/add-points", auth, async (req, res) => {
+    try {
+        const points = req.body.points;
+
+        if (
+            !Number.isSafeInteger(points) ||
+            points <= 0 ||
+            points > 1000
+        ) {
+            return res.status(400).json({
+                ok: false,
+                error: "امتیاز نامعتبر است"
+            });
+        }
+
+        const result = await query(
+            `UPDATE users
+             SET weekly_league_points =
+                 COALESCE(weekly_league_points, 0) + $1
+             WHERE phone = $2
+               AND league_joined = true
+             RETURNING weekly_league_points`,
+            [points, req.user.phone]
+        );
+
+        if (!result.rows.length) {
+            return res.status(403).json({
+                ok: false,
+                error: "ابتدا باید عضو لیگ شوید"
+            });
+        }
+
+        return res.json({
+            ok: true,
+            weeklyPoints: result.rows[0].weekly_league_points
+        });
+    } catch (err) {
+        console.error("League points error:", err.message);
+        return res.status(500).json({
+            ok: false,
+            error: "خطا در ثبت امتیاز"
+        });
+    }
+});
+
+
 module.exports = router;
