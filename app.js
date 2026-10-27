@@ -3189,31 +3189,92 @@ try {
 
 };
         // هندلر دکمه حذف دو گزینه
-        ui.removeBtn.onclick = function () {
-            if (ui.removeBtn.disabled) return;
-            ui.removeBtn.disabled = true;
-            ui.removeBtn.style.opacity = "0.5";
+        
+ui.removeBtn.onclick = async function () {
+    if (ui.removeBtn.disabled) return;
 
-            const freshUser = Users.loadCurrent();
-            const items = Object.assign({ removeTwo: 0, extraTime: 0, rename: 0 }, freshUser.items || {});
-            items.removeTwo = Math.max(0, (items.removeTwo || 0) - 1);
-            Users.updateCurrent({ items: items });
+    const freshUser = Users.loadCurrent();
+    const items = Object.assign(
+        { removeTwo: 0, extraTime: 0, rename: 0 },
+        freshUser.items || {}
+    );
 
+    if (Number(items.removeTwo) < 1) {
+        showInfoModal({
+            emoji: "💡",
+            title: "آیتم موجود نیست",
+            message: "برای استفاده از این قابلیت، ابتدا آیتم حذف دو گزینه را تهیه کن.",
+            color: "#8b5cf6",
+            shadow: "#5b21b6",
+            buttonText: "ادامه"
+        });
+        return;
+    }
+
+    ui.removeBtn.disabled = true;
+    ui.removeBtn.style.opacity = "0.5";
+
+    try {
+        const result = await supabaseFetch("quiz/hint", {
+            method: "POST",
+            body: JSON.stringify({
+                sessionId: sessionId,
+                questionIndex: current
+            })
+        });
+
+        if (!result.ok || !Array.isArray(result.wrongIndices)) {
             showInfoModal({
-    emoji: "💡",
-    title: "راهنمای حذف دو گزینه",
-    message: "این قابلیت فعلاً تا اتصال امن به سرور غیرفعال است.",
-    color: "#8b5cf6",
-    shadow: "#5b21b6",
-    buttonText: "ادامه"
-});
-
-            showInfoModal({
-                emoji: "⏭", title: "حذف دو گزینه فعال شد!",
-                message: "دو جواب غلط حذف شدن",
-                color: "#8b5cf6", shadow: "#5b21b6", buttonText: "ادامه"
+                emoji: "⚠️",
+                title: "راهنما انجام نشد",
+                message: result.error || "دریافت راهنما ناموفق بود.",
+                color: "#8b5cf6",
+                shadow: "#5b21b6",
+                buttonText: "ادامه"
             });
-        };
+            return;
+        }
+
+        result.wrongIndices.forEach(function (idx) {
+            const button = ui.answerButtons[idx];
+            if (button) {
+                button.style.visibility = "hidden";
+                button.disabled = true;
+            }
+        });
+
+        const updatedUser = Users.loadCurrent();
+        const updatedItems = Object.assign(
+            { removeTwo: 0, extraTime: 0, rename: 0 },
+            updatedUser.items || {}
+        );
+        updatedItems.removeTwo = result.remaining;
+        Users.updateCurrent({ items: updatedItems });
+
+        showInfoModal({
+            emoji: "⏭",
+            title: "حذف دو گزینه فعال شد!",
+            message: "دو گزینه اشتباه حذف شدند.",
+            color: "#8b5cf6",
+            shadow: "#5b21b6",
+            buttonText: "ادامه"
+        });
+    } catch (err) {
+        console.error("Quiz hint error:", err);
+        showInfoModal({
+            emoji: "⚠️",
+            title: "خطا در راهنما",
+            message: "اتصال به سرور ناموفق بود. دوباره تلاش کن.",
+            color: "#8b5cf6",
+            shadow: "#5b21b6",
+            buttonText: "ادامه"
+        });
+    } finally {
+        ui.removeBtn.disabled = false;
+        ui.removeBtn.style.opacity = "1";
+    }
+};
+
 
         // هندلر دکمه زمان اضافه
         ui.timeBtn.onclick = function () {
