@@ -3347,14 +3347,8 @@ try {
         retryBtn.className = "category next";
         retryBtn.style.marginBottom = "8px";
         retryBtn.onclick = function () {
-            if (!Subscription.isActive()) {
-                Hearts.sync();
-                if (Hearts.peek() <= 0) { showNoHeartsMessage(); return; }
-                Hearts.use(1);
-            }
-            playMusicQuiz();
-            runQuiz(questions, title, difficulty);
-        };
+    startQuiz(fileName, title, difficulty);
+};
         buttonRow.appendChild(retryBtn);
 
         const back = document.createElement("button");
