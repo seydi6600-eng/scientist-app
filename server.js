@@ -174,10 +174,6 @@ app.post("/api/verify-otp", async (req, res) => {
         
     } catch (err) { res.status(500).json({ ok: false, error: "خطای دیتابیس: " + err.message }); }
 });
-
-
-
-
 app.use("/auth", require("./routes/auth"));
 app.use("/user", require("./routes/user"));
 app.use("/league", require("./routes/league"));
