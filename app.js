@@ -3139,30 +3139,55 @@ function runQuiz(questions, title, difficulty, sessionId, fileName) {
             button.style.visibility = "visible";
             
             button.onclick = async function () {
-                if (button.disabled) return;
-                stopTimer();
-                ui.answerButtons.forEach(b => b.disabled = true);
-                if (i === q.correct) {
-                    score++;
-                    button.classList.add("correct");
-                    const levelResult = await User.addXP(XP_PER_CORRECT);
-                    await User.addCoins(COINS_PER_CORRECT);
-                    totalXP += XP_PER_CORRECT;
-                    totalCoins += COINS_PER_CORRECT;
-                    if (levelResult && levelResult.leveledUp) showLevelUpToast(levelResult.newLevel);
-                } else {
-                    wrongCount++;
-                    button.classList.add("wrong");
-                    if (ui.answerButtons[q.correct]) ui.answerButtons[q.correct].classList.add("correct");
-                }
-                setTimeout(function () {
-                    current++;
-                    if (current < totalQ) showQuestion();
-                    else showResult("complete");
-                }, 1200);
-            };
-        });
+if (button.disabled) return;
 
+stopTimer();
+ui.answerButtons.forEach(b => b.disabled = true);
+
+try {
+    const result = await supabaseFetch("quiz/answer", {
+        method: "POST",
+        body: JSON.stringify({
+            sessionId: sessionId,
+            questionIndex: current,
+            answerIndex: i
+        })
+    });
+
+    if (!result.ok) {
+        showError(result.error || "ثبت پاسخ ناموفق بود");
+        return;
+    }
+
+    if (result.correct) {
+        score++;
+        button.classList.add("correct");
+
+        const levelResult = await User.addXP(XP_PER_CORRECT);
+        await User.addCoins(COINS_PER_CORRECT);
+
+        totalXP += XP_PER_CORRECT;
+        totalCoins += COINS_PER_CORRECT;
+
+        if (levelResult && levelResult.leveledUp) {
+            showLevelUpToast(levelResult.newLevel);
+        }
+    } else {
+        wrongCount++;
+        button.classList.add("wrong");
+    }
+
+    setTimeout(function () {
+        current++;
+        if (current < totalQ) showQuestion();
+        else showResult("complete");
+    }, 1200);
+} catch (err) {
+    console.error("Quiz answer error:", err);
+    showError("خطا در ثبت پاسخ");
+}
+
+};
         // هندلر دکمه حذف دو گزینه
         ui.removeBtn.onclick = function () {
             if (ui.removeBtn.disabled) return;
