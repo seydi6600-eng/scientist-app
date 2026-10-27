@@ -1,62 +1,21 @@
 
 const express = require("express");
-const crypto = require("crypto");
 const fs = require("fs");
 const path = require("path");
-const jwt = require("jsonwebtoken");
-const { query } = require("../db");
+const crypto = require("crypto");
+const { pool } = require("../db");
+const auth = require("../middleware/auth");
 
 const router = express.Router();
 
-const auth = (req, res, next) => {
-    const header = req.headers.authorization || "";
-    if (!header.startsWith("Bearer ")) {
-        return res.status(401).json({ ok: false, error: "توکن ندارد" });
-    }
+const SESSION_MS = 30 * 60 * 1000;
+const QUESTION_COUNT = 10;
 
-    try {
-        req.user = jwt.verify(
-            header.slice(7),
-            process.env.JWT_SECRET || "secret"
-        );
-        if (!req.user.phone) throw new Error("Invalid user");
-        next();
-    } catch {
-        return res.status(401).json({ ok: false, error: "توکن نامعتبر" });
-    }
-};
-
-const sessions = new Map();
-const SESSION_MS = 60 * 60 * 1000;
-const MAX_QUESTIONS = 20;
-
-function loadQuestions(fileName) {
-    if (
-        typeof fileName !== "string" ||
-        !/^[a-zA-Z0-9_-]+\.json$/.test(fileName)
-    ) {
-        throw new Error("Invalid question file");
-    }
-
-    const filePath = path.join(__dirname, "..", "questions", fileName);
-    const root = path.resolve(__dirname, "..", "questions") + path.sep;
-
-    if (!path.resolve(filePath).startsWith(root)) {
-        throw new Error("Invalid question path");
-    }
-
-    const data = JSON.parse(fs.readFileSync(filePath, "utf8"));
-
-    if (!Array.isArray(data)) throw new Error("Invalid question data");
-
-    return data.filter(q =>
-        q &&
-        typeof q.question === "string" &&
-        Array.isArray(q.answers) &&
-        q.answers.length >= 2 &&
-        Number.isInteger(q.correct) &&
-        q.correct >= 0 &&
-        q.correct < q.answers.length
+// فقط نام فایل مجاز است؛ مسیر دلخواه پذیرفته نمی‌شود.
+function validFileName(name) {
+    return (
+        typeof name === "string" &&
+        /^[a-zA-Z0-9_-]+\.json$/.test(name)
     );
 }
 
@@ -71,79 +30,135 @@ function shuffle(array) {
     return result;
 }
 
-function publicQuestion(q) {
+function loadQuestions(fileName) {
+    if (!validFileName(fileName)) {
+        throw new Error("Invalid question file");
+    }
+
+    const questionsDir = path.resolve(__dirname, "../questions");
+    const filePath = path.resolve(questionsDir, fileName);
+
+    if (!filePath.startsWith(questionsDir + path.sep)) {
+        throw new Error("Invalid question path");
+    }
+
+    const raw = fs.readFileSync(filePath, "utf8");
+    const data = JSON.parse(raw);
+
+    if (!Array.isArray(data)) {
+        throw new Error("Invalid question data");
+    }
+
+    const valid = data.filter(q =>
+        q &&
+        typeof q.question === "string" &&
+        Array.isArray(q.answers) &&
+        q.answers.length >= 2 &&
+        q.answers.every(a => typeof a === "string") &&
+        Number.isInteger(q.correct) &&
+        q.correct >= 0 &&
+        q.correct < q.answers.length
+    );
+
+    if (valid.length === 0) {
+        throw new Error("No valid questions");
+    }
+
+    return valid;
+}
+
+function prepareQuestion(q) {
     const order = shuffle(q.answers.map((_, i) => i));
 
     return {
         question: q.question,
         answers: order.map(i => q.answers[i]),
+        // این فیلد فقط در دیتابیس ذخیره می‌شود.
         correct: order.indexOf(q.correct),
         difficulty: q.difficulty || "medium"
     };
 }
 
-function cleanQuestion(q) {
-    const { answerMap, ...visible } = q;
-    return visible;
+function publicQuestion(q) {
+    return {
+        question: q.question,
+        answers: q.answers,
+        difficulty: q.difficulty
+    };
 }
 
-// شروع نشست بازی
+// جدول‌ها را در شروع هر درخواست آماده می‌کنیم.
+// برای محیط عملیاتی بهتر است این ساختارها با migration ساخته شوند.
+async function ensureTables(client) {
+    await client.query(`
+        CREATE TABLE IF NOT EXISTS quiz_sessions (
+            session_id UUID PRIMARY KEY,
+            phone TEXT NOT NULL,
+            questions JSONB NOT NULL,
+            current_index INTEGER NOT NULL DEFAULT 0,
+            score INTEGER NOT NULL DEFAULT 0,
+            expires_at TIMESTAMPTZ NOT NULL,
+            finished_at TIMESTAMPTZ,
+            awarded_points INTEGER NOT NULL DEFAULT 0
+        )
+    `);
+
+    await client.query(`
+        CREATE TABLE IF NOT EXISTS quiz_answers (
+            session_id UUID NOT NULL REFERENCES quiz_sessions(session_id)
+                ON DELETE CASCADE,
+            question_index INTEGER NOT NULL,
+            answer_index INTEGER NOT NULL,
+            is_correct BOOLEAN NOT NULL,
+            PRIMARY KEY (session_id, question_index)
+        )
+    `);
+}
+
+// شروع بازی
 router.post("/start", auth, async (req, res) => {
+    const client = await pool.connect();
+
     try {
-        const { fileName, difficulty = "medium" } = req.body || {};
+        const { fileName, difficulty } = req.body || {};
 
-        const user = await query(
-            `SELECT phone, league_joined FROM users WHERE phone = $1`,
-            [req.user.phone]
-        );
+        const questions = loadQuestions(fileName);
 
-        if (!user.rows.length) {
-            return res.status(404).json({ ok: false, error: "کاربر یافت نشد" });
+        const chosen = shuffle(
+            questions.filter(q =>
+                !difficulty || q.difficulty === difficulty
+            )
+        ).slice(0, QUESTION_COUNT);
+
+        if (chosen.length === 0) {
+            return res.status(400).json({
+                ok: false,
+                error: "برای این سطح سؤالی پیدا نشد"
+            });
         }
 
-        const all = loadQuestions(fileName);
-        const allowedDifficulty = ["easy", "medium", "hard"].includes(difficulty)
-            ? difficulty
-            : "medium";
+        const prepared = chosen.map(prepareQuestion);
+        const sessionId = crypto.randomUUID();
+        const expiresAt = new Date(Date.now() + SESSION_MS);
 
-        const matching = all.filter(
-            q => (q.difficulty || "medium") === allowedDifficulty
+        await ensureTables(client);
+
+        await client.query(
+            `INSERT INTO quiz_sessions
+                (session_id, phone, questions, current_index, score, expires_at)
+             VALUES ($1, $2, $3::jsonb, 0, 0, $4)`,
+            [
+                sessionId,
+                req.user.phone,
+                JSON.stringify(prepared),
+                expiresAt
+            ]
         );
-
-        const pool = matching.length >= 5 ? matching : all;
-        if (!pool.length) {
-            return res.status(400).json({ ok: false, error: "سؤالی پیدا نشد" });
-        }
-
-        const questions = shuffle(pool).slice(
-            0,
-            Math.min(MAX_QUESTIONS, pool.length)
-        );
-
-        const id = crypto.randomUUID();
-
-        sessions.set(id, {
-            phone: req.user.phone,
-            questions: questions.map(q => ({
-                question: q.question,
-                answers: q.answers,
-                correct: q.correct,
-                difficulty: q.difficulty || "medium"
-            })),
-            current: 0,
-            score: 0,
-            finished: false,
-            expiresAt: Date.now() + SESSION_MS
-        });
 
         return res.json({
             ok: true,
-            sessionId: id,
-            questions: questions.map(q => {
-                const shuffled = publicQuestion(q);
-                const { answerMap, ...visible } = shuffled;
-                return { ...visible, answerMap: undefined };
-            })
+            sessionId,
+            questions: prepared.map(publicQuestion)
         });
     } catch (err) {
         console.error("Quiz start error:", err.message);
@@ -151,110 +166,265 @@ router.post("/start", auth, async (req, res) => {
             ok: false,
             error: "شروع بازی ناموفق بود"
         });
+    } finally {
+        client.release();
     }
 });
 
-// ثبت پاسخ هر سؤال
+// ثبت پاسخ یک سؤال
 router.post("/answer", auth, async (req, res) => {
+    const client = await pool.connect();
+
     try {
-        const { sessionId, answerIndex } = req.body || {};
-        const session = sessions.get(sessionId);
+        const { sessionId, questionIndex, answerIndex } = req.body || {};
 
         if (
-            !session ||
-            session.phone !== req.user.phone ||
-            session.finished ||
-            session.expiresAt < Date.now()
+            typeof sessionId !== "string" ||
+            !Number.isSafeInteger(questionIndex) ||
+            questionIndex < 0 ||
+            !Number.isSafeInteger(answerIndex) ||
+            answerIndex < 0
         ) {
             return res.status(400).json({
                 ok: false,
-                error: "نشست بازی نامعتبر یا منقضی شده است"
+                error: "اطلاعات پاسخ نامعتبر است"
+            });
+        }
+
+        await ensureTables(client);
+        await client.query("BEGIN");
+
+        const result = await client.query(
+            `SELECT *
+             FROM quiz_sessions
+             WHERE session_id = $1 AND phone = $2
+             FOR UPDATE`,
+            [sessionId, req.user.phone]
+        );
+
+        const session = result.rows[0];
+
+        if (!session) {
+            await client.query("ROLLBACK");
+            return res.status(404).json({
+                ok: false,
+                error: "نشست بازی پیدا نشد"
             });
         }
 
         if (
-            !Number.isSafeInteger(answerIndex) ||
-            answerIndex < 0
+            session.finished_at ||
+            new Date(session.expires_at).getTime() < Date.now()
         ) {
-            return res.status(400).json({ ok: false, error: "پاسخ نامعتبر است" });
+            await client.query("ROLLBACK");
+            return res.status(400).json({
+                ok: false,
+                error: "نشست بازی پایان یافته یا منقضی شده است"
+            });
         }
 
-        const q = session.questions[session.current];
+        const existing = await client.query(
+            `SELECT is_correct
+             FROM quiz_answers
+             WHERE session_id = $1 AND question_index = $2`,
+            [sessionId, questionIndex]
+        );
+
+        // اگر درخواست تکراری ارسال شده، امتیاز دوباره اضافه نمی‌شود.
+        if (existing.rows.length > 0) {
+            await client.query("COMMIT");
+            return res.json({
+                ok: true,
+                correct: existing.rows[0].is_correct,
+                duplicate: true,
+                next: session.current_index,
+                total: session.questions.length,
+                score: session.score,
+                complete:
+                    session.current_index === session.questions.length
+            });
+        }
+
+        if (questionIndex !== session.current_index) {
+            await client.query("ROLLBACK");
+            return res.status(409).json({
+                ok: false,
+                error: "ترتیب پاسخ‌ها نامعتبر است"
+            });
+        }
+
+        const q = session.questions[questionIndex];
+
         if (!q || answerIndex >= q.answers.length) {
-            return res.status(400).json({ ok: false, error: "شماره گزینه نامعتبر است" });
+            await client.query("ROLLBACK");
+            return res.status(400).json({
+                ok: false,
+                error: "شماره گزینه نامعتبر است"
+            });
         }
 
         const isCorrect = answerIndex === q.correct;
-        if (isCorrect) session.score++;
+        const newScore = session.score + (isCorrect ? 1 : 0);
+        const next = session.current_index + 1;
 
-        session.current++;
+        await client.query(
+            `INSERT INTO quiz_answers
+                (session_id, question_index, answer_index, is_correct)
+             VALUES ($1, $2, $3, $4)`,
+            [sessionId, questionIndex, answerIndex, isCorrect]
+        );
+
+        await client.query(
+            `UPDATE quiz_sessions
+             SET current_index = $2, score = $3
+             WHERE session_id = $1`,
+            [sessionId, next, newScore]
+        );
+
+        await client.query("COMMIT");
 
         return res.json({
             ok: true,
             correct: isCorrect,
-            next: session.current,
+            next,
             total: session.questions.length,
-            score: session.score,
-            complete: session.current === session.questions.length
+            score: newScore,
+            complete: next === session.questions.length
         });
     } catch (err) {
+        try {
+            await client.query("ROLLBACK");
+        } catch (_) {}
+
         console.error("Quiz answer error:", err.message);
-        return res.status(500).json({ ok: false, error: "ثبت پاسخ ناموفق بود" });
+        return res.status(500).json({
+            ok: false,
+            error: "ثبت پاسخ ناموفق بود"
+        });
+    } finally {
+        client.release();
     }
 });
 
-// پایان نشست و ثبت امتیاز هفتگی
+// پایان بازی و ثبت امتیاز هفتگی فقط یک بار
 router.post("/finish", auth, async (req, res) => {
-    const session = sessions.get(req.body?.sessionId);
-
-    if (
-        !session ||
-        session.phone !== req.user.phone ||
-        session.finished ||
-        session.expiresAt < Date.now()
-    ) {
-        return res.status(400).json({
-            ok: false,
-            error: "نشست بازی نامعتبر یا قبلاً ثبت شده است"
-        });
-    }
-
-    if (session.current !== session.questions.length) {
-        return res.status(400).json({
-            ok: false,
-            error: "هنوز به همه سؤال‌ها پاسخ داده نشده است"
-        });
-    }
-
-    session.finished = true;
+    const client = await pool.connect();
 
     try {
-        const result = await query(
-            `UPDATE users
-             SET weekly_league_points =
-                 COALESCE(weekly_league_points, 0) + $1
-             WHERE phone = $2
-               AND COALESCE(league_joined, false) = true
-             RETURNING weekly_league_points`,
-            [session.score, session.phone]
+        const { sessionId } = req.body || {};
+
+        if (typeof sessionId !== "string") {
+            return res.status(400).json({
+                ok: false,
+                error: "شناسه بازی نامعتبر است"
+            });
+        }
+
+        await ensureTables(client);
+        await client.query("BEGIN");
+
+        const result = await client.query(
+            `SELECT *
+             FROM quiz_sessions
+             WHERE session_id = $1 AND phone = $2
+             FOR UPDATE`,
+            [sessionId, req.user.phone]
         );
 
-        sessions.delete(req.body.sessionId);
+        const session = result.rows[0];
+
+        if (!session) {
+            await client.query("ROLLBACK");
+            return res.status(404).json({
+                ok: false,
+                error: "نشست بازی پیدا نشد"
+            });
+        }
+
+        // فراخوانی مجدد finish جایزه را دوباره ثبت نمی‌کند.
+        if (session.finished_at) {
+            await client.query("COMMIT");
+            return res.json({
+                ok: true,
+                alreadyFinished: true,
+                score: session.score,
+                awardedPoints: session.awarded_points
+            });
+        }
+
+        if (new Date(session.expires_at).getTime() < Date.now()) {
+            await client.query("ROLLBACK");
+            return res.status(400).json({
+                ok: false,
+                error: "زمان بازی به پایان رسیده است"
+            });
+        }
+
+        if (session.current_index !== session.questions.length) {
+            await client.query("ROLLBACK");
+            return res.status(400).json({
+                ok: false,
+                error: "هنوز به همه سؤال‌ها پاسخ نداده‌اید"
+            });
+        }
+
+        const userResult = await client.query(
+            `SELECT league_joined
+             FROM users
+             WHERE phone = $1
+             FOR UPDATE`,
+            [req.user.phone]
+        );
+
+        if (userResult.rows.length === 0) {
+            await client.query("ROLLBACK");
+            return res.status(404).json({
+                ok: false,
+                error: "کاربر پیدا نشد"
+            });
+        }
+
+        const joined = userResult.rows[0].league_joined === true;
+        const awardedPoints = joined ? session.score : 0;
+
+        if (awardedPoints > 0) {
+            await client.query(
+                `UPDATE users
+                 SET weekly_league_points =
+                     COALESCE(weekly_league_points, 0) + $2
+                 WHERE phone = $1 AND league_joined = true`,
+                [req.user.phone, awardedPoints]
+            );
+        }
+
+        await client.query(
+            `UPDATE quiz_sessions
+             SET finished_at = NOW(), awarded_points = $2
+             WHERE session_id = $1`,
+            [sessionId, awardedPoints]
+        );
+
+        await client.query("COMMIT");
 
         return res.json({
             ok: true,
             score: session.score,
-            weeklyPoints: result.rows[0]?.weekly_league_points ?? null
+            awardedPoints,
+            joinedLeague: joined
         });
     } catch (err) {
-        session.finished = false;
+        try {
+            await client.query("ROLLBACK");
+        } catch (_) {}
+
         console.error("Quiz finish error:", err.message);
         return res.status(500).json({
             ok: false,
-            error: "ثبت نتیجه ناموفق بود"
+            error: "پایان بازی ناموفق بود"
         });
+    } finally {
+        client.release();
     }
 });
 
 module.exports = router;
-
