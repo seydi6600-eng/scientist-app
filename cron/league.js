@@ -13,15 +13,24 @@ function startCronJobs() {
         }
     });
 
-    // پنجشنبه ساعت 00:00 → بستن فصل‌ها
-    cron.schedule("0 0 * * 4", async () => {
-        console.log("⏰ Cron: Finalising seasons...");
-        try {
-            await finaliseAllSeasons();
-        } catch (err) {
-            console.error("❌ Cron error:", err.message);
-        }
-    });
+    
+cron.schedule("0 0 * * 4", async () => {
+    console.log("⏰ Cron: Finalising seasons and weekly leagues...");
+
+    try {
+        await finaliseAllSeasons();
+    } catch (err) {
+        console.error("❌ Season finalisation error:", err.message);
+    }
+
+    try {
+        await processWeeklyGlobalLeagues();
+    } catch (err) {
+        console.error("❌ Weekly league error:", err.message);
+    }
+});
+
+    
 
     console.log("✅ Cron jobs started");
 }
