@@ -828,7 +828,10 @@ const Users = {
             "lastDailyHeartClaim",
             "adsWatchedToday", "adsResetTime",
             "transactions", "honors",
-            "leagueId", "leaguePaidWeek", "leaguePaidAmount"
+            "leagueId", "leaguePaidWeek", "leaguePaidAmount",
+"leagueJoined", 
+"weeklyLeaguePoints",
+"bazaarConsumedTokens"
         ];
 
         const safeUpdates = {};
