@@ -176,22 +176,7 @@ app.post("/api/verify-otp", async (req, res) => {
 });
 
 app.post("/league/add-points", async (req, res) => {
-    try {
-        const authHeader = req.headers.authorization;
-        if (!authHeader) return res.status(401).json({ ok: false, error: "توکن ندارد" });
-        const token = authHeader.split(" ")[1];
-        const decoded = jwt.verify(token, process.env.JWT_SECRET || "secret");
-        const phone = decoded.phone;
 
-        const { points } = req.body;
-        if (typeof points !== "number" || points < 0) return res.status(400).json({ ok: false, error: "امتیاز نامعتبر" });
-
-        await query("UPDATE users SET weekly_league_points = COALESCE(weekly_league_points, 0) + $1 WHERE phone = $2", [points, phone]);
-        res.json({ ok: true });
-    } catch (err) {
-        res.status(500).json({ ok: false, error: err.message });
-    }
-});
 
 app.use("/auth", require("./routes/auth"));
 app.use("/user", require("./routes/user"));
