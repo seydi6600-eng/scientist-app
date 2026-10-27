@@ -3240,16 +3240,35 @@ try {
         };
 
         startTimer(async function () {
-            if (ui.answerButtons.every(b => b.disabled)) return;
-            ui.answerButtons.forEach(b => b.disabled = true);
-            wrongCount++;
-            if (ui.answerButtons[q.correct]) ui.answerButtons[q.correct].classList.add("correct");
-            setTimeout(function () {
-                current++;
-                if (current < totalQ) showQuestion();
-                else showResult("complete");
-            }, 1200);
+        startTimer(async function () {
+    if (ui.answerButtons.every(b => b.disabled)) return;
+
+    ui.answerButtons.forEach(b => b.disabled = true);
+    wrongCount++;
+
+    try {
+        const result = await supabaseFetch("quiz/answer", {
+            method: "POST",
+            body: JSON.stringify({
+                sessionId: sessionId,
+                questionIndex: current,
+                answerIndex: -1
+            })
         });
+
+        if (!result.ok) {
+            console.error("Timeout answer error:", result.error);
+        }
+    } catch (err) {
+        console.error("Timeout answer error:", err);
+    }
+
+    setTimeout(function () {
+        current++;
+        if (current < totalQ) showQuestion();
+        else showResult("complete");
+    }, 1200);
+});
     }
 
     // ۵. تابع نمایش نتیجه
