@@ -59,7 +59,7 @@ router.get("/state", auth, async (req, res) => {
                 ok: true,
                 state: {
                     joined: false,
-                    leagueId: 3,
+                    leagueId: "division3",
                     players: []
                 }
             });
