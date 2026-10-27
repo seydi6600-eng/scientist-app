@@ -263,7 +263,7 @@ answerIndex < -1
             });
         }
 
-        const isCorrect = answerIndex === q.correct;
+        const isCorrect = answerIndex >= 0 && answerIndex === q.correct;
         const newScore = session.score + (isCorrect ? 1 : 0);
         const next = session.current_index + 1;
 
