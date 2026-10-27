@@ -295,12 +295,17 @@ async function processWeeklyGlobalLeagues() {
             `${changes.length} users; ${winners.length} prizes`
         );
     } catch (err) {
+    try {
         await client.query("ROLLBACK");
-        console.error("❌ Weekly league rollover failed:", err.message);
-        throw err;
-    } finally {
-        client.release();
+    } catch (rollbackErr) {
+        console.error("❌ Rollback error:", rollbackErr.message);
     }
+
+    console.error("❌ Weekly league rollover failed:", err.message);
+    throw err;
+} finally {
+    client.release();
+}
 }
 
 
