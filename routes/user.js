@@ -73,7 +73,7 @@ router.post("/update", authMiddleware, async (req, res) => {
             "league_id", "league_wins", "online_wins", "online_games", "online_best_score",
             "category_stats", "vip_avatars", "honors", "items", "transactions",
             "subscription_until", "subscription_type", "last_daily_heart_claim",
-            "username", "league_joined", "weekly_league_points"
+            "username"
         ];
 
         const sets = [];
