@@ -2895,29 +2895,43 @@ function showCategorySelection(difficulty) {
    کوییز آفلاین
    ============================================ */
 
-function startQuiz(fileName, title, difficulty) {
+
+async function startQuiz(fileName, title, difficulty) {
     playMusicQuiz();
+
     const diff = difficulty || Storage.load("current_difficulty", "medium");
 
-    fetch("questions/" + fileName)
-        .then(r => { if (!r.ok) throw new Error("not found"); return r.json(); })
-        .then(q => {
-            if (!Array.isArray(q) || q.length === 0) {
-                showError("سوال‌ها آماده نیست");
+    try {
+        if (!Subscription.isActive()) {
+            Hearts.sync();
+            if (Hearts.peek() <= 0) {
+                showNoHeartsMessage();
                 return;
             }
-            if (!Subscription.isActive()) {
-                Hearts.sync();
-                if (Hearts.peek() <= 0) { showNoHeartsMessage(); return; }
-                Hearts.use(1);
-            }
-            runQuiz(q, title, diff);
-        })
-        .catch(err => {
-            console.error(err);
-            showError("سوال‌ها آماده نیست");
+            Hearts.use(1);
+        }
+
+        const data = await supabaseFetch("quiz/start", {
+            method: "POST",
+            body: JSON.stringify({
+                fileName: fileName,
+                difficulty: diff
+            })
         });
+
+        if (!data.ok || !data.sessionId ||
+            !Array.isArray(data.questions) || data.questions.length === 0) {
+            showError(data.error || "شروع بازی ناموفق بود");
+            return;
+        }
+
+        runQuiz(data.questions, title, diff, data.sessionId);
+    } catch (err) {
+        console.error("Quiz start error:", err);
+        showError("خطا در شروع بازی");
+    }
 }
+
 
 function showNoHeartsMessage() {
     setProfilePageMode(false);
