@@ -182,6 +182,7 @@ app.use("/auth", require("./routes/auth"));
 app.use("/user", require("./routes/user"));
 app.use("/league", require("./routes/league"));
 app.use("/pvp", require("./routes/pvp"));
+app.use("/quiz", require("./routes/quiz"));    
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(__dirname));
