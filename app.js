@@ -3001,8 +3001,8 @@ function showNoHeartsMessage() {
 }
 
 function runQuiz(questions, title, difficulty, sessionId, fileName) {
-    const picked = pickQuestionsByLevel(questions, difficulty || "medium");
-    const selectedQuestions = picked.map(shuffleQuestion);
+    const selectedQuestions = questions;
+    
     const totalQ = selectedQuestions.length;
 
     let score = 0, wrongCount = 0, current = 0;
