@@ -124,7 +124,7 @@ router.post("/join", auth, async (req, res) => {
 
         return res.json({
             ok: true,
-            leagueId: 3,
+            leagueId: "division3",
             message: "ثبت‌نام در دسته سه انجام شد"
         });
     } catch (err) {
