@@ -3199,17 +3199,14 @@ try {
             items.removeTwo = Math.max(0, (items.removeTwo || 0) - 1);
             Users.updateCurrent({ items: items });
 
-            const wrongIndices = [];
-            ui.answerButtons.forEach(function (b, idx) {
-                if (idx !== q.correct) wrongIndices.push(idx);
-            });
-            const toRemove = wrongIndices.sort(() => Math.random() - 0.5).slice(0, 2);
-            toRemove.forEach(function (idx) {
-                if (ui.answerButtons[idx]) {
-                    ui.answerButtons[idx].style.visibility = "hidden";
-                    ui.answerButtons[idx].disabled = true;
-                }
-            });
+            showInfoModal({
+    emoji: "💡",
+    title: "راهنمای حذف دو گزینه",
+    message: "این قابلیت فعلاً تا اتصال امن به سرور غیرفعال است.",
+    color: "#8b5cf6",
+    shadow: "#5b21b6",
+    buttonText: "ادامه"
+});
 
             showInfoModal({
                 emoji: "⏭", title: "حذف دو گزینه فعال شد!",
