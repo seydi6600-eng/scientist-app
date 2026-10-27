@@ -183,7 +183,7 @@ router.post("/answer", auth, async (req, res) => {
             !Number.isSafeInteger(questionIndex) ||
             questionIndex < 0 ||
             !Number.isSafeInteger(answerIndex) ||
-            answerIndex < 0
+answerIndex < -1
         ) {
             return res.status(400).json({
                 ok: false,
