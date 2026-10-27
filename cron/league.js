@@ -139,4 +139,160 @@ async function updateStandings(seasonId) {
     }
 }
 
+async function processWeeklyGlobalLeagues() {
+    const client = await require("../db").pool.connect();
+
+    const leagueOrder = [
+        "division3",
+        "division2",
+        "division1",
+        "division4"
+    ];
+
+    const prizes = {
+        division3: 500,
+        division2: 800,
+        division1: 1200,
+        division4: 2500
+    };
+
+    try {
+        await client.query("BEGIN");
+
+        // جلوگیری از اجرای هم‌زمان دو پایان هفته
+        await client.query(
+            "SELECT pg_advisory_xact_lock(73190524)"
+        );
+
+        await client.query(`
+            CREATE TABLE IF NOT EXISTS weekly_league_rollovers (
+                week_key TEXT PRIMARY KEY,
+                processed_at BIGINT NOT NULL
+            )
+        `);
+
+        // این اجرا فقط یک بار در هر تاریخ می‌تواند انجام شود.
+        const weekKey = new Date().toISOString().slice(0, 10);
+
+        const claim = await client.query(
+            `INSERT INTO weekly_league_rollovers (week_key, processed_at)
+             VALUES ($1, $2)
+             ON CONFLICT (week_key) DO NOTHING
+             RETURNING week_key`,
+            [weekKey, Date.now()]
+        );
+
+        if (claim.rowCount === 0) {
+            await client.query("ROLLBACK");
+            console.log("ℹ️ Weekly league already processed:", weekKey);
+            return;
+        }
+
+        const result = await client.query(`
+            SELECT phone, username, league_id,
+                   COALESCE(weekly_league_points, 0) AS points
+            FROM users
+            WHERE COALESCE(league_joined, false) = true
+              AND league_id = ANY($1::text[])
+            ORDER BY league_id, weekly_league_points DESC NULLS LAST,
+                     username ASC, phone ASC
+            FOR UPDATE
+        `, [leagueOrder]);
+
+        const groups = Object.fromEntries(
+            leagueOrder.map(id => [id, []])
+        );
+
+        for (const user of result.rows) {
+            groups[user.league_id].push(user);
+        }
+
+        // تصمیم‌ها بر اساس رتبه‌های قبل از تغییر لیگ‌ها گرفته می‌شوند.
+        const changes = [];
+        const winners = [];
+
+        for (let index = 0; index < leagueOrder.length; index++) {
+            const leagueId = leagueOrder[index];
+            const players = groups[leagueId];
+            const count = players.length;
+
+            if (count === 0) continue;
+
+            // جایزه نفر اول
+            winners.push({
+                phone: players[0].phone,
+                prize: prizes[leagueId]
+            });
+
+            let promoteCount = Math.round(count / 3);
+            let relegateCount = Math.round(count / 3);
+
+            if (leagueId === "division3") relegateCount = 0;
+            if (leagueId === "division4") promoteCount = 0;
+
+            // تعدادها نباید روی هم بیفتند.
+            promoteCount = Math.min(promoteCount, count);
+            relegateCount = Math.min(
+                relegateCount,
+                count - promoteCount
+            );
+
+            const higherLeague = leagueOrder[index + 1];
+            const lowerLeague = leagueOrder[index - 1];
+
+            for (let i = 0; i < count; i++) {
+                let newLeague = leagueId;
+
+                if (i < promoteCount && higherLeague) {
+                    newLeague = higherLeague;
+                } else if (
+                    i >= count - relegateCount &&
+                    lowerLeague
+                ) {
+                    newLeague = lowerLeague;
+                }
+
+                changes.push({
+                    phone: players[i].phone,
+                    leagueId: newLeague
+                });
+            }
+        }
+
+        // پرداخت جایزه و تغییر دسته در همان تراکنش انجام می‌شوند.
+        for (const winner of winners) {
+            await client.query(
+                `UPDATE users
+                 SET coins = COALESCE(coins, 0) + $1
+                 WHERE phone = $2`,
+                [winner.prize, winner.phone]
+            );
+        }
+
+        for (const change of changes) {
+            await client.query(
+                `UPDATE users
+                 SET league_id = $1,
+                     weekly_league_points = 0
+                 WHERE phone = $2`,
+                [change.leagueId, change.phone]
+            );
+        }
+
+        await client.query("COMMIT");
+
+        console.log(
+            `✅ Weekly leagues processed: ${weekKey}; ` +
+            `${changes.length} users; ${winners.length} prizes`
+        );
+    } catch (err) {
+        await client.query("ROLLBACK");
+        console.error("❌ Weekly league rollover failed:", err.message);
+        throw err;
+    } finally {
+        client.release();
+    }
+}
+
+
 module.exports = { startCronJobs };
