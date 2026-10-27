@@ -255,7 +255,7 @@ answerIndex < -1
 
         const q = session.questions[questionIndex];
 
-        if (!q || answerIndex >= q.answers.length) {
+        if (!q || (answerIndex !== -1 && answerIndex >= q.answers.length)) {
             await client.query("ROLLBACK");
             return res.status(400).json({
                 ok: false,
