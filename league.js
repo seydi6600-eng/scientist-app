@@ -55,7 +55,7 @@ async function leagueRequest(path, options = {}) {
     
     let response;
     try {
-        response = await fetch(LEAGUE_API + path, fetchOptions);
+        response = await fetch(LEAGUE_API + path, fetchOptions); 
     } catch (netErr) {
         return { ok: false, error: "خطای اتصال به سرور" };
     }
