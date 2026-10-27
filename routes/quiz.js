@@ -305,6 +305,102 @@ answerIndex < -1
         client.release();
     }
 });
+// راهنمای امن حذف دو گزینه اشتباه
+router.post("/hint", auth, async (req, res) => {
+    const client = await pool.connect();
+
+    try {
+        const { sessionId, questionIndex } = req.body || {};
+
+        if (
+            typeof sessionId !== "string" ||
+            !Number.isSafeInteger(questionIndex) ||
+            questionIndex < 0
+        ) {
+            return res.status(400).json({
+                ok: false,
+                error: "اطلاعات راهنما نامعتبر است"
+            });
+        }
+
+        await ensureTables(client);
+        await client.query("BEGIN");
+
+        const result = await client.query(
+            `SELECT *
+             FROM quiz_sessions
+             WHERE session_id = $1 AND phone = $2
+             FOR UPDATE`,
+            [sessionId, req.user.phone]
+        );
+
+        const session = result.rows[0];
+
+        if (
+            !session ||
+            session.finished_at ||
+            new Date(session.expires_at).getTime() < Date.now() ||
+            questionIndex !== session.current_index
+        ) {
+            await client.query("ROLLBACK");
+            return res.status(400).json({
+                ok: false,
+                error: "این راهنما در دسترس نیست"
+            });
+        }
+
+        const answered = await client.query(
+            `SELECT 1 FROM quiz_answers
+             WHERE session_id = $1 AND question_index = $2`,
+            [sessionId, questionIndex]
+        );
+
+        if (answered.rows.length > 0) {
+            await client.query("ROLLBACK");
+            return res.status(400).json({
+                ok: false,
+                error: "این سؤال قبلاً پاسخ داده شده است"
+            });
+        }
+
+        const q = session.questions[questionIndex];
+
+        if (!q || !Array.isArray(q.answers)) {
+            await client.query("ROLLBACK");
+            return res.status(400).json({
+                ok: false,
+                error: "سؤال نامعتبر است"
+            });
+        }
+
+        const wrongIndices = q.answers
+            .map((_, index) => index)
+            .filter(index => index !== q.correct);
+
+        const wrongOptions = shuffle(wrongIndices).slice(0, 2);
+
+        await client.query("COMMIT");
+
+        return res.json({
+            ok: true,
+            questionIndex,
+            wrongIndices: wrongOptions
+        });
+    } catch (err) {
+        try {
+            await client.query("ROLLBACK");
+        } catch (_) {}
+
+        console.error("Quiz hint error:", err.message);
+
+        return res.status(500).json({
+            ok: false,
+            error: "دریافت راهنما ناموفق بود"
+        });
+    } finally {
+        client.release();
+    }
+});
 
 // پایان بازی و ثبت امتیاز هفتگی فقط یک بار
 router.post("/finish", auth, async (req, res) => {
