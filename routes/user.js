@@ -1,7 +1,7 @@
 // routes/user.js — مدیریت کاربران
 const express = require("express");
 const { query } = require("../db");
-const { authMiddleware } = require("../middleware/auth");
+const { authMiddleware: auth } = require("../middleware/auth");
 
 const router = express.Router();
 
