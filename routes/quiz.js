@@ -1,4 +1,3 @@
-
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
@@ -11,7 +10,6 @@ const router = express.Router();
 const SESSION_MS = 30 * 60 * 1000;
 const QUESTION_COUNT = 10;
 
-// فقط نام فایل مجاز است؛ مسیر دلخواه پذیرفته نمی‌شود.
 function validFileName(name) {
     return (
         typeof name === "string" &&
@@ -21,12 +19,10 @@ function validFileName(name) {
 
 function shuffle(array) {
     const result = [...array];
-
     for (let i = result.length - 1; i > 0; i--) {
         const j = crypto.randomInt(i + 1);
         [result[i], result[j]] = [result[j], result[i]];
     }
-
     return result;
 }
 
@@ -73,7 +69,6 @@ function prepareQuestion(q) {
     return {
         question: q.question,
         answers: order.map(i => q.answers[i]),
-        // این فیلد فقط در دیتابیس ذخیره می‌شود.
         correct: order.indexOf(q.correct),
         difficulty: q.difficulty || "medium"
     };
@@ -87,8 +82,6 @@ function publicQuestion(q) {
     };
 }
 
-// جدول‌ها را در شروع هر درخواست آماده می‌کنیم.
-// برای محیط عملیاتی بهتر است این ساختارها با migration ساخته شوند.
 async function ensureTables(client) {
     await client.query(`
         CREATE TABLE IF NOT EXISTS quiz_sessions (
@@ -171,7 +164,7 @@ router.post("/start", auth, async (req, res) => {
     }
 });
 
-// ثبت پاسخ یک سؤال
+// ثبت پاسخ
 router.post("/answer", auth, async (req, res) => {
     const client = await pool.connect();
 
@@ -183,7 +176,7 @@ router.post("/answer", auth, async (req, res) => {
             !Number.isSafeInteger(questionIndex) ||
             questionIndex < 0 ||
             !Number.isSafeInteger(answerIndex) ||
-answerIndex < -1
+            answerIndex < -1
         ) {
             return res.status(400).json({
                 ok: false,
@@ -230,7 +223,6 @@ answerIndex < -1
             [sessionId, questionIndex]
         );
 
-        // اگر درخواست تکراری ارسال شده، امتیاز دوباره اضافه نمی‌شود.
         if (existing.rows.length > 0) {
             await client.query("COMMIT");
             return res.json({
@@ -240,8 +232,7 @@ answerIndex < -1
                 next: session.current_index,
                 total: session.questions.length,
                 score: session.score,
-                complete:
-                    session.current_index === session.questions.length
+                complete: session.current_index === session.questions.length
             });
         }
 
@@ -305,9 +296,9 @@ answerIndex < -1
         client.release();
     }
 });
-// راهنمای امن حذف دو گزینه اشتباه
-router.post("/hint", auth, async (req, res) => {
 
+// راهنما
+router.post("/hint", auth, async (req, res) => {
     const client = await pool.connect();
     let inTransaction = false;
 
@@ -386,7 +377,6 @@ router.post("/hint", auth, async (req, res) => {
             });
         }
 
-        // قفل موجودی کاربر تا آیتم دوبار مصرف نشود
         const userResult = await client.query(
             `SELECT items FROM users WHERE phone = $1 FOR UPDATE`,
             [req.user.phone]
@@ -456,8 +446,7 @@ router.post("/hint", auth, async (req, res) => {
     }
 });
 
-
-// پایان بازی و ثبت امتیاز هفتگی فقط یک بار
+// پایان بازی
 router.post("/finish", auth, async (req, res) => {
     const client = await pool.connect();
 
@@ -492,7 +481,6 @@ router.post("/finish", auth, async (req, res) => {
             });
         }
 
-        // فراخوانی مجدد finish جایزه را دوباره ثبت نمی‌کند.
         if (session.finished_at) {
             await client.query("COMMIT");
             return res.json({
