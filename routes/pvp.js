@@ -1,4 +1,5 @@
 // routes/pvp.js — بازی آنلاین PvP
+const { authMiddleware } = require("../middleware/auth");
 const express = require("express");
 const { query } = require("../db");
 const { authMiddleware: auth } = require("../middleware/auth");
