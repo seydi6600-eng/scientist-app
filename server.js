@@ -64,7 +64,9 @@ async function setupDatabase() {
         `);
 
         console.log("✅ Tables Ready and Columns Updated");
-    } catch (err) { console.error("❌ DB Error:", err.message); }
+    } catch (err) { 
+        console.error("❌ DB Error:", err.message); 
+    }
 }
 
 app.post("/api/send-otp", async (req, res) => {
@@ -137,7 +139,9 @@ app.post("/api/verify-otp", async (req, res) => {
         const result = await query("SELECT * FROM otp_codes WHERE phone = $1", [phone]);
         const record = result.rows[0];
         
-        if (!record || Number(record.expires) < Date.now()) return res.status(400).json({ ok: false, error: "کد منقضی شده" });
+        if (!record || Number(record.expires) < Date.now()) {
+            return res.status(400).json({ ok: false, error: "کد منقضی شده" });
+        }
         
         const dbCode = normalizeCode(record.code);
         const userCode = normalizeCode(code);
@@ -158,22 +162,27 @@ app.post("/api/verify-otp", async (req, res) => {
         
         let finalUsername = (username && username.trim()) ? username.trim() : "user_" + phone.slice(-4);
         const checkUser = await query("SELECT * FROM users WHERE username = $1", [finalUsername]);
-        if (checkUser.rows.length > 0) finalUsername = finalUsername + Math.floor(Math.random() * 1000);
+        if (checkUser.rows.length > 0) {
+            finalUsername = finalUsername + Math.floor(Math.random() * 1000);
+        }
         
         let finalPass = (password && password.trim()) ? password.trim() : "otp";
-        // هش کردن رمز برای امنیت
         const hashedPass = finalPass === "otp" ? "otp" : crypto.createHash("sha256").update(finalPass).digest("hex");
 
         const newUser = await query(
             `INSERT INTO users (phone, username, password_hash, coins, created_at) VALUES ($1, $2, $3, 50, $4) RETURNING *`, 
             [phone, finalUsername, hashedPass, Date.now()]
         );
+        
         const user = newUser.rows[0];
         const token = jwt.sign({ phone: user.phone }, process.env.JWT_SECRET || "secret", { expiresIn: '30d' });
         return res.json({ ok: true, token, user });
         
-    } catch (err) { res.status(500).json({ ok: false, error: "خطای دیتابیس: " + err.message }); }
+    } catch (err) { 
+        res.status(500).json({ ok: false, error: "خطای دیتابیس: " + err.message }); 
+    }
 });
+
 app.use("/auth", require("./routes/auth"));
 app.use("/user", require("./routes/user"));
 app.use("/league", require("./routes/league"));
@@ -192,10 +201,15 @@ app.use((req, res, next) => {
 });
 
 async function start() {
-    app.listen(PORT, "0.0.0.0", () => { console.log(`✅ Server running on ${PORT}`); });
+    app.listen(PORT, "0.0.0.0", () => { 
+        console.log(`✅ Server running on ${PORT}`); 
+    });
     try {
         const dbOk = await testConnection();
         if (dbOk) await setupDatabase();
-    } catch (err) { console.warn("⚠️ Startup:", err.message); }
+    } catch (err) { 
+        console.warn("⚠️ Startup:", err.message); 
+    }
 }
+
 start();
