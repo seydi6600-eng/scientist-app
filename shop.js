@@ -892,6 +892,33 @@ function _showRenameScreenLocal(price) {
         showShopScreen();
     };
 }
+/* ============================================
+   توابع دریافت نتیجه تبلیغات از اندروید (تپسل)
+   ============================================ */
+
+// این تابع وقتی اجرا می‌شود که کاربر تبلیغ را تا آخر ببیند
+window.onAdRewarded = async function() {
+    const success = await Shop.addCoins(50, "rewarded_ad");
+    if (success) {
+        showInfoModal({
+            emoji: "🎉", title: "آفرین!",
+            message: "۵۰ سکه به دلیل تماشای کامل تبلیغ به حساب شما اضافه شد.",
+            color: "#22c55e", shadow: "#14532d",
+            onClose: showShopScreen
+        });
+    }
+};
+
+// این تابع وقتی اجرا می‌شود که تبلیغی وجود نداشته باشد یا خطا رخ دهد
+window.onAdFailed = function(msg) {
+    showInfoModal({
+        emoji: "❌", title: "تبلیغ نمایش داده نشد",
+        message: msg || "لطفاً بعداً تلاش کنید.",
+        color: "#dc2626", shadow: "#7f1d1d",
+        onClose: showShopScreen
+    });
+};
+
 
 /* ============================================
    صادرات برای استفاده در app.js
