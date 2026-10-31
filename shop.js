@@ -320,7 +320,6 @@ function handleCoinPurchase(pkg) {
     const user = Users.loadCurrent();
     if (!user) return;
 
-    // ✅ استفاده از showConfirmModal به جای confirm
     if (typeof showConfirmModal === "function") {
         showConfirmModal({
             emoji: "💰",
@@ -331,69 +330,28 @@ function handleCoinPurchase(pkg) {
                 "آیا مطمئنید؟",
             color: "#f59e0b", shadow: "#b45309",
             confirmText: "🏦 پرداخت", cancelText: "لغو",
-            onConfirm: function () { showPaymentGateway(pkg); }
+            onConfirm: function () { 
+                // اتصال به کافه‌بازار
+                if (window.AndroidBazaar && typeof window.AndroidBazaar.startPurchase === "function") {
+                    window.AndroidBazaar.startPurchase(pkg.id);
+                } else {
+                    showInfoModal({
+                        emoji: "⚠️", title: "خطا",
+                        message: "پلاگین پرداخت بازار یافت نشد. لطفاً از طریق بازار نصب کنید.",
+                        color: "#dc2626", shadow: "#7f1d1d"
+                    });
+                }
+            }
         });
     } else {
-        if (confirm(
-            "💰 خرید " + pkg.title + "\n\n" +
-            "مبلغ: " + _shopToPersianNumber(pkg.price.toLocaleString()) + " تومان\n" +
-            "دریافتی: " + _shopToPersianNumber(pkg.coins) + " سکه\n\n" +
-            "آیا مطمئنید؟"
-        )) {
-            showPaymentGateway(pkg);
+        if (confirm("خرید " + pkg.title + "؟")) {
+            if (window.AndroidBazaar && typeof window.AndroidBazaar.startPurchase === "function") {
+                window.AndroidBazaar.startPurchase(pkg.id);
+            } else {
+                alert("خطا: پلاگین پرداخت بازار یافت نشد.");
+            }
         }
     }
-}
-
-/* ============================================
-   درگاه پرداخت (نمایشی)
-   ============================================ */
-function showPaymentGateway(pkg) {
-    const modal = document.createElement("div");
-    modal.style.cssText =
-        "position: fixed; inset: 0; " +
-        "background: rgba(0,0,0,0.85); " +
-        "backdrop-filter: blur(8px); " +
-        "-webkit-backdrop-filter: blur(8px); " +
-        "z-index: 9999; " +
-        "display: flex; align-items: center; justify-content: center; " +
-        "padding: 20px;";
-
-    const card = document.createElement("div");
-    card.style.cssText =
-        "max-width: 380px; width: 100%; " +
-        "background: white; " +
-        "border-radius: 26px; " +
-        "padding: 28px 22px; " +
-        "text-align: center; " +
-        "box-shadow: 0 20px 60px rgba(0,0,0,0.5); " +
-        "animation: modalBounceIn 0.4s ease;";
-
-    card.innerHTML =
-        '<div style="font-size: 60px; margin-bottom: 12px;">🏦</div>' +
-        '<div style="font-size: 18px; font-weight: 900; color: #1e293b; margin-bottom: 6px;">' +
-            'در حال انتقال به درگاه پرداخت...' +
-        '</div>' +
-        '<div style="font-size: 13px; font-weight: 600; color: #64748b; margin-bottom: 20px;">' +
-            'لطفاً صبر کنید' +
-        '</div>' +
-        '<div style="padding: 14px; background: linear-gradient(180deg, #fef3c7, #fde68a); border: 2px solid #fbbf24; border-radius: 14px; margin-bottom: 18px;">' +
-            '<div style="font-size: 12px; font-weight: 700; color: #92400e; margin-bottom: 4px;">مبلغ قابل پرداخت</div>' +
-            '<div style="font-size: 24px; font-weight: 900; color: #d97706;">' +
-                _shopToPersianNumber(pkg.price.toLocaleString()) + ' تومان' +
-            '</div>' +
-        '</div>' +
-        '<div style="font-size: 11px; font-weight: 600; color: #94a3b8;">' +
-            '⚠️ این یه نسخه نمایشیه — پرداخت واقعی انجام نمی‌شه' +
-        '</div>';
-
-    modal.appendChild(card);
-    document.body.appendChild(modal);
-
-    setTimeout(function () {
-        modal.remove();
-        showPaymentSuccess(pkg);
-    }, 2000);
 }
 
 /* ============================================
