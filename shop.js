@@ -228,6 +228,55 @@ function showShopScreen() {
         '🎨 خرید آواتارهای ویژه<br>' +
         '✏️ تغییر نام کاربری';
     categoriesDiv.appendChild(coinInfoBox);
+   /* ============================================
+   📺 دکمه تماشای تبلیغات (تپسل)
+   ============================================ */
+const adTitle = document.createElement("h3");
+adTitle.textContent = "📺 تبلیغات جایزه‌ای";
+adTitle.style.cssText = "margin: 20px 0 12px; font-size: 16px; font-weight: 900; color: #10b981; text-align: center; text-shadow: 0 1px 0 rgba(255,255,255,0.8);";
+categoriesDiv.appendChild(adTitle);
+
+const adBtn = document.createElement("button");
+adBtn.style.cssText = 
+    "width: 100%; padding: 16px; margin-bottom: 24px; " +
+    "background: linear-gradient(180deg, #10b981, #047857); " +
+    "border: 3px solid #34d399; border-radius: 18px; color: white; " +
+    "font-size: 16px; font-weight: 900; font-family: inherit; cursor: pointer; " +
+    "box-shadow: 0 6px 0 #065f46; display: flex; align-items: center; justify-content: center; gap: 10px; " +
+    "transition: transform 0.1s ease;";
+
+adBtn.innerHTML = '<span style="font-size: 24px;">📺</span><span>تماشای تبلیغ و دریافت ۵۰ سکه!</span>';
+
+adBtn.onclick = function() {
+    if (window.AndroidAds && typeof window.AndroidAds.showRewardedAd === 'function') {
+        // غیرفعال کردن دکمه تا تبلیغ لود شود
+        adBtn.disabled = true;
+        adBtn.style.opacity = "0.7";
+        adBtn.style.transform = "translateY(3px)";
+        adBtn.style.boxShadow = "0 3px 0 #065f46";
+        adBtn.innerHTML = '<span style="font-size: 24px;">⏳</span><span>در حال دریافت تبلیغ...</span>';
+        
+        // اگر بعد از ۱۵ ثانیه تبلیغی نیامد، دکمه به حالت اول برگردد
+        setTimeout(() => {
+            if (adBtn.disabled) {
+                adBtn.disabled = false;
+                adBtn.style.opacity = "1";
+                adBtn.style.transform = "translateY(0)";
+                adBtn.style.boxShadow = "0 6px 0 #065f46";
+                adBtn.innerHTML = '<span style="font-size: 24px;">📺</span><span>تماشای تبلیغ و دریافت ۵۰ سکه!</span>';
+            }
+        }, 15000);
+
+        window.AndroidAds.showRewardedAd();
+    } else {
+        showInfoModal({
+            emoji: "⚠️", title: "خطا",
+            message: "پلاگین تبلیغات در این نسخه فعال نیست.",
+            color: "#dc2626", shadow: "#7f1d1d"
+        });
+    }
+};
+categoriesDiv.appendChild(adBtn);
 
     /* ============================================
        🎁 بخش آیتم‌های فروشگاه
