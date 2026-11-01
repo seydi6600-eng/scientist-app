@@ -17,7 +17,7 @@ const auth = (req, res, next) => {
     try {
         req.user = jwt.verify(
             authHeader.slice(7),
-            process.env.JWT_SECRET || "secret"
+            require("../config").JWT_SECRET
         );
 
         if (!req.user.phone) {

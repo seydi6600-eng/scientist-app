@@ -83,7 +83,7 @@ router.post("/verify-otp", async (req, res) => {
                 [phone, defaultUsername, "otp_login", Date.now()]
             );
             const user = newUser.rows[0];
-            const token = jwt.sign({ phone: user.phone }, process.env.JWT_SECRET || "secret_key", { expiresIn: '30d' });
+            const token = jwt.sign({ phone: user.phone }, require("./config").JWT_SECRET, { expiresIn: '30d' });
             
             return res.json({ ok: true, token: token, user: user });
 
@@ -93,7 +93,7 @@ router.post("/verify-otp", async (req, res) => {
                 return res.status(400).json({ ok: false, error: "کاربری با این شماره یافت نشد. لطفا ابتدا ثبت‌نام کنید." });
             }
             const user = userRes.rows[0];
-            const token = jwt.sign({ phone: user.phone }, process.env.JWT_SECRET || "secret_key", { expiresIn: '30d' });
+            const token = jwt.sign({ phone: user.phone }, require("./config").JWT_SECRET, { expiresIn: '30d' });
             
             return res.json({ ok: true, token: token, user: user });
         }

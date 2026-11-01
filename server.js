@@ -156,7 +156,7 @@ app.post("/api/verify-otp", async (req, res) => {
         
         if (userRes.rows.length > 0) {
             const user = userRes.rows[0];
-            const token = jwt.sign({ phone: user.phone }, process.env.JWT_SECRET || "secret", { expiresIn: '30d' });
+            const token = jwt.sign({ phone: user.phone }, require("./config").JWT_SECRET, { expiresIn: '30d' });
             return res.json({ ok: true, token, user });
         } 
         
@@ -175,7 +175,7 @@ app.post("/api/verify-otp", async (req, res) => {
         );
         
         const user = newUser.rows[0];
-        const token = jwt.sign({ phone: user.phone }, process.env.JWT_SECRET || "secret", { expiresIn: '30d' });
+        const token = jwt.sign({ phone: user.phone }, require("./config").JWT_SECRET, { expiresIn: '30d' });
         return res.json({ ok: true, token, user });
         
     } catch (err) { 

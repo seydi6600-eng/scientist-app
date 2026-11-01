@@ -29,7 +29,7 @@ router.post("/register", async (req, res) => {
         );
 
         const user = newUser.rows[0];
-        const token = jwt.sign({ phone: user.phone }, process.env.JWT_SECRET || "secret", { expiresIn: "30d" });
+        const token = jwt.sign({ phone: user.phone }, require("../config").JWT_SECRET, { expiresIn: "30d" });
         res.json({ ok: true, token, user });
     } catch (err) {
         res.status(500).json({ ok: false, error: err.message });
@@ -61,7 +61,7 @@ router.post("/login", async (req, res) => {
             return res.status(400).json({ ok: false, error: "رمز اشتباه است" });
         }
 
-        const token = jwt.sign({ phone: user.phone }, process.env.JWT_SECRET || "secret", { expiresIn: "30d" });
+        const token = jwt.sign({ phone: user.phone }, require("../config").JWT_SECRET, { expiresIn: "30d" });
         res.json({ ok: true, token, user });
 
     } catch (err) {
