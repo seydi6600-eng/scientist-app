@@ -53,7 +53,7 @@ function loadQuestions(topicId) {
     }
 }
 
-// ✅ اصلاح ۱: استفاده از الگوریتم درست شافل (Fisher-Yates) برای رفع مشکل تکرار سوالات
+// ✅ تابع جدید: شافل استاندارد برای جلوگیری از تکرار سوالات
 function shuffleArray(array) {
     const arr = [...array];
     for (let i = arr.length - 1; i > 0; i--) {
@@ -70,8 +70,9 @@ function pickRandomQuestions(topicId, count) {
     const all = loadQuestions(topicId);
     if (all.length === 0) return [];
     
-    // ✅ استفاده از تابع شافل استاندارد جایگزین sort
+    // ✅ اصلاح: استفاده از شافل استاندارد به جای sort
     const shuffled = shuffleArray(all);
+    
     return shuffled.slice(0, count).map(q => {
         // برهم زدن گزینه‌ها
         const correctIdx = typeof q.correct === "number" ? q.correct : 0;
@@ -95,7 +96,7 @@ function pickRandomQuestions(topicId, count) {
 router.post("/join", authMiddleware, async (req, res) => {
     try {
         const phone = req.user.phone;
-        // ✅ اصلاح ۲: فال‌بک برای نام کاربری
+        // ✅ اصلاح: جلوگیری از خالی بودن اسم کاربر
         const username = req.user.username || "کاربر مهمان";
         
         // چک کن قبلاً توی صف نیست
@@ -212,27 +213,7 @@ router.get("/status", authMiddleware, async (req, res) => {
             if (waited > MAX_WAIT_SECONDS) {
                 // تایم‌اوت
                 await query("DELETE FROM pvp_queue WHERE user_phone = $1", [phone]);
-                
-                // ✅ اصلاح ۳: ساخت مسابقه با ربات به جای ارور تایم‌اوت
-                const userRes = await query("SELECT avatar FROM users WHERE phone = $1", [phone]);
-                const user = userRes.rows[0];
-                const botPhone = "bot_" + Math.floor(Math.random() * 100000);
-                
-                const matchRes = await query(
-                    `INSERT INTO pvp_matches 
-                     (player1_phone, player1_username, player1_avatar,
-                      player2_phone, player2_username, player2_avatar,
-                      questions, status, started_at)
-                     VALUES ($1, $2, $3, $4, $5, $6, $7, 'selecting_topics', $8)
-                     RETURNING id`,
-                    [
-                        phone, req.user.username || "شما", user.avatar || "👤",
-                        botPhone, "ربات دانشمند 🤖", "🤖",
-                        JSON.stringify([]), Date.now()
-                    ]
-                );
-                
-                return res.json({ ok: true, status: "matched", matchId: matchRes.rows[0].id });
+                return res.json({ ok: true, status: "timeout" });
             }
             
             return res.json({ 
@@ -307,27 +288,6 @@ router.get("/match/:id", authMiddleware, async (req, res) => {
             return res.status(403).json({ ok: false, error: "دسترسی غیرمجاز" });
         }
         
-        const isBotMatch = m.player1_phone.startsWith("bot_") || m.player2_phone.startsWith("bot_");
-
-        // ✅ اصلاح ۴: اگر ربات است و موضوع انتخاب نکرده، براش رندوم انتخاب کن
-        if (isBotMatch) {
-            const botPhone = m.player1_phone.startsWith("bot_") ? m.player1_phone : m.player2_phone;
-            const botSelection = await query(
-                "SELECT * FROM pvp_topic_selections WHERE match_id = $1 AND user_phone = $2",
-                [matchId, botPhone]
-            );
-            if (botSelection.rows.length === 0) {
-                const randomTopic = TOPICS[Math.floor(Math.random() * TOPICS.length)].id;
-                await query(
-                    `INSERT INTO pvp_topic_selections (match_id, user_phone, topic_id, selected_at)
-                     VALUES ($1, $2, $3, $4)`,
-                    [matchId, botPhone, randomTopic, Date.now()]
-                );
-                const topicField = m.player1_phone === botPhone ? "player1_topic" : "player2_topic";
-                await query(`UPDATE pvp_matches SET ${topicField} = $1 WHERE id = $2`, [randomTopic, matchId]);
-            }
-        }
-
         // موضوعات انتخاب‌شده
         const selections = await query(
             "SELECT * FROM pvp_topic_selections WHERE match_id = $1",
@@ -369,39 +329,30 @@ router.get("/match/:id", authMiddleware, async (req, res) => {
             m.started_at = Date.now();
         }
 
-        // ✅ اصلاح ۵: شبیه‌سازی پاسخ‌دهی ربات حریف
-        if (isBotMatch && m.status === "in_progress") {
-            const elapsed = (Date.now() - parseInt(m.started_at)) / 1000;
-            // ربات هر ۱۵ ثانیه یک سوال جواب میده
-            const expectedBotAnswers = Math.min(10, Math.floor(elapsed / 15));
-
-            if (expectedBotAnswers > 0) {
-                const currentBotAnswered = isP1 ? m.player2_answered : m.player1_answered;
+        // ✅ سیستم جلوگیری از گیر کردن (Forfeit)
+        // اگر حریف قطع شد و بازی بیش از ۳ دقیقه طول کشید
+        if (m.status === "in_progress" && m.started_at) {
+            const elapsed = Math.floor((Date.now() - parseInt(m.started_at)) / 1000);
+            
+            if (elapsed > 180) { // ۱۸۰ ثانیه = ۳ دقیقه
+                let winner = null;
+                if (m.player1_score > m.player2_score) winner = m.player1_phone;
+                else if (m.player2_score > m.player1_score) winner = m.player2_phone;
                 
-                if (expectedBotAnswers > currentBotAnswered) {
-                    let newScore = isP1 ? m.player2_score : m.player1_score;
-                    
-                    // شبیه‌سازی شانس درست جواب دادن (۶۰ درصد شانس)
-                    for (let i = currentBotAnswered; i < expectedBotAnswers; i++) {
-                        if (Math.random() < 0.6) newScore++;
-                    }
-                    
-                    const scoreField = isP1 ? "player2_score" : "player1_score";
-                    const ansField = isP1 ? "player2_answered" : "player1_answered";
-                    
-                    await query(`UPDATE pvp_matches SET ${scoreField} = $1, ${ansField} = $2 WHERE id = $3`, [newScore, expectedBotAnswers, matchId]);
-                    
-                    // آپدیت آبجکت در حافظه برای ارسال به کلاینت
-                    if (isP1) { m.player2_score = newScore; m.player2_answered = expectedBotAnswers; }
-                    else { m.player1_score = newScore; m.player1_answered = expectedBotAnswers; }
-                }
-            }
+                // اگر یکی اصلاً جواب نداده، بازنده است
+                if (m.player1_answered === 0 && m.player2_answered > 0) winner = m.player2_phone;
+                if (m.player2_answered === 0 && m.player1_answered > 0) winner = m.player1_phone;
 
-            // اگر ربات به ۱۰ سوال رسید، خودکار بازی را برای او تمام کن
-            if (expectedBotAnswers >= 10 && !(isP1 ? m.player2_finished : m.player1_finished)) {
-                const finishField = isP1 ? "player2_finished" : "player1_finished";
-                await query(`UPDATE pvp_matches SET ${finishField} = true WHERE id = $1`, [matchId]);
-                if (isP1) m.player2_finished = true; else m.player1_finished = true;
+                await query(
+                    `UPDATE pvp_matches 
+                     SET status = 'finished', finished_at = $1, winner_phone = $2
+                     WHERE id = $3`,
+                    [Date.now(), winner, matchId]
+                );
+                
+                m.status = "finished";
+                m.finished_at = Date.now();
+                m.winner_phone = winner;
             }
         }
         
@@ -439,6 +390,7 @@ router.get("/match/:id", authMiddleware, async (req, res) => {
                 hasOppSelection: !!oppSelection,
                 player1: {
                     isMe: isP1,
+                    // ✅ اصلاح: جلوگیری از خالی بودن اسم
                     username: m.player1_username || "کاربر مهمان",
                     avatar: m.player1_avatar,
                     score: m.player1_score,
@@ -448,6 +400,7 @@ router.get("/match/:id", authMiddleware, async (req, res) => {
                 },
                 player2: {
                     isMe: isP2,
+                    // ✅ اصلاح: جلوگیری از خالی بودن اسم
                     username: m.player2_username || "کاربر مهمان",
                     avatar: m.player2_avatar,
                     score: m.player2_score,
@@ -637,9 +590,6 @@ router.post("/finish", authMiddleware, async (req, res) => {
             
             // آپدیت آمار بازیکن‌ها
             for (const player of [u.player1_phone, u.player2_phone]) {
-                // اگر بازیکن ربات است، آمارش آپدیت نشود
-                if (player.startsWith("bot_")) continue; 
-
                 await query(
                     `UPDATE users 
                      SET online_games = online_games + 1,
